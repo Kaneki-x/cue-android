@@ -144,7 +144,7 @@ public class EntryHolder extends RecyclerView.ViewHolder {
         _showNextCode = entry.getInfo() instanceof TotpInfo && showNextCode;
         _showExpirationState = _entry.getInfo() instanceof TotpInfo && showExpirationState;
 
-        _favoriteIndicator.setVisibility(_entry.isFavorite() ? View.VISIBLE : View.INVISIBLE);
+        _favoriteIndicator.setVisibility(_entry.isFavorite() ? View.VISIBLE : View.GONE);
 
         // only show the progress bar if there is no uniform period and the entry type is TotpInfo
         setShowProgress(nonUniform);
@@ -170,6 +170,15 @@ public class EntryHolder extends RecyclerView.ViewHolder {
         _profileIssuer.setText(profileIssuer);
         _profileName.setText(profileName);
         setAccountNameLayout(_accountNamePosition, !profileIssuer.isEmpty() && !profileName.isEmpty());
+
+        // compact and small: the star follows the name on the first line, or the title when
+        // the name is hidden or below it (as iOS puts it after "issuer (name)")
+        if (viewMode == ViewMode.COMPACT || viewMode == ViewMode.SMALL) {
+            RelativeLayout.LayoutParams starParams = (RelativeLayout.LayoutParams) _favoriteIndicator.getLayoutParams();
+            starParams.addRule(RelativeLayout.END_OF, _accountNamePosition == AccountNamePosition.END
+                    ? R.id.profile_account_name : R.id.profile_issuer);
+            _favoriteIndicator.setLayoutParams(starParams);
+        }
 
         if (_hidden) {
             hideCode();
