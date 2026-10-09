@@ -19,4 +19,8 @@
     <dimen name="cue_code_display">34sp</dimen>
     <dimen name="cue_code_compact">26sp</dimen>
     <dimen name="cue_code_inline">20sp</dimen>
+    <dimen name="cue_ring_list">28dp</dimen>
+    <dimen name="cue_ring_compact">24dp</dimen>
+    <dimen name="cue_ring_small">22dp</dimen>
+    <dimen name="cue_ring_tile">20dp</dimen>
 </resources>

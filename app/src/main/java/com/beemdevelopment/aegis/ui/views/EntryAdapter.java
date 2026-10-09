@@ -444,7 +444,8 @@ public class EntryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             boolean paused = _pauseFocused && entry.equals(_focusedEntry);
             boolean dimmed = (_highlightEntry || _tempHighlightEntry) && _focusedEntry != null && !_focusedEntry.equals(entry);
             boolean nonUniformPeriod = entry.getInfo() instanceof TotpInfo && ((TotpInfo) entry.getInfo()).getPeriod() != getMostFrequentPeriod();
-            boolean showProgress = nonUniformPeriod || (_viewMode == ViewMode.NORMAL && entry.getInfo() instanceof TotpInfo);
+            // every TOTP card carries its own ring, in every view mode
+            boolean showProgress = entry.getInfo() instanceof TotpInfo;
             boolean showAccountName = true;
             if (_onlyShowNecessaryAccountNames) {
                 // Only show account name when there's multiple entries found with the same issuer.

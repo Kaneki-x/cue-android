@@ -400,8 +400,9 @@ public class EntryHolder extends RecyclerView.ViewHolder {
     }
 
     private void updateTextViewWithDots(TextView textView, String hiddenCode, String code) {
-        Paint paint = new Paint();
-        paint.setTextSize(_profileCode.getTextSize());
+        // measure with the view's own typeface: the code font has no dot glyph, and the
+        // fallback font's dot (a full-width one under a CJK locale) is much wider than a digit
+        Paint paint = new Paint(textView.getPaint());
 
         // Calculate the difference between the actual code width and the dots width
         float codeWidth = paint.measureText(code);

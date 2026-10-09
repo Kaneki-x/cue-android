@@ -376,8 +376,9 @@ public class EntryListView extends Fragment implements EntryAdapter.Listener {
     public void onPeriodUniformityChanged(boolean isUniform, int period) {
         setShowProgress(isUniform);
         if (_showProgress) {
-            // in the normal view mode every card carries its own ring, so no top bar
-            _progressBar.setVisibility(_viewMode == ViewMode.NORMAL ? View.GONE : View.VISIBLE);
+            // every card carries its own ring, so the bar under the toolbar stays hidden; it
+            // only keeps the shared refresh timing
+            _progressBar.setVisibility(View.GONE);
             _progressBar.setPeriod(period);
             _progressBar.start();
             onRefreshStart();

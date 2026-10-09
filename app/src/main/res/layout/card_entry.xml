@@ -179,8 +179,8 @@
             <com.beemdevelopment.aegis.ui.views.TotpProgressBar
                 android:id="@+id/progressBar"
                 style="?android:attr/progressBarStyleHorizontal"
-                android:layout_width="28dp"
-                android:layout_height="28dp"
+                android:layout_width="@dimen/cue_ring_list"
+                android:layout_height="@dimen/cue_ring_list"
                 android:layout_marginStart="@dimen/cue_space_2"
                 android:max="5000"
                 android:progressDrawable="@drawable/progress_ring"

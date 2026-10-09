@@ -64,9 +64,11 @@
                         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Aegis.ImageView.Circle" />
             </RelativeLayout>
 
+            <!-- at least as tall as the icon, taller when the text needs it (CJK account names) -->
             <RelativeLayout
                 android:layout_width="fill_parent"
-                android:layout_height="24dp"
+                android:layout_height="wrap_content"
+                android:minHeight="24dp"
                 android:id="@+id/description"
                 android:layout_toEndOf="@id/layoutImage">
 
@@ -102,14 +104,23 @@
                     tools:text=" - AccountName" />
             </RelativeLayout>
 
+            <!-- the code, then the ring or the HOTP refresh button, as on iOS -->
+            <LinearLayout
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_below="@id/description"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_marginBottom="0dp"
                 android:paddingBottom="0dp"
                 android:id="@+id/profile_codes_layout"
-                android:layout_below="@id/description"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content">
 
                 <TextView
                     android:textAppearance="@style/TextAppearance.Cue.Code.Compact"
@@ -118,11 +129,9 @@
                     tools:text="012 345"
                     android:id="@+id/profile_code"
                     android:layoutDirection="ltr"
-                    android:layout_below="@id/description"
+                    android:maxLines="1"
                     android:includeFontPadding="false"
-                    android:fallbackLineSpacing="false"
-                    android:layout_alignParentStart="true"
-                    android:layout_marginTop="10dp" />
+                    android:fallbackLineSpacing="false" />
 
                 <TextView
                     android:id="@+id/next_profile_code"
@@ -140,26 +149,38 @@
                     tools:text="412 643"/>
             </LinearLayout>
 
+            <ImageView
+                android:id="@+id/buttonRefresh"
+                android:visibility="gone"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="@dimen/cue_space_1"
+                android:layout_marginEnd="-6dp"
+                android:padding="6dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:contentDescription="@string/action_refresh_code"
+                android:src="@drawable/ic_outline_refresh_24"
+                android:background="?android:attr/selectableItemBackgroundBorderless"
+                app:tint="?attr/colorOnSurface" />
+
+            <com.beemdevelopment.aegis.ui.views.TotpProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="@dimen/cue_ring_tile"
+                android:layout_height="@dimen/cue_ring_tile"
+                android:layout_marginStart="@dimen/cue_space_1"
+                android:max="5000"
+                android:progressDrawable="@drawable/progress_ring"
+                android:rotation="-90" />
+            </LinearLayout>
+
         </RelativeLayout>
 
         <LinearLayout
             android:orientation="horizontal"
             android:layout_width="wrap_content"
             android:layout_height="match_parent">
-
-            <ImageView
-                android:id="@+id/buttonRefresh"
-                android:visibility="gone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_vertical"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="0dp"
-                android:padding="8dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:src="@drawable/ic_outline_refresh_24"
-                android:background="?android:attr/selectableItemBackground" />
 
             <ImageView
                 android:id="@+id/drag_handle"
@@ -173,23 +194,6 @@
 
         </LinearLayout>
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:orientation="horizontal"
-        android:padding="0dp"
-        android:layout_margin="0dp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <com.beemdevelopment.aegis.ui.views.TotpProgressBar
-            style="?android:attr/progressBarStyleHorizontal"
-            android:progressDrawable="@drawable/progress_horizontal"
-            android:layout_width="0dp"
-            android:layout_height="3dp"
-            android:id="@+id/progressBar"
-            android:max="5000"
-            android:layout_weight="1"/>
     </LinearLayout>
 
 </com.google.android.material.card.MaterialCardView>
