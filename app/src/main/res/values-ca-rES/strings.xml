@@ -212,8 +212,8 @@
     <string name="assign_groups">Assignar a grup</string>
     <string name="assign_groups_dialog_summary">Tria el grup on vols assignar les entrades seleccionades.</string>
     <string name="assign_groups_dialog_dropdown">Tria un grup</string>
-    <string name="favorite" comment="Verb">Preferit</string>
-    <string name="unfavorite" comment="Verb">No preferit</string>
+    <string name="favorite" comment="Verb">Fixa</string>
+    <string name="unfavorite" comment="Verb">Deixa de fixar</string>
     <string name="error_all_caps">ERROR</string>
     <string name="password">Contrasenya</string>
     <string name="confirm_password">Confirma la contrasenya</string>

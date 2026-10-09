@@ -165,8 +165,8 @@
     <string name="edit">തിരുത്തുക</string>
     <string name="select_all">എല്ലാം തിരഞ്ഞെടുക്കുക</string>
     <string name="assign_icons">ഐക്കണുകൾ നിയോഗിക്കുക</string>
-    <string name="favorite" comment="Verb">പ്രിയപ്പെട്ടത്</string>
-    <string name="unfavorite" comment="Verb">പ്രിയപ്പെട്ടതല്ല</string>
+    <string name="favorite" comment="Verb">പിൻ ചെയ്യുക</string>
+    <string name="unfavorite" comment="Verb">അൺപിൻ ചെയ്യുക</string>
     <string name="error_all_caps">പിശക്</string>
     <string name="password">പാസ്വേഡ്</string>
     <string name="confirm_password">പാസ്‌വേഡ് സ്ഥിരീകരിക്കുക</string>

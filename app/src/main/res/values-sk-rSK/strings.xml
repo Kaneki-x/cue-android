@@ -205,8 +205,8 @@
     <string name="assign_groups">Priraď do skupiny</string>
     <string name="assign_groups_dialog_summary">Vyberte skupinu, do ktorej chcete priradiť vybrané položky.</string>
     <string name="assign_groups_dialog_dropdown">Vyber skupinu</string>
-    <string name="favorite" comment="Verb">Obľúbené</string>
-    <string name="unfavorite" comment="Verb">Odobrať z obľúbených</string>
+    <string name="favorite" comment="Verb">Pripnúť</string>
+    <string name="unfavorite" comment="Verb">Odopnúť</string>
     <string name="error_all_caps">CHYBA</string>
     <string name="password">Heslo</string>
     <string name="confirm_password">Potvrďte heslo</string>

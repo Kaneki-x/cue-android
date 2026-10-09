@@ -212,8 +212,8 @@
     <string name="assign_groups">Associer au groupe</string>
     <string name="assign_groups_dialog_summary">Sélectionnez un groupe auquel vous souhaitez assigner les entrées sélectionnées.</string>
     <string name="assign_groups_dialog_dropdown">Sélectionner groupe</string>
-    <string name="favorite" comment="Verb">Ajouter aux favoris</string>
-    <string name="unfavorite" comment="Verb">Retirer des favoris</string>
+    <string name="favorite" comment="Verb">Épingler</string>
+    <string name="unfavorite" comment="Verb">Désépingler</string>
     <string name="error_all_caps">ERREUR</string>
     <string name="password">Mot de passe</string>
     <string name="confirm_password">Confirmer mot de passe</string>

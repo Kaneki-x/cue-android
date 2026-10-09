@@ -106,8 +106,8 @@
     <string name="enter_manually">ಕೈಯಾರೆ ನಮೂದಿಸಿ</string>
     <string name="copy">ನಕಲಿಸು</string>
     <string name="edit">ಸಂಪಾದಿಸು</string>
-    <string name="favorite" comment="Verb">ಮೆಚ್ಚಿನವುಗಳು</string>
-    <string name="unfavorite" comment="Verb">ಮೆಚ್ಚಿನದಲ್ಲದ</string>
+    <string name="favorite" comment="Verb">ಪಿನ್ ಮಾಡಿ</string>
+    <string name="unfavorite" comment="Verb">ಅನ್‌ಪಿನ್ ಮಾಡಿ</string>
     <string name="error_all_caps">ದೋಷ</string>
     <string name="password">ಗುಪ್ತಪದ</string>
     <string name="confirm_password">ಗುಪ್ತಪದವನ್ನು ಖಚಿತಗೊಳಿಸು</string>

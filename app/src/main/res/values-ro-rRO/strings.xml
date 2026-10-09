@@ -214,8 +214,8 @@
     <string name="assign_groups">Abonează în grup</string>
     <string name="assign_groups_dialog_summary">Selectează un grup căruia dorești să îi atribui intrările selectate.</string>
     <string name="assign_groups_dialog_dropdown">Selectează grupul</string>
-    <string name="favorite" comment="Verb">Favorit</string>
-    <string name="unfavorite" comment="Verb">Elimină din favorite</string>
+    <string name="favorite" comment="Verb">Fixează</string>
+    <string name="unfavorite" comment="Verb">Anulează fixarea</string>
     <string name="error_all_caps">EROARE</string>
     <string name="password">Parolă</string>
     <string name="confirm_password">Confirmă parola</string>

@@ -188,8 +188,8 @@
     <string name="copy">Copiar</string>
     <string name="edit">Editar</string>
     <string name="assign_groups_dialog_dropdown">Seleiciona un grupu</string>
-    <string name="favorite" comment="Verb">Meter en Favoritos</string>
-    <string name="unfavorite" comment="Verb">Quitar en Favoritos</string>
+    <string name="favorite" comment="Verb">Fixar</string>
+    <string name="unfavorite" comment="Verb">Desfixar</string>
     <string name="error_all_caps">ERROR</string>
     <string name="password">Contraseña</string>
     <string name="confirm_password">Confirmación</string>

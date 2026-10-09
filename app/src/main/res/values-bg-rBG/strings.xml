@@ -212,8 +212,8 @@
     <string name="assign_groups">Прибавяне към група</string>
     <string name="assign_groups_dialog_summary">Изберете групата, в която да добавите избраните записи.</string>
     <string name="assign_groups_dialog_dropdown">Избиране на група</string>
-    <string name="favorite" comment="Verb">Добавя в избрани</string>
-    <string name="unfavorite" comment="Verb">Премахва от избраните</string>
+    <string name="favorite" comment="Verb">Закачи</string>
+    <string name="unfavorite" comment="Verb">Откачи</string>
     <string name="error_all_caps">ГРЕШКА</string>
     <string name="password">Парола</string>
     <string name="confirm_password">Потвърждаване на паролата</string>

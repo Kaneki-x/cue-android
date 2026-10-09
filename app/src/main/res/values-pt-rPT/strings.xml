@@ -211,8 +211,8 @@
     <string name="assign_groups">Atribuir ao grupo</string>
     <string name="assign_groups_dialog_summary">Selecione o grupo ao qual deseja atribuir os itens selecionados.</string>
     <string name="assign_groups_dialog_dropdown">Selecione o grupo</string>
-    <string name="favorite" comment="Verb">Favorito</string>
-    <string name="unfavorite" comment="Verb">Remover dos favoritos</string>
+    <string name="favorite" comment="Verb">Afixar</string>
+    <string name="unfavorite" comment="Verb">Desafixar</string>
     <string name="error_all_caps">ERRO</string>
     <string name="password">Palavra-passe</string>
     <string name="confirm_password">Confirme a Senha</string>

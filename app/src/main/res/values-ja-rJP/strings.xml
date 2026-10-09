@@ -174,8 +174,8 @@
     <string name="edit">編集</string>
     <string name="select_all">すべて選択</string>
     <string name="assign_icons">アイコンを割り当てる</string>
-    <string name="favorite" comment="Verb">お気に入りに追加</string>
-    <string name="unfavorite" comment="Verb">お気に入りを解除</string>
+    <string name="favorite" comment="Verb">ピン留め</string>
+    <string name="unfavorite" comment="Verb">ピン留めを解除</string>
     <string name="error_all_caps">エラー</string>
     <string name="password">パスワード</string>
     <string name="confirm_password">パスワードの確認</string>

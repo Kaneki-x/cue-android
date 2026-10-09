@@ -224,8 +224,8 @@
     <string name="assign_groups">عيّن لمجموعة</string>
     <string name="assign_groups_dialog_summary">حدّد مجموعة ترغب في تعيين المواد المختارة إليها.</string>
     <string name="assign_groups_dialog_dropdown">حدّد مجموعة</string>
-    <string name="favorite" comment="Verb">أضِف للمفضلة</string>
-    <string name="unfavorite" comment="Verb">أزِل من المفضلة</string>
+    <string name="favorite" comment="Verb">تثبيت</string>
+    <string name="unfavorite" comment="Verb">إلغاء التثبيت</string>
     <string name="error_all_caps">خطأ</string>
     <string name="password">كلمة السر</string>
     <string name="confirm_password">أكّد كلمة السر</string>

@@ -212,8 +212,8 @@
     <string name="assign_groups">Toewijzen aan groep</string>
     <string name="assign_groups_dialog_summary">Selecteer een groep waaraan u de geselecteerde items wilt toewijzen.</string>
     <string name="assign_groups_dialog_dropdown">Groep selecteren</string>
-    <string name="favorite" comment="Verb">Aan favorieten toevoegen</string>
-    <string name="unfavorite" comment="Verb">Uit favorieten verwijderen</string>
+    <string name="favorite" comment="Verb">Vastzetten</string>
+    <string name="unfavorite" comment="Verb">Losmaken</string>
     <string name="error_all_caps">FOUT</string>
     <string name="password">Wachtwoord</string>
     <string name="confirm_password">Wachtwoord bevestigen</string>

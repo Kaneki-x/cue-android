@@ -215,8 +215,8 @@
     <string name="assign_groups">Додели групи</string>
     <string name="assign_groups_dialog_summary">Изаберите групу којој желите да доделите изабране уносе.</string>
     <string name="assign_groups_dialog_dropdown">Изаберите групу</string>
-    <string name="favorite" comment="Verb">Додај у омиљено</string>
-    <string name="unfavorite" comment="Verb">Уклони из омиљеног</string>
+    <string name="favorite" comment="Verb">Закачи</string>
+    <string name="unfavorite" comment="Verb">Откачи</string>
     <string name="error_all_caps">ГРЕШКА</string>
     <string name="password">Лозинка</string>
     <string name="confirm_password">Потврдите лозинку</string>

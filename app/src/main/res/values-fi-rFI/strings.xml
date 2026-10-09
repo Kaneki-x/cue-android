@@ -211,8 +211,8 @@
     <string name="assign_groups">Lisää ryhmään</string>
     <string name="assign_groups_dialog_summary">Valitse ryhmä, johon haluat lisätä valitut kohteet.</string>
     <string name="assign_groups_dialog_dropdown">Valitse ryhmä</string>
-    <string name="favorite" comment="Verb">Lisää suosikiksi</string>
-    <string name="unfavorite" comment="Verb">Poista suosikeista</string>
+    <string name="favorite" comment="Verb">Kiinnitä</string>
+    <string name="unfavorite" comment="Verb">Irrota</string>
     <string name="error_all_caps">VIRHE</string>
     <string name="password">Salasana</string>
     <string name="confirm_password">Vahvista salasana</string>

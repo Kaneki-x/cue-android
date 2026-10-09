@@ -212,8 +212,8 @@
     <string name="assign_groups">Oan groep tawize</string>
     <string name="assign_groups_dialog_summary">Selektearje in groep wêroan jo de selektearre items tawize wolle.</string>
     <string name="assign_groups_dialog_dropdown">Groep selektearje</string>
-    <string name="favorite" comment="Verb">Oan favoriten tafoegje</string>
-    <string name="unfavorite" comment="Verb">Ut favoriten fuortsmite</string>
+    <string name="favorite" comment="Verb">Fêstsette</string>
+    <string name="unfavorite" comment="Verb">Losmeitsje</string>
     <string name="error_all_caps">FLATER</string>
     <string name="password">Wachtwurd</string>
     <string name="confirm_password">Wachtwurd befêstigje</string>

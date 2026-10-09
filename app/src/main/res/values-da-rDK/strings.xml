@@ -212,8 +212,8 @@
     <string name="assign_groups">Tildel til gruppe</string>
     <string name="assign_groups_dialog_summary">Vælg en gruppe, som de valgte poster ønskes tilknyttet.</string>
     <string name="assign_groups_dialog_dropdown">Vælg gruppe</string>
-    <string name="favorite" comment="Verb">Tilføj som favorit</string>
-    <string name="unfavorite" comment="Verb">Fjern som favorit</string>
+    <string name="favorite" comment="Verb">Fastgør</string>
+    <string name="unfavorite" comment="Verb">Frigør</string>
     <string name="error_all_caps">FEJL</string>
     <string name="password">Adgangskode</string>
     <string name="confirm_password">Bekræft adgangskode</string>

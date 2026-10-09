@@ -218,8 +218,8 @@
     <string name="assign_groups">Назначить группу</string>
     <string name="assign_groups_dialog_summary">Выберите группу, в которую вы хотите отнести выбранные записи.</string>
     <string name="assign_groups_dialog_dropdown">Выберите группу</string>
-    <string name="favorite" comment="Verb">В избранное</string>
-    <string name="unfavorite" comment="Verb">Убрать из избранного</string>
+    <string name="favorite" comment="Verb">Закрепить</string>
+    <string name="unfavorite" comment="Verb">Открепить</string>
     <string name="error_all_caps">ОШИБКА</string>
     <string name="password">Пароль</string>
     <string name="confirm_password">Подтвердите пароль</string>

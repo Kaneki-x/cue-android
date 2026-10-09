@@ -212,8 +212,8 @@
     <string name="assign_groups">Tilldela grupp</string>
     <string name="assign_groups_dialog_summary">Välj en grupp som du vill tilldela de valda posterna till.</string>
     <string name="assign_groups_dialog_dropdown">Välj grupp</string>
-    <string name="favorite" comment="Verb">Favoritmarkera</string>
-    <string name="unfavorite" comment="Verb">Ta bort som favorit</string>
+    <string name="favorite" comment="Verb">Fäst</string>
+    <string name="unfavorite" comment="Verb">Lossa</string>
     <string name="error_all_caps">FEL</string>
     <string name="password">Lösenord</string>
     <string name="confirm_password">Bekräfta lösenord</string>

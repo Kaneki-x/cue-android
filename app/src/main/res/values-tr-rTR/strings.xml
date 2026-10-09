@@ -211,8 +211,8 @@
     <string name="assign_groups">Gruba ata</string>
     <string name="assign_groups_dialog_summary">Seçilen girdileri istediğiniz bir gruba atayın.</string>
     <string name="assign_groups_dialog_dropdown">Grup seçin</string>
-    <string name="favorite" comment="Verb">Favorilere Ekle</string>
-    <string name="unfavorite" comment="Verb">Favorilerden Çıkar</string>
+    <string name="favorite" comment="Verb">Sabitle</string>
+    <string name="unfavorite" comment="Verb">Sabitlemeyi kaldır</string>
     <string name="error_all_caps">HATA</string>
     <string name="password">Parola</string>
     <string name="confirm_password">Parolayı doğrula</string>

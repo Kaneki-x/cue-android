@@ -212,8 +212,8 @@
     <string name="assign_groups">Lisa gruppi</string>
     <string name="assign_groups_dialog_summary">Vali grupp, kuhu soovid antud kirjed lisada.</string>
     <string name="assign_groups_dialog_dropdown">Vali grupp</string>
-    <string name="favorite" comment="Verb">Lisa lemmikuks</string>
-    <string name="unfavorite" comment="Verb">Eemalda lemmikutest</string>
+    <string name="favorite" comment="Verb">Kinnita</string>
+    <string name="unfavorite" comment="Verb">Vabasta</string>
     <string name="error_all_caps">VIGA</string>
     <string name="password">Salasõna</string>
     <string name="confirm_password">Korda salasõna</string>

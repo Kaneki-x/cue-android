@@ -211,8 +211,8 @@
     <string name="assign_groups">Csoporthoz rendelés</string>
     <string name="assign_groups_dialog_summary">Válassza ki, hogy a kiválasztott elemek mely csoporthoz legyenek rendelve.</string>
     <string name="assign_groups_dialog_dropdown">Csoport kiválasztása</string>
-    <string name="favorite" comment="Verb">Kedvencnek jelölés</string>
-    <string name="unfavorite" comment="Verb">Eltávolítás a kedvencek közül</string>
+    <string name="favorite" comment="Verb">Kitűzés</string>
+    <string name="unfavorite" comment="Verb">Kitűzés megszüntetése</string>
     <string name="error_all_caps">HIBA</string>
     <string name="password">Jelszó</string>
     <string name="confirm_password">Jelszó megerősítése</string>

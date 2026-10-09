@@ -212,8 +212,8 @@
     <string name="assign_groups">Αντιστοίχιση σε ομάδα</string>
     <string name="assign_groups_dialog_summary">Επιλέξτε μια ομάδα στην οποία θέλετε να αντιστοιχίσετε τις επιλεγμένες καταχωρήσεις.</string>
     <string name="assign_groups_dialog_dropdown">Επιλογή ομάδας</string>
-    <string name="favorite" comment="Verb">Προσθήκη στα αγαπημένα</string>
-    <string name="unfavorite" comment="Verb">Αφαίρεση από αγαπημένα</string>
+    <string name="favorite" comment="Verb">Καρφίτσωμα</string>
+    <string name="unfavorite" comment="Verb">Ξεκαρφίτσωμα</string>
     <string name="error_all_caps">ΣΦΑΛΜΑ</string>
     <string name="password">Κωδικός πρόσβασης</string>
     <string name="confirm_password">Επιβεβαίωση κωδικού</string>

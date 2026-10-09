@@ -211,8 +211,8 @@
     <string name="assign_groups">Xếp nhóm</string>
     <string name="assign_groups_dialog_summary">Chọn nhóm muốn xếp cho các mục đã chọn.</string>
     <string name="assign_groups_dialog_dropdown">Chọn nhóm</string>
-    <string name="favorite" comment="Verb">Thích</string>
-    <string name="unfavorite" comment="Verb">Bỏ thích</string>
+    <string name="favorite" comment="Verb">Ghim</string>
+    <string name="unfavorite" comment="Verb">Bỏ ghim</string>
     <string name="error_all_caps">LỖI</string>
     <string name="password">Mật khẩu</string>
     <string name="confirm_password">Xác nhận mật khẩu</string>

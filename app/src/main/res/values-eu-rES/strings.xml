@@ -211,8 +211,8 @@
     <string name="assign_groups">Esleitu taldeari</string>
     <string name="assign_groups_dialog_summary">Aukeratu aukeratutako elementuak zein talderi esleitu.</string>
     <string name="assign_groups_dialog_dropdown">Aukeratu taldea</string>
-    <string name="favorite" comment="Verb">Gogokoa</string>
-    <string name="unfavorite" comment="Verb">Gogokoetatik kendu</string>
+    <string name="favorite" comment="Verb">Ainguratu</string>
+    <string name="unfavorite" comment="Verb">Askatu</string>
     <string name="error_all_caps">Errorea</string>
     <string name="password">Pasahitza</string>
     <string name="confirm_password">Berretsi pasahitza</string>

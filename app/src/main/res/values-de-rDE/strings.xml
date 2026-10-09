@@ -212,8 +212,8 @@
     <string name="assign_groups">Einer Gruppe zuweisen</string>
     <string name="assign_groups_dialog_summary">Wähle eine Gruppe aus, die du den ausgewählten Einträgen zuweisen möchtest.</string>
     <string name="assign_groups_dialog_dropdown">Gruppe auswählen</string>
-    <string name="favorite" comment="Verb">Zu Favoriten hinzufügen</string>
-    <string name="unfavorite" comment="Verb">Aus Favoriten entfernen</string>
+    <string name="favorite" comment="Verb">Anheften</string>
+    <string name="unfavorite" comment="Verb">Loslösen</string>
     <string name="error_all_caps">FEHLER</string>
     <string name="password">Passwort</string>
     <string name="confirm_password">Passwort bestätigen</string>

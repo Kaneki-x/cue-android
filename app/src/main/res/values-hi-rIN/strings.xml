@@ -155,8 +155,8 @@
     <string name="set_up_biometric">बॉयोमेट्रिक अनलॉक सेट करें</string>
     <string name="copy">कॉपी करें</string>
     <string name="edit">संपादित करें</string>
-    <string name="favorite" comment="Verb">फेवरेट</string>
-    <string name="unfavorite" comment="Verb">पसंदीदा नहीं है</string>
+    <string name="favorite" comment="Verb">पिन करें</string>
+    <string name="unfavorite" comment="Verb">अनपिन करें</string>
     <string name="error_all_caps">एरर </string>
     <string name="password">पासवर्ड</string>
     <string name="confirm_password">पासवर्ड की पुष्टि करें</string>

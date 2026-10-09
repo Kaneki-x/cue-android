@@ -208,8 +208,8 @@
     <string name="assign_icons">שיוך סמלים</string>
     <string name="assign_groups">שיוך לקבוצה</string>
     <string name="assign_groups_dialog_dropdown">נא לבחור קבוצה</string>
-    <string name="favorite" comment="Verb">הוספה למועדפים</string>
-    <string name="unfavorite" comment="Verb">הסרה מהמועדפים</string>
+    <string name="favorite" comment="Verb">הצמדה</string>
+    <string name="unfavorite" comment="Verb">ביטול הצמדה</string>
     <string name="error_all_caps">שגיאה</string>
     <string name="password">סיסמה</string>
     <string name="confirm_password">אישור סיסמה</string>

@@ -207,8 +207,8 @@
     <string name="assign_groups">Legg til i gruppe</string>
     <string name="assign_groups_dialog_summary">Velg i hvilken gruppe du vil legge til de valgte oppføringene.</string>
     <string name="assign_groups_dialog_dropdown">Velg gruppe</string>
-    <string name="favorite" comment="Verb">Legg til som favoritt</string>
-    <string name="unfavorite" comment="Verb">Fjern fra favoritter</string>
+    <string name="favorite" comment="Verb">Fest</string>
+    <string name="unfavorite" comment="Verb">Løsne</string>
     <string name="error_all_caps">FEIL</string>
     <string name="password">Passord</string>
     <string name="confirm_password">Bekreft passord</string>

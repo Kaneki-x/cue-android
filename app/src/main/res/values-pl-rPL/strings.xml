@@ -218,8 +218,8 @@
     <string name="assign_groups">Przypisz do grupy</string>
     <string name="assign_groups_dialog_summary">Wybierz grupę, do której chcesz przypisać wybrane wpisy.</string>
     <string name="assign_groups_dialog_dropdown">Wybierz grupę</string>
-    <string name="favorite" comment="Verb">Dodaj do ulubionych</string>
-    <string name="unfavorite" comment="Verb">Usuń z ulubionych</string>
+    <string name="favorite" comment="Verb">Przypnij</string>
+    <string name="unfavorite" comment="Verb">Odepnij</string>
     <string name="error_all_caps">BŁĄD</string>
     <string name="password">Hasło</string>
     <string name="confirm_password">Potwierdź hasło</string>

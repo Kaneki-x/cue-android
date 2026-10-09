@@ -208,8 +208,8 @@
     <string name="assign_groups">Tetapkan ke grup</string>
     <string name="assign_groups_dialog_summary">Pilih grup yang ingin Anda tetapkan untuk menetapkan entri yang dipilih.</string>
     <string name="assign_groups_dialog_dropdown">Pilih grup</string>
-    <string name="favorite" comment="Verb">Favorit</string>
-    <string name="unfavorite" comment="Verb">Hapus dari favorit</string>
+    <string name="favorite" comment="Verb">Sematkan</string>
+    <string name="unfavorite" comment="Verb">Lepas sematan</string>
     <string name="error_all_caps">ERROR</string>
     <string name="password">Kata Sandi</string>
     <string name="confirm_password">Konfirmasi Kata Sandi</string>

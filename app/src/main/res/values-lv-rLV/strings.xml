@@ -214,8 +214,8 @@
     <string name="assign_groups">Piešķirt kopai</string>
     <string name="assign_groups_dialog_summary">Jāatlasa kopa, kurai piešķirt atlasītos ierakstus.</string>
     <string name="assign_groups_dialog_dropdown">Atlasīt kopu</string>
-    <string name="favorite" comment="Verb">Pievienot izlasei</string>
-    <string name="unfavorite" comment="Verb">Izņemt no izlases</string>
+    <string name="favorite" comment="Verb">Piespraust</string>
+    <string name="unfavorite" comment="Verb">Atspraust</string>
     <string name="error_all_caps">KĻŪDA</string>
     <string name="password">Parole</string>
     <string name="confirm_password">Apstiprināt paroli</string>
