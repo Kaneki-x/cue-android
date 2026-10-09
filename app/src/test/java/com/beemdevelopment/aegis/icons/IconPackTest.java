@@ -2,6 +2,7 @@ package com.beemdevelopment.aegis.icons;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import android.content.Context;
 
@@ -48,6 +49,29 @@ public class IconPackTest {
         assertEquals(Arrays.asList("Steam", "Steamworks", "Steam Guard"), names(pack.getSuggestedIcons("steam")));
         assertEquals(Arrays.asList("Steam Guard", "Steam"), names(pack.getSuggestedIcons("STEAM GUARD")));
         assertEquals(Arrays.asList("Steamworks", "Steam Guard", "Steam"), names(pack.getSuggestedIcons("stea")));
+    }
+
+    @Test
+    public void testContainedMatchesOnlyAsWholeWords() throws JSONException {
+        JSONArray icons = new JSONArray();
+        for (String name : new String[] { "C", "ROS", "GitHub", "QQ" }) {
+            icons.put(new JSONObject()
+                    .put("name", name)
+                    .put("filename", name + ".svg")
+                    .put("issuer", new JSONArray().put(name)));
+        }
+        IconPack pack = IconPack.fromJson(new JSONObject()
+                .put("uuid", "33333333-3333-3333-3333-333333333333")
+                .put("name", "Test Pack")
+                .put("version", 1)
+                .put("icons", icons));
+
+        // the same cases as IconTests.testContainedMatchesOnlyAsWholeWords on iOS
+        assertTrue(pack.getSuggestedIcons("Microsoft").isEmpty());
+        assertEquals(Arrays.asList("GitHub"), names(pack.getSuggestedIcons("GitHub Enterprise")));
+        assertEquals(Arrays.asList("GitHub"), names(pack.getSuggestedIcons("work-github")));
+        assertEquals(Arrays.asList("QQ"), names(pack.getSuggestedIcons("腾讯QQ")));
+        assertTrue(pack.getSuggestedIcons("githubber").isEmpty());
     }
 
     private static List<String> names(List<IconPack.Icon> icons) {

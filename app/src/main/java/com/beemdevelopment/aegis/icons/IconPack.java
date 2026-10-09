@@ -192,7 +192,8 @@ public class IconPack {
                 if (lowerIconIssuer.contains(lowerEntryIssuer)) {
                     normalMatch = true;
                 }
-                if (lowerEntryIssuer.contains(lowerIconIssuer)) {
+                // Cue: only as a whole word, or a pack's "C" and "ROS" match "Microsoft"
+                if (containsWord(lowerEntryIssuer, lowerIconIssuer)) {
                     inverseMatch = true;
                 }
             }
@@ -220,6 +221,28 @@ public class IconPack {
 
             return new Icon(filename, name, category, issuers);
         }
+    }
+
+    /**
+     * Whether word occurs in text with no ASCII letter or digit right before or after it,
+     * so "github" is in "github enterprise" but "c" is not in "microsoft".
+     */
+    static boolean containsWord(String text, String word) {
+        if (word.isEmpty()) {
+            return false;
+        }
+        for (int i = text.indexOf(word); i != -1; i = text.indexOf(word, i + 1)) {
+            int end = i + word.length();
+            if ((i == 0 || !isAsciiLetterOrDigit(text.charAt(i - 1)))
+                    && (end == text.length() || !isAsciiLetterOrDigit(text.charAt(end)))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private static boolean isAsciiLetterOrDigit(char c) {
+        return (c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z') || (c >= '0' && c <= '9');
     }
 
     private enum MatchType {
