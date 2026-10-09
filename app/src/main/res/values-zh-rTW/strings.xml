@@ -434,6 +434,8 @@
     </plurals>
     <string name="google_qr_export_unexpected">預期 QR Code 個數 %1$d，然而已掃描個數 %2$d</string>
     <string name="backup_error_bar_message"><b>近期的保險箱備份失敗</b></string>
+    <string name="backup_banner_view">檢視</string>
+    <string name="backup_banner_set_up">設定備份</string>
     <string name="backup_error_dialog_details" comment="The first parameter is the type of backup (e.g. built-in or Android backup). The second parameter is an elapsed time in the style of 'x seconds/minutes/days ago'.">
         最近一次嘗試使用 %1$s 的備份行為失敗。本次備份發生於 %2$s。請檢查您的備份設定以確保備份能順利完成。
     </string>
@@ -458,6 +460,8 @@
     <string name="switch_camera">切換鏡頭</string>
     <string name="empty_list">尚無驗證碼。輕觸右下角的加號開始新增條目</string>
     <string name="empty_list_title">找不到條目</string>
+    <string name="no_group_entries">這個群組裡還沒有項目。</string>
+    <string name="no_search_results">沒有和「%1$s」相符的項目。</string>
     <string name="empty_group_list">沒有可以顯示的群組，請先在條目編輯頁面增加一個群組</string>
     <string name="empty_group_list_title">找不到任何群組</string>
     <string name="no_icon_packs">尚未匯入任何圖示主題集。點選「+」號以匯入。提示：試試看<a href="https://aegis-icons.github.io">aegis-icons</a>。</string>

@@ -76,6 +76,62 @@
                 app:tint="?attr/colorOutline" />
         </LinearLayout>
 
+        <!-- a failed backup or changes not backed up, between the search field and the group
+             chips as on iOS (ContentView.backupBanner); was a card at the top of the list -->
+        <LinearLayout
+            android:id="@+id/backup_banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/cue_space_2"
+            android:layout_marginTop="@dimen/cue_space_1"
+            android:layout_marginEnd="@dimen/cue_space_2"
+            android:layout_marginBottom="@dimen/cue_space_1"
+            android:background="@drawable/cue_banner_background"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/cue_space_4"
+            android:paddingTop="@dimen/cue_space_3"
+            android:paddingEnd="@dimen/cue_space_3"
+            android:paddingBottom="@dimen/cue_space_3"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <ImageView
+                android:id="@+id/backup_banner_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_outline_error_24" />
+
+            <TextView
+                android:id="@+id/backup_banner_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/cue_space_2"
+                android:layout_marginEnd="@dimen/cue_space_2"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:text="数据库最近备份失败" />
+
+            <TextView
+                android:id="@+id/backup_banner_action"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                tools:text="查看" />
+
+            <ImageView
+                android:id="@+id/backup_banner_chevron"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_outline_chevron_right_24" />
+        </LinearLayout>
+
         <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.LayoutAnimationController;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import androidx.annotation.AttrRes;
 import androidx.annotation.NonNull;
@@ -77,6 +78,8 @@ public class EntryListView extends Fragment implements EntryAdapter.Listener {
     private boolean _showProgress;
     private ViewMode _viewMode;
     private LinearLayout _emptyStateView;
+    private LinearLayout _noResultsView;
+    private TextView _noResultsText;
 
     private UiRefresher _refresher;
 
@@ -184,6 +187,10 @@ public class EntryListView extends Fragment implements EntryAdapter.Listener {
         });
 
         _emptyStateView = view.findViewById(R.id.vEmptyList);
+
+        _noResultsView = view.findViewById(R.id.vNoResults);
+
+        _noResultsText = view.findViewById(R.id.text_no_results);
         return view;
     }
 
@@ -539,14 +546,18 @@ public class EntryListView extends Fragment implements EntryAdapter.Listener {
     }
 
     private void updateEmptyState() {
-        if (_adapter.getShownEntriesCount() > 0) {
-            _recyclerView.setVisibility(View.VISIBLE);
-            _emptyStateView.setVisibility(View.GONE);
-        } else {
-            if (Strings.isNullOrEmpty(_adapter.getSearchFilter())) {
-                _recyclerView.setVisibility(View.GONE);
-                _emptyStateView.setVisibility(View.VISIBLE);
-            }
+        boolean empty = _adapter.getShownEntriesCount() == 0;
+        // Cue: an empty vault invites adding entries; a filter that leaves nothing says so,
+        // as on iOS (was the same invitation for a group, or a "0 entries" footer for a search)
+        boolean filtered = empty && _adapter.getEntriesCount() > 0;
+        _recyclerView.setVisibility(empty ? View.GONE : View.VISIBLE);
+        _emptyStateView.setVisibility(empty && !filtered ? View.VISIBLE : View.GONE);
+        _noResultsView.setVisibility(filtered ? View.VISIBLE : View.GONE);
+        if (filtered) {
+            String search = _adapter.getSearchFilter();
+            _noResultsText.setText(Strings.isNullOrEmpty(search)
+                    ? getString(R.string.no_group_entries)
+                    : getString(R.string.no_search_results, search));
         }
     }
 

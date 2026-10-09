@@ -3,6 +3,7 @@ package com.beemdevelopment.aegis.ui;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.content.ClipData;
+import android.content.res.ColorStateList;
 import android.content.ClipDescription;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -30,6 +31,8 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.TextView;
+import android.widget.ImageView;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -121,6 +124,8 @@ public class MainActivity extends AegisActivity implements EntryListView.Listene
     private Collection<VaultGroup> _groups;
     private ChipGroup _groupChip;
     private Set<UUID> _groupFilter;
+    // set while the chips are checked to match the filter, so their listeners stay quiet
+    private boolean _updatingGroupChips;
     private Set<UUID> _prefGroupFilter;
 
     private FabScrollHelper _fabScrollHelper;
@@ -288,17 +293,41 @@ public class MainActivity extends AegisActivity implements EntryListView.Listene
         initializeGroups();
     }
 
+    /**
+     * Cue: 全部, each group, 无分组, as on iOS (GroupChips). The filter is remembered as soon as
+     * it changes, as on iOS, instead of through a 保存 chip; tapping the only selected chip
+     * goes back to 全部.
+     */
     private void initializeGroups() {
         _groupChip.removeAllViews();
         _groupChip.setSingleSelection(!_prefs.isGroupMultiselectEnabled());
+        _groupChip.setSelectionRequired(false);
 
+        addChipTo(_groupChip, new VaultGroupModel(this, GroupPlaceholderType.ALL));
         for (VaultGroup group : _groups) {
             addChipTo(_groupChip, new VaultGroupModel(group));
         }
+        addChipTo(_groupChip, new VaultGroupModel(this, GroupPlaceholderType.NO_GROUP));
+    }
 
-        GroupPlaceholderType placeholderType = GroupPlaceholderType.NO_GROUP;
-        addChipTo(_groupChip, new VaultGroupModel(this, placeholderType));
-        addSaveChip(_groupChip);
+    private void applyGroupFilter(Set<UUID> groupFilter) {
+        _groupFilter = groupFilter;
+        _updatingGroupChips = true;
+        for (int i = 0; i < _groupChip.getChildCount(); i++) {
+            Chip chip = (Chip) _groupChip.getChildAt(i);
+            Object tag = chip.getTag();
+            if (tag == GroupPlaceholderType.ALL) {
+                chip.setChecked(groupFilter.isEmpty());
+            } else if (tag == GroupPlaceholderType.NO_GROUP) {
+                chip.setChecked(groupFilter.contains(null));
+            } else if (tag instanceof VaultGroupModel) {
+                chip.setChecked(groupFilter.contains(((VaultGroupModel) tag).getUUID()));
+            }
+        }
+        _updatingGroupChips = false;
+
+        _entryListView.setGroupFilter(groupFilter);
+        onSaveGroupFilter(groupFilter);
     }
 
     private Set<UUID> cleanGroupFilter(Set<UUID> groupFilter) {
@@ -313,7 +342,9 @@ public class MainActivity extends AegisActivity implements EntryListView.Listene
         Chip chip = (Chip) getLayoutInflater().inflate(R.layout.chip_group_filter, null, false);
         chip.setText(group.getName());
         chip.setCheckable(true);
-        chip.setCheckedIconVisible(false);
+        // a check on the selected chips, as on iOS, in the checked text colour
+        chip.setCheckedIconVisible(true);
+        chip.setCheckedIconTint(ColorStateList.valueOf(MaterialColors.getColor(chip, com.google.android.material.R.attr.colorOnPrimary)));
         chip.setChecked(_groupFilter != null && _groupFilter.contains(group.getUUID()));
 
         if (group.isPlaceholder()) {
@@ -321,7 +352,7 @@ public class MainActivity extends AegisActivity implements EntryListView.Listene
             chip.setTag(groupPlaceholderType);
 
             if (groupPlaceholderType == GroupPlaceholderType.ALL) {
-                chip.setChecked(_groupFilter == null);
+                chip.setChecked(_groupFilter == null || _groupFilter.isEmpty());
             } else if (groupPlaceholderType == GroupPlaceholderType.NO_GROUP) {
                 chip.setChecked(_groupFilter != null && _groupFilter.contains(null));
             }
@@ -329,69 +360,35 @@ public class MainActivity extends AegisActivity implements EntryListView.Listene
             chip.setTag(group);
         }
 
-        chip.setOnCheckedChangeListener((group1, isChecked) -> {
+        chip.setOnCheckedChangeListener((button, isChecked) -> {
+            if (_updatingGroupChips) {
+                return;
+            }
             if (_actionMode != null) {
                 _actionMode.finish();
             }
 
-            setSaveChipVisibility(true);
-
-            // Reset group filter if last checked group gets unchecked
-            if (!isChecked && _groupFilter.size() == 1) {
-                Set<UUID> groupFilter = new HashSet<>();
-
-                chipGroup.clearCheck();
-                _groupFilter = groupFilter;
-                _entryListView.setGroupFilter(groupFilter);
-                return;
-            }
-
-            _groupFilter = getGroupFilter(chipGroup);
-            _entryListView.setGroupFilter(_groupFilter);
+            // 全部 clears the filter; anything else filters by the checked chips, and
+            // unchecking the last one is 全部 again
+            boolean all = button.getTag() == GroupPlaceholderType.ALL;
+            applyGroupFilter(all ? new HashSet<>() : getGroupFilter(chipGroup));
         });
 
         chipGroup.addView(chip);
-    }
-
-    private void addSaveChip(ChipGroup chipGroup) {
-        Chip chip = (Chip) getLayoutInflater().inflate(R.layout.chip_group_filter, null, false);
-
-        chip.setText(getString(R.string.save));
-        chip.setVisibility(View.GONE);
-        chip.setChipStrokeWidth(0);
-        chip.setCheckable(false);
-        chip.setChipBackgroundColorResource(android.R.color.transparent);
-        chip.setTextColor(MaterialColors.getColor(chip.getRootView(), com.google.android.material.R.attr.colorSecondary));
-        chip.setClickable(true);
-        chip.setCheckedIconVisible(false);
-        chip.setOnClickListener(v -> {
-            onSaveGroupFilter(_groupFilter);
-            setSaveChipVisibility(false);
-        });
-
-        chipGroup.addView(chip);
-    }
-
-    private void setSaveChipVisibility(boolean visible) {
-        Chip saveChip = (Chip) _groupChip.getChildAt(_groupChip.getChildCount() - 1);
-        saveChip.setChecked(false);
-        saveChip.setVisibility(visible ? View.VISIBLE : View.GONE);
     }
 
     private static Set<UUID> getGroupFilter(ChipGroup chipGroup) {
-        return chipGroup.getCheckedChipIds().stream()
-                .filter(Objects::nonNull)
-                .map(i -> {
-                    Chip chip = chipGroup.findViewById(i);
-
-                    if (chip.getTag() instanceof VaultGroupModel) {
-                        VaultGroupModel group = (VaultGroupModel) chip.getTag();
-                        return group.getUUID();
-                    }
-
-                    return null;
-                })
-                .collect(Collectors.toSet());
+        // a group's UUID, or null for 无分组; 全部 adds nothing
+        Set<UUID> groupFilter = new HashSet<>();
+        for (int id : chipGroup.getCheckedChipIds()) {
+            Object tag = chipGroup.findViewById(id).getTag();
+            if (tag instanceof VaultGroupModel) {
+                groupFilter.add(((VaultGroupModel) tag).getUUID());
+            } else if (tag == GroupPlaceholderType.NO_GROUP) {
+                groupFilter.add(null);
+            }
+        }
+        return groupFilter;
     }
 
     @Override
@@ -1189,6 +1186,9 @@ public class MainActivity extends AegisActivity implements EntryListView.Listene
 
    private void updateErrorCard() {
        ErrorCardInfo info = null;
+       // Cue: shown as the banner under the search field, as on iOS: a failure in the error
+       // colours with 查看, the reminder in the secondary colours with 设置备份
+       boolean error = true;
 
        Preferences.BackupResult backupRes = _prefs.getErroredBackupResult();
        if (backupRes != null) {
@@ -1205,6 +1205,7 @@ public class MainActivity extends AegisActivity implements EntryListView.Listene
            } else {
                text = getString(R.string.backup_reminder_bar_message);
            }
+           error = false;
            info = new ErrorCardInfo(text, view -> {
                Dialogs.showSecureDialog(new MaterialAlertDialogBuilder(this, R.style.ThemeOverlay_Aegis_AlertDialog_Error)
                        .setTitle(R.string.backup_reminder_bar_dialog_title)
@@ -1220,8 +1221,39 @@ public class MainActivity extends AegisActivity implements EntryListView.Listene
            info = new ErrorCardInfo(getString(R.string.backup_plaintext_export_warning), view -> showPlaintextExportWarningOptions());
        }
 
-       _entryListView.setErrorCardInfo(info);
+       showBackupBanner(info, error);
    }
+
+    private void showBackupBanner(@Nullable ErrorCardInfo info, boolean error) {
+        View banner = findViewById(R.id.backup_banner);
+        if (info == null) {
+            banner.setVisibility(View.GONE);
+            return;
+        }
+
+        int background = MaterialColors.getColor(banner, error
+                ? com.google.android.material.R.attr.colorErrorContainer
+                : com.google.android.material.R.attr.colorSecondaryContainer);
+        int foreground = MaterialColors.getColor(banner, error
+                ? com.google.android.material.R.attr.colorOnErrorContainer
+                : com.google.android.material.R.attr.colorOnSecondaryContainer);
+        banner.setBackgroundTintList(ColorStateList.valueOf(background));
+
+        ImageView icon = banner.findViewById(R.id.backup_banner_icon);
+        icon.setImageResource(error ? R.drawable.ic_outline_error_24 : R.drawable.ic_outline_cloud_upload_24);
+        icon.setImageTintList(ColorStateList.valueOf(foreground));
+        TextView text = banner.findViewById(R.id.backup_banner_text);
+        text.setText(info.getMessage());
+        text.setTextColor(foreground);
+        TextView action = banner.findViewById(R.id.backup_banner_action);
+        action.setText(error ? R.string.backup_banner_view : R.string.backup_banner_set_up);
+        action.setTextColor(foreground);
+        ImageView chevron = banner.findViewById(R.id.backup_banner_chevron);
+        chevron.setImageTintList(ColorStateList.valueOf(foreground));
+
+        banner.setOnClickListener(info.getListener());
+        banner.setVisibility(View.VISIBLE);
+    }
 
     private void showPlaintextExportWarningOptions() {
         View view = LayoutInflater.from(this).inflate(R.layout.dialog_plaintext_warning, null);

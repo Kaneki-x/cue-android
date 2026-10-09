@@ -780,6 +780,10 @@ public class EntryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         return _entryList.getShownEntries().size();
     }
 
+    public int getEntriesCount() {
+        return _entryList.getEntries().size();
+    }
+
     public boolean isPositionFooter(int position) {
         return _entryList.isPositionFooter(position);
     }

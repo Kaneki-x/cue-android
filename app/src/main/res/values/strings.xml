@@ -515,6 +515,8 @@
     </plurals>
     <string name="google_qr_export_unexpected">Expected QR code #%1$d, but scanned #%2$d instead</string>
     <string name="backup_error_bar_message"><b>Vault backup failed recently</b></string>
+    <string name="backup_banner_view">View</string>
+    <string name="backup_banner_set_up">Set up backups</string>
     <string
         name="backup_error_dialog_details"
         comment="The first parameter is the type of backup (e.g. built-in or Android backup). The second parameter is an elapsed time in the style of 'x seconds/minutes/days ago'.">
@@ -547,6 +549,8 @@
 
     <string name="empty_list">There are no codes to be shown. Start adding entries by tapping the plus sign in the bottom right corner</string>
     <string name="empty_list_title">No entries found</string>
+    <string name="no_group_entries">This group has no entries yet.</string>
+    <string name="no_search_results">No entries match “%1$s”.</string>
     <string name="empty_group_list">There are no groups to be shown. Add groups in the edit screen of an entry</string>
     <string name="empty_group_list_title">No groups found</string>
     <string name="no_icon_packs">No icon packs have been imported yet. Tap the plus sign to import one. Tip: try <a href="https://aegis-icons.github.io">aegis-icons</a>.</string>
