@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- Flat and edge to edge, the system keyboards' grey (design/tokens.json color.keyboard):
+     the panel is one plane with the keys on it, as in Gboard, not a sheet over the app. -->
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
-    <solid android:color="?attr/colorSurfaceContainerLow" />
-    <corners
-        android:topLeftRadius="@dimen/cue_radius_large"
-        android:topRightRadius="@dimen/cue_radius_large" />
+    <solid android:color="@color/cue_keyboard_background" />
 </shape>

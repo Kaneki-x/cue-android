@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- An entry key: white (dark: grey) on the keyboard background, like a Gboard key. -->
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    android:color="?attr/colorControlHighlight">
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/cue_keyboard_key" />
+            <corners android:radius="@dimen/cue_radius_small" />
+        </shape>
+    </item>
+</ripple>

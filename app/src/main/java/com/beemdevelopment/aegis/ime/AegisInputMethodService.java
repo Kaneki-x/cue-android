@@ -151,18 +151,33 @@ public class AegisInputMethodService extends InputMethodService
         wrapper.setBackground(AppCompatResources.getDrawable(context, R.drawable.ime_panel_background));
         Window window = getWindow() != null ? getWindow().getWindow() : null;
         if (window != null) {
-            // let the rounded top of the panel show the app behind it
             window.setBackgroundDrawable(new ColorDrawable(Color.TRANSPARENT));
         }
         int height = getResources().getDimensionPixelSize(R.dimen.ime_panel_height);
         wrapper.addView(_root, new FrameLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, height));
         ViewCompat.setOnApplyWindowInsetsListener(wrapper, (v, insets) -> {
-            int bottom = insets.getInsets(WindowInsetsCompat.Type.navigationBars()).bottom;
+            // With gesture navigation the system draws the collapse and switch-keyboard
+            // buttons in a bar across the bottom of the keyboard, taller than the gesture
+            // inset it reports; keep the keys above that bar, as Gboard does.
+            int bottom = Math.max(insets.getInsets(WindowInsetsCompat.Type.navigationBars()).bottom, getImeNavigationBarHeight());
             v.setPadding(0, 0, 0, bottom);
             return WindowInsetsCompat.CONSUMED;
         });
 
         return wrapper;
+    }
+
+    /**
+     * The height of the bar the system draws under a keyboard for its back and switcher
+     * buttons (Android 13+), the framework's navigation_bar_frame_height, 48dp when it
+     * cannot be read.
+     */
+    private int getImeNavigationBarHeight() {
+        int id = getResources().getIdentifier("navigation_bar_frame_height", "dimen", "android");
+        if (id != 0) {
+            return getResources().getDimensionPixelSize(id);
+        }
+        return Math.round(48 * getResources().getDisplayMetrics().density);
     }
 
     @Override

@@ -5,6 +5,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:checkable="true"
+    app:chipBackgroundColor="@color/cue_ime_chip_background"
     app:chipMinHeight="30dp"
     app:chipMinTouchTargetSize="0dp"
     app:ensureMinTouchTargetSize="false" />
