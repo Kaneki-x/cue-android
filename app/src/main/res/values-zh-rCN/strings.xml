@@ -406,6 +406,7 @@
     <string name="tile_open_scanner" comment="label for a quick settings tile that opens the QR code scanner when tapped">打开扫码器</string>
     <string name="toggle_checkboxes">切换复选框</string>
     <string name="search">搜索</string>
+    <string name="clear_search">清除搜索</string>
     <string name="channel_name_lock_status">锁定状态</string>
     <string name="channel_description_lock_status">当数据库处于锁定状态时，Cue 可以创建一个持久的通知来提示您</string>
     <string name="vault_unlocked_state">数据库已解锁，点击此处锁定。</string>

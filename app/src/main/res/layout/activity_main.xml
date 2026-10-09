@@ -23,6 +23,59 @@
             app:titleMarginStart="@dimen/cue_space_3"
             app:titleTextAppearance="@style/TextAppearance.Cue.Wordmark" />
 
+        <!-- always shown under the toolbar while the vault has entries, as on iOS
+             (ContentView.searchField); filters as you type -->
+        <LinearLayout
+            android:id="@+id/search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:layout_marginStart="@dimen/cue_space_2"
+            android:layout_marginTop="@dimen/cue_space_1"
+            android:layout_marginEnd="@dimen/cue_space_2"
+            android:layout_marginBottom="@dimen/cue_space_1"
+            android:background="@drawable/cue_search_background"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/cue_space_4"
+            android:paddingEnd="@dimen/cue_space_3"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_outline_search_24"
+                app:tint="?attr/colorOnSurfaceVariant" />
+
+            <EditText
+                android:id="@+id/search_field"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginStart="@dimen/cue_space_2"
+                android:background="@null"
+                android:hint="@string/search"
+                android:imeOptions="actionSearch|flagNoExtractUi"
+                android:importantForAutofill="no"
+                android:inputType="text|textNoSuggestions"
+                android:maxLines="1"
+                android:textColor="?attr/colorOnSurface"
+                android:textColorHint="?attr/colorOnSurfaceVariant"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/search_clear"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:padding="6dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/clear_search"
+                android:src="@drawable/ic_filled_cancel_24"
+                android:visibility="gone"
+                app:tint="?attr/colorOutline" />
+        </LinearLayout>
+
         <HorizontalScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

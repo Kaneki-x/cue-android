@@ -482,6 +482,7 @@
 
     <string name="toggle_checkboxes">Toggle checkboxes</string>
     <string name="search">Search</string>
+    <string name="clear_search">Clear search</string>
     <string name="channel_name_lock_status">Lock status</string>
     <string name="channel_description_lock_status">Cue can create a persistent notification to notify you when the vault is locked</string>
     <string name="vault_unlocked_state">Vault is unlocked. Tap here to lock.</string>

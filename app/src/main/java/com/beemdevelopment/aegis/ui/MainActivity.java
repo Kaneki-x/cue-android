@@ -25,10 +25,12 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
@@ -38,14 +40,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.view.ActionMode;
-import androidx.appcompat.widget.SearchView;
 import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 import com.beemdevelopment.aegis.GroupPlaceholderType;
 import com.beemdevelopment.aegis.Preferences;
 import com.beemdevelopment.aegis.R;
 import com.beemdevelopment.aegis.SortCategory;
+import com.beemdevelopment.aegis.helpers.SimpleTextWatcher;
 import com.beemdevelopment.aegis.helpers.BitmapHelper;
 import com.beemdevelopment.aegis.helpers.DropdownHelper;
 import com.beemdevelopment.aegis.helpers.FabMenuHelper;
@@ -80,7 +83,6 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
-import com.google.common.base.Strings;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -106,13 +108,14 @@ public class MainActivity extends AegisActivity implements EntryListView.Listene
     private boolean _isDoingIntro;
     private boolean _isAuthenticating;
 
-    private String _submittedSearchQuery;
-    private String _pendingSearchQuery;
 
     private List<VaultEntry> _selectedEntries;
 
     private Menu _menu;
-    private SearchView _searchView;
+    // Cue: the search field under the toolbar, as on iOS (was a SearchView in the toolbar)
+    private View _searchBar;
+    private EditText _searchField;
+    private View _searchClear;
     private EntryListView _entryListView;
 
     private Collection<VaultGroup> _groups;
@@ -201,8 +204,6 @@ public class MainActivity extends AegisActivity implements EntryListView.Listene
         _isAuthenticating = false;
         if (savedInstanceState != null) {
             _isRecreated = true;
-            _pendingSearchQuery = savedInstanceState.getString("pendingSearchQuery");
-            _submittedSearchQuery = savedInstanceState.getString("submittedSearchQuery");
             _isDoingIntro = savedInstanceState.getBoolean("isDoingIntro");
             _isAuthenticating = savedInstanceState.getBoolean("isAuthenticating");
         }
@@ -211,6 +212,7 @@ public class MainActivity extends AegisActivity implements EntryListView.Listene
         getOnBackPressedDispatcher().addCallback(this, _lockBackPressHandler);
         _searchViewBackPressHandler = new SearchViewBackPressHandler();
         getOnBackPressedDispatcher().addCallback(this, _searchViewBackPressHandler);
+        setUpSearchField();
         _actionModeBackPressHandler = new ActionModeBackPressHandler();
         getOnBackPressedDispatcher().addCallback(this, _actionModeBackPressHandler);
         _fabMenuBackPressHandler = new FabMenuBackPressHandler();
@@ -416,8 +418,6 @@ public class MainActivity extends AegisActivity implements EntryListView.Listene
     @Override
     protected void onSaveInstanceState(@NonNull Bundle instance) {
         super.onSaveInstanceState(instance);
-        instance.putString("pendingSearchQuery", _pendingSearchQuery);
-        instance.putString("submittedSearchQuery", _submittedSearchQuery);
         instance.putBoolean("isDoingIntro", _isDoingIntro);
         instance.putBoolean("isAuthenticating", _isAuthenticating);
 
@@ -454,7 +454,7 @@ public class MainActivity extends AegisActivity implements EntryListView.Listene
     public void onEntryListTouch() {
         _isDPadPressed = false;
 
-        if (_searchView != null && !_searchView.isIconified()) {
+        if (_searchField.hasFocus()) {
             if (ViewCompat.getRootWindowInsets(findViewById(android.R.id.content).getRootView()).isVisible(WindowInsetsCompat.Type.ime())) {
                 InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
                 if (inputMethodManager != null && getCurrentFocus() != null) {
@@ -1045,72 +1045,6 @@ public class MainActivity extends AegisActivity implements EntryListView.Listene
         updateLockIcon();
         updateSortCategoryMenu();
 
-        MenuItem searchViewMenuItem = menu.findItem(R.id.mi_search);
-        _searchView = (SearchView) searchViewMenuItem.getActionView();
-        _searchView.setMaxWidth(Integer.MAX_VALUE);
-        _searchView.setOnQueryTextFocusChangeListener((v, hasFocus) -> {
-            boolean enabled = _submittedSearchQuery != null || hasFocus;
-            _searchViewBackPressHandler.setEnabled(enabled);
-        });
-        _searchView.setOnCloseListener(() -> {
-            boolean enabled = _submittedSearchQuery != null;
-            _searchViewBackPressHandler.setEnabled(enabled);
-            _groupChip.setVisibility(_groups.isEmpty() ? View.GONE : View.VISIBLE);
-            return false;
-        });
-
-        _searchView.setQueryHint(getString(R.string.search));
-        _searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
-            @Override
-            public boolean onQueryTextSubmit(String s) {
-                setTitle(getString(R.string.search));
-                setToolbarLogoVisible(false);
-                getSupportActionBar().setSubtitle(s);
-                _entryListView.setSearchFilter(s);
-                _pendingSearchQuery = null;
-                _submittedSearchQuery = s;
-                collapseSearchView();
-                _searchViewBackPressHandler.setEnabled(true);
-                return false;
-            }
-
-            @Override
-            public boolean onQueryTextChange(String s) {
-                if (_submittedSearchQuery == null) {
-                    _entryListView.setSearchFilter(s);
-                }
-
-                _pendingSearchQuery = Strings.isNullOrEmpty(s) && !_searchView.isIconified() ? null : s;
-                if (_pendingSearchQuery != null) {
-                    _entryListView.setSearchFilter(_pendingSearchQuery);
-                }
-
-                return false;
-            }
-        });
-        _searchView.setOnSearchClickListener(v -> {
-            String query = _submittedSearchQuery != null ? _submittedSearchQuery : _pendingSearchQuery;
-            _groupChip.setVisibility(View.GONE);
-            _searchView.setQuery(query, false);
-        });
-
-        if (_pendingSearchQuery != null) {
-            _searchView.setIconified(false);
-            _searchView.setQuery(_pendingSearchQuery, false);
-            _searchViewBackPressHandler.setEnabled(true);
-        } else if (_submittedSearchQuery != null) {
-            setTitle(getString(R.string.search));
-                setToolbarLogoVisible(false);
-            getSupportActionBar().setSubtitle(_submittedSearchQuery);
-            _entryListView.setSearchFilter(_submittedSearchQuery);
-            _searchViewBackPressHandler.setEnabled(true);
-        } else if (_prefs.getFocusSearchEnabled() && !_isRecreated) {
-            _searchView.setIconified(false);
-            _searchView.setFocusable(true);
-            _searchView.requestFocus();
-            _searchView.requestFocusFromTouch();
-        }
-
         return true;
     }
 
@@ -1156,17 +1090,67 @@ public class MainActivity extends AegisActivity implements EntryListView.Listene
         return true;
     }
 
-    private void setToolbarLogoVisible(boolean visible) {
-        androidx.appcompat.widget.Toolbar toolbar = findViewById(R.id.toolbar);
-        if (toolbar != null) {
-            toolbar.setLogo(visible ? R.drawable.ic_cue_logo_toolbar : 0);
+    /**
+     * Cue: the search field under the toolbar, as on iOS. It filters as you type; the search
+     * key closes the keyboard, the clear button and back empty it. The group chips stay.
+     */
+    private void setUpSearchField() {
+        _searchBar = findViewById(R.id.search_bar);
+        _searchField = findViewById(R.id.search_field);
+        _searchClear = findViewById(R.id.search_clear);
+
+        _searchField.addTextChangedListener(new SimpleTextWatcher(s -> {
+            String query = s.toString();
+            _entryListView.setSearchFilter(query.isEmpty() ? null : query);
+            updateSearchState();
+        }));
+        _searchField.setOnFocusChangeListener((v, hasFocus) -> {
+            // the add button would sit on the keyboard, as iOS hides it while searching
+            _fabScrollHelper.setVisible(!hasFocus);
+            updateSearchState();
+        });
+        _searchField.setOnEditorActionListener((v, actionId, event) -> {
+            if (actionId == EditorInfo.IME_ACTION_SEARCH) {
+                hideKeyboard(_searchField);
+                _searchField.clearFocus();
+                return true;
+            }
+            return false;
+        });
+        _searchClear.setOnClickListener(v -> clearSearch());
+    }
+
+    private void updateSearchState() {
+        boolean active = _searchField.hasFocus() || _searchField.length() > 0;
+        _searchClear.setVisibility(active ? View.VISIBLE : View.GONE);
+        _searchViewBackPressHandler.setEnabled(active);
+    }
+
+    private void updateSearchBarVisibility() {
+        boolean hasEntries = _vaultManager.isVaultLoaded() && !_vaultManager.getVault().getEntries().isEmpty();
+        _searchBar.setVisibility(hasEntries ? View.VISIBLE : View.GONE);
+        if (!hasEntries && (_searchField.hasFocus() || _searchField.length() > 0)) {
+            clearSearch();
         }
     }
 
-    private void collapseSearchView() {
-        _groupChip.setVisibility(_groups.isEmpty() ? View.GONE : View.VISIBLE);
-        _searchView.setQuery(null, false);
-        _searchView.setIconified(true);
+    private void focusSearchField() {
+        _searchField.requestFocus();
+        _searchField.post(() -> WindowCompat.getInsetsController(getWindow(), _searchField).show(WindowInsetsCompat.Type.ime()));
+    }
+
+    private void hideKeyboard(View view) {
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        if (inputMethodManager != null) {
+            inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
+    }
+
+    private void clearSearch() {
+        hideKeyboard(_searchField);
+        _searchField.setText(null);
+        _searchField.clearFocus();
+        updateSearchState();
     }
 
     private void loadEntries() {
@@ -1179,6 +1163,10 @@ public class MainActivity extends AegisActivity implements EntryListView.Listene
                 _entryListView.runEntriesAnimation();
             }
             _loaded = true;
+            updateSearchBarVisibility();
+            if (_prefs.getFocusSearchEnabled() && !_isRecreated && _searchBar.getVisibility() == View.VISIBLE) {
+                focusSearchField();
+            }
         }
     }
 
@@ -1373,7 +1361,10 @@ public class MainActivity extends AegisActivity implements EntryListView.Listene
     }
 
     @Override
-    public void onListChange() { _fabScrollHelper.setVisible(true); }
+    public void onListChange() {
+        _fabScrollHelper.setVisible(!_searchField.hasFocus());
+        updateSearchBarVisibility();
+    }
 
     @Override
     public void onSaveGroupFilter(Set<UUID> groupFilter) {
@@ -1388,9 +1379,8 @@ public class MainActivity extends AegisActivity implements EntryListView.Listene
         if (_actionMode != null) {
             _actionMode.finish();
         }
-        if (_searchView != null && !_searchView.isIconified()) {
-            collapseSearchView();
-        }
+        clearSearch();
+        _searchBar.setVisibility(View.GONE);
         if (_fabMenuHelper != null && _fabMenuHelper.isOpen()) {
             _fabMenuHelper.close();
         }
@@ -1441,16 +1431,7 @@ public class MainActivity extends AegisActivity implements EntryListView.Listene
 
         @Override
         public void handleOnBackPressed() {
-            if (!_searchView.isIconified() || _submittedSearchQuery != null) {
-                _submittedSearchQuery = null;
-                _pendingSearchQuery = null;
-                _entryListView.setSearchFilter(null);
-
-                collapseSearchView();
-                setTitle(R.string.app_name);
-                setToolbarLogoVisible(true);
-                getSupportActionBar().setSubtitle(null);
-            }
+            clearSearch();
         }
     }
 

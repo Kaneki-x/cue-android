@@ -3,11 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.beemdevelopment.aegis.ui.MainActivity">
     <item
-        android:id="@+id/mi_search"
-        android:title="@string/search"
-        app:showAsAction="always"
-        app:actionViewClass="androidx.appcompat.widget.SearchView"/>
-    <item
         android:id="@+id/action_lock"
         android:icon="@drawable/ic_outline_lock_24"
         app:showAsAction="ifRoom"
