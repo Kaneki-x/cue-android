@@ -189,11 +189,12 @@ public class IconPack {
                 if (lowerIconIssuer.equals(lowerEntryIssuer)) {
                     return MatchType.EXACT;
                 }
-                if (lowerIconIssuer.contains(lowerEntryIssuer)) {
+                // Cue: only where a word starts, or "bank" matches "Mutasibank"
+                if (containsWord(lowerIconIssuer, lowerEntryIssuer, false)) {
                     normalMatch = true;
                 }
                 // Cue: only as a whole word, or a pack's "C" and "ROS" match "Microsoft"
-                if (containsWord(lowerEntryIssuer, lowerIconIssuer)) {
+                if (containsWord(lowerEntryIssuer, lowerIconIssuer, true)) {
                     inverseMatch = true;
                 }
             }
@@ -224,17 +225,18 @@ public class IconPack {
     }
 
     /**
-     * Whether word occurs in text with no ASCII letter or digit right before or after it,
-     * so "github" is in "github enterprise" but "c" is not in "microsoft".
+     * Whether word occurs in text with no ASCII letter or digit right before it and, for a
+     * whole word, right after it: "git" starts a word in "github" but "bank" does not in
+     * "mutasibank"; "github" is a whole word in "github enterprise", "c" is not in "microsoft".
      */
-    static boolean containsWord(String text, String word) {
+    static boolean containsWord(String text, String word, boolean wholeWord) {
         if (word.isEmpty()) {
             return false;
         }
         for (int i = text.indexOf(word); i != -1; i = text.indexOf(word, i + 1)) {
             int end = i + word.length();
             if ((i == 0 || !isAsciiLetterOrDigit(text.charAt(i - 1)))
-                    && (end == text.length() || !isAsciiLetterOrDigit(text.charAt(end)))) {
+                    && (!wholeWord || end == text.length() || !isAsciiLetterOrDigit(text.charAt(end)))) {
                 return true;
             }
         }

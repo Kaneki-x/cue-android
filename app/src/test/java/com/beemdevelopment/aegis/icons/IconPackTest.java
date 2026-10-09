@@ -74,6 +74,28 @@ public class IconPackTest {
         assertTrue(pack.getSuggestedIcons("githubber").isEmpty());
     }
 
+    @Test
+    public void testContainingMatchesOnlyWhereAWordStarts() throws JSONException {
+        JSONArray icons = new JSONArray();
+        for (String name : new String[] { "Mutasibank", "Bank of America", "GitHub", "Google Pay" }) {
+            icons.put(new JSONObject()
+                    .put("name", name)
+                    .put("filename", name + ".svg")
+                    .put("issuer", new JSONArray().put(name)));
+        }
+        IconPack pack = IconPack.fromJson(new JSONObject()
+                .put("uuid", "44444444-4444-4444-4444-444444444444")
+                .put("name", "Test Pack")
+                .put("version", 1)
+                .put("icons", icons));
+
+        // the same cases as IconTests.testContainingMatchesOnlyWhereAWordStarts on iOS
+        assertEquals(Arrays.asList("Bank of America"), names(pack.getSuggestedIcons("Bank")));
+        assertEquals(Arrays.asList("GitHub"), names(pack.getSuggestedIcons("git")));
+        assertEquals(Arrays.asList("Google Pay"), names(pack.getSuggestedIcons("pay")));
+        assertTrue(pack.getSuggestedIcons("hub").isEmpty());
+    }
+
     private static List<String> names(List<IconPack.Icon> icons) {
         return icons.stream().map(IconPack.Icon::getName).collect(Collectors.toList());
     }
