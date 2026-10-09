@@ -14,7 +14,6 @@ import android.text.SpannableString;
 import android.text.style.RelativeSizeSpan;
 import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -181,12 +180,14 @@ public class EntryHolder extends RecyclerView.ViewHolder {
                 _profileName.setVisibility(View.GONE);
 
                 if (_viewMode == ViewMode.TILES) {
+                    // centred beside the icon; the block wraps its text (at least the icon's
+                    // height), so MATCH_PARENT would no longer centre anything
                     _profileCopied.setGravity(Gravity.CENTER_VERTICAL);
                     ((RelativeLayout.LayoutParams)_profileCopied.getLayoutParams()).removeRule(RelativeLayout.BELOW);
-                    _profileCopied.getLayoutParams().height = ViewGroup.LayoutParams.MATCH_PARENT;
+                    ((RelativeLayout.LayoutParams)_profileCopied.getLayoutParams()).addRule(RelativeLayout.CENTER_VERTICAL);
                     _profileCopied.setTextSize(14);
 
-                    _profileIssuer.getLayoutParams().height = ViewGroup.LayoutParams.MATCH_PARENT;
+                    ((RelativeLayout.LayoutParams)_profileIssuer.getLayoutParams()).addRule(RelativeLayout.CENTER_VERTICAL);
                     _profileIssuer.setGravity(Gravity.CENTER_VERTICAL);
                     _profileIssuer.setTextSize(14);
 
