@@ -23,9 +23,37 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RunWith(RobolectricTestRunner.class)
 public class IconPackTest {
+    @Test
+    public void testSuggestionsPutExactThenContainingMatchesFirst() throws JSONException {
+        JSONArray icons = new JSONArray();
+        for (String name : new String[] { "Steam", "Steam Guard", "Steamworks" }) {
+            icons.put(new JSONObject()
+                    .put("name", name)
+                    .put("filename", name + ".svg")
+                    .put("issuer", new JSONArray().put(name.toLowerCase())));
+        }
+        IconPack pack = IconPack.fromJson(new JSONObject()
+                .put("uuid", "22222222-2222-2222-2222-222222222222")
+                .put("name", "Test Pack")
+                .put("version", 1)
+                .put("icons", icons));
+
+        // the same order as IconPack.suggestions(for:) in apple/Packages/CueVault
+        assertEquals(Arrays.asList("Steam", "Steamworks", "Steam Guard"), names(pack.getSuggestedIcons("steam")));
+        assertEquals(Arrays.asList("Steam Guard", "Steam"), names(pack.getSuggestedIcons("STEAM GUARD")));
+        assertEquals(Arrays.asList("Steamworks", "Steam Guard", "Steam"), names(pack.getSuggestedIcons("stea")));
+    }
+
+    private static List<String> names(List<IconPack.Icon> icons) {
+        return icons.stream().map(IconPack.Icon::getName).collect(Collectors.toList());
+    }
+
     @Test
     public void testMaliciousIconPackCannotOverwriteVaultFile() throws IOException, JSONException {
         final String VAULT_CONTENTS = "VAULT-CONTENTS";

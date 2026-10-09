@@ -58,13 +58,16 @@ public class IconPack {
             return new ArrayList<>();
         }
 
+        List<Icon> exact = new ArrayList<>();
         List<Icon> icons = new ArrayList<>();
         for (Icon icon : _icons) {
             MatchType matchType = icon.getMatchFor(issuer);
             if (matchType != null) {
                 // Inverse matches (entry issuer contains icon name) are less likely
                 // to be good, so position them at the end of the list.
-                if (matchType.equals(MatchType.NORMAL)) {
+                if (matchType.equals(MatchType.EXACT)) {
+                    exact.add(icon);
+                } else if (matchType.equals(MatchType.NORMAL)) {
                     icons.add(0, icon);
                 } else if (matchType.equals(MatchType.INVERSE)) {
                     icons.add(icon);
@@ -72,6 +75,9 @@ public class IconPack {
             }
         }
 
+        // Cue: an icon named exactly like the issuer goes first, so "Amazon" gets
+        // Amazon rather than "Amazon Web Services bg.var" (iOS ranks the same way)
+        icons.addAll(0, exact);
         return icons;
     }
 
@@ -176,15 +182,22 @@ public class IconPack {
         private MatchType getMatchFor(String issuer) {
             String lowerEntryIssuer = issuer.toLowerCase();
 
+            boolean normalMatch = false;
             boolean inverseMatch = false;
             for (String is : _issuers) {
                 String lowerIconIssuer = is.toLowerCase();
+                if (lowerIconIssuer.equals(lowerEntryIssuer)) {
+                    return MatchType.EXACT;
+                }
                 if (lowerIconIssuer.contains(lowerEntryIssuer)) {
-                    return MatchType.NORMAL;
+                    normalMatch = true;
                 }
                 if (lowerEntryIssuer.contains(lowerIconIssuer)) {
                     inverseMatch = true;
                 }
+            }
+            if (normalMatch) {
+                return MatchType.NORMAL;
             }
             if (inverseMatch) {
                 return MatchType.INVERSE;
@@ -210,6 +223,7 @@ public class IconPack {
     }
 
     private enum MatchType {
+        EXACT,
         NORMAL,
         INVERSE
     }
