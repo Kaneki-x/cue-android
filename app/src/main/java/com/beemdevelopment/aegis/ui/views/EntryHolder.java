@@ -155,6 +155,15 @@ public class EntryHolder extends RecyclerView.ViewHolder {
 
         String profileIssuer = entry.getIssuer();
         String profileName = entry.getName();
+        // an entry with only a name shows it as the title, as on iOS, and a missing account
+        // name leaves no empty line
+        if (profileIssuer.isEmpty()) {
+            profileIssuer = profileName;
+            profileName = "";
+        }
+        if (profileName.isEmpty()) {
+            _accountNamePosition = AccountNamePosition.HIDDEN;
+        }
         if (!profileIssuer.isEmpty() && !profileName.isEmpty() && _accountNamePosition == AccountNamePosition.END) {
             profileName = _viewMode.getFormattedAccountName(profileName);
         }
@@ -178,25 +187,15 @@ public class EntryHolder extends RecyclerView.ViewHolder {
         switch (accountNamePosition) {
             case HIDDEN:
                 _profileName.setVisibility(View.GONE);
-
                 if (_viewMode == ViewMode.TILES) {
-                    // centred beside the icon; the block wraps its text (at least the icon's
-                    // height), so MATCH_PARENT would no longer centre anything
-                    _profileCopied.setGravity(Gravity.CENTER_VERTICAL);
-                    ((RelativeLayout.LayoutParams)_profileCopied.getLayoutParams()).removeRule(RelativeLayout.BELOW);
-                    ((RelativeLayout.LayoutParams)_profileCopied.getLayoutParams()).addRule(RelativeLayout.CENTER_VERTICAL);
-                    _profileCopied.setTextSize(14);
-
-                    ((RelativeLayout.LayoutParams)_profileIssuer.getLayoutParams()).addRule(RelativeLayout.CENTER_VERTICAL);
-                    _profileIssuer.setGravity(Gravity.CENTER_VERTICAL);
-                    _profileIssuer.setTextSize(14);
-
-                    _profileName.setVisibility(View.GONE);
+                    setTileTitleOnly(true);
                 }
-
                 break;
 
             case BELOW:
+                if (_viewMode == ViewMode.TILES) {
+                    setTileTitleOnly(false);
+                }
                 profileNameLayoutParams = (RelativeLayout.LayoutParams) _profileName.getLayoutParams();
                 profileNameLayoutParams.removeRule(RelativeLayout.END_OF);
                 profileNameLayoutParams.addRule(RelativeLayout.BELOW, R.id.profile_issuer);
@@ -217,6 +216,32 @@ public class EntryHolder extends RecyclerView.ViewHolder {
                 _profileName.setVisibility(View.VISIBLE);
                 break;
         }
+    }
+
+    /**
+     * Tiles: a title alone is larger and centred beside the icon; with an account name below
+     * it, both are small (card_entry_tile.xml). Set both ways, since holders are recycled
+     * between entries with and without an account name.
+     */
+    private void setTileTitleOnly(boolean titleOnly) {
+        RelativeLayout.LayoutParams issuerParams = (RelativeLayout.LayoutParams) _profileIssuer.getLayoutParams();
+        RelativeLayout.LayoutParams copiedParams = (RelativeLayout.LayoutParams) _profileCopied.getLayoutParams();
+        if (titleOnly) {
+            // the block wraps its text (at least the icon's height), so centre with a rule
+            issuerParams.addRule(RelativeLayout.CENTER_VERTICAL);
+            copiedParams.removeRule(RelativeLayout.BELOW);
+            copiedParams.addRule(RelativeLayout.CENTER_VERTICAL);
+        } else {
+            issuerParams.removeRule(RelativeLayout.CENTER_VERTICAL);
+            copiedParams.removeRule(RelativeLayout.CENTER_VERTICAL);
+            copiedParams.addRule(RelativeLayout.BELOW, R.id.profile_issuer);
+        }
+        _profileIssuer.setLayoutParams(issuerParams);
+        _profileCopied.setLayoutParams(copiedParams);
+        _profileIssuer.setGravity(titleOnly ? Gravity.CENTER_VERTICAL : Gravity.NO_GRAVITY);
+        _profileCopied.setGravity(titleOnly ? Gravity.CENTER_VERTICAL : Gravity.NO_GRAVITY);
+        _profileIssuer.setTextSize(titleOnly ? 14 : 11);
+        _profileCopied.setTextSize(titleOnly ? 14 : 9);
     }
 
     public VaultEntry getEntry() {
@@ -412,8 +437,10 @@ public class EntryHolder extends RecyclerView.ViewHolder {
         scaleFactor = (float)(Math.round(scaleFactor * 10.0) / 10.0);
         textView.setTextColor(MaterialColors.getColor(textView, R.attr.colorCodeHidden));
 
-        // If scale is higher or equal to 0.8, do nothing and proceed with the normal text rendering
-        if (scaleFactor >= 0.8) {
+        // If the dots are no wider than the code, proceed with the normal text rendering (Cue:
+        // was 0.8, which left Steam's letter codes with dots a quarter wider than the code,
+        // and larger or smaller depending on the letters)
+        if (scaleFactor >= 1.0) {
             textView.setText(hiddenCode);
             return;
         }
