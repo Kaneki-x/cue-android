@@ -24,7 +24,12 @@ public class AegisModule {
     @Provides
     @Singleton
     public static IconPackManager provideIconPackManager(@ApplicationContext Context context) {
-        return new IconPackManager(context);
+        IconPackManager manager = new IconPackManager(context);
+        // install the packs that ship in the APK without holding up the first screen
+        Thread thread = new Thread(() -> manager.installBundledPacks(context), "bundled-icon-packs");
+        thread.setPriority(Thread.MIN_PRIORITY);
+        thread.start();
+        return manager;
     }
 
     @Provides

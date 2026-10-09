@@ -42,8 +42,9 @@ The security design of the app and the vault format is described in detail in
   - Import from other authenticator apps (Aegis, Google Authenticator, Microsoft Authenticator, 2FAS, Authy and more)
 - Organization
   - Groups, favorites, search, icon packs
-  - Ships with the [aegis-icons](https://github.com/aegis-icons/aegis-icons) pack (1007 icons),
-    installed on first start; removing it in Settings > Icon packs keeps it removed
+  - Ships with the four icon packs the Aegis README lists (aegis-icons, delta-aegis-icons,
+    aegis-simple-icons and its outlined variant), installed on first start; a pack removed in
+    Settings > Icon packs stays removed
 - Material 3 design with dynamic colors
 
 ## Building

@@ -86,7 +86,6 @@ import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.Date;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -588,7 +587,6 @@ public class EditEntryActivity extends AegisActivity {
 
     private void startIconSelection() {
         List<IconPack> iconPacks = _iconPackManager.getIconPacks().stream()
-                .sorted(Comparator.comparing(IconPack::getName))
                 .collect(Collectors.toList());
         if (iconPacks.size() == 0) {
             startImageSelectionActivity();

@@ -39,7 +39,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -94,7 +93,6 @@ public class AssignIconsActivity extends AegisActivity implements AssignIconAdap
         _entriesView.addOnScrollListener(preloader2);
 
         Optional<IconPack> favoriteIconPack = _iconPackManager.getIconPacks().stream()
-                .sorted(Comparator.comparing(IconPack::getName))
                 .findFirst();
 
         if (!favoriteIconPack.isPresent()) {
@@ -188,7 +186,6 @@ public class AssignIconsActivity extends AegisActivity implements AssignIconAdap
     @Override
     public void onAssignIconEntryClick(AssignIconEntry entry) {
         List<IconPack> iconPacks = _iconPackManager.getIconPacks().stream()
-                .sorted(Comparator.comparing(IconPack::getName))
                 .collect(Collectors.toList());
 
         BottomSheetDialog dialog = IconPickerDialog.create(this, iconPacks, entry.getEntry().getIssuer(), false, new IconAdapter.Listener() {
