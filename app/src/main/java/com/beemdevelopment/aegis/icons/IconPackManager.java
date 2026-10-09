@@ -1,6 +1,8 @@
 package com.beemdevelopment.aegis.icons;
 
 import android.content.Context;
+import android.content.res.AssetManager;
+import android.util.Log;
 
 import androidx.annotation.Nullable;
 
@@ -16,19 +18,25 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.stream.Collectors;
 
 public class IconPackManager {
+    private static final String TAG = IconPackManager.class.getSimpleName();
     private static final String _packDefFilename = "pack.json";
+    private static final String _bundledAssetsDir = "iconpacks";
 
     private File _iconsBaseDir;
     private List<IconPack> _iconPacks;
 
     public IconPackManager(Context context) {
-        _iconPacks = new ArrayList<>();
+        // the bundled packs are installed on a background thread while the UI reads the list
+        _iconPacks = new CopyOnWriteArrayList<>();
         _iconsBaseDir = new File(context.getFilesDir(), "icons");
         rescanIconPacks();
     }
@@ -129,6 +137,95 @@ public class IconPackManager {
             return pack;
         } catch (IOException | JSONException e) {
             throw new IconPackException(e);
+        }
+    }
+
+    /**
+     * Installs the icon packs that ship in the APK (assets/iconpacks), each version once. A pack
+     * the user removed stays removed, and one they imported in the same or a newer version is
+     * kept. The record of what was installed lives next to the packs, in a directory that is
+     * not backed up, so a restore onto a new device installs them again.
+     */
+    public void installBundledPacks(Context context) {
+        AssetManager assets = context.getAssets();
+        String[] names;
+        try {
+            names = assets.list(_bundledAssetsDir);
+        } catch (IOException e) {
+            Log.e(TAG, "Unable to list the bundled icon packs", e);
+            return;
+        }
+        if (names == null) {
+            return;
+        }
+
+        for (String name : names) {
+            File tempFile = null;
+            try {
+                tempFile = File.createTempFile("icon-pack-", "", context.getCacheDir());
+                try (InputStream inStream = assets.open(_bundledAssetsDir + "/" + name);
+                     FileOutputStream outStream = new FileOutputStream(tempFile)) {
+                    IOUtils.copy(inStream, outStream);
+                }
+
+                IconPack bundled;
+                try (ZipFile zipFile = new ZipFile(tempFile)) {
+                    FileHeader packHeader = zipFile.getFileHeader(_packDefFilename);
+                    if (packHeader == null) {
+                        throw new IOException("Unable to find pack.json in the root of " + name);
+                    }
+                    try (ZipInputStream inStream = zipFile.getInputStream(packHeader)) {
+                        bundled = IconPack.fromBytes(IOUtils.readAll(inStream));
+                    }
+                }
+
+                File marker = new File(_iconsBaseDir, bundled.getUUID() + ".bundled");
+                int handled = readBundledMarker(marker);
+                if (handled >= bundled.getVersion()) {
+                    continue;
+                }
+
+                IconPack existing = getIconPackByUUID(bundled.getUUID());
+                if ((existing == null && handled == -1) || (existing != null && existing.getVersion() < bundled.getVersion())) {
+                    if (existing != null) {
+                        removeIconPack(existing);
+                    } else {
+                        // left by an extraction that was interrupted
+                        File stale = new File(_iconsBaseDir, bundled.getUUID().toString());
+                        if (stale.exists()) {
+                            deleteDir(stale);
+                        }
+                    }
+                    importPack(tempFile);
+                }
+                writeBundledMarker(marker, bundled.getVersion());
+            } catch (IOException | JSONException | IconPackException e) {
+                Log.e(TAG, String.format("Unable to install the bundled icon pack %s", name), e);
+            } finally {
+                if (tempFile != null) {
+                    tempFile.delete();
+                }
+            }
+        }
+    }
+
+    private static int readBundledMarker(File marker) {
+        if (!marker.exists()) {
+            return -1;
+        }
+        try (FileInputStream inStream = new FileInputStream(marker)) {
+            return Integer.parseInt(new String(IOUtils.readAll(inStream), StandardCharsets.UTF_8).trim());
+        } catch (IOException | NumberFormatException e) {
+            return -1;
+        }
+    }
+
+    private void writeBundledMarker(File marker, int version) throws IOException {
+        if (!_iconsBaseDir.exists() && !_iconsBaseDir.mkdirs()) {
+            throw new IOException(String.format("Unable to create directories: %s", _iconsBaseDir));
+        }
+        try (FileOutputStream outStream = new FileOutputStream(marker)) {
+            outStream.write(Integer.toString(version).getBytes(StandardCharsets.UTF_8));
         }
     }
 

@@ -18,6 +18,7 @@ import androidx.lifecycle.LifecycleEventObserver;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.ProcessLifecycleOwner;
 
+import com.beemdevelopment.aegis.icons.IconPackManager;
 import com.beemdevelopment.aegis.receivers.VaultLockReceiver;
 import com.beemdevelopment.aegis.ui.MainActivity;
 import com.beemdevelopment.aegis.util.IOUtils;
@@ -55,6 +56,12 @@ public abstract class AegisApplicationBase extends Application {
 
         // clear the cache directory on startup, to make sure no temporary vault export files remain
         IOUtils.clearDirectory(getCacheDir(), false);
+
+        // after the cache is cleared: the install copies each pack there first
+        IconPackManager iconPackManager = EarlyEntryPoints.get(this, EntryPoint.class).getIconPackManager();
+        Thread iconPackThread = new Thread(() -> iconPackManager.installBundledPacks(this), "bundled-icon-packs");
+        iconPackThread.setPriority(Thread.MIN_PRIORITY);
+        iconPackThread.start();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N_MR1) {
             initAppShortcuts();
@@ -118,5 +125,7 @@ public abstract class AegisApplicationBase extends Application {
     @InstallIn(SingletonComponent.class)
     interface EntryPoint {
         VaultManager getVaultManager();
+
+        IconPackManager getIconPackManager();
     }
 }
