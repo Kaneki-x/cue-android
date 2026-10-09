@@ -625,6 +625,10 @@
     <string name="importer_help_winauth">Supply a WinAuth export file.</string>
     <string name="import_assign_icons_dialog_title">Assign icons</string>
     <string name="import_assign_icons_dialog_text">Do you want to assign icons to the imported entries?</string>
+    <plurals name="assign_icons_offer_text">
+        <item quantity="one">Cue comes with icon packs now, and %d entry has a matching icon. Assign it?</item>
+        <item quantity="other">Cue comes with icon packs now, and %d entries have a matching icon. Assign them?</item>
+    </plurals>
 
     <string name="importer_encrypted_exception_google_authenticator">Encrypted entry was skipped: %s</string>
 

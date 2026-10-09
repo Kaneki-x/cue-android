@@ -44,7 +44,8 @@ The security design of the app and the vault format is described in detail in
   - Groups, favorites, search, icon packs
   - Ships with the four icon packs the Aegis README lists (aegis-icons, delta-aegis-icons,
     aegis-simple-icons and its outlined variant), installed on first start; a pack removed in
-    Settings > Icon packs stays removed
+    Settings > Icon packs stays removed. New entries take the matching icon, and the app offers
+    once to assign icons to existing entries
 - Material 3 design with dynamic colors
 
 ## Building

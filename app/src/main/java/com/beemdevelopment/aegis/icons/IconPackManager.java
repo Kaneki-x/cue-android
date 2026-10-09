@@ -244,6 +244,21 @@ public class IconPackManager {
         }
     }
 
+    /**
+     * The icon a new entry or 分配图标 takes for the issuer: the first suggestion of the first
+     * pack, in getIconPacks() order, that has one (the iOS app picks the same way).
+     */
+    @Nullable
+    public IconPack.Icon getSuggestedIcon(String issuer) {
+        for (IconPack pack : getIconPacks()) {
+            List<IconPack.Icon> icons = pack.getSuggestedIcons(issuer);
+            if (!icons.isEmpty()) {
+                return icons.get(0);
+            }
+        }
+        return null;
+    }
+
     private void rescanIconPacks() {
         _iconPacks.clear();
 

@@ -780,6 +780,32 @@ public class MainActivity extends AegisActivity implements EntryListView.Listene
         }
     }
 
+    /**
+     * Cue: once, offer the matching pack icon to the entries that have none. The vault may
+     * predate the bundled icon packs; new and imported entries are offered theirs anyway.
+     * Waits until the packs are there (the first start installs them in the background).
+     */
+    private void offerAssignIcons() {
+        if (_prefs.isAssignIconsOffered() || !_iconPackManager.hasIconPack()) {
+            return;
+        }
+        _prefs.setAssignIconsOffered(true);
+
+        List<VaultEntry> entries = _vaultManager.getVault().getEntries().stream()
+                .filter(e -> !e.hasIcon() && _iconPackManager.getSuggestedIcon(e.getIssuer()) != null)
+                .collect(Collectors.toList());
+        if (entries.isEmpty()) {
+            return;
+        }
+
+        Dialogs.showSecureDialog(new MaterialAlertDialogBuilder(this)
+                .setTitle(R.string.import_assign_icons_dialog_title)
+                .setMessage(getResources().getQuantityString(R.plurals.assign_icons_offer_text, entries.size(), entries.size()))
+                .setPositiveButton(android.R.string.yes, (dialog, which) -> startAssignIconsActivity(entries))
+                .setNegativeButton(android.R.string.no, null)
+                .create());
+    }
+
     private void onIconsOptimized(Map<UUID, VaultEntryIcon> newIcons) {
         for (Map.Entry<UUID, VaultEntryIcon> mapEntry : newIcons.entrySet()) {
             VaultEntry entry = _vaultManager.getVault().getEntryByUUID(mapEntry.getKey());
@@ -994,6 +1020,10 @@ public class MainActivity extends AegisActivity implements EntryListView.Listene
             checkIconOptimization();
 
             _entryListView.onRefreshStart();
+        }
+
+        if (_vaultManager.isVaultLoaded()) {
+            offerAssignIcons();
         }
 
         _lockBackPressHandler.setEnabled(

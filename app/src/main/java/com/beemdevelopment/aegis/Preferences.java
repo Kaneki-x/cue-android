@@ -225,6 +225,15 @@ public class Preferences {
         _prefs.edit().putBoolean("pref_intro", done).apply();
     }
 
+    /** Whether MainActivity has offered to assign icons to entries that had none (Cue). */
+    public boolean isAssignIconsOffered() {
+        return _prefs.getBoolean("pref_assign_icons_offered", false);
+    }
+
+    public void setAssignIconsOffered(boolean offered) {
+        _prefs.edit().putBoolean("pref_assign_icons_offered", offered).apply();
+    }
+
     public void setTapToRevealTime(int number) {
         _prefs.edit().putInt("pref_tap_to_reveal_time", number).apply();
     }

@@ -105,6 +105,9 @@ public class EditEntryActivity extends AegisActivity {
     // keep track of icon changes separately as the generated jpeg's are not deterministic
     private boolean _hasChangedIcon = false;
     private IconPack.Icon _selectedIcon;
+    // Cue: a new entry shows the pack icon matching its issuer until the user picks one
+    private boolean _suggestIcon;
+    private boolean _iconSuggested;
     private String _pickedMimeType;
     private ShapeableImageView _iconView;
     private ImageView _saveImageButton;
@@ -308,6 +311,9 @@ public class EditEntryActivity extends AegisActivity {
         // Update the icon if the issuer or name has changed
         _textIssuer.addTextChangedListener(_nameChangeListener);
         _textName.addTextChangedListener(_nameChangeListener);
+        // the fields were filled before the listener was added, so suggest once now
+        _suggestIcon = _isNew && !_origEntry.hasIcon();
+        suggestIcon();
 
         // Register listeners to trigger validation
         _textIssuer.addTextChangedListener(_validationListener);
@@ -502,6 +508,14 @@ public class EditEntryActivity extends AegisActivity {
     }
 
     private boolean hasUnsavedChanges(VaultEntry newEntry) {
+        if (_iconSuggested && newEntry != null) {
+            // the suggested icon is not a change the user made: compare without it
+            VaultEntryIcon icon = newEntry.getIcon();
+            newEntry.setIcon(_origEntry.getIcon());
+            boolean changed = !_origEntry.equals(newEntry);
+            newEntry.setIcon(icon);
+            return changed;
+        }
         return _hasChangedIcon || !_origEntry.equals(newEntry);
     }
 
@@ -558,6 +572,8 @@ public class EditEntryActivity extends AegisActivity {
             TextDrawable drawable = TextDrawableHelper.generate(_origEntry.getIssuer(), _origEntry.getName(), _iconView);
             _iconView.setImageDrawable(drawable);
 
+            _suggestIcon = false;
+            _iconSuggested = false;
             _selectedIcon = null;
             _hasCustomIcon = false;
             _hasChangedIcon = true;
@@ -608,11 +624,38 @@ public class EditEntryActivity extends AegisActivity {
     }
 
     private void selectIcon(IconPack.Icon icon) {
+        _suggestIcon = false;
+        _iconSuggested = false;
         _selectedIcon = icon;
         _hasCustomIcon = true;
         _hasChangedIcon = true;
 
         GlideHelper.loadIcon(Glide.with(EditEntryActivity.this), icon, _iconView);
+    }
+
+    /**
+     * Shows the pack icon that matches the issuer on a new entry (as the iOS app does), or
+     * takes it away again when the issuer no longer matches. Stops once the user picks, crops
+     * or resets the icon.
+     */
+    private void suggestIcon() {
+        if (!_suggestIcon) {
+            return;
+        }
+
+        IconPack.Icon icon = _iconPackManager.getSuggestedIcon(_textIssuer.getText().toString());
+        if (icon != null) {
+            if (icon != _selectedIcon) {
+                selectIcon(icon);
+                _suggestIcon = true;
+                _iconSuggested = true;
+            }
+        } else if (_iconSuggested) {
+            _selectedIcon = null;
+            _hasCustomIcon = false;
+            _hasChangedIcon = false;
+            _iconSuggested = false;
+        }
     }
 
     private void startEditingIcon(Uri data) {
@@ -651,6 +694,10 @@ public class EditEntryActivity extends AegisActivity {
 
         _hasCustomIcon = _hasCustomIcon || save;
         _hasChangedIcon = save;
+        if (save) {
+            _suggestIcon = false;
+            _iconSuggested = false;
+        }
         _iconBackPressHandler.setEnabled(false);
     }
 
@@ -960,6 +1007,7 @@ public class EditEntryActivity extends AegisActivity {
     });
 
     private final TextWatcher _nameChangeListener = new SimpleTextWatcher((s) -> {
+        suggestIcon();
         if (!_hasCustomIcon) {
             TextDrawable drawable = TextDrawableHelper.generate(_textIssuer.getText().toString(), _textName.getText().toString(), _iconView);
             _iconView.setImageDrawable(drawable);

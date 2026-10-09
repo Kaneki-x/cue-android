@@ -527,6 +527,9 @@
     <string name="importer_help_winauth">提供 WinAuth 导出文件。</string>
     <string name="import_assign_icons_dialog_title">分配图标</string>
     <string name="import_assign_icons_dialog_text">您想给导入的条目分配图标吗？</string>
+    <plurals name="assign_icons_offer_text">
+        <item quantity="other">Cue 现在自带图标包，有 %d 个条目能找到对应的图标。现在分配吗？</item>
+    </plurals>
     <string name="importer_encrypted_exception_google_authenticator">加密条目已跳过：%s</string>
     <string name="importer_help_direct">直接导入来自 %s 的条目。这要求将应用程序安装在此设备上，并授予 Cue root 权限。</string>
     <string name="groups">分组</string>

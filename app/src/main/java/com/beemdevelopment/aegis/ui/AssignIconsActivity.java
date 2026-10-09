@@ -112,12 +112,8 @@ public class AssignIconsActivity extends AegisActivity implements AssignIconAdap
     }
 
     private IconPack.Icon findSuggestedIcon(AssignIconEntry entry) {
-        List<IconPack.Icon> suggestedIcons = _favoriteIconPack.getSuggestedIcons(entry.getEntry().getIssuer());
-        if (suggestedIcons.size() > 0) {
-            return suggestedIcons.get(0);
-        }
-
-        return null;
+        // Cue: from the first pack with a match, not only the favorite one
+        return _iconPackManager.getSuggestedIcon(entry.getEntry().getIssuer());
     }
 
     private void saveAndFinish() throws IOException {
