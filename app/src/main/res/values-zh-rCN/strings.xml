@@ -572,6 +572,8 @@
     <string name="action_refresh_code">下一个验证码</string>
     <string name="ime_label">Cue 验证码</string>
     <string name="ime_hint_suggested_for">为 %s 推荐</string>
+    <string name="ime_hint_choose">选择要填入的验证码</string>
+    <string name="ime_inserted">✓ 已填入</string>
     <string name="ime_vault_locked">数据库已锁定</string>
     <string name="ime_setup_required">使用键盘前请先设置 Cue</string>
     <string name="ime_open_app">打开 Cue</string>

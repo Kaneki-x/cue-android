@@ -406,6 +406,8 @@
     <string name="tile_open_scanner" comment="label for a quick settings tile that opens the QR code scanner when tapped">開啟掃描器</string>
     <string name="toggle_checkboxes">切換核取方塊</string>
     <string name="search">搜尋</string>
+    <string name="ime_hint_choose">選擇要填入的驗證碼</string>
+    <string name="ime_inserted">✓ 已填入</string>
     <string name="clear_search">清除搜尋</string>
     <string name="channel_name_lock_status">鎖定狀態</string>
     <string name="channel_description_lock_status">Cue 可以常駐通知顯示保險箱鎖定中</string>

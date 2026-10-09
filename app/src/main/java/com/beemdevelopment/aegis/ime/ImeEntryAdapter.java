@@ -1,6 +1,5 @@
 package com.beemdevelopment.aegis.ime;
 
-import android.content.Context;
 import android.content.res.ColorStateList;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,7 +9,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.appcompat.content.res.AppCompatResources;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.beemdevelopment.aegis.Preferences;
@@ -24,17 +22,18 @@ import com.beemdevelopment.aegis.vault.VaultEntry;
 import com.bumptech.glide.RequestManager;
 import com.google.android.material.color.MaterialColors;
 
-import java.text.BreakIterator;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
-import java.util.TreeSet;
 
 public class ImeEntryAdapter extends RecyclerView.Adapter<ImeEntryAdapter.Holder> {
     /**
-     * Filter key that only shows favorites.
+     * Filter key that only shows pinned entries (the vault's favorites).
      */
     public static final String FILTER_FAVORITES = "★";
+    /**
+     * Prefix of a filter key that shows one group: "group:" + its UUID.
+     */
+    public static final String FILTER_GROUP_PREFIX = "group:";
 
     private final RequestManager _glide;
     private final Listener _listener;
@@ -46,6 +45,10 @@ public class ImeEntryAdapter extends RecyclerView.Adapter<ImeEntryAdapter.Holder
     private Preferences.CodeGrouping _codeGrouping = Preferences.CodeGrouping.GROUPING_THREES;
     private boolean _hideCodes;
     private boolean _showIcons = true;
+    // the entry whose code was just inserted, shown as 已填入 for a moment
+    @Nullable
+    private java.util.UUID _inserted;
+    private final android.os.Handler _handler = new android.os.Handler(android.os.Looper.getMainLooper());
 
     public ImeEntryAdapter(RequestManager glide, Listener listener) {
         _glide = glide;
@@ -70,8 +73,8 @@ public class ImeEntryAdapter extends RecyclerView.Adapter<ImeEntryAdapter.Holder
     }
 
     /**
-     * Sets the filter: null shows everything, FILTER_FAVORITES shows favorites only and
-     * any other value is interpreted as the first letter of the issuer (or name).
+     * Sets the filter: null shows everything, FILTER_FAVORITES the pinned entries and
+     * FILTER_GROUP_PREFIX + a group's UUID the entries in that group.
      */
     public void setFilter(@Nullable String filter) {
         _filter = filter;
@@ -97,49 +100,41 @@ public class ImeEntryAdapter extends RecyclerView.Adapter<ImeEntryAdapter.Holder
     }
 
     /**
-     * Returns the distinct, sorted first letters of all entries, for building the filter chips.
+     * The groups that have at least one entry, for building the filter chips.
      */
-    public List<String> getInitials() {
-        TreeSet<String> initials = new TreeSet<>(String.CASE_INSENSITIVE_ORDER);
+    public java.util.Set<java.util.UUID> getUsedGroups() {
+        java.util.Set<java.util.UUID> groups = new java.util.HashSet<>();
         for (ImeEntryRanker.Ranked ranked : _all) {
-            String initial = getInitial(ranked.getEntry());
-            if (initial != null) {
-                initials.add(initial);
-            }
+            groups.addAll(ranked.getEntry().getGroups());
         }
-        return new ArrayList<>(initials);
+        return groups;
+    }
+
+    /**
+     * Shows 已填入 on the entry's key for a moment, after its code was inserted.
+     */
+    public void markInserted(VaultEntry entry) {
+        _inserted = entry.getUUID();
+        notifyDataSetChanged();
+        _handler.removeCallbacksAndMessages(null);
+        _handler.postDelayed(() -> {
+            _inserted = null;
+            notifyDataSetChanged();
+        }, 1500);
     }
 
     private void applyFilter() {
         _visible.clear();
         for (ImeEntryRanker.Ranked ranked : _all) {
+            VaultEntry entry = ranked.getEntry();
             if (_filter == null
-                    || (_filter.equals(FILTER_FAVORITES) && ranked.getEntry().isFavorite())
-                    || _filter.equalsIgnoreCase(getInitial(ranked.getEntry()))) {
+                    || (_filter.equals(FILTER_FAVORITES) && entry.isFavorite())
+                    || (_filter.startsWith(FILTER_GROUP_PREFIX)
+                        && entry.getGroups().contains(java.util.UUID.fromString(_filter.substring(FILTER_GROUP_PREFIX.length()))))) {
                 _visible.add(ranked);
             }
         }
         notifyDataSetChanged();
-    }
-
-    @Nullable
-    private static String getInitial(VaultEntry entry) {
-        String text = entry.getIssuer().trim();
-        if (text.isEmpty()) {
-            text = entry.getName().trim();
-        }
-        if (text.isEmpty()) {
-            return null;
-        }
-
-        BreakIterator iter = BreakIterator.getCharacterInstance();
-        iter.setText(text);
-        int start = iter.first(), end = iter.next();
-        if (end == BreakIterator.DONE) {
-            return null;
-        }
-
-        return text.substring(start, end).toUpperCase(Locale.getDefault());
     }
 
     @NonNull
@@ -151,7 +146,7 @@ public class ImeEntryAdapter extends RecyclerView.Adapter<ImeEntryAdapter.Holder
 
     @Override
     public void onBindViewHolder(@NonNull Holder holder, int position) {
-        holder.bind(_visible.get(position), position == 0);
+        holder.bind(_visible.get(position));
     }
 
     @Override
@@ -175,7 +170,6 @@ public class ImeEntryAdapter extends RecyclerView.Adapter<ImeEntryAdapter.Holder
         private final ImageView _hotpIcon;
 
         private VaultEntry _entry;
-        private boolean _hero;
 
         Holder(View view) {
             super(view);
@@ -198,7 +192,7 @@ public class ImeEntryAdapter extends RecyclerView.Adapter<ImeEntryAdapter.Holder
             });
         }
 
-        void bind(ImeEntryRanker.Ranked ranked, boolean first) {
+        void bind(ImeEntryRanker.Ranked ranked) {
             _entry = ranked.getEntry();
 
             String issuer = _entry.getIssuer();
@@ -209,12 +203,10 @@ public class ImeEntryAdapter extends RecyclerView.Adapter<ImeEntryAdapter.Holder
             }
             _issuer.setText(issuer);
             _name.setText(name);
-            _name.setVisibility(name.isEmpty() ? View.GONE : View.VISIBLE);
-            // the top suggestion is the hero card, further suggestions just get a pill
-            _hero = ranked.isSuggested() && first;
-            _suggested.setVisibility(ranked.isSuggested() && !_hero ? View.VISIBLE : View.GONE);
+            // a suggested entry says so where its account name would be
+            _suggested.setVisibility(ranked.isSuggested() ? View.VISIBLE : View.GONE);
+            _name.setVisibility(name.isEmpty() || ranked.isSuggested() ? View.GONE : View.VISIBLE);
             _favoriteIndicator.setVisibility(_entry.isFavorite() ? View.VISIBLE : View.GONE);
-            applyHero();
 
             OtpInfo info = _entry.getInfo();
             if (info instanceof TotpInfo) {
@@ -242,6 +234,16 @@ public class ImeEntryAdapter extends RecyclerView.Adapter<ImeEntryAdapter.Holder
                 return;
             }
 
+            boolean inserted = _entry.getUUID().equals(_inserted);
+            itemView.setBackgroundTintList(inserted
+                    ? ColorStateList.valueOf(MaterialColors.getColor(itemView, com.google.android.material.R.attr.colorSecondaryContainer))
+                    : null);
+            if (inserted) {
+                _code.setText(itemView.getResources().getString(R.string.ime_inserted));
+                _code.setTextColor(MaterialColors.getColor(_code, com.google.android.material.R.attr.colorOnSecondaryContainer));
+                return;
+            }
+
             String code;
             try {
                 code = CodeFormatHelper.format(_entry.getInfo().getOtp(), _entry.getInfo(), _codeGrouping);
@@ -250,28 +252,7 @@ public class ImeEntryAdapter extends RecyclerView.Adapter<ImeEntryAdapter.Holder
             }
 
             _code.setText(_hideCodes ? CodeFormatHelper.hide(code) : code);
-            if (_hero) {
-                _code.setTextColor(_hideCodes ? 0x99FFFFFF : 0xFFFFFFFF);
-            } else {
-                _code.setTextColor(MaterialColors.getColor(_code, _hideCodes ? R.attr.colorCodeHidden : R.attr.colorCode));
-            }
-        }
-
-        /**
-         * The suggested entry is the one tinted card: brand gradient with white text.
-         */
-        private void applyHero() {
-            Context context = itemView.getContext();
-            itemView.setBackground(AppCompatResources.getDrawable(context,
-                    _hero ? R.drawable.cue_card_background_hero : R.drawable.cue_card_background));
-            int onSurface = MaterialColors.getColor(itemView, com.google.android.material.R.attr.colorOnSurface);
-            int onSurfaceVariant = MaterialColors.getColor(itemView, com.google.android.material.R.attr.colorOnSurfaceVariant);
-            _issuer.setTextColor(_hero ? 0xFFFFFFFF : onSurface);
-            _name.setTextColor(_hero ? 0xCCFFFFFF : onSurfaceVariant);
-            _suggested.setTextColor(_hero ? 0xFFFFFFFF : MaterialColors.getColor(itemView, androidx.appcompat.R.attr.colorPrimary));
-            _suggested.setBackgroundTintList(_hero ? ColorStateList.valueOf(0x33FFFFFF) : null);
-            _ring.setHero(_hero);
-            _hotpIcon.setImageTintList(ColorStateList.valueOf(_hero ? 0xFFFFFFFF : onSurfaceVariant));
+            _code.setTextColor(MaterialColors.getColor(_code, _hideCodes ? R.attr.colorCodeHidden : R.attr.colorCode));
         }
 
         void recycle() {

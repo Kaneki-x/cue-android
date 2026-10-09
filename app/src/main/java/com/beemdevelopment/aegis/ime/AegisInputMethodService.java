@@ -25,7 +25,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.content.res.AppCompatResources;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.beemdevelopment.aegis.Preferences;
@@ -84,6 +83,7 @@ public class AegisInputMethodService extends InputMethodService
     private TextView _stateText;
     private MaterialButton _stateButton;
     private ChipGroup _chips;
+    private View _chipsRow;
     private ImeEntryAdapter _adapter;
 
     private String _currentPackage;
@@ -121,10 +121,12 @@ public class AegisInputMethodService extends InputMethodService
         _stateText = _root.findViewById(R.id.state_text);
         _stateButton = _root.findViewById(R.id.state_button);
         _chips = _root.findViewById(R.id.chips);
+        _chipsRow = _root.findViewById(R.id.chips_row);
         _chipsKey = null;
 
         _adapter = new ImeEntryAdapter(Glide.with(getApplicationContext()), this);
-        _list.setLayoutManager(new LinearLayoutManager(context));
+        // entries are keys: two columns of small tiles (the iOS keyboard draws the same)
+        _list.setLayoutManager(new androidx.recyclerview.widget.GridLayoutManager(context, 2));
         _list.setAdapter(_adapter);
 
         _root.findViewById(R.id.btn_open_app).setOnClickListener(v -> openApp());
@@ -249,7 +251,8 @@ public class AegisInputMethodService extends InputMethodService
         _adapter.setEntries(ranked);
 
         boolean anySuggested = !ranked.isEmpty() && ranked.get(0).isSuggested();
-        _headerHint.setText(anySuggested ? getCallerLabel() : "");
+        String callerLabel = anySuggested ? getCallerLabel() : "";
+        _headerHint.setText(callerLabel.isEmpty() ? getString(R.string.ime_hint_choose) : callerLabel);
 
         buildChips();
         showList();
@@ -270,23 +273,43 @@ public class AegisInputMethodService extends InputMethodService
         }
     }
 
+    /**
+     * 全部, 置顶 and the groups in use, as in the main list (the iOS keyboard shows the same).
+     * The row is hidden when 全部 would be the only chip.
+     */
     private void buildChips() {
-        List<String> initials = _adapter.getInitials();
         boolean hasFavorites = _adapter.hasFavorites();
-        String key = hasFavorites + "/" + initials;
-        if (key.equals(_chipsKey)) {
+        Set<java.util.UUID> used = _adapter.getUsedGroups();
+        List<com.beemdevelopment.aegis.vault.VaultGroup> groups = new java.util.ArrayList<>();
+        for (com.beemdevelopment.aegis.vault.VaultGroup group : _vaultManager.getVault().getGroups()) {
+            if (used.contains(group.getUUID())) {
+                groups.add(group);
+            }
+        }
+        StringBuilder key = new StringBuilder(String.valueOf(hasFavorites));
+        for (com.beemdevelopment.aegis.vault.VaultGroup group : groups) {
+            key.append('/').append(group.getUUID()).append(group.getName());
+        }
+        _chipsRow.setVisibility(hasFavorites || !groups.isEmpty() ? View.VISIBLE : View.GONE);
+        if (key.toString().equals(_chipsKey)) {
             return;
         }
-        _chipsKey = key;
+        _chipsKey = key.toString();
 
+        String filter = _adapter.getFilter();
         _chips.removeAllViews();
-        addChip(null, getString(R.string.all), true);
+        addChip(null, getString(R.string.all), filter == null);
         if (hasFavorites) {
-            addChip(ImeEntryAdapter.FILTER_FAVORITES, ImeEntryAdapter.FILTER_FAVORITES, false)
-                    .setContentDescription(getString(R.string.ime_filter_favorites));
+            addChip(ImeEntryAdapter.FILTER_FAVORITES, getString(R.string.ime_filter_favorites), ImeEntryAdapter.FILTER_FAVORITES.equals(filter));
         }
-        for (String initial : initials) {
-            addChip(initial, initial, false);
+        for (com.beemdevelopment.aegis.vault.VaultGroup group : groups) {
+            String tag = ImeEntryAdapter.FILTER_GROUP_PREFIX + group.getUUID();
+            addChip(tag, group.getName(), tag.equals(filter));
+        }
+        if (_chips.getCheckedChipIds().isEmpty()) {
+            // the filtered group or the last pinned entry is gone
+            _adapter.setFilter(null);
+            _chips.check(_chips.getChildAt(0).getId());
         }
     }
 
@@ -305,7 +328,6 @@ public class AegisInputMethodService extends InputMethodService
     private void showList() {
         _stateView.setVisibility(View.GONE);
         _list.setVisibility(View.VISIBLE);
-        _chips.setVisibility(View.VISIBLE);
     }
 
     private void updateEmptyState() {
@@ -325,7 +347,7 @@ public class AegisInputMethodService extends InputMethodService
 
     private void showState(int iconRes, int textRes, int buttonRes, View.OnClickListener listener) {
         _list.setVisibility(View.GONE);
-        _chips.setVisibility(View.GONE);
+        _chipsRow.setVisibility(View.GONE);
         _headerHint.setText("");
         _stateView.setVisibility(View.VISIBLE);
         _stateIcon.setImageResource(iconRes);
@@ -385,6 +407,8 @@ public class AegisInputMethodService extends InputMethodService
 
         if (_prefs.isImeSwitchBackEnabled()) {
             switchToPreviousKeyboard();
+        } else {
+            _adapter.markInserted(entry);
         }
     }
 

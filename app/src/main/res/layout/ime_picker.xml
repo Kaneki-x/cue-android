@@ -9,7 +9,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="48dp"
+        android:layout_height="40dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:paddingStart="@dimen/cue_space_4"
@@ -21,19 +21,12 @@
             android:importantForAccessibility="no"
             android:src="@drawable/ic_cue_logo_small" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/cue_space_2"
-            android:includeFontPadding="false"
-            android:text="@string/app_name"
-            android:textAppearance="@style/TextAppearance.Cue.Wordmark.Small" />
 
         <TextView
             android:id="@+id/header_hint"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/cue_space_3"
+            android:layout_marginStart="@dimen/cue_space_2"
             android:layout_weight="1"
             android:ellipsize="end"
             android:maxLines="1"
@@ -59,14 +52,26 @@
             android:tint="?attr/colorOnSurfaceVariant" />
     </LinearLayout>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginStart="@dimen/cue_space_4"
-        android:layout_marginEnd="@dimen/cue_space_4"
-        android:alpha="0.7"
-        android:background="@drawable/cue_brand_rule" />
 
+    <!-- 全部 / 置顶 / the user's groups, as in the main list; hidden when there is nothing to choose -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:id="@+id/chips_row"
+        android:layout_height="38dp"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chips"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingStart="@dimen/cue_space_3"
+            android:paddingEnd="@dimen/cue_space_3"
+            app:chipSpacingHorizontal="6dp"
+            app:selectionRequired="true"
+            app:singleLine="true"
+            app:singleSelection="true" />
+    </HorizontalScrollView>
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -77,10 +82,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false"
-            android:paddingStart="@dimen/cue_space_3"
-            android:paddingTop="@dimen/cue_space_2"
-            android:paddingEnd="@dimen/cue_space_3"
-            android:paddingBottom="@dimen/cue_space_1"
+            android:paddingStart="5dp"
+            android:paddingTop="0dp"
+            android:paddingEnd="5dp"
+            android:paddingBottom="5dp"
             android:scrollbars="none" />
 
         <LinearLayout
@@ -120,21 +125,4 @@
         </LinearLayout>
     </FrameLayout>
 
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="46dp"
-        android:fillViewport="true"
-        android:scrollbars="none">
-
-        <com.google.android.material.chip.ChipGroup
-            android:id="@+id/chips"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:paddingStart="@dimen/cue_space_3"
-            android:paddingEnd="@dimen/cue_space_3"
-            app:chipSpacingHorizontal="6dp"
-            app:selectionRequired="true"
-            app:singleLine="true"
-            app:singleSelection="true" />
-    </HorizontalScrollView>
 </LinearLayout>
