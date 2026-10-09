@@ -180,6 +180,8 @@ public class ImeEntryAdapter extends RecyclerView.Adapter<ImeEntryAdapter.Holder
         Holder(View view) {
             super(view);
             _favoriteIndicator = view.findViewById(R.id.favorite_indicator);
+            // the row's rounded background clips the pinned bar
+            view.setClipToOutline(true);
             _icon = view.findViewById(R.id.icon);
             _issuer = view.findViewById(R.id.issuer);
             _name = view.findViewById(R.id.name);

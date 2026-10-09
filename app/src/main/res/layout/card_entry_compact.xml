@@ -21,11 +21,20 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <View
+            android:id="@+id/favorite_indicator"
+            android:layout_width="15dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="-11dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            android:backgroundTint="?attr/colorFavorite"
+            android:background="@drawable/favorite_indicator" />
 
         <RelativeLayout
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:paddingStart="16dp">
+            android:paddingStart="12dp">
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/ivTextDrawable"
@@ -100,20 +109,6 @@
                 android:maxLines="1"
                 android:textSize="13sp"
                 tools:text=" - AccountName" />
-
-            <!-- favourite: a star after the name, as on iOS (was a bar on the card's edge) -->
-            <ImageView
-                android:id="@+id/favorite_indicator"
-                android:layout_width="12dp"
-                android:layout_height="12dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="2dp"
-                android:layout_toEndOf="@id/profile_account_name"
-                android:layout_alignTop="@id/profile_issuer"
-                android:contentDescription="@string/favorite"
-                android:src="@drawable/ic_star_24"
-                android:visibility="gone"
-                app:tint="?attr/colorFavorite" />
         </RelativeLayout>
 
 

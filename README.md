@@ -7,7 +7,7 @@
 **Cue** is a free, secure and open source two-factor authentication app. It
 keeps your tokens in an encrypted vault and gets the code to where you need it:
 a keyboard that inserts the code into any app, a home screen widget that shows
-your favorites, and the usual list with search, groups and icon packs. Cue
+your pinned entries, and the usual list with search, groups and icon packs. Cue
 supports HOTP and TOTP, so it works with thousands of services.
 
 Cue is a hard fork of [Aegis Authenticator](https://github.com/beemdevelopment/Aegis)
@@ -29,7 +29,7 @@ The security design of the app and the vault format is described in detail in
   - Screen capture prevention
   - Tap to reveal
 - Keyboard: insert the code of any entry into the focused field, then switch back
-- Home screen widget: codes of your favorites, hidden until tapped
+- Home screen widget: codes of your pinned entries, hidden until tapped
 - Multiple backup options
   - Automatic
   - Cloud
@@ -41,7 +41,8 @@ The security design of the app and the vault format is described in detail in
   - Enter details manually
   - Import from other authenticator apps (Aegis, Google Authenticator, Microsoft Authenticator, 2FAS, Authy and more)
 - Organization
-  - Groups, favorites, search, icon packs
+  - Groups, pinning (pinned entries come first, marked by a bar on the card's edge), search,
+    icon packs
   - Ships with the four icon packs the Aegis README lists (aegis-icons, delta-aegis-icons,
     aegis-simple-icons and its outlined variant), installed on first start; a pack removed in
     Settings > Icon packs stays removed. New entries take the matching icon, and the app offers

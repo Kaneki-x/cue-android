@@ -209,8 +209,8 @@
     <string name="assign_groups">指派給群組</string>
     <string name="assign_groups_dialog_summary">選選你想要將選中的條目分配到的群組。</string>
     <string name="assign_groups_dialog_dropdown">選擇群組</string>
-    <string name="favorite" comment="Verb">加入最愛</string>
-    <string name="unfavorite" comment="Verb">移出最愛</string>
+    <string name="favorite" comment="Verb">置頂</string>
+    <string name="unfavorite" comment="Verb">取消置頂</string>
     <string name="error_all_caps">錯誤</string>
     <string name="password">密碼</string>
     <string name="confirm_password">確認密碼</string>

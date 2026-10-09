@@ -19,6 +19,13 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+        <View
+            android:id="@+id/favorite_indicator"
+            android:layout_width="15dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="-11dp"
+            android:backgroundTint="?attr/colorFavorite"
+            android:background="@drawable/favorite_indicator" />
 
         <RelativeLayout
             android:layout_width="0dp"
@@ -28,8 +35,8 @@
             android:id="@+id/relativeLayout"
             android:paddingTop="12dp"
             android:paddingBottom="8dp"
-            android:paddingLeft="12dp"
-            android:paddingStart="12dp">
+            android:paddingLeft="8dp"
+            android:paddingStart="8dp">
 
             <RelativeLayout
                 android:id="@+id/layoutImage"
@@ -57,29 +64,13 @@
                         app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Aegis.ImageView.Circle" />
             </RelativeLayout>
 
-            <!-- favourite: a star at the top right, as on iOS (was a bar on the card's edge) -->
-            <ImageView
-                android:id="@+id/favorite_indicator"
-                android:layout_width="12dp"
-                android:layout_height="12dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="2dp"
-                android:contentDescription="@string/favorite"
-                android:src="@drawable/ic_star_24"
-                android:visibility="gone"
-                app:tint="?attr/colorFavorite" />
-
             <!-- at least as tall as the icon, taller when the text needs it (CJK account names) -->
             <RelativeLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:minHeight="24dp"
                 android:id="@+id/description"
-                android:layout_toEndOf="@id/layoutImage"
-                android:layout_toStartOf="@id/favorite_indicator"
-                android:layout_alignWithParentIfMissing="true">
+                android:layout_toEndOf="@id/layoutImage">
 
                 <TextView
                     android:layout_width="wrap_content"

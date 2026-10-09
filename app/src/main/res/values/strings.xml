@@ -223,8 +223,8 @@
     <string name="assign_groups">Assign to group</string>
     <string name="assign_groups_dialog_summary">Select a group you wish to assign the selected entries to.</string>
     <string name="assign_groups_dialog_dropdown">Select group</string>
-    <string name="favorite" comment="Verb">Favorite</string>
-    <string name="unfavorite" comment="Verb">Unfavorite</string>
+    <string name="favorite" comment="Verb">Pin</string>
+    <string name="unfavorite" comment="Verb">Unpin</string>
     <string name="error_all_caps">ERROR</string>
     <string name="password">Password</string>
     <string name="confirm_password">Confirm password</string>
@@ -442,17 +442,17 @@
     <string name="ime_switch_keyboard">Switch keyboard</string>
     <string name="ime_no_entries">No entries in your vault yet</string>
     <string name="ime_no_matches">No entries match this filter</string>
-    <string name="ime_filter_favorites">Favorites</string>
+    <string name="ime_filter_favorites">Pinned</string>
     <string name="ime_suggested" comment="small label on a keyboard row whose entry matches the app asking for input">Suggested</string>
     <string name="ime_own_app_hint">Switch to another keyboard to type here</string>
     <string name="widget_label" comment="name of the home screen widget in the widget picker">Cue</string>
-    <string name="widget_description">Codes of your favorite or selected entries, hidden until you tap them.</string>
+    <string name="widget_description">Codes of your pinned or selected entries, hidden until you tap them.</string>
     <string name="widget_locked">Vault is locked. Tap to unlock.</string>
     <string name="widget_no_entries">No entries to show. Tap to choose entries.</string>
     <string name="widget_setup_required">Open Cue to set up your vault first.</string>
     <string name="widget_configure_title">Choose entries</string>
-    <string name="widget_configure_favorites_title">Show favorites</string>
-    <string name="widget_configure_favorites_summary">The widget follows your favorites automatically</string>
+    <string name="widget_configure_favorites_title">Show pinned entries</string>
+    <string name="widget_configure_favorites_summary">The widget follows your pinned entries automatically</string>
     <string name="widget_configure_select_hint">Select the entries to show in the widget</string>
 
     <string name="pref_section_integrations_title">Keyboard &amp; widget</string>
@@ -469,7 +469,7 @@
     <string name="pref_ime_insert_as_text_title">Insert codes as text</string>
     <string name="pref_ime_insert_as_text_summary">Insert the whole code at once instead of typing it digit by digit. Try this if codes don\'t show up in some apps.</string>
     <string name="pref_widget_add_title">Add widget to home screen</string>
-    <string name="pref_widget_add_summary">Shows the codes of your favorites or selected entries, hidden until you tap them.</string>
+    <string name="pref_widget_add_summary">Shows the codes of your pinned or selected entries, hidden until you tap them.</string>
     <string name="pref_widget_add_unsupported">Your launcher doesn\'t support adding widgets from here. Add it from your home screen\'s widget picker.</string>
     <string name="pref_external_grace_title">Keep unlocked for keyboard and widget</string>
     <string name="pref_external_grace_summary">%s. Only applies when Cue is set to lock when minimized.</string>

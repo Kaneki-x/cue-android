@@ -209,8 +209,8 @@
     <string name="assign_groups">分配给组</string>
     <string name="assign_groups_dialog_summary">选择您想要将选中条目分配到的组。</string>
     <string name="assign_groups_dialog_dropdown">选择组</string>
-    <string name="favorite" comment="Verb">加入收藏</string>
-    <string name="unfavorite" comment="Verb">取消收藏</string>
+    <string name="favorite" comment="Verb">置顶</string>
+    <string name="unfavorite" comment="Verb">取消置顶</string>
     <string name="error_all_caps">错误</string>
     <string name="password">密码</string>
     <string name="confirm_password">确认密码</string>
@@ -578,17 +578,17 @@
     <string name="ime_switch_keyboard">切换键盘</string>
     <string name="ime_no_entries">数据库中还没有条目</string>
     <string name="ime_no_matches">没有符合此筛选的条目</string>
-    <string name="ime_filter_favorites">收藏</string>
+    <string name="ime_filter_favorites">置顶</string>
     <string name="ime_suggested">推荐</string>
     <string name="ime_own_app_hint">请切换到其他键盘在此输入</string>
     <string name="widget_label">Cue 验证码</string>
-    <string name="widget_description">显示收藏或所选条目的验证码，点击后才会显示。</string>
+    <string name="widget_description">显示置顶或所选条目的验证码，点击后才会显示。</string>
     <string name="widget_locked">数据库已锁定，点击解锁。</string>
     <string name="widget_no_entries">没有可显示的条目，点击选择条目。</string>
     <string name="widget_setup_required">请先打开 Cue 设置数据库。</string>
     <string name="widget_configure_title">选择条目</string>
-    <string name="widget_configure_favorites_title">显示收藏</string>
-    <string name="widget_configure_favorites_summary">小组件会自动跟随你的收藏</string>
+    <string name="widget_configure_favorites_title">显示置顶条目</string>
+    <string name="widget_configure_favorites_summary">小组件会自动跟随你的置顶条目</string>
     <string name="widget_configure_select_hint">选择要在小组件中显示的条目</string>
     <string name="pref_section_integrations_title">键盘与小组件</string>
     <string name="pref_section_integrations_summary">用 Cue 键盘直接填入验证码，并在桌面上查看验证码。</string>
@@ -604,7 +604,7 @@
     <string name="pref_ime_insert_as_text_title">以文本方式填入验证码</string>
     <string name="pref_ime_insert_as_text_summary">一次性填入整段验证码，而不是逐位输入。如果某些应用收不到验证码，可以试试此项。</string>
     <string name="pref_widget_add_title">添加桌面小组件</string>
-    <string name="pref_widget_add_summary">显示收藏或所选条目的验证码，点击后才会显示。</string>
+    <string name="pref_widget_add_summary">显示置顶或所选条目的验证码，点击后才会显示。</string>
     <string name="pref_widget_add_unsupported">当前启动器不支持从这里添加小组件，请在桌面的小组件列表中添加。</string>
     <string name="pref_external_grace_title">为键盘和小组件保持解锁</string>
     <string name="pref_external_grace_summary">%s。仅在设置了“最小化时锁定”时生效。</string>

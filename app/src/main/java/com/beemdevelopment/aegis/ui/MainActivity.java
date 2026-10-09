@@ -1336,14 +1336,14 @@ public class MainActivity extends AegisActivity implements EntryListView.Listene
 
         if (_selectedEntries.size() == 1){
             if (_selectedEntries.get(0).isFavorite()) {
-                toggleFavoriteMenuItem.setIcon(R.drawable.ic_filled_star_24);
+                toggleFavoriteMenuItem.setIcon(R.drawable.ic_filled_keep_24);
                 toggleFavoriteMenuItem.setTitle(R.string.unfavorite);
             } else {
-                toggleFavoriteMenuItem.setIcon(R.drawable.ic_outline_star_24);
+                toggleFavoriteMenuItem.setIcon(R.drawable.ic_outline_keep_24);
                 toggleFavoriteMenuItem.setTitle(R.string.favorite);
             }
         } else {
-            toggleFavoriteMenuItem.setIcon(R.drawable.ic_outline_star_24);
+            toggleFavoriteMenuItem.setIcon(R.drawable.ic_outline_keep_24);
             toggleFavoriteMenuItem.setTitle(String.format("%s / %s", getString(R.string.favorite), getString(R.string.unfavorite)));
         }
     }

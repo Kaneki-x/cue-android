@@ -13,6 +13,18 @@
     app:cardElevation="0dp"
     style="@style/Widget.Aegis.EntryCardView">
 
+    <!-- pinned: the bar on the card's left edge, as in the other view modes and on iOS; the
+         card's rounded corners clip it to a 4dp strip -->
+    <View
+        android:id="@+id/favorite_indicator"
+        android:layout_width="15dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:layout_marginStart="-11dp"
+        android:background="@drawable/favorite_indicator"
+        android:backgroundTint="?attr/colorFavorite"
+        android:visibility="invisible" />
+
     <LinearLayout
         android:id="@+id/rlCardEntry"
         android:layout_width="match_parent"
@@ -99,16 +111,6 @@
                     android:textStyle="bold"
                     android:visibility="invisible" />
             </FrameLayout>
-
-            <ImageView
-                android:id="@+id/favorite_indicator"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginStart="@dimen/cue_space_2"
-                android:contentDescription="@string/favorite"
-                android:src="@drawable/ic_star_24"
-                android:visibility="invisible"
-                app:tint="?attr/colorFavorite" />
 
             <ImageView
                 android:id="@+id/drag_handle"
