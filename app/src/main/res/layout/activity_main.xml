@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.beemdevelopment.aegis.ui.MainActivity">
+    tools:context="io.cueapp.android.ui.MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar_layout"
@@ -165,7 +165,7 @@
 
         <fragment
             android:id="@+id/key_profiles"
-            android:name="com.beemdevelopment.aegis.ui.views.EntryListView"
+            android:name="io.cueapp.android.ui.views.EntryListView"
             android:layout_width="match_parent"
             android:layout_height="fill_parent"
             app:layout_behavior="@string/appbar_scrolling_view_behavior" />

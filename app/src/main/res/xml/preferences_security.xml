@@ -5,7 +5,7 @@
     <PreferenceCategory
         android:title="@string/pref_encryption_title"
         app:iconSpaceReserved="false">
-        <com.beemdevelopment.aegis.ui.preferences.SwitchPreference
+        <io.cueapp.android.ui.preferences.SwitchPreference
             android:key="pref_encryption"
             android:title="@string/pref_encryption_title"
             android:summary="@string/pref_encryption_summary"
@@ -19,7 +19,7 @@
             android:dependency="pref_encryption"
             app:iconSpaceReserved="false"/>
 
-        <com.beemdevelopment.aegis.ui.preferences.SwitchPreference
+        <io.cueapp.android.ui.preferences.SwitchPreference
             android:key="pref_biometrics"
             android:title="@string/pref_biometrics_title"
             android:summary="@string/pref_biometrics_summary"
@@ -36,7 +36,7 @@
     <PreferenceCategory
         android:title="@string/pref_backup_password_category"
         app:iconSpaceReserved="false">
-        <com.beemdevelopment.aegis.ui.preferences.SwitchPreference
+        <io.cueapp.android.ui.preferences.SwitchPreference
             android:key="pref_backup_password"
             android:title="@string/pref_backup_password_title"
             android:summary="@string/pref_backup_password_summary"

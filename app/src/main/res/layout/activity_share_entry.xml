@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.beemdevelopment.aegis.ui.TransferEntriesActivity">
+    tools:context="io.cueapp.android.ui.TransferEntriesActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar_layout"
@@ -49,7 +49,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.3"
-            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Aegis.ImageView.Rounded" />
+            app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Cue.ImageView.Rounded" />
 
         <TextView
             android:id="@+id/tvIssuer"

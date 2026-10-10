@@ -187,7 +187,7 @@
     <string name="password_reminder_freq_quarterly">Üç ayda bir</string>
     <string name="enter_password_2fas_message">Görünüşe göre bu 2FAS yedekleme şifrelenmiş. Lütfen aşağıya parolayı girin.</string>
     <string name="enter_password_authy_message">Görünüşe göre Authy kodlarınız şifreli. Lütfen Cue\'i kapatın Authy\'i açın ve parolanızla kodlarınızın kilidini açın. Bunun yerine aşağıya parolanızı girerseniz Cue, Authy kodlarınızı sizin için deşifre etmeyi deneyebilir.</string>
-    <string name="enter_password_aegis_title">Lütfen içe aktarma şifresini girin</string>
+    <string name="enter_password_import_title">Lütfen içe aktarma şifresini girin</string>
     <string name="period_hint">Süre (Saniye)</string>
     <string name="algorithm_hint">Hash fonksiyonu</string>
     <string name="type">Tür</string>
@@ -423,17 +423,9 @@
     <string name="changelog">Değişiklik Günlüğü</string>
     <string name="whats_new">Yeni ne var?</string>
     <string name="github_description">Kaynak kod, sorunlar ve bilgiler</string>
-    <string name="license">Lisans</string>
     <string name="third_party_licenses">Üçüncü taraf lisanslar</string>
     <string name="third_party_licenses_description">Cue\'in kullandığı üçüncü-parti kütüphanelerin lisansları</string>
-    <string name="country_netherlands">Hollanda</string>
-    <string name="email_us">Bir e-posta yazın</string>
-    <string name="visit_website">Sitemizi ziyaret edin</string>
-    <string name="about_support">Destek</string>
-    <string name="support_rate">Puanla</string>
-    <string name="support_rate_description">Bizi desteklemek için Google Play Store\'da görüşünüzü bırakın</string>
     <string name="webview_error">Bu cihazda değişiklik günlüğünü ve lisansı görüntülemek için gerekli olan \"web view\" desteklenmiyor. Bu sistem bileşeni yerinde yok.</string>
-    <string name="email">E-posta</string>
     <string name="time_sync_warning_title">Otomatik zaman senkronizasyonu</string>
     <string name="time_sync_warning_message">Cue doğru kodları oluşturmak üzere sistem zamanın senkron olmasına ihtiyaç duyar. Birkaç saniyelik sapma hatalı kod oluşumuna neden olabilir. Görünüşe göre cihazınız zamanı otomatik senkronize etmeye ayarlanmamış. Şimdi ayarlamak ister misiniz?</string>
     <string name="time_sync_warning_disable">Beni uyarmayı bırak. Ne yaptığımı biliyorum.</string>
@@ -516,7 +508,7 @@
         <item quantity="other">%d potansiyel kopyanın işareti kaldırıldı. Lütfen giriş listesini inceleyin.</item>
     </plurals>
     <string name="importer_help_2fas">2FAS Authenticator dışa aktarım dosyasını sağlayın.</string>
-    <string name="importer_help_aegis">Aegis dışarı aktarım/yedek dosyası sağlayın.</string>
+    <string name="importer_help_cue">Cue dışarı aktarım/yedek dosyası sağlayın.</string>
     <string name="importer_help_authenticator_plus"><b>Ayarlar -&gt; Yedekleme &amp; Geri Yükleme -&gt; Metin ya da HTML olarak dışa aktar</b> yolunu izleyerek bir Authenticator Plus dışa aktarım dosyası sağlayın.</string>
     <string name="importer_help_authy"><b>/data/data/com.authy.authy/shared_prefs/com.authy.storage.tokens.authenticator.xml</b>dosyasını sağlayın, Authy\'nin dahili depolama konumunda bulunabilir.</string>
     <string name="importer_help_andotp">andOTP dışa aktarım dosyasını sağlayın.</string>

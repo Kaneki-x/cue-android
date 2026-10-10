@@ -194,7 +194,7 @@
     <string name="enter_password_proton_message">Wygląda na to, że ta kopia zapasowa Proton Authenticator jest zaszyfrowana. Wprowadź hasło poniżej.</string>
     <string name="enter_password_2fas_message">Wygląda na to, że ta kopia zapasowa 2FA jest zaszyfrowana. Wprowadź hasło poniżej.</string>
     <string name="enter_password_authy_message">Wygląda na to, że Twoje tokeny Authy są zaszyfrowane. Zamknij aplikację Cue, otwórz Authy i odblokuj tokeny za pomocą hasła. Możesz również wpisać poniżej te hasło i aplikacja Cue spróbuje odszyfrować tokeny Authy.</string>
-    <string name="enter_password_aegis_title">Wprowadź hasło importu</string>
+    <string name="enter_password_import_title">Wprowadź hasło importu</string>
     <string name="period_hint">Okres (w sekundach)</string>
     <string name="algorithm_hint">Funkcja skrótu kryptograficznego</string>
     <string name="type">Typ</string>
@@ -446,17 +446,9 @@
     <string name="changelog">Lista zmian</string>
     <string name="whats_new">Co nowego</string>
     <string name="github_description">Kod źródłowy, problemy i informacje</string>
-    <string name="license">Licencja</string>
     <string name="third_party_licenses">Licencje innych firm</string>
     <string name="third_party_licenses_description">Licencje bibliotek zewnętrznych, z których korzysta aplikacja Cue</string>
-    <string name="country_netherlands">Holandia</string>
-    <string name="email_us">Napisz wiadomość e-mail</string>
-    <string name="visit_website">Odwiedź naszą stronę</string>
-    <string name="about_support">Wsparcie</string>
-    <string name="support_rate">Oceń</string>
-    <string name="support_rate_description">Wesprzyj nas zostawiając opinię w Sklepie Google Play</string>
     <string name="webview_error">To urządzenie nie wspiera widoku internetowego, który jest niezbędny do wyświetlenia listy zmian i licencji. To brakujący element systemu operacyjnego.</string>
-    <string name="email">Adres e-mail</string>
     <string name="time_sync_warning_title">Automatyczna synchronizacja czasu</string>
     <string name="time_sync_warning_message">Aby wygenerować poprawne kody, aplikacja Cue korzysta z synchronizacji czasu systemowego. Różnica czasu zaledwie kilku sekund może spowodować nieprawidłowe kody. Wygląda na to, że Twoje urządzenie nie jest skonfigurowane do automatycznej synchronizacji czasu. Czy chcesz skorzystać z tej funkcji?</string>
     <string name="time_sync_warning_disable">Nie ostrzegaj mnie. Wiem co robię.</string>
@@ -547,7 +539,7 @@ Zmiany nie są zapisane w kopii zapasowej
         <item quantity="other">Odznaczono %d potencjalnych duplikatów. Sprawdź listę.</item>
     </plurals>
     <string name="importer_help_2fas">Dostarcz plik zapasowy 2FAS Authenticator.</string>
-    <string name="importer_help_aegis">Dostarcz plik zapasowy Aegis.</string>
+    <string name="importer_help_cue">Dostarcz plik zapasowy Cue.</string>
     <string name="importer_help_authenticator_plus">Dostarcz plik eksportu Authenticator Plus uzyskany w <b>Ustawienia -&gt; Kopia zapasowa &amp; Przywróć -&gt; Eksportuj jako tekst i HTML</b>.</string>
     <string name="importer_help_authy">Dostarcz kopię <b>/data/data/com.authy.authy/shared_prefs/com.authy.storage.tokens.authenticator.xml</b>, znajdującą się w wewnętrznym katalogu pamięci Authy.</string>
     <string name="importer_help_andotp">Dostarcz plik andOTP eksportu/kopii zapasowej.</string>

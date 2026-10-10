@@ -183,7 +183,7 @@
     <string name="password_reminder_freq_quarterly">Kvartalvis</string>
     <string name="enter_password_2fas_message">Det ser ut som at denne 2FAS sikkerhetskopien er kryptert. Vennligst skriv inn passordet under.</string>
     <string name="enter_password_authy_message">Det ser ut som at nøklene i Authy er krypterte. Vennligst lukk Cue, åpne Authy og lås opp nøklene med passordet ditt. Alternativt kan Cue forsøke å dekryptere Authy nøklene dine om du skriver passordet ditt nedenfor.</string>
-    <string name="enter_password_aegis_title">Vennligst skriv inn det importerte passordet</string>
+    <string name="enter_password_import_title">Vennligst skriv inn det importerte passordet</string>
     <string name="period_hint">Periode (sekunder)</string>
     <string name="algorithm_hint">Hashfunksjon</string>
     <string name="type">Type</string>
@@ -386,16 +386,8 @@
     <string name="changelog">Endringslogg</string>
     <string name="whats_new">Nyheter</string>
     <string name="github_description">Kildekode, problemer og informasjon</string>
-    <string name="license">Lisens</string>
     <string name="third_party_licenses">Tredjepartslisenser</string>
     <string name="third_party_licenses_description">Lisenser til tredjepartsbiblioteker Cue benytter</string>
-    <string name="country_netherlands">Nederland</string>
-    <string name="email_us">Skriv en e-post</string>
-    <string name="visit_website">Besøk nettsiden våres</string>
-    <string name="about_support">Støtte</string>
-    <string name="support_rate">Ranger</string>
-    <string name="support_rate_description">Støtt oss ved å skrive en anmeldelse i Google Play Butikk</string>
-    <string name="email">E-post</string>
     <string name="backup_system_builtin">Cue\' innebygde automatiske sikkerhetskopier</string>
     <string name="backup_system_android">System for Android-sikkerhetskopiering i skyen</string>
     <string name="backup_reminder_bar_message_with_latest" comment="The parameter is an elapsed time in the style of 'x seconds/minutes/days ago'">
@@ -452,7 +444,7 @@
     <string name="dialog_wipe_entries_title">Tøm oppføringner</string>
     <string name="dialog_wipe_entries_checkbox">Destruer hvelv</string>
     <string name="importer_help_2fas">Legg ved en 2FAS Authenticator sikkerhetskopi.</string>
-    <string name="importer_help_aegis">Legg ved en Aegis eksportfil eller sikkerhetskopi.</string>
+    <string name="importer_help_cue">Legg ved en Cue eksportfil eller sikkerhetskopi.</string>
     <string name="importer_help_andotp">Legg ved en andOTP eksportfil eller sikkerhetskopi.</string>
     <string name="importer_help_bitwarden">Legg ved en Bitwarden eksportfil eller sikkerhetskopi. Krypterte filer støttes ikke.</string>
     <string name="importer_help_freeotp_plus">Legg ved en FreeOTP+ eksportfil.</string>

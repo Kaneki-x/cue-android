@@ -3,7 +3,7 @@
 # this depends on the 'cryptography' package
 # pip install cryptography
 
-# example usage: ./scripts/decrypt.py --input ./app/src/test/resources/com/beemdevelopment/aegis/importers/aegis_encrypted.json
+# example usage: ./scripts/decrypt.py --input ./app/src/test/resources/io/cueapp/android/importers/cue_encrypted.json
 # password: test
 
 import argparse
@@ -24,12 +24,12 @@ def die(msg, code=1):
     exit(code)
 
 def main():
-    parser = argparse.ArgumentParser(description="Decrypt an Aegis vault")
-    parser.add_argument("--input", dest="input", required=True, help="encrypted Aegis vault file")
+    parser = argparse.ArgumentParser(description="Decrypt an Cue vault")
+    parser.add_argument("--input", dest="input", required=True, help="encrypted Cue vault file")
     parser.add_argument("--output", dest="output", default="-", help="output file ('-' for stdout)")
     args = parser.parse_args()
 
-    # parse the Aegis vault file
+    # parse the Cue vault file
     with io.open(args.input, "r") as f:
         data = json.load(f)
 

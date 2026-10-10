@@ -9,7 +9,7 @@
     android:focusable="true"
     app:checkedIcon="@null"
     app:cardElevation="0dp"
-    style="@style/Widget.Aegis.EntryCardView">
+    style="@style/Widget.Cue.EntryCardView">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -52,7 +52,7 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center_vertical"
-                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Aegis.ImageView.Circle" />
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Cue.ImageView.Circle" />
 
             <ImageView
                 android:layout_width="32dp"
@@ -68,7 +68,7 @@
                 android:layout_width="60dp"
                 android:layout_height="60dp"
                 android:layout_gravity="center_vertical"
-                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Aegis.ImageView.Circle" />
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Cue.ImageView.Circle" />
 
             <View
                 android:layout_width="0dp"

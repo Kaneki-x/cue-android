@@ -185,7 +185,7 @@
     <string name="enter_password_proton_message">看來這 Proton 驗證器的備份已被加密。請在下方輸入密碼。</string>
     <string name="enter_password_2fas_message">看來此 2FAS 備份已被加密，請在此輸入密碼。</string>
     <string name="enter_password_authy_message">您的似乎已加密 Authy 驗證碼。請關閉 Cue，開啟 Authy，然後使用您的密碼解鎖憑證。另外，如果您在下方輸入 Authy 的解密密碼，Cue 也可以嘗試為您解密 Authy 憑證。</string>
-    <string name="enter_password_aegis_title">請輸入匯入密碼</string>
+    <string name="enter_password_import_title">請輸入匯入密碼</string>
     <string name="period_hint">長度（秒）</string>
     <string name="algorithm_hint">雜湊函數</string>
     <string name="type">類型</string>
@@ -416,17 +416,9 @@
     <string name="changelog">變更記錄</string>
     <string name="whats_new">有什麼新鮮事</string>
     <string name="github_description">原始碼、問題與資訊</string>
-    <string name="license">授權條款</string>
     <string name="third_party_licenses">第三方授權條款</string>
     <string name="third_party_licenses_description">Cue 所使用的第三方函式庫及其授權條款</string>
-    <string name="country_netherlands">荷蘭</string>
-    <string name="email_us">撰寫郵件</string>
-    <string name="visit_website">瀏覽我們的網站</string>
-    <string name="about_support">支持</string>
-    <string name="support_rate">評分</string>
-    <string name="support_rate_description">透過在Google Play商店留下評論來支持我們</string>
     <string name="webview_error">此裝置不支援瀏覽變更記錄與授權條款所需要的 WebView。缺少重要的系統元件。</string>
-    <string name="email">電子郵件</string>
     <string name="time_sync_warning_title">自動同步時間</string>
     <string name="time_sync_warning_message">僅幾秒鐘的偏差可能會導致驗證碼錯誤。您的裝置似乎未設定為自動同步時間。您現在要設定自動同步時間嗎？</string>
     <string name="time_sync_warning_disable">不要再次提醒。我知道我在做什麼。</string>
@@ -512,7 +504,7 @@
         <item quantity="other">未選中 %d 個潛在重複項。請檢查條目列表。</item>
     </plurals>
     <string name="importer_help_2fas">請提供 2FAS Authenticator 的備份檔。</string>
-    <string name="importer_help_aegis">請提供 Aegis 的匯出/備份檔。</string>
+    <string name="importer_help_cue">請提供 Cue 的匯出/備份檔。</string>
     <string name="importer_help_authenticator_plus">請透過 Authenticator Plus 的 <b>選項 -> 備份與還原 -> 匯出為純文字與 HTML</b> 功能匯出，並提供匯出的檔案。</string>
     <string name="importer_help_authy">提供 <b>/data/data/com.authy.authy/shared_prefs/com.authy.storage.tokens.authenticator.xml</b> 的複本，其位於 Authy 的內部儲存空間。</string>
     <string name="importer_help_andotp">提供 andOTP 的匯出/備份檔。</string>

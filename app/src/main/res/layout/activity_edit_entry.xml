@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.beemdevelopment.aegis.ui.EditEntryActivity">
+    tools:context="io.cueapp.android.ui.EditEntryActivity">
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar_layout"
         android:layout_width="match_parent"
@@ -45,7 +45,7 @@
                         android:layout_height="100dp"
                         android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"
-                        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Aegis.ImageView.Circle" />
+                        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Cue.ImageView.Circle" />
 
                     <com.avito.android.krop.KropView
                         android:id="@+id/krop_view"
@@ -224,7 +224,7 @@
                             app:passwordToggleTint="?attr/colorOnSurface"
                             app:passwordToggleEnabled="true">
 
-                            <com.beemdevelopment.aegis.ui.components.NoAutofillEditText
+                            <io.cueapp.android.ui.components.NoAutofillEditText
                                 android:id="@+id/text_secret"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"

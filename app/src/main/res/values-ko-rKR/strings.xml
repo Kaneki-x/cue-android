@@ -185,7 +185,7 @@
     <string name="enter_password_proton_message">Proton 인증자 백업이 암호화되어 있습니다. 아래에 비밀번호를 입력해주세요.</string>
     <string name="enter_password_2fas_message">2FAS 백업이 암호화되어 있습니다. 아래에 비밀번호를 입력해주세요.</string>
     <string name="enter_password_authy_message">Authy 토큰이 암호화된 것으로 보입니다. Cue를 닫은 다음 Authy를 열고 비밀번호로 토큰을 해제해주세요. 아래에 비밀번호를 입력해서도 Cue가 대신 Authy 토큰을 해독할 수 있습니다.</string>
-    <string name="enter_password_aegis_title">가져오기 비밀번호를 입력해주세요</string>
+    <string name="enter_password_import_title">가져오기 비밀번호를 입력해주세요</string>
     <string name="period_hint">주기 (초)</string>
     <string name="algorithm_hint">해시 함수</string>
     <string name="type">유형</string>
@@ -415,17 +415,9 @@
     <string name="changelog">변경 내역</string>
     <string name="whats_new">새로운 소식</string>
     <string name="github_description">소스코드, 문제 및 정보</string>
-    <string name="license">라이선스</string>
     <string name="third_party_licenses">서드파티 라이선스</string>
     <string name="third_party_licenses_description">Cue가 사용하는 서드파티 라이브러리</string>
-    <string name="country_netherlands">네덜란드</string>
-    <string name="email_us">이메일 쓰기</string>
-    <string name="visit_website">웹사이트 방문하기</string>
-    <string name="about_support">지원</string>
-    <string name="support_rate">평가</string>
-    <string name="support_rate_description">구글 플레이 스토어에서 리뷰를 남겨 응원해주세요</string>
     <string name="webview_error">이 기기는 변경 내역 및 라이선스를 보는 데 필요한 웹 뷰를 지원하지 않습니다. 시스템 구성 요소가 누락된 것입니다.</string>
-    <string name="email">이메일</string>
     <string name="time_sync_warning_title">자동 시간 동기화</string>
     <string name="time_sync_warning_message">Cue는 올바른 코드를 생성하기 위해 시스템 동기화 시간에 의존합니다. 몇 초만 벗어나도 잘못된 코드가 생성될 수 있습니다. 장치가 시간을 자동으로 동기화하도록 설정되지 않은 것 같습니다. 지금 변경하시겠나요?</string>
     <string name="time_sync_warning_disable">그만해!! 나는 다 알아!!</string>
@@ -507,7 +499,7 @@
         <item quantity="other">%d개의 잠재적 중복을 확인하지 않았습니다. 전체 목록을 검토해주세요.</item>
     </plurals>
     <string name="importer_help_2fas">2FAS Authenticator 백업 파일을 제공해주세요.</string>
-    <string name="importer_help_aegis">Aegis 백업 파일을 제공해주세요.</string>
+    <string name="importer_help_cue">Cue 백업 파일을 제공해주세요.</string>
     <string name="importer_help_authenticator_plus"><b>설정 -&gt; 백업 &amp; 복원- &gt; 글자 또는 HTML로 내보내기</b>에서 얻은 Authenticator Plus 내보내기 파일을 제공해주세요.</string>
     <string name="importer_help_authy">Authy의 내부 저장소 위치 <b>/data/data/com.authy.authy/shared_prefs/com.authy.storage.tokens.authenticator.xml</b>에 있는 파일의 사본을 제공해주세요.</string>
     <string name="importer_help_andotp">andOTP 내보내기 파일을 제공해주세요.</string>

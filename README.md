@@ -10,10 +10,6 @@ a keyboard that inserts the code into any app, a home screen widget that shows
 your pinned entries, and the usual list with search, groups and icon packs. Cue
 supports HOTP and TOTP, so it works with thousands of services.
 
-Cue is a hard fork of [Aegis Authenticator](https://github.com/beemdevelopment/Aegis)
-by Beem Development. The vault format is unchanged, so Aegis backups import
-directly and Cue exports can be read by Aegis.
-
 For a list of frequently asked questions, please check out [the FAQ](FAQ.md).
 
 The security design of the app and the vault format is described in detail in
@@ -39,11 +35,11 @@ The security design of the app and the vault format is described in detail in
 - Lots of ways to add new entries
   - Scan a QR code or an image of one
   - Enter details manually
-  - Import from other authenticator apps (Aegis, Google Authenticator, Microsoft Authenticator, 2FAS, Authy and more)
+  - Import from other authenticator apps (Google Authenticator, Microsoft Authenticator, 2FAS, Authy and more)
 - Organization
   - Groups, pinning (pinned entries come first, marked by a bar on the card's edge), search,
     icon packs
-  - Ships with the four icon packs the Aegis README lists (aegis-icons, delta-aegis-icons,
+  - Ships with four CC0 icon packs (aegis-icons, delta-aegis-icons,
     aegis-simple-icons and its outlined variant), installed on first start; a pack removed in
     Settings > Icon packs stays removed. New entries take the matching icon, and the app offers
     once to assign icons to existing entries
@@ -54,9 +50,3 @@ The security design of the app and the vault format is described in detail in
 ```
 ./gradlew assembleDebug
 ```
-
-## License
-
-Cue is licensed under the [GPLv3](LICENSE). It is based on Aegis Authenticator,
-copyright Beem Development, also licensed under the GPLv3. Aegis and its logo are
-trademarks of Beem Development and are not used by Cue.

@@ -188,7 +188,7 @@
     <string name="enter_password_proton_message">It liket derop dat dizze Proton Authenticator-reservekopy fersifere is. Fier it wachtwurd hjirûnder yn.</string>
     <string name="enter_password_2fas_message">It liket derop dat dizze 2FAS-reservekopy fersifere is. Fier it wachtwurd hjirûnder yn.</string>
     <string name="enter_password_authy_message">It liket derop dat jo Authy-tokens fersifere binne. Slút Cue, iepenje Authy en ûntskoattelje de tokens mei jo wachtwurd. Yn stee dêrfan kin Cue ek probearje om jo Authy-tokens te dekodearjen as jo hjirûnder jo wachtwurd ynfolje.</string>
-    <string name="enter_password_aegis_title">Fier it ymportwachtwurd yn</string>
+    <string name="enter_password_import_title">Fier it ymportwachtwurd yn</string>
     <string name="period_hint">Tiid (sekonden)</string>
     <string name="algorithm_hint">Hash-funksje</string>
     <string name="type">Type</string>
@@ -424,17 +424,9 @@
     <string name="changelog">Wizigingenlochboek</string>
     <string name="whats_new">Wat is der nij</string>
     <string name="github_description">Boarnekoade, problemen en ynformaasje</string>
-    <string name="license">Lisinsje</string>
     <string name="third_party_licenses">Lisinsjes fan tredden</string>
     <string name="third_party_licenses_description">Lisinsjes fan biblioteken fan tredden brûkt troch Cue</string>
-    <string name="country_netherlands">Nederlân</string>
-    <string name="email_us">Stjoer in e-mailberjocht</string>
-    <string name="visit_website">Besykje ús website</string>
-    <string name="about_support">Stipe</string>
-    <string name="support_rate">Beoardielje</string>
-    <string name="support_rate_description">Stypje ús troch in beoardieling yn de Google Play Store efter te litten</string>
     <string name="webview_error">Dit apparaat stipet gjin webview, hokker nedich is om de wizigingen te besjen. It mist in systeemkomponint.</string>
-    <string name="email">E-mailadres</string>
     <string name="time_sync_warning_title">Automatyske tiidsyngronisaasje</string>
     <string name="time_sync_warning_message">Cue is ôfhinklik fan syngronisearre systeemtiid om krekte koaden te generearjen. In ôfwiking fan op syn minst inkelde sekonden kin liede ta net krekte koaden. It liket derop dat jo apparaat net ynsteld is om de tiid automatysk te syngronisearjen. Wolle jo dit no dwaan?</string>
     <string name="time_sync_warning_disable">Stop mei my te warskôgjen. Ik wit wat ik doch.</string>
@@ -520,7 +512,7 @@
         <item quantity="other">%d potinsjele dûbelingen net oanfinkt. Kontrolearje de list mei items.</item>
     </plurals>
     <string name="importer_help_2fas">Leverje in 2FAS-autentikator-eksportbestân oan.</string>
-    <string name="importer_help_aegis">Leverje in Aegis-eksport-/reservekopybestân oan.</string>
+    <string name="importer_help_cue">Leverje in Cue-eksport-/reservekopybestân oan.</string>
     <string name="importer_help_authenticator_plus">Leverje in Authenticator Plus-eksportbestân oan krigen fia <b>Ynstellingen -&gt; Reservekopy &amp; Werstelle -&gt; Eksportearje as Tekst en HTML</b>.</string>
     <string name="importer_help_authy">Leverje in kopy oan fan <b>/data/data/com.authy.authy/shared_prefs/com.authy.storage.tokens.authenticator.xml</b>, pleatst yn de ynterne ûnthâldmap fan Authy.</string>
     <string name="importer_help_andotp">Leverje in andOTP-eksport-/reservekopybestân oan.</string>

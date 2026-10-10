@@ -91,7 +91,7 @@
             android:visibility="gone"
             style="?attr/dropdownStyle">
 
-            <com.beemdevelopment.aegis.ui.components.DropdownCheckBoxes
+            <io.cueapp.android.ui.components.DropdownCheckBoxes
                 android:id="@+id/group_selection_dropdown"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

@@ -10,7 +10,7 @@
     android:focusable="true"
     android:paddingHorizontal="10dp"
     android:paddingVertical="10dp"
-    style="@style/Widget.Aegis.ErrorCardView">
+    style="@style/Widget.Cue.ErrorCardView">
     <LinearLayout
         android:paddingHorizontal="16dp"
         android:paddingVertical="16dp"

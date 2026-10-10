@@ -188,7 +188,7 @@
     <string name="enter_password_proton_message">Tundub, et Proton Authenticatori rakenduse varukoopia on krüptitud. Palun sisesta alljärgnevalt salasõna.</string>
     <string name="enter_password_2fas_message">Tundub, et 2FAS rakenduse varukoopia on krüptitud. Palun sisesta alljärgnevalt salasõna.</string>
     <string name="enter_password_authy_message">Tundub, et Authy rakenduse kirjed on krüptitud. Palun sulge Cue, ava Authy ning eemalda kirjete lukustus oma salasõnaga. Võid ka proovida, kas Cue saab dekrüptimisega hakkama. Selleks sisesta alljärgnevalt vajalik salasõna.</string>
-    <string name="enter_password_aegis_title">Palun sisesta importimise salasõna</string>
+    <string name="enter_password_import_title">Palun sisesta importimise salasõna</string>
     <string name="period_hint">Välp (sekundites)</string>
     <string name="algorithm_hint">Räsifunktsioon</string>
     <string name="type">Tüüp</string>
@@ -424,17 +424,9 @@
     <string name="changelog">Muudatuste logi</string>
     <string name="whats_new">Mida on uut</string>
     <string name="github_description">Lähtekood, veahaldus ja teave</string>
-    <string name="license">Litsents</string>
     <string name="third_party_licenses">Kolmandate osapoolte litsentsid</string>
     <string name="third_party_licenses_description">Cuee kasutatavate kolmandate osapoolte teekide litsentsid</string>
-    <string name="country_netherlands">Madalmaad</string>
-    <string name="email_us">Saada e-kiri</string>
-    <string name="visit_website">Külasta meie veebisaiti</string>
-    <string name="about_support">Kasutajatugi</string>
-    <string name="support_rate">Hinda meie rakendust</string>
-    <string name="support_rate_description">Toeta meid koostades arvustuse Google Play rakendustepoes</string>
     <string name="webview_error">Selles nutiseadmes puudub webview-teegi tugi. Seda on vaja muudatuste logi ja litsentside kuvamiseks. Tegemist on operatsioonisüsteemi komponendiga.</string>
-    <string name="email">E-post</string>
     <string name="time_sync_warning_title">Kellaaja automaatne sünkroniseerimine</string>
     <string name="time_sync_warning_message">Õigete tuvastusskoodide loomiseks vajab Cue, et kellaajad nutiserdme ja serveri vahel on sünkroonis. Isegi mõnesekundiline erinevus võib tulemuseks anda vale koodi. Tundub, et sinu nutiseadmes on puudu automaatne aja sünkroniseerimine. Kas sa tahaksid seda nüüd teha?</string>
     <string name="time_sync_warning_disable">Ära hoiata mind enam. Ma tean, mida ma teen.</string>
@@ -515,7 +507,7 @@ Andmehoidla viimased muudatused on veel varundamata. Vältimaks, et kaotad ligip
         <item quantity="other">%d võimalikku kontrollimata duplikaati. Palun vaata kirjete loend üle.</item>
     </plurals>
     <string name="importer_help_2fas">Ava 2FAS Authenticatori varukoopia fail.</string>
-    <string name="importer_help_aegis">Ava Aegise ekspordi- või varukoopia fail.</string>
+    <string name="importer_help_cue">Ava Cue ekspordi- või varukoopia fail.</string>
     <string name="importer_help_authenticator_plus">Määratle Authenticator Plusi ekspordifail, mille saad rakendusest siit: <b>Seadistused -&gt; Varundus ja taastamine -&gt; Ekspordi teksti- või html-failina</b>.</string>
     <string name="importer_help_authy">Ava <b>/data/data/com.authy.authy/shared_prefs/com.authy.storage.tokens.authenticator.xml</b> faili koopia, leiad Authy sisemisest andmeruumist.</string>
     <string name="importer_help_andotp">Ava andOTP ekspordi- või varukoopia fail.</string>

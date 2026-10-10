@@ -186,13 +186,6 @@
     <string name="changelog">ಬದಲಾವಣೆ ಲಾಗ್</string>
     <string name="whats_new">ಹೊಸತೇನಿದೆ</string>
     <string name="github_description">ಮೂಲ ಕೋಡ್, ಸಮಸ್ಯೆಗಳು ಹಾಗು ಮಾಹಿತಿ</string>
-    <string name="country_netherlands">ನೆದರ್ಲೆಂಡ್ಸ್</string>
-    <string name="email_us">ಈಮೇಲನ್ನು ಬರಿ</string>
-    <string name="visit_website">ನಮ್ಮ ಅಂತರ್ಜಾಲದ ಪುಟವನ್ನು ಭೇಟಿ ಮಾಡು</string>
-    <string name="about_support">ಬೆಂಬಲ</string>
-    <string name="support_rate">ಅಂಕಗಳನ್ನು ಕೊಡು</string>
-    <string name="support_rate_description">ಗೂಗಲ್ ಪ್ಲೇ ಅಂಗಡಿಯಲ್ಲಿ ಸಮೀಕ್ಷೆಯನ್ನು ಬಿಟ್ಟು ನಮ್ಮನ್ನ ಬೆಂಬಲಿಸು</string>
-    <string name="email">ಈಮೇಲ್</string>
     <string name="empty_list">ತೋರಿಸುವುದಕ್ಕೆ ಯಾವುದೇ ಸಂಕೇತವು ಇಲ್ಲ. ಎಂಟ್ರಿಗಳನ್ನು ಸೇರಿಸಲು ಕೆಳಗಿನ ಬಲ ಮೂಲೆಯಲ್ಲಿರುವ ಹೆಚ್ಚಿನ ಚಿಹ್ನೆಯನ್ನು ಒತ್ತು</string>
     <string name="empty_list_title">ಯಾವುದೇ ಎಂಟ್ರಿಗಳು ಕಂಡುಬಂದಿಲ್ಲ</string>
     <string name="title_activity_manage_groups">ಗುಂಪುಗಳನ್ನು ನಿರ್ವಹಿಸು</string>

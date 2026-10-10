@@ -187,7 +187,7 @@
     <string name="password_reminder_freq_quarterly">Negyedévente</string>
     <string name="enter_password_2fas_message">Úgy tűnik, hogy ez a 2FAS mentés titkosított. Adja meg a jelszót alul.</string>
     <string name="enter_password_authy_message">Úgy tűnik, hogy az Authy tokenek titkosítottak. Zárja be az Cuet, nyissa meg az Authyt, és oldja fel a tokeneket a jelszavával. Vagy az Cue is megpróbálhatja visszafejteni az Authy tokeneket, ha megadja a jelszót alább.</string>
-    <string name="enter_password_aegis_title">Adja meg az importálási jelszót</string>
+    <string name="enter_password_import_title">Adja meg az importálási jelszót</string>
     <string name="period_hint">Időtartam (másodpercben)</string>
     <string name="algorithm_hint">Hash függvény</string>
     <string name="type">Típus</string>
@@ -423,17 +423,9 @@
     <string name="changelog">Változáslista</string>
     <string name="whats_new">Újdonságok</string>
     <string name="github_description">Forráskód, problémák és információk</string>
-    <string name="license">Licenc</string>
     <string name="third_party_licenses">Harmadik felek licencei</string>
     <string name="third_party_licenses_description">Az Cue által használt, harmadik féltől származó programkönyvtárok licencei</string>
-    <string name="country_netherlands">Hollandia</string>
-    <string name="email_us">Írjon egy e-mailt</string>
-    <string name="visit_website">Keresse fel weboldalunkat</string>
-    <string name="about_support">Támogatás</string>
-    <string name="support_rate">Értékelés</string>
-    <string name="support_rate_description">Támogasson minket azzal, hogy értékelést ír a Google Play Áruházban</string>
     <string name="webview_error">Ez az eszköz nem támogatja a webes nézetet, amely szükséges a változásnapló és a licenc megtekintéséhez. Ez egy hiányzó rendszerösszetevő.</string>
-    <string name="email">E-mail</string>
     <string name="time_sync_warning_title">Automatikus időszinkronizálás</string>
     <string name="time_sync_warning_message">Az Cue a rendszeridőre támaszkodik a helyes kódok előállításánál. Néhány másodperces eltérés is hibás kódok előállítását eredményezheti. Úgy tűnik az eszközön nincs bekapcsolva az automatikus időszinkronizálás. Be akarja most ezt kapcsolni?</string>
     <string name="time_sync_warning_disable">Ne figyelmeztessen. Tudom mit csinálok.</string>
@@ -519,7 +511,7 @@
         <item quantity="other">%d lehetséges ismétlődés kijelölése megszüntetve. Ellenőrizze a bejegyzéseket.</item>
     </plurals>
     <string name="importer_help_2fas">Adja meg a 2FAS Authenticator egy biztonsági mentési fájlját.</string>
-    <string name="importer_help_aegis">Adja meg az Aegis egy exportját vagy biztonsági mentési fájlját.</string>
+    <string name="importer_help_cue">Adja meg az Cue egy exportját vagy biztonsági mentési fájlját.</string>
     <string name="importer_help_authenticator_plus">Adja meg az Authenticator Plus egy exportfájlját, melyet a <b>Beállítások -&gt; Mentés és visszaállítás -&gt; Exportálás szövegként vagy HTML-ként</b> résznél állíthat elő.</string>
     <string name="importer_help_authy">Adja meg a <b>/data/data/com.authy.authy/shared_prefs/com.authy.storage.tokens.authenticator.xml</b> másolatát, mely az Authy belső háttértáron levő mappájában található.</string>
     <string name="importer_help_andotp">Adja meg az andOTP egy exportját vagy biztonsági mentési fájlját.</string>

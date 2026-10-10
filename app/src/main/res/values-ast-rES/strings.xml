@@ -168,7 +168,7 @@
     <string name="password_reminder_freq_quarterly">Trimestralmente</string>
     <string name="enter_password_2fas_message">Paez qu\'esta copia de seguranza de 2FAS ta cifrada. Introduz la contraseña abaxo.</string>
     <string name="enter_password_authy_message">Paez que los pases d\'Authy tán cifraos. Zarra Aeguis, abri Authy ya desbloquia los pases cola contraseña. Sicasí, Aeguis pue tentar de descifrar los pases d\'Authy si introduces la contraseña abaxo.</string>
-    <string name="enter_password_aegis_title">Introduz la contraseña de la importación</string>
+    <string name="enter_password_import_title">Introduz la contraseña de la importación</string>
     <string name="period_hint">Periodu (segundos)</string>
     <string name="algorithm_hint">Hash</string>
     <string name="type">Tipu</string>
@@ -364,17 +364,9 @@
     <string name="changelog">Rexistru de cambeos</string>
     <string name="whats_new">Les novedaes</string>
     <string name="github_description">El códigu fonte, los problemes ya más información</string>
-    <string name="license">Llicencia</string>
     <string name="third_party_licenses">Llicencies de terceros</string>
     <string name="third_party_licenses_description">Les llicencies de les biblioteques de terceros qu\'usa Cue</string>
-    <string name="country_netherlands">Países Baxos</string>
-    <string name="email_us">Escribir un correu electrónicu</string>
-    <string name="visit_website">Visitar el sitiu web</string>
-    <string name="about_support">Apoyu</string>
-    <string name="support_rate">Valorar</string>
-    <string name="support_rate_description">Apóyanos pente una reseña na Play Store de Google</string>
     <string name="webview_error">Esti preséu nun ye compatible con WebView, que ye necesariu pa visualizar el rexistru de cambeos ya la llicencia. Al sistema fálta-y un componente.</string>
-    <string name="email">Corréu electrónicu</string>
     <string name="time_sync_warning_title">Sincronización automática de la hora</string>
     <string name="time_sync_warning_message">Cue encóntase na hora del sistema pa xenerar códigos correutos ya la esviación d\'unos segundos na hora podría facer que se xeneren códigos incorreutos. Paez que\'l preséu nun ta configuráu pa sincronizar automáticamente la hora. ¿Quies facelo agora?</string>
     <string name="time_sync_warning_disable">Dexar d\'alvertime, sé lo que faigo.</string>
@@ -432,7 +424,7 @@
     <string name="pref_panic_trigger_title">Desaniciar l\'arca n\'eventos de pánicu</string>
     <string name="pref_panic_trigger_summary">Desaniciar l\'arca al recibir un eventu de pánicu de Ripple</string>
     <string name="importer_help_2fas">Forni una copia de seguranza de 2FAS Authenticator.</string>
-    <string name="importer_help_aegis">Forni un ficheru d\'esportación/copia de seguranza d\'Aegis.</string>
+    <string name="importer_help_cue">Forni un ficheru d\'esportación/copia de seguranza d\'Cue.</string>
     <string name="importer_help_authenticator_plus">Forni un ficheru d\'esportación d\'Authenticator Plus que se consigue pente <b>Configuración -&gt; Copia de seguranza ya restauración -&gt; Esportar como testu ya HTML</b>.</string>
     <string name="importer_help_authy">Forni una copia del ficheru <b>com.authy.storage.tokens.authenticator.xml</b> que s\'alluga na direición «/data/data/com.authy.authy/shared_prefs/», dientro del direutoriu del almacenamientu internu d\'Authy.</string>
     <string name="importer_help_andotp">Forni un ficheru d\'esportación/copia de seguranza d\'AndOTP.</string>

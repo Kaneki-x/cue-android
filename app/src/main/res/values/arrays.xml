@@ -151,7 +151,7 @@
     </string-array>
 
     <string-array name="export_formats">
-        <item>@string/export_format_aegis</item>
+        <item>@string/export_format_cue</item>
         <item>@string/export_format_html</item>
         <item>@string/export_format_google_auth_uri</item>
     </string-array>

@@ -194,7 +194,7 @@
     <string name="enter_password_proton_message">Похоже, эта резервная копия Proton Authenticator зашифрована. Пожалуйста, введите пароль ниже.</string>
     <string name="enter_password_2fas_message">Похоже, эта резервная копия 2FAS зашифрована. Пожалуйста, введите пароль ниже.</string>
     <string name="enter_password_authy_message">Похоже, что ваши ключи Authy зашифрованы. Перейдите в Authy и расшифруйте ключи своим паролем. Вы также можете ввести пароль от Authy ниже и Cue расшифрует ключи за вас.</string>
-    <string name="enter_password_aegis_title">Введите пароль для импорта</string>
+    <string name="enter_password_import_title">Введите пароль для импорта</string>
     <string name="period_hint">Период (сек.)</string>
     <string name="algorithm_hint">Функция хеширования</string>
     <string name="type">Тип</string>
@@ -446,17 +446,9 @@
     <string name="changelog">Список изменений</string>
     <string name="whats_new">Что нового</string>
     <string name="github_description">Исходный код, замечания и информация</string>
-    <string name="license">Лицензия</string>
     <string name="third_party_licenses">Лицензии третьих сторон</string>
     <string name="third_party_licenses_description">Лицензии сторонних библиотек, используемых в Cue</string>
-    <string name="country_netherlands">Нидерланды</string>
-    <string name="email_us">Написать эл. письмо</string>
-    <string name="visit_website">Посетить сайт</string>
-    <string name="about_support">Поддержка</string>
-    <string name="support_rate">Оценить</string>
-    <string name="support_rate_description">Поддержите нас, оставив отзыв в Google Play</string>
     <string name="webview_error">Это устройство не поддерживает веб-просмотр, необходимый для просмотра списка изменений и лицензии, т.к. в нём отсутствует соответствующий системный компонент.</string>
-    <string name="email">Адрес электронной почты</string>
     <string name="time_sync_warning_title">Автосинхронизация времени</string>
     <string name="time_sync_warning_message">Cue полагается на системное время для генерации правильных кодов. Отклонение всего в несколько секунд может привести к неверным кодам. Кажется, ваше устройство не настроено для автоматической синхронизации времени. Хотите сделать это сейчас?</string>
     <string name="time_sync_warning_disable">Прекратите меня предупреждать, я знаю, что делаю.</string>
@@ -548,7 +540,7 @@
         <item quantity="other">Не выбрано %d потенциальных дубликатов. Проверьте список записей.</item>
     </plurals>
     <string name="importer_help_2fas">Необходим файл резервной копии 2FAS.</string>
-    <string name="importer_help_aegis">Необходим файл экспорта/резервной копии Aegis.</string>
+    <string name="importer_help_cue">Необходим файл экспорта/резервной копии Cue.</string>
     <string name="importer_help_authenticator_plus">Необходим файл экспорта Authenticator Plus, полученный через <b>«Настройки» → «Рез. копия и восстановление» → «Экспорт текста и HTML»</b>.</string>
     <string name="importer_help_authy">Необходима копия файла <b>/data/data/com.authy.authy/shared_prefs/com.authy.storage.tokens.authenticator.xml</b>, расположенного в папке «Authy» во внутренней памяти.</string>
     <string name="importer_help_andotp">Необходим файл экспорта/резервной копии andOTP.</string>

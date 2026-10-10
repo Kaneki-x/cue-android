@@ -1,7 +1,6 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name" translatable="false">Cue</string>
     <string name="app_name_full" translatable="false">Cue</string>
-    <string name="org_name_full" translatable="false">Based on Aegis Authenticator by Beem Development</string>
     <string name="action_settings">Settings</string>
     <string name="action_about">About</string>
     <string name="action_delete">Delete</string>
@@ -31,7 +30,7 @@
     <string name="pref_section_security_title">Security</string>
     <string name="pref_section_security_summary">Configure encryption, biometric unlock, auto lock and other security settings.</string>
     <string name="pref_section_import_export_title">Import &amp; Export</string>
-    <string name="pref_section_import_export_summary">Import backups of Aegis, Cue or other authenticator apps. Create manual exports of your Cue vault.</string>
+    <string name="pref_section_import_export_summary">Import backups of Cue or other authenticator apps. Create manual exports of your Cue vault.</string>
     <string name="pref_section_audit_log_title">Audit log</string>
     <string name="pref_section_audit_log_summary">Find a list of all reported important events that happened within the app.</string>
     <string name="pref_section_backups_title">Backups</string>
@@ -155,7 +154,7 @@
     <string name="export_warning_unencrypted">You are about to export an unencrypted copy of your Cue vault. <b>This is not recommended</b>.</string>
     <string name="export_warning_password">Exports are encrypted using a separate password configured in Security settings.</string>
     <string name="understand_risk_accept">I understand the risk</string>
-    <string name="export_format_aegis">Cue (.JSON, Aegis-compatible)</string>
+    <string name="export_format_cue">Cue (.JSON)</string>
     <string name="export_format_google_auth_uri">Text file (.TXT)</string>
     <string name="export_format_html">Web page (.HTML)</string>
     <string name="export_format_hint">Export format</string>
@@ -198,7 +197,7 @@
     <string name="enter_password_proton_message">It looks like this Proton Authenticator backup is encrypted. Please enter the password below.</string>
     <string name="enter_password_2fas_message">It looks like this 2FAS backup is encrypted. Please enter the password below.</string>
     <string name="enter_password_authy_message">It looks like your Authy tokens are encrypted. Please close Cue, open Authy and unlock the tokens with your password. Instead, Cue can also attempt to decrypt your Authy tokens for you, if you enter your password below.</string>
-    <string name="enter_password_aegis_title">Please enter the import password</string>
+    <string name="enter_password_import_title">Please enter the import password</string>
 
     <string name="period_hint">Period (seconds)</string>
     <string name="algorithm_hint">Hash function</string>
@@ -493,20 +492,9 @@
     <string name="whats_new">What\'s new</string>
     <string name="github" translatable="false">GitHub</string>
     <string name="github_description">Source code, issues and information</string>
-    <string name="license">License</string>
-    <string name="license_description">Cue is licensed under GPLv3</string>
     <string name="third_party_licenses">Third-party licenses</string>
     <string name="third_party_licenses_description">Licenses of the third-party libraries Cue uses</string>
-    <string name="author_alex" translatable="false">Alexander Bakker</string>
-    <string name="country_netherlands">Netherlands</string>
-    <string name="author_michael" translatable="false">Michael Schättgen</string>
-    <string name="email_us">Write an email</string>
-    <string name="visit_website">Visit our website</string>
-    <string name="about_support">Support</string>
-    <string name="support_rate">Rate</string>
-    <string name="support_rate_description">Support us by leaving a review in the Google Play Store</string>
     <string name="webview_error">This device doesn\'t support web view, which is necessary to view the changelog and the license. It is missing a system component.</string>
-    <string name="email">Email</string>
     <string name="time_sync_warning_title">Automatic time synchronization</string>
     <string name="time_sync_warning_message">Cue relies on the system time to be in sync to generate correct codes. A deviation of only a few seconds could result in incorrect codes. It looks like your device is not configured to automatically synchronize the time. Would you like to do so now?</string>
     <string name="time_sync_warning_disable">Stop warning me. I know what I\'m doing.</string>
@@ -527,7 +515,7 @@
     <string
         name="backup_permission_error_dialog_details"
         comment="The first parameter is the type of backup (e.g. built-in or Android backup). The second parameter is an elapsed time in the style of 'x seconds/minutes/days ago'.">
-        A recent vault backup attempt using %1$s failed because Cue did not have permission to write to the backup destination. The backup was attempted %2$s. This error can occur if you moved/renamed the backup destination or if you recently restored Aegis from a backup. Please reconfigure the backup destination.
+        A recent vault backup attempt using %1$s failed because Cue did not have permission to write to the backup destination. The backup was attempted %2$s. This error can occur if you moved/renamed the backup destination or if you recently restored Cue from a backup. Please reconfigure the backup destination.
     </string>
     <string name="backup_system_builtin">Cue\'s built-in automatic backups</string>
     <string name="backup_system_android">Android\'s cloud backup system</string>
@@ -603,14 +591,14 @@
     <string name="pref_panic_trigger_title">Delete vault on panic trigger</string>
     <string name="pref_panic_trigger_summary">Delete vault when a panic trigger is received from Ripple</string>
 
-    <string name="import_vault">Import Cue or Aegis vault</string>
+    <string name="import_vault">Import Cue vault</string>
     <string name="import_vault_hint">Want to import from a different 2FA app? Complete the setup first and then head over to the settings menu.</string>
     <plurals name="import_duplicate_toast">
         <item quantity="one">Unchecked %d potential duplicate. Please review the list of entries.</item>
         <item quantity="other">Unchecked %d potential duplicates. Please review the list of entries.</item>
     </plurals>
     <string name="importer_help_2fas">Supply a 2FAS Authenticator backup file.</string>
-    <string name="importer_help_aegis">Supply an Aegis export/backup file.</string>
+    <string name="importer_help_cue">Supply a Cue export/backup file.</string>
     <string name="importer_help_authenticator_plus">Supply an Authenticator Plus export file obtained through <b>Settings -> Backup &amp; Restore -> Export as Text and HTML</b>.</string>
     <string name="importer_help_authy">Supply a copy of <b>/data/data/com.authy.authy/shared_prefs/com.authy.storage.tokens.authenticator.xml</b>, located in the internal storage directory of Authy.</string>
     <string name="importer_help_andotp">Supply an andOTP export/backup file.</string>

@@ -19,7 +19,7 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:importantForAccessibility="no"
-        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Aegis.ImageView.Circle" />
+        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Cue.ImageView.Circle" />
 
     <LinearLayout
         android:layout_width="0dp"

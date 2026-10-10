@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.beemdevelopment.aegis.ui.IntroActivity">
+    tools:context="io.cueapp.android.ui.IntroActivity">
     <androidx.viewpager2.widget.ViewPager2
         android:id="@+id/pager"
         android:layout_width="match_parent"
@@ -28,7 +28,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         style="@style/Widget.Material3.Button.IconButton.Filled.Tonal" />
-    <com.beemdevelopment.aegis.ui.intro.SlideIndicator
+    <io.cueapp.android.ui.intro.SlideIndicator
         android:id="@+id/slideIndicator"
         android:layout_width="0dp"
         android:layout_height="65dp"

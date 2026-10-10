@@ -200,7 +200,7 @@
     <string name="enter_password_proton_message">يبدو أن نُسخة Proton Authenticator هذه مُعمّاة. يُرجى إدخال كلمة السر أدناه.</string>
     <string name="enter_password_2fas_message">يبدو أن نُسخة 2FAS الاحتياطية مُعمَّاة، الرجاء إدخال كلمة السر أدناه.</string>
     <string name="enter_password_authy_message">يبدو أن رموز Authy الخاصة بك مُعمَّاة. الرجاء إغلاق Cue، وفتح Authy وفتح قفل الرموز بكلمة سرك. بدلًا من ذلك، Cue يمكنه أيضًا محاولة فك تعمية رموز Authy الخاصة بك، إذا أدخلت كلمة سرك أدناه.</string>
-    <string name="enter_password_aegis_title">الرجاء إدخال كلمة سر الاستيراد</string>
+    <string name="enter_password_import_title">الرجاء إدخال كلمة سر الاستيراد</string>
     <string name="period_hint">الفترة (بالثواني)</string>
     <string name="algorithm_hint">دالات/وظائف التجزئة (Hash Functions)</string>
     <string name="type">النوع</string>
@@ -468,17 +468,9 @@
     <string name="changelog">سجلّ التغيير</string>
     <string name="whats_new">ما الجديد</string>
     <string name="github_description">المصدر البرمجي والعلل والمعلومات</string>
-    <string name="license">الرخصة</string>
     <string name="third_party_licenses">تراخيص طرف ثالث</string>
     <string name="third_party_licenses_description">تراخيص مكتبات الطرف الثالث التي يستعملها Cue</string>
-    <string name="country_netherlands">هولندا</string>
-    <string name="email_us">اكتب بريد الكتروني</string>
-    <string name="visit_website">زُر موقعنا</string>
-    <string name="about_support">الدعم</string>
-    <string name="support_rate">التقييم</string>
-    <string name="support_rate_description">ادعمنا بترك تقييم على متجر Google Play</string>
     <string name="webview_error">هذا الجهاز لا يدعم عرض الويب، والذي هو ضروري لعرض سجلّ التغيير و الرخصة. إنه مكوِّن نظام مفقود.</string>
-    <string name="email">البريد الإلكتروني</string>
     <string name="time_sync_warning_title">مزامنة الوقت تلقائيًا</string>
     <string name="time_sync_warning_message">يعتمد Cue على وقت النظام لتوليد رموز صحيحة. انحراف بمقادر بضعة ثواني يمكن أن يؤدي إلى رموز خاطئة. يبدو أن جهازك غير معيّن إلى مزامنة الوقت تلقائيًا. أترغب بفعل ذلك الآن؟</string>
     <string name="time_sync_warning_disable">توقف عن تحذيري. أعرف ماذا أفعل.</string>
@@ -575,7 +567,7 @@
         <item quantity="other">لم يُؤشَّر %d من التكرارات المحتملة. الرجاء مراجعة قائمة الإدخالات.</item>
     </plurals>
     <string name="importer_help_2fas">وفّر ملف النسخ الاحتياطي 2FAS Authenticator.</string>
-    <string name="importer_help_aegis">وفّر ملف Aegis للتصدير / النسخ الاحتياطي.</string>
+    <string name="importer_help_cue">وفّر ملف Cue للتصدير / النسخ الاحتياطي.</string>
     <string name="importer_help_authenticator_plus">وفّر ملف تصدير Authenticator Plus الذي حُصل عليه من خلال <b>الإعدادات -&gt; النسخ الاحتياطي &amp; استعادة -&gt; تصدير كنص و HTML</b>.</string>
     <string name="importer_help_authy">وفّر نسخة من <b> /data/data/com.authy.authy/shared_prefs/com.authy.storage.tokens.authenticator.xml</b>، الموجود في دليل التخزين الداخلي لـ Authy.</string>
     <string name="importer_help_andotp">توفير ملف andOTP تصدير / نسخ احتياطي.</string>

@@ -9,7 +9,7 @@
     android:focusable="true"
     android:orientation="horizontal"
     app:cardElevation="0dp"
-    style="@style/Widget.Aegis.EntryCardView">
+    style="@style/Widget.Cue.EntryCardView">
     <LinearLayout
         android:layout_weight="1"
         android:layout_width="match_parent"
@@ -32,7 +32,7 @@
                 android:padding="2dp"
                 android:scaleType="centerInside"
                 android:src="@drawable/ic_lock_open"
-                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Aegis.ImageView.Rounded" />
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Cue.ImageView.Rounded" />
 
         </RelativeLayout>
 
@@ -87,7 +87,7 @@
                 android:layoutDirection="ltr"
                 android:layout_below="@id/text_audit_log_description"
                 android:includeFontPadding="false"
-                tools:text="Aegis (authenticator)"
+                tools:text="Cue (authenticator)"
                 android:layout_alignParentStart="true"
                 android:layout_marginTop="4dp"
                 android:textStyle="italic"/>

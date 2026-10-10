@@ -1,10 +1,10 @@
-# Aegis Vault
+# Cue Vault
 
-Aegis persists the user's token secrets and related information to a file. This
+Cue persists the user's token secrets and related information to a file. This
 file is referred to as the __vault__. Users can configure the app to store the
 vault in plain text or to encrypt it with a password.
 
-This document describes Aegis' security design and file format. It's split up
+This document describes Cue's security design and file format. It's split up
 into two parts. First, the cryptographic primitives and use of them for
 encryption are discussed. The second section documents the details of the file
 format of the vault.
@@ -13,7 +13,7 @@ format of the vault.
 
 ### Primitives
 
-Two cryptographic primitives were selected for use in Aegis. An Authenticated
+Two cryptographic primitives were selected for use in Cue. An Authenticated
 Encryption with Associated Data
 ([AEAD](https://en.wikipedia.org/wiki/Authenticated_encryption#Authenticated_encryption_with_associated_data))
 cipher and a Key Derivation Function
@@ -33,9 +33,9 @@ devices simultaneously, which would almost certainly result in nonce reuse. As a
 repeat of the nonce would have catastrophic consequences for the confidentiality
 of the ciphertext, NIST strongly recommends not exceeding 2<sup>32</sup>
 invocations when using random nonces with GCM. As such, the security of the
-Aegis vault also relies on the assumption that this limit is never exceeded.
+Cue vault also relies on the assumption that this limit is never exceeded.
 This is a reasonable assumption to make, because it's highly unlikely that an
-Aegis user will ever come close to saving the vault 2<sup>32</sup> times.
+Cue user will ever come close to saving the vault 2<sup>32</sup> times.
 
 _Switching to a nonce misuse-resistant cipher like AES-GCM-SIV or a cipher with
 a larger (192 bits) nonce like XChaCha-Poly1305 will be considered in the
@@ -68,7 +68,7 @@ When a vault is first created, a random 256-bit key is generated that is used to
 encrypt the contents with AES in GCM mode. This key is referred to as the
 __master key__.
 
-Aegis supports unlocking a vault with multiple different credentials. The main
+Cue supports unlocking a vault with multiple different credentials. The main
 credential is a key derived from a user-provided password. In addition to that,
 users can also add a key backed by the Android KeyStore as a credential, which
 is only usable after biometrics authentication.
@@ -120,12 +120,12 @@ encoded (with padding) ciphertext of the vault contents. Otherwise, the value is
 a JSON object. See [vault content](#vault-content) for details.
 
 Full examples of a [plain text
-vault](/app/src/test/resources/com/beemdevelopment/aegis/importers/aegis_plain.json)
+vault](/app/src/test/resources/io/cueapp/android/importers/cue_plain.json)
 and an [encrypted
-vault](/app/src/test/resources/com/beemdevelopment/aegis/importers/aegis_encrypted.json)
+vault](/app/src/test/resources/io/cueapp/android/importers/cue_encrypted.json)
 are available in the [test
-data](/app/src/test/resources/com/beemdevelopment/aegis/importers) folder.
-There's also an example Python script that can decrypt an Aegis vault given the
+data](/app/src/test/resources/io/cueapp/android/importers) folder.
+There's also an example Python script that can decrypt an Cue vault given the
 password: [decrypt.py](/docs/decrypt.py).
 
 ### Header
@@ -140,7 +140,7 @@ decrypting the ``key`` from one of the slots) are used to decrypt the vault
 contents found in the ``db`` field.
 
 Setting ``slots`` and ``params`` to null indicates that the vault is not
-encrypted and Aegis will try to parse it as such.
+encrypted and Cue will try to parse it as such.
 
 ```json
 {
@@ -319,9 +319,9 @@ The following algorithms are supported for HOTP and TOTP:
 ##### Steam
 
 There is no specification available for Steam's OTP algorithm. It's essentially
-the same as TOTP, but it uses a different final encoding step. Aegis'
+the same as TOTP, but it uses a different final encoding step. Cue's
 implementation of it can be found in
-[crypto/otp/OTP.java](/app/src/main/java/com/beemdevelopment/aegis/crypto/otp/OTP.java).
+[crypto/otp/OTP.java](/app/src/main/java/io/cueapp/android/crypto/otp/OTP.java).
 
 A couple of fields have fixed values:
 
@@ -333,9 +333,9 @@ A couple of fields have fixed values:
 
 ##### MOTP
 
-There is no specification available for MOTP. Aegis' implementation of it can be
+There is no specification available for MOTP. Cue's implementation of it can be
 found in
-[crypto/otp/MOTP.java](/app/src/main/java/com/beemdevelopment/aegis/crypto/otp/MOTP.java).
+[crypto/otp/MOTP.java](/app/src/main/java/io/cueapp/android/crypto/otp/MOTP.java).
 
 A couple of fields have fixed values:
 
@@ -353,9 +353,9 @@ MOTP-specific fields:
 
 ##### Yandex
 
-There is no specification available for Yandex's OTP algorithm. Aegis'
+There is no specification available for Yandex's OTP algorithm. Cue's
 implementation can be found in
-[crypto/otp/YAOTP.java](/app/src/main/java/com/beemdevelopment/aegis/crypto/otp/YAOTP.java)
+[crypto/otp/YAOTP.java](/app/src/main/java/io/cueapp/android/crypto/otp/YAOTP.java)
 
 A couple of fields have fixed values:
 

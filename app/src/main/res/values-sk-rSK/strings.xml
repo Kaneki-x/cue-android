@@ -181,7 +181,7 @@
     <string name="password_reminder_freq_biweekly">Každý druhý týždeň</string>
     <string name="password_reminder_freq_monthly">Mesačne</string>
     <string name="password_reminder_freq_quarterly">Štvrťročne</string>
-    <string name="enter_password_aegis_title">Prosím, zadajte heslo pre import</string>
+    <string name="enter_password_import_title">Prosím, zadajte heslo pre import</string>
     <string name="period_hint">Doba (v sekundách)</string>
     <string name="algorithm_hint">Funkcia hash</string>
     <string name="type">Typ</string>
@@ -382,16 +382,8 @@
     <string name="changelog">Zoznam zmien</string>
     <string name="whats_new">Čo je nové</string>
     <string name="github_description">Zdrojový kód, problémy a informácie</string>
-    <string name="license">Licencia</string>
     <string name="third_party_licenses">Licencie tretích strán</string>
     <string name="third_party_licenses_description">Licencie knižníc tretích strán, ktoré Cue používa</string>
-    <string name="country_netherlands">Holandsko</string>
-    <string name="email_us">Napísať e-mail</string>
-    <string name="visit_website">Navštíviť našu webstránku</string>
-    <string name="about_support">Podpora</string>
-    <string name="support_rate">Ohodnotiť</string>
-    <string name="support_rate_description">Podporte nás zanechaním recenzie v obchode Google Play</string>
-    <string name="email">E-mail</string>
     <string name="time_sync_warning_title">Automatická synchronizácia času</string>
     <string name="google_qr_export_unrelated">Nesúvisiaci QR kód bol nájdený. Pokúste sa reštartovať skener.</string>
     <string name="backup_error_bar_message"><b>Zálohovanie trezora nedávno zlyhalo</b></string>
@@ -441,7 +433,7 @@
     <string name="pref_panic_trigger_title">Vymazať trezor pri vyvolaní paniky</string>
     <string name="pref_panic_trigger_summary">Vymazať trezor, keď sa vyvolá panický spúšťač od Ripple</string>
     <string name="importer_help_2fas">Nahrajte súbor exportu služby 2FAS Authenticator.</string>
-    <string name="importer_help_aegis">Nahrajte súbor exportu/zálohy služby Aegis.</string>
+    <string name="importer_help_cue">Nahrajte súbor exportu/zálohy služby Cue.</string>
     <string name="importer_help_authenticator_plus">Nahrajte súbor exportu služby Authenticator Plus, ktorý obdržíte cez <b>Nastavenia -&gt; Záloha &amp; Obnoviť -&gt; Exportovať ako Text a HTML</b>.</string>
     <string name="importer_help_authy">Nahrajte kópiu <b>/data/data/com.authy.authy/shared_prefs/com.authy.storage.tokens.authenticator.xml</b>, ktorá sa nachádza vo vnútornom úložnom adresári služby Authy.</string>
     <string name="importer_help_andotp">Nahrajte súbor exportu/zálohy služby andOTP.</string>

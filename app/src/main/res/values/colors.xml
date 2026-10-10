@@ -98,11 +98,11 @@
     <color name="md_theme_dark_surfaceDim">#13121b</color>
     <color name="md_theme_dark_surfaceBright">#393842</color>
     <!-- Custom -->
-    <color name="aegis_theme_all_favorite">#F9A825</color>
-    <color name="aegis_theme_light_success">#518242</color>
-    <color name="aegis_theme_dark_success">#d9e7cb</color>
-    <color name="aegis_theme_light_onSurfaceDim">#9D9EA2</color>
-    <color name="aegis_theme_dark_onSurfaceDim">#616371</color>
+    <color name="cue_theme_all_favorite">#F9A825</color>
+    <color name="cue_theme_light_success">#518242</color>
+    <color name="cue_theme_dark_success">#d9e7cb</color>
+    <color name="cue_theme_light_onSurfaceDim">#9D9EA2</color>
+    <color name="cue_theme_dark_onSurfaceDim">#616371</color>
     <!-- Hacks to force the status bar to the correct color during action mode.
          These colors are used by AppCompatDelegateImpl.updateStatusGuardColor -->
     <color name="abc_decor_view_status_guard_light" tools:override="true">@android:color/transparent</color>

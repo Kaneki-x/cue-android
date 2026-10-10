@@ -9,14 +9,9 @@ requesting a feature.
 
 ## Translations
 
-We use [Crowdin](https://crowdin.com/project/aegis-authenticator) to crowdsource
-translations of Cue for lots of different languages. __Pull requests that
-add/update a translation are no longer accepted.__ Crowdin is our single source
-of truth for translations, to keep things easy to maintain.
-
-The top 30 languages are available for translation. It's possible that yours is
-not in that list. If that's the case, feel free to send us an email and we'll
-add it.
+Translations live in `app/src/main/res/values-*/strings.xml`. Pull requests that
+add a language or fix a translation are welcome; keep the string names identical to
+the ones in `values/strings.xml`.
 
 ## Pull requests
 
@@ -108,11 +103,11 @@ __On your PC__:
     one below:
 
     ```sh
-    adb logcat --pid=$(adb shell pidof -s com.beemdevelopment.aegis) > debug.log
+    adb logcat --pid=$(adb shell pidof -s io.cueapp.android) > debug.log
     ```
 
-    _If you are using a debug APK, replace ``com.beemdevelopment.aegis`` with
-   ``com.beemdevelopment.aegis.debug``._
+    _If you are using a debug APK, replace ``io.cueapp.android`` with
+   ``io.cueapp.android.debug``._
 
 __On your Android device__:
 

@@ -188,7 +188,7 @@
     <string name="enter_password_proton_message">Het lijkt erop dat deze Proton Authenticator-back-up is versleuteld. Voer het wachtwoord hieronder in.</string>
     <string name="enter_password_2fas_message">Het lijkt erop dat deze 2FAS-back-up is versleuteld. Voer het wachtwoord hieronder in.</string>
     <string name="enter_password_authy_message">Het lijkt erop dat je Authy-tokens zijn versleuteld. Sluit Cue, open Authy en ontgrendel de tokens met je wachtwoord. In plaats daarvan kan Cue ook proberen om je Authy-tokens te decoderen als je hieronder je wachtwoord invult.</string>
-    <string name="enter_password_aegis_title">Voer het importwachtwoord in</string>
+    <string name="enter_password_import_title">Voer het importwachtwoord in</string>
     <string name="period_hint">Tijd (seconden)</string>
     <string name="algorithm_hint">Hash-functie</string>
     <string name="type">Type</string>
@@ -424,17 +424,9 @@
     <string name="changelog">Wijzigingen</string>
     <string name="whats_new">Vernieuwingen</string>
     <string name="github_description">Broncode, problemen en informatie</string>
-    <string name="license">Licentie</string>
     <string name="third_party_licenses">Licenties van derden</string>
     <string name="third_party_licenses_description">Licenties van bibliotheken van derden gebruikt door Cue</string>
-    <string name="country_netherlands">Nederland</string>
-    <string name="email_us">Schrijf een e-mailbericht</string>
-    <string name="visit_website">Bekijk de website</string>
-    <string name="about_support">Ondersteuning</string>
-    <string name="support_rate">Beoordeel</string>
-    <string name="support_rate_description">Steun ons door een review in de Google Play Store achter te laten</string>
     <string name="webview_error">Dit apparaat ondersteunt geen webview, welke nodig is om de wijzigingen te bekijken. Het mist een systeemcomponent.</string>
-    <string name="email">E-mailadres</string>
     <string name="time_sync_warning_title">Automatische tijdsynchronisatie</string>
     <string name="time_sync_warning_message">Cue is afhankelijk van gesynchroniseerde systeemtijd om juiste codes te genereren. Een afwijking van slechts enkele seconden kan leiden tot onjuiste codes. Het lijkt erop dat je apparaat niet is ingesteld om de tijd automatisch te synchroniseren. Wil je dit nu doen?</string>
     <string name="time_sync_warning_disable">Stop met me te waarschuwen. Ik weet wat ik doe.</string>
@@ -520,7 +512,7 @@
         <item quantity="other">%d potentiële dubbelingen niet aangevinkt. Controleer de lijst met items.</item>
     </plurals>
     <string name="importer_help_2fas">Lever een 2FAS Authenticator-back-upbestand aan.</string>
-    <string name="importer_help_aegis">Lever een Aegis-export/-back-upbestand aan.</string>
+    <string name="importer_help_cue">Lever een Cue-export/-back-upbestand aan.</string>
     <string name="importer_help_authenticator_plus">Lever een Authenticator Plus-exportbestand aan verkregen via <b>Instellingen -&gt; Back-up &amp; Herstellen -&gt; Exporteren als Tekst en HTML</b>.</string>
     <string name="importer_help_authy">Lever een kopie aan van <b>/data/data/com.authy.authy/shared_prefs/com.authy.storage.tokens.authenticator.xml</b>, geplaatst in de interne opslagmap van Authy.</string>
     <string name="importer_help_andotp">Lever een andOTP-export/-back-upbestand aan.</string>

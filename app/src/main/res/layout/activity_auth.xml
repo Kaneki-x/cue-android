@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:fillViewport="true"
     android:fitsSystemWindows="true"
-    tools:context="com.beemdevelopment.aegis.ui.AuthActivity">
+    tools:context="io.cueapp.android.ui.AuthActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -79,7 +79,7 @@
                     app:passwordToggleEnabled="true"
                     app:passwordToggleTint="?attr/colorOnSurfaceVariant">
 
-                    <com.beemdevelopment.aegis.ui.components.NoAutofillEditText
+                    <io.cueapp.android.ui.components.NoAutofillEditText
                         android:id="@+id/text_password_no_autofill"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"

@@ -145,7 +145,7 @@
     <string name="password_reminder_freq_never">Niekada</string>
     <string name="enter_password_2fas_message">Atrodo, kad ši 2FAS atsarginė kopija yra šifruota. Žemiau įveskite slaptažodį.</string>
     <string name="enter_password_authy_message">Atrodo, kad jūsų Authy prieigos raktai yra šifruoti. Užverkite Cue, atverkite Authy ir atrakinkite prieigos raktus naudodami slaptažodį. Priešingu atveju, Cue gali pamėginti už jus iššifruoti Authy prieigos raktus, jei žemiau įvesite slaptažodį.</string>
-    <string name="enter_password_aegis_title">Įveskite importavimo slaptažodį</string>
+    <string name="enter_password_import_title">Įveskite importavimo slaptažodį</string>
     <string name="period_hint">Laikotarpis (sek.)</string>
     <string name="algorithm_hint">Maišos funkcija</string>
     <string name="type">Tipas</string>
@@ -311,17 +311,9 @@
     <string name="changelog">Keitinių žurnalas</string>
     <string name="whats_new">Kas naujo</string>
     <string name="github_description">Pirminis kodas, klaidos ir informacija</string>
-    <string name="license">Licencija</string>
     <string name="third_party_licenses">Trečiųjų šalių licencijos</string>
     <string name="third_party_licenses_description">Cue naudojamų trečiųjų šalių bibliotekų licencijos</string>
-    <string name="country_netherlands">Nyderlandai</string>
-    <string name="email_us">Rašyti el. laišką</string>
-    <string name="visit_website">Apsilankyti mūsų internetinėje svetainėje</string>
-    <string name="about_support">Palaikymas</string>
-    <string name="support_rate">Įvertinti</string>
-    <string name="support_rate_description">Palaikykite mus parašydami apžvalgą „Google Play“ parduotuvėje</string>
     <string name="webview_error">Šis įrenginys nepalaiko saityno rodinio, kuris yra būtinas norint rodyti keitinių žurnalą ir licenciją. Įrenginyje trūksta sisteminio komponento.</string>
-    <string name="email">El. paštas</string>
     <string name="time_sync_warning_title">Automatinis laiko sinchronizavimas</string>
     <string name="time_sync_warning_disable">Daugiau manęs nebeįspėkite. Aš žinau, ką darau.</string>
     <string name="google_qr_export_unrelated">Rastas nesusijęs QR kodas. Pabandykite paleisti skenerį iš naujo.</string>
@@ -369,7 +361,7 @@
     <string name="import_from_clipboard_title">Importuoti iš iškarpinės</string>
     <string name="import_vault_hint">Norite importuoti iš kitos 2FA programėlės? Iš pradžių, užbaikite sąranką, o tada pereikite į nustatymų meniu.</string>
     <string name="importer_help_2fas">Pateikite 2FAS Authenticator atsarginės kopijos failą.</string>
-    <string name="importer_help_aegis">Pateikite Aegis eksportuotą/atsarginės kopijos failą.</string>
+    <string name="importer_help_cue">Pateikite Cue eksportuotą/atsarginės kopijos failą.</string>
     <string name="importer_help_authenticator_plus">Pateikite Authenticator Plus eksportuotą failą, gautą per <b>Nustatymai (angl. Settings) -&gt; Atsarginė kopija ir atkūrimas (angl. Backup &amp; Restore) -&gt; Eksportuoti kaip tekstą ir HTML (angl. Export as Text and HTML)</b>.</string>
     <string name="importer_help_authy">Pateikite <b>/data/data/com.authy.authy/shared_prefs/com.authy.storage.tokens.authenticator.xml</b> kopiją, esančią Authy vidinės saugyklos kataloge.</string>
     <string name="importer_help_andotp">Pateikite andOTP eksportuotą/atsarginės kopijos failą.</string>

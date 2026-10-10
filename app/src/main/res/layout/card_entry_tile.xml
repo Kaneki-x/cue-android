@@ -11,7 +11,7 @@
     android:checkable="true"
     app:checkedIcon="@null"
     app:cardElevation="0dp"
-    style="@style/Widget.Aegis.EntryCardView">
+    style="@style/Widget.Cue.EntryCardView">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -50,7 +50,7 @@
                         android:layout_height="24dp"
                         android:layout_marginEnd="6dp"
                         android:layout_alignParentStart="true"
-                        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Aegis.ImageView.Circle" />
+                        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Cue.ImageView.Circle" />
 
                     <com.google.android.material.imageview.ShapeableImageView
                         android:id="@+id/ivSelected"
@@ -61,7 +61,7 @@
                         android:src="@drawable/item_selected"
                         android:visibility="gone"
                         android:background="?attr/colorPrimaryAlternative"
-                        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Aegis.ImageView.Circle" />
+                        app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Cue.ImageView.Circle" />
             </RelativeLayout>
 
             <!-- at least as tall as the icon, taller when the text needs it (CJK account names) -->
@@ -164,7 +164,7 @@
                 android:background="?android:attr/selectableItemBackgroundBorderless"
                 app:tint="?attr/colorOnSurface" />
 
-            <com.beemdevelopment.aegis.ui.views.TotpProgressBar
+            <io.cueapp.android.ui.views.TotpProgressBar
                 android:id="@+id/progressBar"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="@dimen/cue_ring_tile"

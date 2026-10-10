@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-option java_package = "com.beemdevelopment.aegis";
+option java_package = "io.cueapp.android";
 option java_outer_classname = "GoogleAuthProtos";
 
 message MigrationPayload {

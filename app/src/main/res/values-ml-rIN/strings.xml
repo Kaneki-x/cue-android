@@ -144,7 +144,7 @@
     <string name="password_reminder_freq_quarterly">ത്രൈമാസ</string>
     <string name="enter_password_2fas_message">ഈ 2FAS ബാക്കപ്പ് എൻക്രിപ്റ്റ് ചെയ്തതായി തോന്നുന്നു. ദയവായി താഴെ പാസ്‌വേഡ് നൽകുക.</string>
     <string name="enter_password_authy_message">നിങ്ങളുടെ Authy ടോക്കണുകൾ എൻക്രിപ്റ്റ് ചെയ്തതായി തോന്നുന്നു. ദയവായി Cue അടയ്ക്കുക, Authy തുറന്ന് നിങ്ങളുടെ പാസ്‌വേഡ് ഉപയോഗിച്ച് ടോക്കണുകൾ അൺലോക്ക് ചെയ്യുക. പകരം, നിങ്ങളുടെ പാസ്‌വേഡ് ചുവടെ നൽകിയാൽ, നിങ്ങളുടെ Authy ടോക്കണുകൾ ഡീക്രിപ്റ്റ് ചെയ്യാനും ഏജിസിന് ശ്രമിക്കാം.</string>
-    <string name="enter_password_aegis_title">ഇറക്കുമതി പാസ്‌വേഡ് നൽകുക</string>
+    <string name="enter_password_import_title">ഇറക്കുമതി പാസ്‌വേഡ് നൽകുക</string>
     <string name="period_hint">കാലയളവ് (സെക്കൻ്റുകൾ)</string>
     <string name="algorithm_hint">ഹാഷ് ഫംഗ്ഷൻ</string>
     <string name="type">വൈവിധ്യം</string>
@@ -344,17 +344,9 @@
     <string name="changelog">ചേഞ്ച്ലോഗ്</string>
     <string name="whats_new">പുതിയതെന്താണ്</string>
     <string name="github_description">കോഡ്, പ്രശ്നങ്ങൾ, വിവരങ്ങൾ</string>
-    <string name="license">ലൈസൻസ്</string>
     <string name="third_party_licenses">മൂന്നാം കക്ഷി ലൈസൻസുകൾ</string>
     <string name="third_party_licenses_description">ഏജിസ് ഉപയോഗിക്കുന്ന മൂന്നാം കക്ഷി ലൈബ്രറികളുടെ ലൈസൻസുകൾ</string>
-    <string name="country_netherlands">നെതർലാൻഡ്സ്</string>
-    <string name="email_us">ഒരു ഇ - മെയിൽ എഴുതുക</string>
-    <string name="visit_website">ഞങ്ങളുടെ വെബ്സൈറ്റ് സന്ദർശിക്കുക</string>
-    <string name="about_support">പിന്തുണ</string>
-    <string name="support_rate">നിരക്ക്</string>
-    <string name="support_rate_description">Google Play Store-ൽ ഒരു അവലോകനം നൽകി ഞങ്ങളെ പിന്തുണയ്ക്കുക</string>
     <string name="webview_error">ഈ ഉപകരണം വെബ് കാഴ്‌ചയെ പിന്തുണയ്‌ക്കുന്നില്ല, ഇത് ചേഞ്ച്‌ലോഗും ലൈസൻസും കാണുന്നതിന് ആവശ്യമാണ്. ഇതിന് ഒരു സിസ്റ്റം ഘടകം നഷ്‌ടമായിരിക്കുന്നു.</string>
-    <string name="email">ഇമെയിൽ</string>
     <string name="time_sync_warning_title">യാന്ത്രിക സമന്വയം</string>
     <string name="time_sync_warning_message">ശരിയായ കോഡുകൾ സൃഷ്‌ടിക്കുന്നതിന് ഏജിസ് സിസ്റ്റം സമയത്തെ ആശ്രയിക്കുന്നു. കുറച്ച് സെക്കൻ്റുകൾ മാത്രം വ്യതിചലിക്കുന്നത് തെറ്റായ കോഡുകൾക്ക് കാരണമായേക്കാം. സമയം സ്വയമേവ സമന്വയിപ്പിക്കുന്നതിന് നിങ്ങളുടെ ഉപകരണം കോൺഫിഗർ ചെയ്തിട്ടില്ലെന്ന് തോന്നുന്നു. ഇപ്പോൾ അങ്ങനെ ചെയ്യാൻ നിങ്ങൾ ആഗ്രഹിക്കുന്നുണ്ടോ?</string>
     <string name="time_sync_warning_disable">എനിക്ക് മുന്നറിയിപ്പ് നൽകുന്നത് നിർത്തുക. ഞാൻ എന്താണ് ചെയ്യുന്നതെന്ന് എനിക്കറിയാം.</string>
@@ -425,7 +417,6 @@
         <item quantity="other">%d സാധ്യതയുള്ള ഡ്യൂപ്ലിക്കേറ്റുകൾ അൺചെക്ക് ചെയ്തു. എൻട്രികളുടെ ലിസ്റ്റ് അവലോകനം ചെയ്യുക.</item>
     </plurals>
     <string name="importer_help_2fas">ഒരു 2FAS ഓതൻ്റിക്കേറ്റർ ബാക്കപ്പ് ഫയൽ നൽകുക.</string>
-    <string name="importer_help_aegis">ഒരു എജിസ് കയറ്റുമതി/ബാക്കപ്പ് ഫയൽ നൽകുക.</string>
     <string name="importer_help_andotp">ഒരു andOTP കയറ്റുമതി/ബാക്കപ്പ് ഫയൽ നൽകുക.</string>
     <string name="importer_help_bitwarden">ഒരു ബിറ്റ്വാർഡൻ കയറ്റുമതി/ബാക്കപ്പ് ഫയൽ നൽകുക. എൻക്രിപ്റ്റ് ചെയ്ത ഫയലുകൾ പിന്തുണയ്ക്കുന്നില്ല.</string>
     <string name="importer_help_freeotp_plus">ഒരു FreeOTP+ കയറ്റുമതി ഫയൽ നൽകുക.</string>

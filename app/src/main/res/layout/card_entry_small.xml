@@ -11,7 +11,7 @@
     android:checkable="true"
     app:checkedIcon="@null"
     app:cardElevation="0dp"
-    style="@style/Widget.Aegis.EntryCardView">
+    style="@style/Widget.Cue.EntryCardView">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -42,7 +42,7 @@
                 android:layout_height="45dp"
                 android:layout_centerVertical="true"
                 android:layout_alignParentStart="true"
-                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Aegis.ImageView.Circle" />
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Cue.ImageView.Circle" />
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/ivSelected"
@@ -53,7 +53,7 @@
                 android:src="@drawable/item_selected"
                 android:visibility="gone"
                 android:background="?attr/colorPrimaryAlternative"
-                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Aegis.ImageView.Circle" />
+                app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Cue.ImageView.Circle" />
         </RelativeLayout>
 
         <RelativeLayout
@@ -171,7 +171,7 @@
                 android:background="?android:attr/selectableItemBackground" />
 
             <!-- every TOTP card has its own ring (design/tokens.json size.countdownRing) -->
-            <com.beemdevelopment.aegis.ui.views.TotpProgressBar
+            <io.cueapp.android.ui.views.TotpProgressBar
                 android:id="@+id/progressBar"
                 style="?android:attr/progressBarStyleHorizontal"
                 android:layout_width="@dimen/cue_ring_small"

@@ -187,7 +187,7 @@
     <string name="password_reminder_freq_quarterly">Neljännesvuosittain</string>
     <string name="enter_password_2fas_message">Näyttää siltä, että tämä 2FAS varmuuskopio on salattu. Syötä salasana.</string>
     <string name="enter_password_authy_message">Näyttää siltä, että Authy-todennuskoodisi on salattu. Sulje Cue, käynnistä Authy ja avaa sen lukitus salasanallasi. Cue voi myös yrittää purkaa Authy-todennuskoodiesi salauksen puolestasi, jos syötät salasanasi alle.</string>
-    <string name="enter_password_aegis_title">Syötä tuontisalasana</string>
+    <string name="enter_password_import_title">Syötä tuontisalasana</string>
     <string name="period_hint">Aikaväli (sekuntia)</string>
     <string name="algorithm_hint">Hajautusalgoritmi</string>
     <string name="type">Tyyppi</string>
@@ -415,17 +415,9 @@
     <string name="changelog">Muutosloki</string>
     <string name="whats_new">Mitä uutta</string>
     <string name="github_description">Lähdekoodi, ongelmat ja tietoa</string>
-    <string name="license">Lisenssi</string>
     <string name="third_party_licenses">Kolmannen osapuolen lisenssit</string>
     <string name="third_party_licenses_description">Cuein käyttämien kolmannen osapuolen kirjastojen lisenssit</string>
-    <string name="country_netherlands">Alankomaat</string>
-    <string name="email_us">Lähetä sähköpostia</string>
-    <string name="visit_website">Käy verkkosivuillamme</string>
-    <string name="about_support">Tuki</string>
-    <string name="support_rate">Arvostele</string>
-    <string name="support_rate_description">Tue meitä kirjoittamalla arvostelu Google Play Kauppaan</string>
     <string name="webview_error">Tämä laite ei tue WebView:tä, joka vaaditaan muutoslokin ja lisenssitietojen katselemiseksi. Siitä puuttuu järjestelmäkomponentti.</string>
-    <string name="email">Sähköposti</string>
     <string name="time_sync_warning_title">Synkronoi aika automaattisesti</string>
     <string name="time_sync_warning_message">Cue vaatii, että järjestelmän aika on synkronoitu oikeiden koodien luomiseksi. Vain muutaman sekunnin poikkeama voi johtaa virheellisiin koodeihin. Näyttää siltä, että laitettasi ei ole määritetty synkronoimaan aika automaattisesti. Haluatko tehdä niin nyt?</string>
     <string name="time_sync_warning_disable">Lopeta varoitus. Tiedän mitä teen.</string>
@@ -509,7 +501,7 @@
         <item quantity="other">%d mahdollisen kaksoiskappaleen valinta poistettiin. Tarkista kohdelista.</item>
     </plurals>
     <string name="importer_help_2fas">Anna 2FAS Authenticatorin varmuuskopiotiedosto.</string>
-    <string name="importer_help_aegis">Anna Aegisisin vienti-/varmuuskopiotiedosto.</string>
+    <string name="importer_help_cue">Anna Cue vienti-/varmuuskopiotiedosto.</string>
     <string name="importer_help_authenticator_plus">Anna Authenticator Plus -varmuuskopiotiedosto, jonka saat menemällä <b>Asetukset -&gt;Varmuuskopiointi ja palautus -&gt; Vie teksti- tai HTML-tiedostona</b>.</string>
     <string name="importer_help_authy">Anna kopio tiedostosta <b>/data/data/com.authy.authy/shared_prefs/com.authy.storage.tokens.authenticator.xml</b>, joka sijaitsee Authyn sisäisessä tallennushakemistossa.</string>
     <string name="importer_help_andotp">Anna andOTP:n vienti-/varmuuskopiotiedosto.</string>

@@ -1,12 +1,12 @@
 <resources>
-    <style name="Theme.Aegis.Launch" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Theme.Cue.Launch" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- colorPrimary in the root theme sets the task description color (seen in task switcher) -->
         <item name="colorPrimary">@color/md_theme_light_primary</item>
         <item name="android:windowDrawsSystemBarBackgrounds">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
 
-    <style name="Base.Theme.Aegis.Light" parent="Theme.Material3.Light">
+    <style name="Base.Theme.Cue.Light" parent="Theme.Material3.Light">
         <!-- Material colors -->
         <item name="colorPrimary">@color/md_theme_light_primary</item>
         <item name="colorOnPrimary">@color/md_theme_light_onPrimary</item>
@@ -55,12 +55,12 @@
         <item name="colorSurfaceDim">@color/md_theme_light_surfaceDim</item>
         <item name="colorSurfaceBright">@color/md_theme_light_surfaceBright</item>
         <!-- Custom colors -->
-        <item name="colorFavorite">@color/aegis_theme_all_favorite</item>
+        <item name="colorFavorite">@color/cue_theme_all_favorite</item>
         <item name="colorPrimaryAlternative">?attr/colorPrimary</item>
         <item name="colorProgressbar">?attr/colorPrimaryAlternative</item>
         <item name="colorOnDark">@android:color/white</item>
-        <item name="colorSuccess">@color/aegis_theme_light_success</item>
-        <item name="colorOnSurfaceDim">@color/aegis_theme_light_onSurfaceDim</item>
+        <item name="colorSuccess">@color/cue_theme_light_success</item>
+        <item name="colorOnSurfaceDim">@color/cue_theme_light_onSurfaceDim</item>
         <item name="colorCode">@color/cue_brand_solid</item>
         <item name="colorCodeHidden">?attr/colorOutlineVariant</item>
         <!-- Intro colors -->
@@ -79,17 +79,17 @@
         <item name="shapeAppearanceCornerLarge">@style/ShapeAppearance.Cue.Large</item>
         <item name="shapeAppearanceCornerExtraLarge">@style/ShapeAppearance.Cue.ExtraLarge</item>
         <!-- Styles -->
-        <item name="dropdownStyle">@style/Widget.Aegis.Dropdown</item>
-        <item name="preferenceTheme">@style/ThemeOverlay.Aegis.Preference</item>
-        <item name="actionModeTheme">@style/ThemeOverlay.Aegis.ActionMode</item>
-        <item name="materialAlertDialogTheme">@style/ThemeOverlay.Aegis.AlertDialog</item>
+        <item name="dropdownStyle">@style/Widget.Cue.Dropdown</item>
+        <item name="preferenceTheme">@style/ThemeOverlay.Cue.Preference</item>
+        <item name="actionModeTheme">@style/ThemeOverlay.Cue.ActionMode</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.Cue.AlertDialog</item>
         <!-- Settings -->
         <item name="windowActionModeOverlay">true</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Base.Theme.Aegis.Dark" parent="Theme.Material3.Dark">
+    <style name="Base.Theme.Cue.Dark" parent="Theme.Material3.Dark">
         <!-- Material colors -->
         <item name="colorPrimary">@color/md_theme_dark_primary</item>
         <item name="colorOnPrimary">@color/md_theme_dark_onPrimary</item>
@@ -138,12 +138,12 @@
         <item name="colorSurfaceDim">@color/md_theme_dark_surfaceDim</item>
         <item name="colorSurfaceBright">@color/md_theme_dark_surfaceBright</item>
         <!-- Custom colors -->
-        <item name="colorFavorite">@color/aegis_theme_all_favorite</item>
+        <item name="colorFavorite">@color/cue_theme_all_favorite</item>
         <item name="colorPrimaryAlternative">?attr/colorPrimaryInverse</item>
         <item name="colorProgressbar">?attr/colorPrimaryAlternative</item>
         <item name="colorOnDark">@android:color/white</item>
-        <item name="colorSuccess">@color/aegis_theme_dark_success</item>
-        <item name="colorOnSurfaceDim">@color/aegis_theme_dark_onSurfaceDim</item>
+        <item name="colorSuccess">@color/cue_theme_dark_success</item>
+        <item name="colorOnSurfaceDim">@color/cue_theme_dark_onSurfaceDim</item>
         <item name="colorCode">?attr/colorPrimary</item>
         <item name="colorCodeHidden">?attr/colorOutlineVariant</item>
         <!-- Intro colors -->
@@ -162,17 +162,17 @@
         <item name="shapeAppearanceCornerLarge">@style/ShapeAppearance.Cue.Large</item>
         <item name="shapeAppearanceCornerExtraLarge">@style/ShapeAppearance.Cue.ExtraLarge</item>
         <!-- Styles -->
-        <item name="dropdownStyle">@style/Widget.Aegis.Dropdown</item>
-        <item name="preferenceTheme">@style/ThemeOverlay.Aegis.Preference</item>
-        <item name="actionModeTheme">@style/ThemeOverlay.Aegis.ActionMode</item>
-        <item name="materialAlertDialogTheme">@style/ThemeOverlay.Aegis.AlertDialog</item>
+        <item name="dropdownStyle">@style/Widget.Cue.Dropdown</item>
+        <item name="preferenceTheme">@style/ThemeOverlay.Cue.Preference</item>
+        <item name="actionModeTheme">@style/ThemeOverlay.Cue.ActionMode</item>
+        <item name="materialAlertDialogTheme">@style/ThemeOverlay.Cue.AlertDialog</item>
         <!-- Settings -->
         <item name="windowActionModeOverlay">true</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Base.Theme.Aegis.Amoled" parent="Base.Theme.Aegis.Dark">
+    <style name="Base.Theme.Cue.Amoled" parent="Base.Theme.Cue.Dark">
         <!-- Setting android:colorBackground to #000000 on API 28 and below causes smearing -->
         <item name="android:colorBackground">@android:color/black</item>
         <item name="colorSurface">#000000</item>
@@ -190,11 +190,11 @@
         <item name="cueCardStrokeWidth">1dp</item>
     </style>
 
-    <style name="ThemeOverlay.Aegis.Dynamic.Dark" parent="ThemeOverlay.Material3.DynamicColors.Dark">
+    <style name="ThemeOverlay.Cue.Dynamic.Dark" parent="ThemeOverlay.Material3.DynamicColors.Dark">
         <item name="colorProgressbar">?attr/colorCode</item>
     </style>
 
-    <style name="ThemeOverlay.Aegis.Dynamic.Amoled" parent="ThemeOverlay.Material3.DynamicColors.Dark">
+    <style name="ThemeOverlay.Cue.Dynamic.Amoled" parent="ThemeOverlay.Material3.DynamicColors.Dark">
         <!-- Setting android:colorBackground to #000000 on API 28 and below causes smearing -->
         <item name="android:colorBackground">@android:color/black</item>
         <item name="colorSurface">#000000</item>
@@ -211,24 +211,24 @@
         <item name="colorProgressbar">@android:color/white</item>
     </style>
 
-    <style name="Theme.Aegis.Light" parent="Base.Theme.Aegis.Light">
+    <style name="Theme.Cue.Light" parent="Base.Theme.Cue.Light">
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar">true</item>
     </style>
 
-    <style name="Theme.Aegis.Dark" parent="Base.Theme.Aegis.Dark">
+    <style name="Theme.Cue.Dark" parent="Base.Theme.Cue.Dark">
         <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar">false</item>
     </style>
 
-    <style name="Theme.Aegis.Amoled" parent="Base.Theme.Aegis.Amoled">
+    <style name="Theme.Cue.Amoled" parent="Base.Theme.Cue.Amoled">
         <item name="android:navigationBarColor">@android:color/transparent</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
         <item name="android:windowLightStatusBar">false</item>
     </style>
 
-    <style name="Widget.Aegis.Dropdown" parent="Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+    <style name="Widget.Cue.Dropdown" parent="Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
         <item name="boxCornerRadiusTopStart">@dimen/cue_radius_small_plus</item>
         <item name="boxCornerRadiusTopEnd">@dimen/cue_radius_small_plus</item>
         <item name="boxCornerRadiusBottomStart">@dimen/cue_radius_small_plus</item>
@@ -244,78 +244,78 @@
         <item name="boxStrokeColor">@color/cue_text_input_stroke</item>
     </style>
 
-    <style name="ThemeOverlay.Aegis.Preference" parent="@style/PreferenceThemeOverlay">
+    <style name="ThemeOverlay.Cue.Preference" parent="@style/PreferenceThemeOverlay">
         <item name="android:tint">?attr/colorPrimary</item>
-        <item name="switchPreferenceCompatStyle">@style/Preference.Aegis.SwitchPreference</item>
+        <item name="switchPreferenceCompatStyle">@style/Preference.Cue.SwitchPreference</item>
         <item name="preferenceCategoryTitleTextAppearance">@style/TextAppearance.Cue.Overline</item>
         <item name="preferenceCategoryTitleTextColor">?attr/colorPrimary</item>
     </style>
 
-    <style name="Preference.Aegis.SwitchPreference" parent="@style/Preference.SwitchPreferenceCompat.Material">
+    <style name="Preference.Cue.SwitchPreference" parent="@style/Preference.SwitchPreferenceCompat.Material">
         <item name="widgetLayout">@layout/view_preference_switch</item>
     </style>
 
-    <style name="Widget.Aegis.EntryCardView" parent="Widget.Material3.CardView.Elevated">
-        <item name="materialThemeOverlay">@style/ThemeOverlay.Aegis.EntryCardView</item>
+    <style name="Widget.Cue.EntryCardView" parent="Widget.Material3.CardView.Elevated">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Cue.EntryCardView</item>
         <item name="strokeWidth">?attr/cueCardStrokeWidth</item>
         <item name="strokeColor">?attr/colorOutlineVariant</item>
     </style>
 
-    <style name="Widget.Aegis.CompactEntryCardView" parent="Widget.Material3.CardView.Elevated">
-        <item name="materialThemeOverlay">@style/ThemeOverlay.Aegis.CompactEntryCardView</item>
+    <style name="Widget.Cue.CompactEntryCardView" parent="Widget.Material3.CardView.Elevated">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Cue.CompactEntryCardView</item>
     </style>
 
-    <style name="ThemeOverlay.Aegis.EntryCardView" parent="">
+    <style name="ThemeOverlay.Cue.EntryCardView" parent="">
         <item name="colorSurfaceContainerLow">?attr/colorSurfaceContainerLowest</item>
     </style>
 
-    <style name="ThemeOverlay.Aegis.CompactEntryCardView" parent="">
+    <style name="ThemeOverlay.Cue.CompactEntryCardView" parent="">
         <item name="colorSurfaceContainerLow">?attr/colorSurface</item>
     </style>
 
-    <style name="Widget.Aegis.ErrorCardView" parent="Widget.Material3.CardView.Filled">
-        <item name="materialThemeOverlay">@style/ThemeOverlay.Aegis.ErrorCardView</item>
+    <style name="Widget.Cue.ErrorCardView" parent="Widget.Material3.CardView.Filled">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.Cue.ErrorCardView</item>
     </style>
 
-    <style name="ThemeOverlay.Aegis.ErrorCardView" parent="">
+    <style name="ThemeOverlay.Cue.ErrorCardView" parent="">
         <item name="colorSurfaceContainerHighest">@color/cue_error_card_background</item>
     </style>
 
-    <style name="ThemeOverlay.Aegis.ActionMode" parent="">
+    <style name="ThemeOverlay.Cue.ActionMode" parent="">
         <!-- Magically give the action mode icons the right color -->
         <item name="actionButtonStyle">@style/Widget.AppCompat.ActionButton</item>
         <!-- The hack below is necessary to force the action mode overflow menu to the right color -->
         <item name="actionBarPopupTheme">@style/Widget.Material3.PopupMenu.ContextMenu</item>
     </style>
 
-    <style name="ThemeOverlay.Aegis.AlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog.Centered">
+    <style name="ThemeOverlay.Cue.AlertDialog" parent="ThemeOverlay.Material3.MaterialAlertDialog.Centered">
 
     </style>
 
-    <style name="ThemeOverlay.Aegis.AlertDialog.Error">
+    <style name="ThemeOverlay.Cue.AlertDialog.Error">
         <item name="android:alertDialogIcon">@drawable/ic_outline_error_24</item>
-        <item name="materialAlertDialogTitleIconStyle">@style/Widget.Aegis.AlertDialog.Icon.Error</item>
+        <item name="materialAlertDialogTitleIconStyle">@style/Widget.Cue.AlertDialog.Icon.Error</item>
     </style>
 
-    <style name="ThemeOverlay.Aegis.AlertDialog.Warning">
+    <style name="ThemeOverlay.Cue.AlertDialog.Warning">
         <item name="android:alertDialogIcon">@drawable/ic_outline_warning_24</item>
-        <item name="materialAlertDialogTitleIconStyle">@style/Widget.Aegis.AlertDialog.Icon.Warning</item>
+        <item name="materialAlertDialogTitleIconStyle">@style/Widget.Cue.AlertDialog.Icon.Warning</item>
     </style>
 
-    <style name="Widget.Aegis.AlertDialog.Icon.Error" parent="@style/MaterialAlertDialog.Material3.Title.Icon.CenterStacked">
+    <style name="Widget.Cue.AlertDialog.Icon.Error" parent="@style/MaterialAlertDialog.Material3.Title.Icon.CenterStacked">
         <item name="android:tint">?attr/colorError</item>
     </style>
 
-    <style name="Widget.Aegis.AlertDialog.Icon.Warning" parent="@style/MaterialAlertDialog.Material3.Title.Icon.CenterStacked">
+    <style name="Widget.Cue.AlertDialog.Icon.Warning" parent="@style/MaterialAlertDialog.Material3.Title.Icon.CenterStacked">
         <item name="android:tint">?attr/colorError</item>
     </style>
 
-    <style name="ShapeAppearanceOverlay.Aegis.ImageView.Rounded" parent="">
+    <style name="ShapeAppearanceOverlay.Cue.ImageView.Rounded" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">8dp</item>
     </style>
 
-    <style name="ShapeAppearanceOverlay.Aegis.ImageView.Circle" parent="">
+    <style name="ShapeAppearanceOverlay.Cue.ImageView.Circle" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">50%</item>
     </style>

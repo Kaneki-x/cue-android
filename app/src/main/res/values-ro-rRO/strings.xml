@@ -190,7 +190,7 @@
     <string name="password_reminder_freq_quarterly">Trimestrial</string>
     <string name="enter_password_2fas_message">Se pare că această copie de rezervă 2FAS este criptată. Introduceți parola mai jos.</string>
     <string name="enter_password_authy_message">Se pare că token-urile tale Authy sunt criptate. Te rugăm să închizi Cue, să deschizi Authy și să deblochezi tokenurile cu parola ta. În schimb, Cue poate încerca, de asemenea, să decripteze tokenurile Authy pentru tine, dacă introduci parola mai jos.</string>
-    <string name="enter_password_aegis_title">Vă rugăm să introduceți parola curentă</string>
+    <string name="enter_password_import_title">Vă rugăm să introduceți parola curentă</string>
     <string name="period_hint">Timp (secunde)</string>
     <string name="algorithm_hint">Funcția Hash</string>
     <string name="type">Tip</string>
@@ -422,17 +422,9 @@
     <string name="changelog">Istoric modificări</string>
     <string name="whats_new">Ce este nou</string>
     <string name="github_description">Cod sursă, probleme și informații</string>
-    <string name="license">Licență</string>
     <string name="third_party_licenses">Licențe terțe</string>
     <string name="third_party_licenses_description">Licenţele bibliotecilor terţe pe care Cue le utilizează</string>
-    <string name="country_netherlands">Olanda</string>
-    <string name="email_us">Scrie un e-mail</string>
-    <string name="visit_website">Vizitează site-ul nostru web</string>
-    <string name="about_support">Asistență</string>
-    <string name="support_rate">Evaluează</string>
-    <string name="support_rate_description">Sprijiniți-ne lăsând o recenzie în Google Play</string>
     <string name="webview_error">Acest dispozitiv nu acceptă vizualizare web, care este necesară pentru a vizualiza jurnalul modificărilor și licența. Îi lipsește o componentă de sistem.</string>
-    <string name="email">Email</string>
     <string name="time_sync_warning_title">Sincronizare automată a timpului</string>
     <string name="time_sync_warning_message">Cue-ul se bazează pe un sistem de timp pentru a fi sincronizat pentru a genera codurile corecte. O abatere de doar câteva secunde ar putea duce la coduri incorecte. Se pare că dispozitivul tău nu este configurat pentru a sincroniza automat timpul. Dorești să faci acest lucru acum?</string>
     <string name="time_sync_warning_disable">Nu mă mai avertiza. Ştiu ce fac.</string>
@@ -511,7 +503,7 @@ O tentativă recentă de backup de vault utilizând %1$s a eșuată deoarece Cue
         <item quantity="other">Am detectat %d de potențiale duplicate ce au rămas nebifate. Te rugăm să revizuiești lista intrărilor.</item>
     </plurals>
     <string name="importer_help_2fas">Furnizează un fișier de backup 2FAS autentificator.</string>
-    <string name="importer_help_aegis">Furnizează un fișier export/copie de rezervă Aegis.</string>
+    <string name="importer_help_cue">Furnizează un fișier export/copie de rezervă Cue.</string>
     <string name="importer_help_authenticator_plus">Furnizează un fişier de export de Autentificator Plus obţinut prin <b>Setări -&gt; Copie de rezervă &amp; Restore -&gt; Export ca Text şi HTML</b>.</string>
     <string name="importer_help_authy">Furnizează o copie a <b>/data/data/com.authy.authy/shared_prefs/com.authy.storage.tokens.authenticator.xml</b>, localizată în directorul de stocare internă al Authy.</string>
     <string name="importer_help_andotp">Furnizați un fişier de export/copie de rezervă andOTP.</string>

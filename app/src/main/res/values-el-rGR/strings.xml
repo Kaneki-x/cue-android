@@ -188,7 +188,7 @@
     <string name="enter_password_proton_message">Φαίνεται ότι αυτό το αντίγραφο ασφαλείας επαληθευτή Proton είναι κρυπτογραφημένο. Παρακαλώ εισάγετε τον κωδικό πρόσβασης παρακάτω.</string>
     <string name="enter_password_2fas_message">Φαίνεται ότι αυτό το αντίγραφο ασφαλείας 2FAS είναι κρυπτογραφημένο. Παρακαλώ εισάγετε τον κωδικό πρόσβασης παρακάτω.</string>
     <string name="enter_password_authy_message">Φαίνεται ότι τα Authy αναγνωριστικά σας είναι κρυπτογραφημένα. Κλείστε το Cue, ανοίξτε το Authy και ξεκλειδώστε τα αναγνωριστικά με τον κωδικό πρόσβασής σας. Αντ \'αυτού, ο Cue μπορεί επίσης να προσπαθήσει να αποκρυπτογραφήσει τα διακριτικά Authy για εσάς, εάν εισαγάγετε τον κωδικό πρόσβασής σας παρακάτω.</string>
-    <string name="enter_password_aegis_title">Παρακαλώ εισάγετε τον κωδικό εισαγωγής</string>
+    <string name="enter_password_import_title">Παρακαλώ εισάγετε τον κωδικό εισαγωγής</string>
     <string name="period_hint">Περίοδος (δευτερόλεπτα)</string>
     <string name="algorithm_hint">Λειτουργία Hash</string>
     <string name="type">Τύπος</string>
@@ -424,17 +424,9 @@
     <string name="changelog">Αρχείο καταγραφής αλλαγών</string>
     <string name="whats_new">Τι νέο υπάρχει</string>
     <string name="github_description">Πηγαίος κώδικας, προβλήματα και πληροφορίες</string>
-    <string name="license">Άδεια Χρήσης</string>
     <string name="third_party_licenses">Άδειες χρήσης τρίτων</string>
     <string name="third_party_licenses_description">Άδειες χρήσης βιβλιοθηκών τρίτων που χρησιμοποιεί το Cue</string>
-    <string name="country_netherlands">Ολλανδία</string>
-    <string name="email_us">Γράψτε ένα email</string>
-    <string name="visit_website">Επισκεφτείτε την ιστοσελίδα μας</string>
-    <string name="about_support">Υποστήριξη</string>
-    <string name="support_rate">Βαθμολόγηση</string>
-    <string name="support_rate_description">Υποστηρίξτε μας αφήνοντας μια κριτική στο Google Play Store</string>
     <string name="webview_error">Αυτή η συσκευή δεν υποστηρίζει προβολή ιστού, η οποία είναι απαραίτητη για την προβολή του αρχείου αλλαγών και της άδειας. Λείπει ένα στοιχείο συστήματος.</string>
-    <string name="email">Email</string>
     <string name="time_sync_warning_title">Χρόνος αυτόματου συγχρονισμού</string>
     <string name="time_sync_warning_message">Το Cue βασίζεται στον χρόνο του συστήματος για να είναι συγχρονισμένο για τη δημιουργία σωστών κωδικών. Μια απόκλιση λίγων δευτερολέπτων θα μπορούσε να οδηγήσει σε εσφαλμένους κωδικούς. Φαίνεται ότι η συσκευή σας δεν έχει ρυθμιστεί ώστε να συγχρονίζει αυτόματα την ώρα. Θα θέλατε να το κάνετε τώρα;</string>
     <string name="time_sync_warning_disable">Σταμάτα να με προειδοποιείς. Ξέρω τι κάνω.</string>
@@ -519,7 +511,7 @@
         <item quantity="other">Μη επιλεγμένα %d πιθανά διπλότυπα. Παρακαλούμε εξετάστε τη λίστα καταχωρήσεων.</item>
     </plurals>
     <string name="importer_help_2fas">Παρέχετε ένα αντίγραφο ασφαλείας 2FAS Authenticator.</string>
-    <string name="importer_help_aegis">Παρέχετε ένα αρχείο εξαγωγής/αντιγράφων ασφαλείας Aegis.</string>
+    <string name="importer_help_cue">Παρέχετε ένα αρχείο εξαγωγής/αντιγράφων ασφαλείας Cue.</string>
     <string name="importer_help_authenticator_plus">Παρέχετε ένα αρχείο εξαγωγής Authenticator Plus που αποκτήθηκε μέσω των <b> Ρυθμίσεων - &gt; Αντιγράφων ασφαλείας &amp; Επαναφορά - &gt; Εξαγωγή ως Κείμενο και HTML </b>.</string>
     <string name="importer_help_authy">Παρέχετε ένα αντίγραφο του <b>/data/data/com.authy.authy/shared_prefs/com.authy.storage.tokens.authenticator.xml</b>, που βρίσκεται στον κατάλογο εσωτερικής αποθήκευσης του Authy.</string>
     <string name="importer_help_andotp">Παρέχετε ένα αρχείο εξαγωγής/αντιγράφου ασφαλείας andOTP.</string>

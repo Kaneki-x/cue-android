@@ -19,18 +19,18 @@
         android:required="false" />
 
     <application
-        android:name=".AegisApplication"
+        android:name=".CueApplication"
         android:allowBackup="true"
         android:fullBackupOnly="true"
         android:fullBackupContent="@xml/backup_rules_old"
         android:dataExtractionRules="@xml/backup_rules"
-        android:backupAgent=".AegisBackupAgent"
+        android:backupAgent=".CueBackupAgent"
         android:enableOnBackInvokedCallback="true"
         android:icon="@mipmap/${iconName}"
         android:label="Cue"
         android:supportsRtl="true"
         android:largeHeap="true"
-        android:theme="@style/Theme.Aegis.Launch"
+        android:theme="@style/Theme.Cue.Launch"
         tools:targetApi="tiramisu">
         <activity android:name=".ui.TransferEntriesActivity"
             android:label="@string/title_activity_transfer" />
@@ -110,7 +110,7 @@
         </activity>
 
         <receiver
-            android:name=".widget.AegisWidgetProvider"
+            android:name=".widget.CueWidgetProvider"
             android:label="@string/widget_label"
             android:exported="true">
             <intent-filter>
@@ -118,7 +118,7 @@
             </intent-filter>
             <meta-data
                 android:name="android.appwidget.provider"
-                android:resource="@xml/widget_aegis_info" />
+                android:resource="@xml/widget_cue_info" />
         </receiver>
 
         <receiver
@@ -126,7 +126,7 @@
             android:exported="false" />
 
         <service
-            android:name=".widget.AegisWidgetService"
+            android:name=".widget.CueWidgetService"
             android:permission="android.permission.BIND_REMOTEVIEWS"
             android:exported="false" />
 
@@ -161,7 +161,7 @@
         </service>
 
         <service
-            android:name=".ime.AegisInputMethodService"
+            android:name=".ime.CueInputMethodService"
             android:label="@string/ime_label"
             android:permission="android.permission.BIND_INPUT_METHOD"
             android:exported="true">

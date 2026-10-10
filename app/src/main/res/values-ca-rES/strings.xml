@@ -188,7 +188,7 @@
     <string name="enter_password_proton_message">Sembla que la còpia de seguretat de Proton Authenticator està xifrada. Introdueix la contrasenya.</string>
     <string name="enter_password_2fas_message">Sembla que la còpia dels A2F està xifrada. Introdueix la contrasenya.</string>
     <string name="enter_password_authy_message">Sembla que les fitxes d\'Authy estan xifrades. Si us plau, tanca Cue, obre l\'Authy i desbloqueja les fitxes amb la contrasenya. Si no, Cue port intentar desxifrar les fitxes d\'Authy per tu, si introdueixes la contrasenya a sota.</string>
-    <string name="enter_password_aegis_title">Introdueix la contrasenya</string>
+    <string name="enter_password_import_title">Introdueix la contrasenya</string>
     <string name="period_hint">Període (segons)</string>
     <string name="algorithm_hint">Funció hash</string>
     <string name="type">Tipus</string>
@@ -424,17 +424,9 @@
     <string name="changelog">Registre de canvis</string>
     <string name="whats_new">Què hi ha de nou</string>
     <string name="github_description">Codi font, problemes i informació</string>
-    <string name="license">Llicència</string>
     <string name="third_party_licenses">Llicències de tercers</string>
     <string name="third_party_licenses_description">Llicències de llibreries de tercers que fa servir Cue</string>
-    <string name="country_netherlands">Països Baixos</string>
-    <string name="email_us">Escriu un correu electrònic</string>
-    <string name="visit_website">Visiteu el nostre lloc web</string>
-    <string name="about_support">Assistència</string>
-    <string name="support_rate">Valora</string>
-    <string name="support_rate_description">Ajuda\'ns deixant un comentari a la Google Play Store</string>
     <string name="webview_error">Aquest dispositiu no suporta \'web view\', que es necessari per a veure el registre de canvis i la llicència. Falta un component de sistema.</string>
-    <string name="email">Correu electrònic</string>
     <string name="time_sync_warning_title">Sincronització automàtica de temps</string>
     <string name="time_sync_warning_message">Cal que l\'hora del sistema sigui correcta per tal de generar codis correctes. Una desviació d\'uns quants segons pot causar codis no vàlids. Sembla que el teu dispositiu no està configurat per a sincronitzar la hora automàticament. Vols activar-ho ara?</string>
     <string name="time_sync_warning_disable">No cal que m\'avisis més. Sé el que estic fent.</string>
@@ -518,7 +510,7 @@ No s\'han desat els canvis    </string>
         <item quantity="other">%d possibles duplicats desmarcats. Revisa la llista d\'entrades.</item>
     </plurals>
     <string name="importer_help_2fas">Subministra un fitxer exportat del 2FAS Authenticator.</string>
-    <string name="importer_help_aegis">Subministra un fitxer exportat del Aegis.</string>
+    <string name="importer_help_cue">Subministra un fitxer exportat del Cue.</string>
     <string name="importer_help_authenticator_plus">Subministra un fitxer exportat del Authenticator Plus, obtingut amb <b>Settings -&gt; Backup &amp; Restore -&gt; Export as Text and HTML</b>.</string>
     <string name="importer_help_authy">Subministra una còpia de <b>/data/data/com.authy.authy/shared_prefs/com.authy.storage.tokens.authenticator.xml</b>, que està a l\'emmagatzematge intern del teu dispositiu, al directori del Authy.</string>
     <string name="importer_help_andotp">Subministra un fitxer exportat del andOTP.</string>

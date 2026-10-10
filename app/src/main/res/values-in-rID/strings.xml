@@ -184,7 +184,7 @@
     <string name="password_reminder_freq_quarterly">Setiap Triwulan</string>
     <string name="enter_password_2fas_message">Sepertinya cadangan 2FAS ini dienkripsi. Masukkan kata sandi di bawah.</string>
     <string name="enter_password_authy_message">Sepertinya token Authy Anda dienkripsi. Silakan tutup Cue, buka Authy dan buka token dengan kata sandi Anda. Sebagai gantinya, Cue juga dapat mencoba mendekripsi token Authy untuk Anda, jika Anda memasukkan kata sandi di bawah.</string>
-    <string name="enter_password_aegis_title">Mohon masukkan kata sandi pengimporan</string>
+    <string name="enter_password_import_title">Mohon masukkan kata sandi pengimporan</string>
     <string name="period_hint">Jangka Waktu (detik)</string>
     <string name="algorithm_hint">Fungsi Hash</string>
     <string name="type">Tipe</string>
@@ -412,17 +412,9 @@
     <string name="changelog">Catatan perubahan</string>
     <string name="whats_new">Apa yang baru</string>
     <string name="github_description">Kode sumber, masalah dan informasi</string>
-    <string name="license">Lisensi</string>
     <string name="third_party_licenses">Lisensi pihak ketiga</string>
     <string name="third_party_licenses_description">Lisensi pustaka pihak ketiga yang digunakan Cue</string>
-    <string name="country_netherlands">Belanda</string>
-    <string name="email_us">Tuliskan email</string>
-    <string name="visit_website">Kunjungi situs web kami</string>
-    <string name="about_support">Dukung</string>
-    <string name="support_rate">Beri penilaian</string>
-    <string name="support_rate_description">Dukung kami dengan meninggalkan ulasan di Google Play Store</string>
     <string name="webview_error">Perangkat ini tidak mendukung tampilan web yang diperlukan untuk melihat catatan perubahan dan lisensi. Komponen sistem tidak ada.</string>
-    <string name="email">Email</string>
     <string name="time_sync_warning_title">Sinkronisasi waktu otomatis</string>
     <string name="time_sync_warning_message">Cue mengandalkan waktu sistem untuk disinkronkan menjadi kode yang benar. Selisih hanya beberapa detik dapat menyebabkan kode salah. Sepertinya perangkat Anda tidak dikonfigurasi untuk menyinkronkan waktu secara otomatis. Apakah Anda ingin melakukannya sekarang?</string>
     <string name="time_sync_warning_disable">Berhenti memperingatkan saya. Saya tahu apa yang saya lakukan.</string>
@@ -499,7 +491,7 @@
         <item quantity="other">Tidak dicentang %d potensi duplikat. Silakan tinjau daftar entri.</item>
     </plurals>
     <string name="importer_help_2fas">Sediakan sebuah berkas cadangan Autetikator 2FAS.</string>
-    <string name="importer_help_aegis">Siapkan berkas ekspor/cadangan Aegis.</string>
+    <string name="importer_help_cue">Siapkan berkas ekspor/cadangan Cue.</string>
     <string name="importer_help_authenticator_plus">Siapkan berkas ekspor Authenticator Plus yang didapat melalui<b>Pengaturan -&gt; Pemulihan &amp; Cadangan -&gt; Ekspor sebagai Teks dan HTML</b>.</string>
     <string name="importer_help_authy">Siapkan salinan
 <b>/data/data/com.authy.authy/shared_prefs/com.authy.storage.tokens.authenticator.xml</b>, yang terletak di direktori penyimpanan internal Authy.</string>

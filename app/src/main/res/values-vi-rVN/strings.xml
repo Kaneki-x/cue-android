@@ -187,7 +187,7 @@
     <string name="enter_password_proton_message">Bản sao lưu Proton Authenticator này được mã hóa. Vui lòng nhập mật khẩu ở dưới.</string>
     <string name="enter_password_2fas_message">Bản sao lưu 2FAS này được mã hóa. Vui lòng nhập mật khẩu ở dưới.</string>
     <string name="enter_password_authy_message">Các mã Authy của bạn đã được mã hóa. Vui lòng đóng Cue, mở Authy và mở khóa các mã bằng mật khẩu của bạn. Bên cạnh đó, Cue cũng có thể thử giải các mã Authy cho bạn, nếu bạn nhập mật khẩu ở dưới.</string>
-    <string name="enter_password_aegis_title">Vui lòng nhập mật khẩu để nhập</string>
+    <string name="enter_password_import_title">Vui lòng nhập mật khẩu để nhập</string>
     <string name="period_hint">Đếm ngược (s)</string>
     <string name="algorithm_hint">Hàm băm</string>
     <string name="type">Loại</string>
@@ -415,17 +415,9 @@
     <string name="changelog">Các thay đổi</string>
     <string name="whats_new">Có gì mới</string>
     <string name="github_description">Mã nguồn và báo lỗi</string>
-    <string name="license">Giấy phép</string>
     <string name="third_party_licenses">Giấy phép bên thứ ba</string>
     <string name="third_party_licenses_description">Các thư viện nguồn mở mà Cue sử dụng</string>
-    <string name="country_netherlands">Hà Lan</string>
-    <string name="email_us">Gửi thư</string>
-    <string name="visit_website">Trang chủ</string>
-    <string name="about_support">Hỗ trợ</string>
-    <string name="support_rate">Đánh giá</string>
-    <string name="support_rate_description">Đánh giá trên Cửa hàng Google Play</string>
     <string name="webview_error">Thiết bị này không hỗ trợ WebView, nó là cần thiết để xem changelog và giấy phép. Đây là một thành phần hệ thống.</string>
-    <string name="email">Email</string>
     <string name="time_sync_warning_title">Tự đồng bộ thời gian</string>
     <string name="time_sync_warning_message">Cue dựa vào việc thời gian hệ thống được đồng bộ để tạo các mã chính xác. Một sự sai lệch chỉ vài giây cũng có thể dẫn đến các mã không chính xác. Có vẻ như thiết bị của bạn không được thiết lập tự đồng bộ thời gian. Bạn có muốn bật tính năng này?</string>
     <string name="time_sync_warning_disable">Đừng cảnh báo tôi nữa. Tôi biết tôi đang làm gì.</string>
@@ -508,7 +500,7 @@
         <item quantity="other">Bỏ đánh dấu %d mục khả năng trùng lặp. Vui lòng xem lại danh sách các mục.</item>
     </plurals>
     <string name="importer_help_2fas">Cung cấp một tệp sao lưu 2FAS Authenticator.</string>
-    <string name="importer_help_aegis">Cung cấp một tệp xuất/sao lưu Aegis.</string>
+    <string name="importer_help_cue">Cung cấp một tệp xuất/sao lưu Cue.</string>
     <string name="importer_help_authenticator_plus">Cung cấp một tệp xuất Authenticator Plus có từ <b>Cài đặt -&gt; Sao lưu &amp; Khôi phục -&gt; Xuất dưới dạng Văn bản và HTML</b>.</string>
     <string name="importer_help_authy">Cung cấp một bản sao của <b>/data/data/com.authy.authy/shared_prefs/com.authy.storage.tokens.authenticator.xml</b>, nằm trong thư mục bộ nhớ trong của Authy.</string>
     <string name="importer_help_andotp">Cung cấp một tệp xuất/sao lưu andOTP.</string>

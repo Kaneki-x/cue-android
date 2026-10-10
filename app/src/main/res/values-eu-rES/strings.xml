@@ -187,7 +187,7 @@
     <string name="password_reminder_freq_quarterly">Hiru hilabetero</string>
     <string name="enter_password_2fas_message">2FAko segurtasun kopia hau zifratuta dagoela dirudi. Sartu pasahitza.</string>
     <string name="enter_password_authy_message">Badirudi Authy tokenak zifratuta daudela. Itxi Cue, ireki Authy eta desblokeatu tokenak pasahitzarekin. Horren ordez, Cue zure Authy fitxak deszifratzen ere saia daiteke, ondoren pasahitza sartzen baduzu.</string>
-    <string name="enter_password_aegis_title">Mesedez sartu inportatzeko pasahitza</string>
+    <string name="enter_password_import_title">Mesedez sartu inportatzeko pasahitza</string>
     <string name="period_hint">Tartea (segundoak)</string>
     <string name="algorithm_hint">Hash funtzioa</string>
     <string name="type">Mota</string>
@@ -419,17 +419,9 @@
     <string name="changelog">Aldaketen erregistroa</string>
     <string name="whats_new">Zer berri</string>
     <string name="github_description">Iturburu-kodea, arazoak eta informazioa</string>
-    <string name="license">Lizentzia</string>
     <string name="third_party_licenses">Hirugarrenen lizentziak</string>
     <string name="third_party_licenses_description">Cueek erabiltzen dituen hirugarrenen lizentziak</string>
-    <string name="country_netherlands">Herbehereak</string>
-    <string name="email_us">Idatzi eposta bat</string>
-    <string name="visit_website">Ikusi gure webgunea</string>
-    <string name="about_support">Laguntza</string>
-    <string name="support_rate">Baloratu</string>
-    <string name="support_rate_description">Lagundu gaitzazu Google Play Store-n balorazio bat eginez</string>
     <string name="webview_error">Gailu honetan ez dabil web view, eta beharrezkoa da aldaketen erregistroa eta lizentzia ikusteko. Sistemaren osagai bat da eta ez dago instalatuta.</string>
-    <string name="email">Eposta</string>
     <string name="time_sync_warning_title">Denboraren sinkronizazio automatikoa</string>
     <string name="time_sync_warning_message">Cue-ek konfiantza du sistemaren denboran, kode zuzenak sortzeko sinkronizatuta egoteko. Segundo batzuetako desbideratzea kode okerrak eragin ditzake. Badirudi zure gailua ez dagoela denbora automatikoki sinkronizatzeko konfiguratuta. Orain egitea gustatuko litzaizuke?</string>
     <string name="time_sync_warning_disable">Utzi aholkuak emateari. Badakit zer egiten ari naizen.</string>
@@ -512,7 +504,7 @@ Biltegian egindako azken aldaketen segurtasun kopiarik ez dago. Garrantzitsua da
         <item quantity="other">Bikoiztutako %d sarrera posible. Errebisatu zerrenda mesedez.</item>
     </plurals>
     <string name="importer_help_2fas">Aukeratu 2FAS Authenticator segurtasun-kopia fitxategia.</string>
-    <string name="importer_help_aegis">Aegisen esportazio/segurtasun-kopia fitxategia aukeratu.</string>
+    <string name="importer_help_cue">Cue esportazio/segurtasun-kopia fitxategia aukeratu.</string>
     <string name="importer_help_authenticator_plus">Authenticator Plus esportazio fitxategia aukeratu. Lortzeko modua: <b>Settings -&gt; Backup &amp; Restore -&gt; Export as Text and HTML</b>.</string>
     <string name="importer_help_authy"><b>/data/data/com.authy.authy/shared_prefs/com.authy.storage.tokens.authenticator.xml</b> fitxategia aukeratu.</string>
     <string name="importer_help_andotp">andOTPren esportazio/segurtasun-kopia fitxategia aukeratu.</string>

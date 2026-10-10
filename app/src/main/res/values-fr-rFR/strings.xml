@@ -188,7 +188,7 @@
     <string name="enter_password_proton_message">Il semble que cette sauvegarde Proton Authenticator soit chiffrée. Veuillez saisir le mot de passe ci-dessous.</string>
     <string name="enter_password_2fas_message">Il semble que cette sauvegarde 2FAS soit chiffrée. Veuillez saisir le mot de passe ci-dessous.</string>
     <string name="enter_password_authy_message">Il semble que vos jetons Authy soient chiffrés. Veuillez fermer Cue, ouvrir Authy et déverrouiller les jetons avec votre mot de passe. Au lieu de cela, Cue peut également tenter de déchiffrer vos jetons Authy pour vous si vous entrez votre mot de passe ci-dessous.</string>
-    <string name="enter_password_aegis_title">Veuillez saisir le mot de passe pour l\'importation</string>
+    <string name="enter_password_import_title">Veuillez saisir le mot de passe pour l\'importation</string>
     <string name="period_hint">Période (secondes)</string>
     <string name="algorithm_hint">Fonction de hachage</string>
     <string name="type">Type</string>
@@ -424,17 +424,9 @@
     <string name="changelog">Historique des modifications</string>
     <string name="whats_new">Les nouveautés</string>
     <string name="github_description">Code source, problèmes et informations</string>
-    <string name="license">Licence</string>
     <string name="third_party_licenses">Licences tierces</string>
     <string name="third_party_licenses_description">Licences des bibliothèques tierces utilisées par Cue</string>
-    <string name="country_netherlands">Pays-Bas</string>
-    <string name="email_us">Écrire un email</string>
-    <string name="visit_website">Visiter notre site internet</string>
-    <string name="about_support">Soutien</string>
-    <string name="support_rate">Noter</string>
-    <string name="support_rate_description">Soutenez-nous en laissant un avis sur le Google Play Store</string>
     <string name="webview_error">Cet appareil ne supporte pas web view, qui est nécessaire pour voir l\'historique des modifications et la licence. Un composant système est manquant.</string>
-    <string name="email">Email</string>
     <string name="time_sync_warning_title">Synchronisation automatique de l\'heure</string>
     <string name="time_sync_warning_message">Cue s\'appuie sur l\'heure du système pour être synchronisé afin de générer des codes corrects. Un écart de quelques secondes seulement pourrait aboutir à des codes incorrects. Il semble que votre appareil n\'est pas configuré pour synchroniser le temps automatiquement. Souhaitez-vous le faire maintenant ?</string>
     <string name="time_sync_warning_disable">Arrêter de m\'avertir. Je sais ce que je fais.</string>
@@ -520,7 +512,7 @@
         <item quantity="other">%d potentiels doublons décochés. Veuillez vérifier la liste des entrées.</item>
     </plurals>
     <string name="importer_help_2fas">Fournir une sauvegarde 2FAS Authenticator.</string>
-    <string name="importer_help_aegis">Fournir un export/sauvegarde Aegis.</string>
+    <string name="importer_help_cue">Fournir un export/sauvegarde Cue.</string>
     <string name="importer_help_authenticator_plus">Fournir un export Authenticator Plus obtenu via <b>Paramètres -&gt; Sauvegarde &amp; Restauration -&gt; Exporter en tant que texte et HTML</b>.</string>
     <string name="importer_help_authy">Fournir une copie de <b>/data/com.authy.authy/shared_prefs/com.authy.storage.tokens.authenticator.xml</b>, situé dans le répertoire de stockage interne d\'Authy.</string>
     <string name="importer_help_andotp">Fournir un export/sauvegarde andOTP.</string>

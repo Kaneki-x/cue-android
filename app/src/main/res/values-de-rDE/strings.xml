@@ -188,7 +188,7 @@
     <string name="enter_password_proton_message">Es sieht so aus, als wäre diese Proton-Authenticator-Sicherung verschlüsselt. Bitte gib unten das Passwort ein.</string>
     <string name="enter_password_2fas_message">Es sieht so aus, als ob diese 2FAS-Sicherung verschlüsselt ist. Bitte das Passwort unten eingeben.</string>
     <string name="enter_password_authy_message">Es sieht so aus, als ob deine Authy-Token verschlüsselt sind. Bitte schließe Cue, öffne Authy und entsperre die Token mit deinem Passwort. Cue kann ebenfalls versuchen, deine Authy-Token zu entschlüsseln, wenn du unten dein Passwort eingibst.</string>
-    <string name="enter_password_aegis_title">Gib das Passwort der zu importierenden Datenbank ein</string>
+    <string name="enter_password_import_title">Gib das Passwort der zu importierenden Datenbank ein</string>
     <string name="period_hint">Zeitraum (Sekunden)</string>
     <string name="algorithm_hint">Hashfunktion</string>
     <string name="type">Art</string>
@@ -424,17 +424,9 @@
     <string name="changelog">Änderungsprotokoll</string>
     <string name="whats_new">Was ist neu</string>
     <string name="github_description">Quellcode, Probleme und Informationen</string>
-    <string name="license">Lizenz</string>
     <string name="third_party_licenses">Lizenzen von Dritten</string>
     <string name="third_party_licenses_description">Lizenzen für die von Cue verwendeten Bibliotheken von Dritten</string>
-    <string name="country_netherlands">Niederlande</string>
-    <string name="email_us">Eine E-Mail schreiben</string>
-    <string name="visit_website">Unsere Website besuchen</string>
-    <string name="about_support">Unterstützung</string>
-    <string name="support_rate">Bewerten</string>
-    <string name="support_rate_description">Unterstütze uns, indem du eine Bewertung im Google Play Store hinterlässt</string>
     <string name="webview_error">Dieses Gerät unterstützt kein WebView, das zum Anzeigen des Änderungsprotokolls und der Lizenz erforderlich ist. Es fehlt eine Systemkomponente.</string>
-    <string name="email">E-Mail</string>
     <string name="time_sync_warning_title">Automatische Zeitsynchronisierung</string>
     <string name="time_sync_warning_message">Cue ist auf die Synchronisierung der Systemzeit angewiesen, um korrekte Codes zu generieren. Eine Abweichung von nur wenigen Sekunden kann zu falschen Codes führen. Es sieht so aus, als ob dein Gerät nicht so konfiguriert ist, dass es die Zeit automatisch synchronisiert. Möchtest du das jetzt tun?</string>
     <string name="time_sync_warning_disable">Höre auf, mich zu warnen. Ich weiß, was ich tue.</string>
@@ -518,7 +510,7 @@
         <item quantity="other">Auswahl für %d potenzielle Duplikate aufgehoben. Bitte überprüfe die Einträge.</item>
     </plurals>
     <string name="importer_help_2fas">Gib eine 2FAS-Authenticator-Sicherungsdatei an.</string>
-    <string name="importer_help_aegis">Gib eine Aegis-Export-/Sicherungsdatei an.</string>
+    <string name="importer_help_cue">Gib eine Cue-Export-/Sicherungsdatei an.</string>
     <string name="importer_help_authenticator_plus">Gib eine Authenticator-Plus-Exportdatei an, die du über <b>Einstellungen -&gt; Sicherung &amp; Rücksicherung -&gt; Exportieren als Text und HTML Format</b> erhältst.</string>
     <string name="importer_help_authy">Gib eine Kopie von <b>/data/data/com.authy.authy/shared_prefs/com.authy.storage.tokens.authenticator.xml</b> an, die sich im internen Speicherverzeichnis von Authy befindet.</string>
     <string name="importer_help_andotp">Gib eine andOTP-Export-/Sicherungsdatei an.</string>

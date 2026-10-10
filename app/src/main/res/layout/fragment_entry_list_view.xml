@@ -6,7 +6,7 @@
     android:background="?attr/colorSurfaceContainerLow"
     android:orientation="vertical">
 
-    <com.beemdevelopment.aegis.ui.views.TotpProgressBar
+    <io.cueapp.android.ui.views.TotpProgressBar
         style="?android:attr/progressBarStyleHorizontal"
         android:layout_width="match_parent"
         android:layout_height="4dp"

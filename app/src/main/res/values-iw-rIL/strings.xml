@@ -185,7 +185,7 @@
     <string name="password_reminder_freq_quarterly">פעם ברבעון</string>
     <string name="enter_password_2fas_message">נראה שגיבוי 2FAS זה מוצפן. אנא הזן את הסיסמה למטה.</string>
     <string name="enter_password_authy_message">זה נראה כאילו אסימוני Authy שלך מוצפנים. אנא סגור את Cue, פתח את Authy ובטל את נעילת האסימונים עם הסיסמה שלך. במקום זאת, Cue יכולה גם לנסות לפענח עבורך את אסימוני Authy שלך, אם תזין את הסיסמה שלך למטה.</string>
-    <string name="enter_password_aegis_title">נא להקליד את הסיסמה לצורך הייבוא</string>
+    <string name="enter_password_import_title">נא להקליד את הסיסמה לצורך הייבוא</string>
     <string name="period_hint">פרק זמן (שניות)</string>
     <string name="algorithm_hint">פונקציית גיבוב</string>
     <string name="type">סוג</string>
@@ -410,17 +410,9 @@
     <string name="changelog">יומן שינויים</string>
     <string name="whats_new">מה חדש</string>
     <string name="github_description">קוד מקור, בעיות ומידע</string>
-    <string name="license">רישיון</string>
     <string name="third_party_licenses">רישיונות של צד שלישי</string>
     <string name="third_party_licenses_description">רישיונות של ספריות צד שלישי שבהן משתמשת Cue</string>
-    <string name="country_netherlands">הולנד</string>
-    <string name="email_us">כתוב מייל</string>
-    <string name="visit_website">בקר באתר שלנו</string>
-    <string name="about_support">תמיכה</string>
-    <string name="support_rate">דירוג</string>
-    <string name="support_rate_description">תמכו בנו על ידי השארת ביקורת בחנות Google Play</string>
     <string name="webview_error">מכשיר זה אינו תומך בתצוגת אינטרנט, הנחוצה להצגת יומן השינויים והרישיון. חסר לו רכיב מערכת.</string>
-    <string name="email">אימייל</string>
     <string name="time_sync_warning_title">סנכרון זמן אוטומטי</string>
     <string name="time_sync_warning_message">Cue מסתמכת על זמן המערכת להיות מסונכרן כדי ליצור קודים נכונים. סטייה של מספר שניות בלבד עלולה לגרום לקודים שגויים. נראה שהמכשיר שלך לא מוגדר לסנכרון אוטומטי של השעה. האם תרצה לעשות זאת כעת?</string>
     <string name="time_sync_warning_disable">תפסיק להזהיר אותי. אני יודע מה אני עושה.</string>
@@ -490,7 +482,7 @@
     <string name="pref_panic_trigger_summary">מחק את הכספת בהפעלת הפאניקה</string>
     <string name="import_vault_hint">רוצה לייבא מיישום אחר של אימות דו־שלבי? נא לסיים קודם את ההגדרה הראשונית ואז לגשת לתפריט ההגדרות.</string>
     <string name="importer_help_2fas">ספק קובץ גיבוי של 2FAS Authenticator.</string>
-    <string name="importer_help_aegis">ספק קובץ ייצוא/גיבוי של Aegis.</string>
+    <string name="importer_help_cue">ספק קובץ ייצוא/גיבוי של Cue.</string>
     <string name="importer_help_authenticator_plus">ספק קובץ ייצוא של Authenticator Plus שהושג דרך <b>הגדרות -&gt; גיבוי &amp; שחזור -&gt; ייצוא כטקסט ו-HTML</b>.</string>
     <string name="importer_help_authy">ספק עותק של <b>/data/data/com.authy.authy/shared_prefs/com.authy.storage.tokens.authenticator.xml</b>, הממוקם בספריית האחסון הפנימית של Authy.</string>
     <string name="importer_help_andotp">ספק קובץ יצוא/גיבוי andOTP.</string>

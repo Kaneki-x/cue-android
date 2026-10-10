@@ -185,7 +185,7 @@
     <string name="enter_password_proton_message">此 Proton Authenticator 备份似乎已加密。请在下方输入密码。</string>
     <string name="enter_password_2fas_message">看起来此 2FAS 备份已加密。请在下方输入密码。</string>
     <string name="enter_password_authy_message">您的 Authy 令牌似乎已加密。请关闭 Cue，打开 Authy，然后使用您的密码解锁令牌。另外，如果您在下面输入密码，Cue 也可以尝试为您解密 Authy 令牌。</string>
-    <string name="enter_password_aegis_title">请输入导入密码</string>
+    <string name="enter_password_import_title">请输入导入密码</string>
     <string name="period_hint">时间间隔 (秒)</string>
     <string name="algorithm_hint">哈希函数</string>
     <string name="type">类型</string>
@@ -414,17 +414,9 @@
     <string name="changelog">更新日志</string>
     <string name="whats_new">新增功能</string>
     <string name="github_description">源代码，问题和信息</string>
-    <string name="license">代码许可</string>
     <string name="third_party_licenses">第三方许可</string>
     <string name="third_party_licenses_description">Cue 用到的第三方库的许可</string>
-    <string name="country_netherlands">荷兰</string>
-    <string name="email_us">发送电子邮件</string>
-    <string name="visit_website">访问我们的网站</string>
-    <string name="about_support">支持</string>
-    <string name="support_rate">评分</string>
-    <string name="support_rate_description">通过在 Google Play 商店留下评论来支持我们</string>
     <string name="webview_error">此设备不支持 webview，这是查看更新日志和许可证所必需的。你的系统缺少这一组件。</string>
-    <string name="email">电子邮件</string>
     <string name="time_sync_warning_title">自动同步时间</string>
     <string name="time_sync_warning_message">Cue 依靠系统时间来同步生成正确的验证码。仅几秒钟的偏差可能会导致验证码错误。您的设备似乎未配置为自动同步时间。您现在要设置自动同步时间吗？</string>
     <string name="time_sync_warning_disable">不要再次提醒。我知道我在做什么。</string>
@@ -510,7 +502,7 @@
         <item quantity="other">未选中 %d 个潜在重复项。请检视条目列表。</item>
     </plurals>
     <string name="importer_help_2fas">提供一个 2FAS 身份验证器备份文件。</string>
-    <string name="importer_help_aegis">提供一个 Aegis 导出/备份文件。</string>
+    <string name="importer_help_cue">提供一个 Cue 导出/备份文件。</string>
     <string name="importer_help_authenticator_plus">提供一个通过 <b>设置 -&gt; 备份 &amp; 还原 -&gt; 导出为纯文本和 HTML</b> 获得的 Authenticator Plus 导出文件。</string>
     <string name="importer_help_authy">提供 <b>/data/data/com.authy.authy/shared_prefs/com.authy.storage.tokens.authenticator.xml</b> 的一个副本，位于 Authy 的内部存储目录。</string>
     <string name="importer_help_andotp">提供 andOTP 导出/备份文件。</string>
@@ -616,11 +608,10 @@
     <string name="pref_external_grace_1m">1 分钟</string>
     <string name="pref_external_grace_5m">5 分钟</string>
     <string name="pref_external_grace_15m">15 分钟</string>
-    <string name="pref_section_import_export_summary">导入 Aegis、Cue 或其他验证器应用的备份。手动导出你的 Cue 数据库。</string>
-    <string name="export_format_aegis">Cue（.JSON，兼容 Aegis）</string>
-    <string name="import_vault">导入 Cue 或 Aegis 数据库</string>
+    <string name="pref_section_import_export_summary">导入 Cue 或其他验证器应用的备份。手动导出你的 Cue 数据库。</string>
+    <string name="export_format_cue">Cue（.JSON）</string>
+    <string name="import_vault">导入 Cue 数据库</string>
     <string name="app_description">Cue 是一款免费、安全、开源的两步验证应用</string>
-    <string name="license_description">Cue 基于 GPLv3 许可证发布</string>
     <string name="website">网站</string>
     <string name="website_helper">这个验证码在哪个网站使用，例如 github.com。键盘和小组件会据此推荐。</string>
 </resources>

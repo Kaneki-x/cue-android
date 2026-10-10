@@ -190,7 +190,7 @@
     <string name="password_reminder_freq_quarterly">Ik ceturksni</string>
     <string name="enter_password_2fas_message">Izskatās, ka šī 2FAS rezerves kopija ir šifrēta. Lūgums zemāk ievadīt paroli.</string>
     <string name="enter_password_authy_message">Izskatās, ka Authy kodi ir šifrēti. Lūgums aizvērt Cue, atvērt Authy un atslēgt kodus ar paroli. Cue var arī mēģināt atšifrēt Authy kodus, ja tiek ievadīta parole zemāk esošajā laukā.</string>
-    <string name="enter_password_aegis_title">Lūgums ievadīt ievietošanas paroli</string>
+    <string name="enter_password_import_title">Lūgums ievadīt ievietošanas paroli</string>
     <string name="period_hint">Laika posms (sekundes)</string>
     <string name="algorithm_hint">Jaukšanas funkcija</string>
     <string name="type">Veids</string>
@@ -434,17 +434,9 @@
     <string name="changelog">Izmaiņu žurnāls</string>
     <string name="whats_new">Kas jauns</string>
     <string name="github_description">Pirmkods, pieteikumi un informācija</string>
-    <string name="license">Licence</string>
     <string name="third_party_licenses">Trešo pušu licences</string>
     <string name="third_party_licenses_description">Trešo pušu bibliotēku, ko Cue izmanto, licences</string>
-    <string name="country_netherlands">Nīderlande</string>
-    <string name="email_us">Rakstīt e-pastu</string>
-    <string name="visit_website">Apmeklēt mūsu vietni</string>
-    <string name="about_support">Atbalsts</string>
-    <string name="support_rate">Novērtēt</string>
-    <string name="support_rate_description">Mūs var atbalstīt ar pārskatu Google Play veikalā</string>
     <string name="webview_error">Šajā ierīcē netiek atbalstīts tīmekļa skats, kas ir nepieciešams, lai apskatīt izmaiņu sarakstu un licenci. Tam trūkst sistēmas sastāvdaļas.</string>
-    <string name="email">E-pasts</string>
     <string name="time_sync_warning_title">Automātiska laika sinhronizēšana</string>
     <string name="time_sync_warning_message">Cue paļaujas, ka sistēmas laiks sakrīt, lai izveidotu pareizus kodus. Dažu sekunžu nobīde var izraisīt nepareizus kodus. Izskatās, ka šī ierīce nav uzstādīta, lai automātiski sinhronizētu laiku. Vai izdarīt to tagad?</string>
     <string name="time_sync_warning_disable">Nebrīdināt mani. Es zinu, ko es daru.</string>
@@ -533,7 +525,7 @@
         <item quantity="other">Noņemta atzīme %d iespējamiem dublikātiem. Lūgums pārskatīt ierakstu sarakstu.</item>
     </plurals>
     <string name="importer_help_2fas">Jāiesniedz 2FAS Authenticator izgūšanas datne.</string>
-    <string name="importer_help_aegis">Jāiesniedz Aegis izgūšanas / rezerves kopijas datne.</string>
+    <string name="importer_help_cue">Jāiesniedz Cue izgūšanas / rezerves kopijas datne.</string>
     <string name="importer_help_authenticator_plus">Jāiesniedz Authenticator Plus izgūšanas datne, kas ir iegūta ar <b>Iestatījumi -&gt; Rezerves kopēšana un atjaunošana -&gt; Izgūt kā tekstu un HTML</b>.</string>
     <string name="importer_help_authy">Jāiesniedz <b>/data/data/com.authy.authy/shared_prefs/com.authy.storage.tokens.authenticator.xml</b> kopija, kas atrodas iekšējās krātuves Authy mapē.</string>
     <string name="importer_help_andotp">Jāiesniedz andOTP izgūšanas / rezerves kopijas datne.</string>

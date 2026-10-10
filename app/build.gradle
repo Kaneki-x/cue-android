@@ -15,8 +15,8 @@ def getCmdOutput = { cmd ->
 def getGitHash = { -> return getCmdOutput(["git", "rev-parse", "--short", "HEAD"]) }
 def getGitBranch = { -> return getCmdOutput(["git", "rev-parse", "--abbrev-ref", "HEAD"]) }
 
-// Java/resource namespace. Kept as-is so that fixes from upstream Aegis can still be cherry-picked.
-def packageName = "com.beemdevelopment.aegis"
+// Java/resource namespace.
+def packageName = "io.cueapp.android"
 // Application id (what Android and the stores identify the app by).
 def appId = "io.cueapp.android"
 def fileProviderAuthority = "${appId}.fileprovider"
@@ -44,7 +44,7 @@ android {
             }
         }
 
-        testInstrumentationRunner "com.beemdevelopment.aegis.AegisTestRunner"
+        testInstrumentationRunner "io.cueapp.android.CueTestRunner"
         testInstrumentationRunnerArguments clearPackageData: 'true'
     }
 

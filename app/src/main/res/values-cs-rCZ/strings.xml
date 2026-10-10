@@ -194,7 +194,7 @@
     <string name="enter_password_proton_message">Zdá se, že tato záloha aplikace Proton Authenticator je šifrovaná. Zadejte prosím heslo níže.</string>
     <string name="enter_password_2fas_message">Zdá se, že tato záloha 2FAS je šifrovaná. Zadejte prosím heslo níže.</string>
     <string name="enter_password_authy_message">Vypadá to, že vaše Authy tokeny jsou šifrovány. Prosím, zavřete Cue, otevřete Authy a odemkněte tokeny pomocí vašeho hesla. Alternativně se může Cue pokusit dešifrovat vaše Authy tokeny, pokud zadáte své heslo níže.</string>
-    <string name="enter_password_aegis_title">Zadejte heslo importu</string>
+    <string name="enter_password_import_title">Zadejte heslo importu</string>
     <string name="period_hint">Doba (sekundy)</string>
     <string name="algorithm_hint">Funkce hash</string>
     <string name="type">Typ</string>
@@ -446,17 +446,9 @@
     <string name="changelog">Seznam změn</string>
     <string name="whats_new">Co je nového?</string>
     <string name="github_description">Zdrojový kód, problémy a informace</string>
-    <string name="license">Licence</string>
     <string name="third_party_licenses">Licence třetí strany</string>
     <string name="third_party_licenses_description">Licence knihoven třetích stran použitých v Cueu</string>
-    <string name="country_netherlands">Nizozemsko</string>
-    <string name="email_us">Pošlete nám e-mail</string>
-    <string name="visit_website">Navštivte náš web</string>
-    <string name="about_support">Podpora</string>
-    <string name="support_rate">Ohodnoťte aplikaci</string>
-    <string name="support_rate_description">Podpořte nás napsáním recenze v obchodě Google Play</string>
     <string name="webview_error">Vaše zařízení nepodporuje WebView, které je nutné pro zobrazení seznamu změn a licence. Tato komponenta zřejmě chybí v systému.</string>
-    <string name="email">E-mail</string>
     <string name="time_sync_warning_title">Automatická synchronizace času</string>
     <string name="time_sync_warning_message">Cue při generování správných kódů spoléhá na synchronizaci systémového času. Odchylka pouze několika sekund může mít za následek nesprávné kódy. Zdá se, že vaše zařízení není nakonfigurováno pro automatickou synchronizaci času. Chcete nastavit automatickou synchronizaci času?</string>
     <string name="time_sync_warning_disable">Už mě neupozorňujte. Vím, co dělám.</string>
@@ -548,7 +540,7 @@
         <item quantity="other">Zrušeno označení %d možných duplicit. Zkontrolujte prosím seznam položek.</item>
     </plurals>
     <string name="importer_help_2fas">Dodejte záložní soubor 2FAS Authenticator.</string>
-    <string name="importer_help_aegis">Dodejte soubor exportu/zálohy Aegis.</string>
+    <string name="importer_help_cue">Dodejte soubor exportu/zálohy Cue.</string>
     <string name="importer_help_authenticator_plus">Dodejte exportovaný soubor Authenticator Plus získaný přes <b>Nastavení -&gt; Záloha a obnovení -&gt; Exportovat jako text a HTML</b>.</string>
     <string name="importer_help_authy">Dodejte kopii <b>/data/data/com.authy.authy/shared_prefs/com.authy.storage.tokens.authenticator.xml</b>, která se nachází v interním úložišti Authy.</string>
     <string name="importer_help_andotp">Dodejte soubor exportu/zálohy andOTP.</string>

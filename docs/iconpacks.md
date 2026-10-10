@@ -32,7 +32,7 @@ is randomly generated once and stays the same across different versions.
 
 Every icon definition contains the filename of the icon file, relative to the
 root of the .ZIP archive. Icon definitions also have a list of strings that the
-Issuer field in Aegis is matched against for automatic selection of an icon for
+Issuer field in Cue is matched against for automatic selection of an icon for
 new entries. Matching is done in a case-insensitive manner. There's also a
 category field. Optionally, icons can also have a name.
 
@@ -46,19 +46,19 @@ The following image formats are supported, in order of preference:
 
 Any files in the .ZIP archive that are not the ``pack.json`` file or referred to
 in the icons list are ignored. Such files are not extracted when importing the
-icon pack into Aegis.
+icon pack into Cue.
 
-### Using icon packs in Aegis
+### Using icon packs in Cue
 
-Users can download an icon pack from the internet and import it into Aegis
-through the settings menu. Aegis extracts the icon pack to
+Users can download an icon pack from the internet and import it into Cue
+through the settings menu. Cue extracts the icon pack to
 ``icons/{uuid}/{version}``, relative to its internal storage directory. So for
 the example icon pack above, that'd be:
 ``icons/c553f06f-2a17-46ca-87f5-56af90dd0500/1``. If it has an old version of
 the icon pack, it will be removed after successful extraction of the newer
 version. 
 
-After that, Aegis will start proposing icons for new entries if the issuer
+After that, Cue will start proposing icons for new entries if the issuer
 matches with one of the icons in the pack. We'll also have an icon selection
 dialog, where all of the icons in the pack appear. When the user selects an
 icon, it is copied and stored in the vault file.

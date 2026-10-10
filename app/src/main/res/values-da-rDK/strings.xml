@@ -188,7 +188,7 @@
     <string name="enter_password_proton_message">Det lader til, at denne Proton Authenticator-sikkerhedskopi er krypteret. Angiv adgangskoden nedenfor.</string>
     <string name="enter_password_2fas_message">Det lader til, at denne 2FAS-sikkerhedskopi er krypteret. Angiv adgangskoden nedenfor.</string>
     <string name="enter_password_authy_message">Det ser ud til at Authy-tokenerne er krypterede. Luk Cue, åbn Authy og oplås tokener med adgangskoden. Alternativ kan Cue forsøge at dekryptere Authy-tokenerne, hvis adgangskode angives nedenfor.</string>
-    <string name="enter_password_aegis_title">Angiv importadgangskoden</string>
+    <string name="enter_password_import_title">Angiv importadgangskoden</string>
     <string name="period_hint">Periode (sekunder)</string>
     <string name="algorithm_hint">Hash-funktion</string>
     <string name="type">Type</string>
@@ -424,17 +424,9 @@
     <string name="changelog">Ændringslog</string>
     <string name="whats_new">Nyheder</string>
     <string name="github_description">Kildekode, problematikker og information</string>
-    <string name="license">Licens</string>
     <string name="third_party_licenses">Tredjepartslicenser</string>
     <string name="third_party_licenses_description">Licenser fra tredjepartsbibliotekerne Cue bruger</string>
-    <string name="country_netherlands">Nederlandene</string>
-    <string name="email_us">Skriv en e-mail</string>
-    <string name="visit_website">Besøg vores websted</string>
-    <string name="about_support">Support</string>
-    <string name="support_rate">Bedøm</string>
-    <string name="support_rate_description">Støt os ved at skrive en anmeldelse i Google Play Store</string>
     <string name="webview_error">Denne enhed understøtter ikke webvisning, hvilket kræves for at vise ændringslog og licens. En systemkomponent mangler.</string>
-    <string name="email">E-mail</string>
     <string name="time_sync_warning_title">Automatisk tidssynkronisering</string>
     <string name="time_sync_warning_message">Cue er afhængig af systemtiden for at være i synk til generering af korrekte koder. En afvigelse på kun et par sekunder kan resultere i forkerte koder. Det ser ud til, at enheden ikke er opsat til auto-synk af tid. Opsæt dette nu?</string>
     <string name="time_sync_warning_disable">Ophør med at advare mig. Jeg ved, hvad jeg gør.</string>
@@ -520,7 +512,7 @@
         <item quantity="other">Afmarkererede %d potentielle dubletter. Revidér listen over poster.</item>
     </plurals>
     <string name="importer_help_2fas">Stil en 2FAS-godkendelse sikkerhedskopifil til rådighed.</string>
-    <string name="importer_help_aegis">Levér en Aegis eksport/backup fil.</string>
+    <string name="importer_help_cue">Levér en Cue eksport/backup fil.</string>
     <string name="importer_help_authenticator_plus">Levér en Authenticator Plus-eksportfil opnået gennem <b>Indstillinger -&gt; Sikkerhedskopi &amp; Gendan -&gt; Eksport som tekst og HTML</b>.</string>
     <string name="importer_help_authy">Levér en kopi af <b>/data/data/com.authy.authy/shared_prefs/com.authy.storage.tokens.authenticator.xml</b>, der er placeret i den interne lagermappe i Authy.</string>
     <string name="importer_help_andotp">Levér en andOTP eksport/backup fil.</string>

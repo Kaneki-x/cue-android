@@ -191,7 +191,7 @@
     <string name="enter_password_proton_message">Изгледа да је ова резервна копија Proton Authenticator-а шифрована. Унесите лозинку испод.</string>
     <string name="enter_password_2fas_message">Изгледа да је ова 2FAS резервна копија шифрована. Унесите лозинку испод.</string>
     <string name="enter_password_authy_message">Изгледа да су ваши Authy токени шифровани. Затворите Cue, отворите Authy и откључајте токене својом лозинком. Уместо тога, Cue такође може покушати да дешифрује ваше Authy токене за вас, ако унесете своју лозинку испод.</string>
-    <string name="enter_password_aegis_title">Унесите лозинку за увоз</string>
+    <string name="enter_password_import_title">Унесите лозинку за увоз</string>
     <string name="period_hint">Период (секунди)</string>
     <string name="algorithm_hint">Функција хеша</string>
     <string name="type">Тип</string>
@@ -435,17 +435,9 @@
     <string name="changelog">Евиденција промена</string>
     <string name="whats_new">Шта је ново</string>
     <string name="github_description">Изворни кôд, проблеми и информације</string>
-    <string name="license">Лиценца</string>
     <string name="third_party_licenses">Лиценце треће стране</string>
     <string name="third_party_licenses_description">Лиценце библиотека трећих страна које користи Cue</string>
-    <string name="country_netherlands">Холандија</string>
-    <string name="email_us">Напишите имејл</string>
-    <string name="visit_website">Посетите наш веб-сајт</string>
-    <string name="about_support">Подршка</string>
-    <string name="support_rate">Оцени</string>
-    <string name="support_rate_description">Подржите нас тако што ћете оставити рецензију у Google Play продавници</string>
     <string name="webview_error">Овај уређај не подржава веб-приказ, који је неопходан за преглед евиденције промена и лиценце. Недостаје системска компонента.</string>
-    <string name="email">Имејл</string>
     <string name="time_sync_warning_title">Аутоматска синхронизација времена</string>
     <string name="time_sync_warning_message">Cue се ослања на системско време да буде синхронизовано да генерише исправне кодове. Одступање од само неколико секунди може довести до нетачних кодова. Изгледа да ваш уређај није конфигурисан да аутоматски синхронизује време. Желите ли да то урадите сада?</string>
     <string name="time_sync_warning_disable">Престаните да ме упозоравате. Знам шта радим.</string>
@@ -533,7 +525,7 @@
         <item quantity="other">Опозвано је %d потенцијалних дупликата. Прегледајте листу уноса.</item>
     </plurals>
     <string name="importer_help_2fas">Доставите фајл резервне копије 2FAS Authenticator-а.</string>
-    <string name="importer_help_aegis">Доставите фајл извоза/резервне копије Aegis-а.</string>
+    <string name="importer_help_cue">Доставите фајл извоза/резервне копије Cue-а.</string>
     <string name="importer_help_authenticator_plus">Доставите фајл извоза Authenticator Plus добијен преко <b>Подешавања -&gt; Резервна копија и враћање -&gt; Извоз као текст и HTML</b>.</string>
     <string name="importer_help_authy">Доставите копију <b>/data/data/com.authy.authy/shared_prefs/com.authy.storage.tokens.authenticator.xml</b>, која се налази у фолдеру интерне меморије Authy-а.</string>
     <string name="importer_help_andotp">Доставите фајл извоза/резервне копије andOTP-а.</string>
