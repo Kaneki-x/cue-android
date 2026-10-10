@@ -652,7 +652,7 @@ public class Preferences {
     }
 
     public CopyBehavior getCopyBehavior() {
-        return CopyBehavior.fromInteger(_prefs.getInt("pref_current_copy_behavior", 0));
+        return CopyBehavior.fromInteger(_prefs.getInt("pref_current_copy_behavior", CopyBehavior.SINGLETAP.ordinal()));
     }
 
     public void setCopyBehavior(CopyBehavior copyBehavior) {

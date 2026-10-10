@@ -470,27 +470,24 @@ public class EntryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             entryHolder.itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    boolean handled = false;
-
                     if (_selectedEntries.isEmpty()) {
+                        // A tap that copies also reveals the code and keeps it shown, as on iOS:
+                        // shown and copied at once, hidden again when the reveal time runs out
+                        boolean copies = _copyBehavior == CopyBehavior.SINGLETAP
+                                || (_copyBehavior == CopyBehavior.DOUBLETAP && entry == _clickedEntry);
                         if (_highlightEntry || _tempHighlightEntry || _tapToReveal) {
-                            if (_focusedEntry != null && _focusedEntry.equals(entry)) {
+                            if (!copies && _focusedEntry != null && _focusedEntry.equals(entry)) {
                                 resetFocus();
                             } else {
                                 focusEntry(entry, _tapToRevealTime);
-
-                                // Prevent copying when singletap is set and the entry is being revealed
-                                handled = _copyBehavior == CopyBehavior.SINGLETAP && _tapToReveal;
                             }
                         }
 
                         switch (_copyBehavior) {
                             case SINGLETAP:
-                                if (!handled) {
-                                    _view.onEntryCopy(entry);
-                                    entryHolder.animateCopyText();
-                                    _clickedEntry = null;
-                                }
+                                _view.onEntryCopy(entry);
+                                entryHolder.animateCopyText();
+                                _clickedEntry = null;
                                 break;
                             case DOUBLETAP:
                                 _doubleTapHandler.postDelayed(() -> _clickedEntry = null, ViewConfiguration.getDoubleTapTimeout());
@@ -518,9 +515,7 @@ public class EntryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                         }
                     }
 
-                    if (!handled) {
-                        _view.onEntryClick(entry);
-                    }
+                    _view.onEntryClick(entry);
                 }
             });
             entryHolder.itemView.setOnLongClickListener(new View.OnLongClickListener() {
