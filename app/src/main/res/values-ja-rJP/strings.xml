@@ -135,7 +135,6 @@
     <string name="authentication_method_biometrics">生体認証</string>
     <string name="authentication_method_biometrics_description">パスワードに加えて、指紋や顔など、このデバイスに登録された生体認証を保管庫のロックの解除に使用することができます。</string>
     <string name="authentication">保管庫のロックを解除</string>
-    <string name="auth_use_biometrics"><font fgcolor="#FF0D86C1">生体認証</font> を使用するにはここをタップしてください</string>
     <string name="set_password">パスワードを入力してください</string>
     <string name="set_group">グループ名を入力してください</string>
     <string name="set_number">数字を入力してください</string>
@@ -343,7 +342,6 @@
     <string name="version">バージョン</string>
     <string name="changelog">更新履歴</string>
     <string name="whats_new">新着情報</string>
-    <string name="github_description">ソースコード、問題および情報</string>
     <string name="third_party_licenses">サードパーティ ライセンス</string>
     <string name="third_party_licenses_description">Cueが使用するサードパーティライブラリのライセンス</string>
     <string name="webview_error">このデバイスはWebビューをサポートしていません。これはchangelogとライセンスを表示するために必要です。システムコンポーネントがありません。
@@ -374,7 +372,6 @@
     <string name="empty_list_title">エントリーが見つかりません</string>
     <string name="empty_group_list">表示するグループがありません。エントリーの編集画面でグループを追加してください</string>
     <string name="empty_group_list_title">グループが見つかりません</string>
-    <string name="no_icon_packs">アイコンパックはまだインポートされていません。＋記号をタップしてインポートしてください。ヒント: <a href="https://aegis-icons.github.io">aegis-icons</a> を試してください。</string>
     <string name="no_icon_packs_title">アイコンパックがありません</string>
     <string name="pick_icon">アイコンを選択</string>
     <string name="uncategorized">未分類</string>

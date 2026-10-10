@@ -169,7 +169,6 @@
     <string name="authentication_method_biometrics">Biomeetria</string>
     <string name="authentication_method_biometrics_description">Lisaks salasõnale, on siin nutiseadmes biomeetrilise tuvastuse võimalus. Näiteks sõrmejälje või näotuvastusega on võimalik andmehoidlat lukust lahti võtta.</string>
     <string name="authentication">Võta andmehoidla lukust lahti</string>
-    <string name="auth_use_biometrics">Või klõpsi siin <font fgcolor="#FF0D86C1">biomeetrilise tuvastuse</font> kasutamiseks</string>
     <string name="set_password">Palun sisesta salasõna</string>
     <string name="set_group">Palun sisesta grupi nimi</string>
     <string name="set_number">Palun sisesta number</string>
@@ -419,7 +418,6 @@
     <string name="version">Versioon</string>
     <string name="changelog">Muudatuste logi</string>
     <string name="whats_new">Mida on uut</string>
-    <string name="github_description">Lähtekood, veahaldus ja teave</string>
     <string name="third_party_licenses">Kolmandate osapoolte litsentsid</string>
     <string name="third_party_licenses_description">Cuee kasutatavate kolmandate osapoolte teekide litsentsid</string>
     <string name="webview_error">Selles nutiseadmes puudub webview-teegi tugi. Seda on vaja muudatuste logi ja litsentside kuvamiseks. Tegemist on operatsioonisüsteemi komponendiga.</string>
@@ -455,7 +453,6 @@ Andmehoidla viimased muudatused on veel varundamata. Vältimaks, et kaotad ligip
     <string name="empty_list_title">Ühtegi kirjet ei leidu</string>
     <string name="empty_group_list">Ühtegi gruppi pole näidatud. Saad neid lisada kirje muutmisvaatest</string>
     <string name="empty_group_list_title">Ühtegi gruppi ei leidu</string>
-    <string name="no_icon_packs">Ühtegi ikoonipakki pole veel imporditud. Mõne sellise importimisejs klõpsi + ikooni. Soovitus: vaata ka <a href="https://aegis-icons.github.io">aegise ikoone</a>.</string>
     <string name="no_icon_packs_title">Ikoonipakke pole</string>
     <string name="pick_icon">Vali ikoon</string>
     <string name="uncategorized">Kategoriseerimata</string>

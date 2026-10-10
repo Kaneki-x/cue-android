@@ -172,6 +172,10 @@ public class Preferences {
         return _prefs.getBoolean("pref_expiration_state", true);
     }
 
+    public boolean getShowExpirationCountdown() {
+        return getShowExpirationState() && _prefs.getBoolean("pref_expiration_countdown", false);
+    }
+
     public CodeGrouping getCodeGroupSize() {
         String value = _prefs.getString("pref_code_group_size_string", "GROUPING_THREES");
 

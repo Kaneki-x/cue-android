@@ -169,7 +169,6 @@
     <string name="authentication_method_biometrics">Biometri</string>
     <string name="authentication_method_biometrics_description">Ud over en adgangskode kan denne enheds registrerede biometri, såsom fingeraftryk eller ansigt, bruges til oplåsning af Boksen.</string>
     <string name="authentication">Lås boksen op</string>
-    <string name="auth_use_biometrics">Eller tryk her for at bruge <font fgcolor="#FF0D86C1">biometri</font></string>
     <string name="set_password">Angiv adgangskode</string>
     <string name="set_group">Angiv et gruppenavn</string>
     <string name="set_number">Angiv et tal</string>
@@ -419,7 +418,6 @@
     <string name="version">Version</string>
     <string name="changelog">Ændringslog</string>
     <string name="whats_new">Nyheder</string>
-    <string name="github_description">Kildekode, problematikker og information</string>
     <string name="third_party_licenses">Tredjepartslicenser</string>
     <string name="third_party_licenses_description">Licenser fra tredjepartsbibliotekerne Cue bruger</string>
     <string name="webview_error">Denne enhed understøtter ikke webvisning, hvilket kræves for at vise ændringslog og licens. En systemkomponent mangler.</string>
@@ -460,7 +458,6 @@
     <string name="empty_list_title">Ingen poster fundet</string>
     <string name="empty_group_list">Der er ingen grupper at vise. Tilføj grupper på redigeringsskærmen for en post</string>
     <string name="empty_group_list_title">Ingen grupper fundet</string>
-    <string name="no_icon_packs">Ingen ikonpakker importeret endnu. Tryk på plus-tegnet for at importere en. Tip: Prøv <a href="https://aegis-icons.github.io">aegis-ikoner</a>.</string>
     <string name="no_icon_packs_title">Ingen ikonpakker</string>
     <string name="pick_icon">Vælg et ikon</string>
     <string name="uncategorized">Ukategoriseret</string>

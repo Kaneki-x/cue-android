@@ -169,7 +169,6 @@
     <string name="authentication_method_biometrics">Biometrikus</string>
     <string name="authentication_method_biometrics_description">A jelszó mellett a biometrikus adatai is regisztrálva lesznek az eszközön, mint például az ujjlenyomata vagy az arca, melyet a széf feloldásához használhat.</string>
     <string name="authentication">A széf feloldása</string>
-    <string name="auth_use_biometrics">Koppintson ide, hogy a <font fgcolor="#FF0D86C1">biometrikus adatokat</font> használja</string>
     <string name="set_password">Adja meg a jelszavát</string>
     <string name="set_group">Adja meg a csoport nevét</string>
     <string name="set_number">Adjon meg egy számot</string>
@@ -418,7 +417,6 @@
     <string name="version">Verzió</string>
     <string name="changelog">Változáslista</string>
     <string name="whats_new">Újdonságok</string>
-    <string name="github_description">Forráskód, problémák és információk</string>
     <string name="third_party_licenses">Harmadik felek licencei</string>
     <string name="third_party_licenses_description">Az Cue által használt, harmadik féltől származó programkönyvtárok licencei</string>
     <string name="webview_error">Ez az eszköz nem támogatja a webes nézetet, amely szükséges a változásnapló és a licenc megtekintéséhez. Ez egy hiányzó rendszerösszetevő.</string>
@@ -459,7 +457,6 @@
     <string name="empty_list_title">Nem található bejegyzés</string>
     <string name="empty_group_list">Nincs megjelenítendő csoport. Adjon hozzá csoportokat egy bejegyzés szerkesztésénél.</string>
     <string name="empty_group_list_title">Nem található csoport</string>
-    <string name="no_icon_packs">Még nem lett ikoncsomag importálva. Koppintson a plusz ikonra az importáláshoz. Tipp: próbálja ki az <a href="https://aegis-icons.github.io">aegis-icons</a> csomagot.</string>
     <string name="no_icon_packs_title">Nincs ikoncsomag</string>
     <string name="pick_icon">Válasszon egy ikont</string>
     <string name="uncategorized">Kategorizálatlan</string>

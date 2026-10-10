@@ -167,7 +167,6 @@
     <string name="authentication_method_biometrics">Biometrické údaje</string>
     <string name="authentication_method_biometrics_description">Na odomknutie trezoru možno okrem hesla použiť aj biometriu zaregistrovanú v tomto zariadení, napríklad odtlačok prsta alebo vašu tvár.</string>
     <string name="authentication">Odomknúť trezor</string>
-    <string name="auth_use_biometrics">Alebo kliknite sem pre použitie <font fgcolor="#FF0D86C1">biometrie</font></string>
     <string name="set_password">Prosím, zadajte heslo</string>
     <string name="set_group">Zadajte názov skupiny</string>
     <string name="set_number">Prosím zadajte číslo</string>
@@ -377,7 +376,6 @@
     <string name="version">Verzia</string>
     <string name="changelog">Zoznam zmien</string>
     <string name="whats_new">Čo je nové</string>
-    <string name="github_description">Zdrojový kód, problémy a informácie</string>
     <string name="third_party_licenses">Licencie tretích strán</string>
     <string name="third_party_licenses_description">Licencie knižníc tretích strán, ktoré Cue používa</string>
     <string name="time_sync_warning_title">Automatická synchronizácia času</string>
@@ -396,7 +394,6 @@
     <string name="switch_camera">Prepnúť fotoaparát</string>
     <string name="empty_list_title">Neboli nájdené žiadne záznamy</string>
     <string name="empty_group_list_title">Neboli nájdené žiadne skupiny</string>
-    <string name="no_icon_packs">Zatiaľ neboli importované žiadne balíčky ikon. Klepnite na znamienko plus aby ste ho importovali. Tip: vyskúšajte <a href="https://aegis-icons.github.io">aegis-icons</a>.</string>
     <string name="no_icon_packs_title">Žiadne balíčky ikon</string>
     <string name="uncategorized">Nezaradené</string>
     <string name="done">Hotovo</string>

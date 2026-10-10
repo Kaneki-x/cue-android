@@ -167,7 +167,6 @@
     <string name="authentication_method_biometrics">זיהוי ביומטרי</string>
     <string name="authentication_method_biometrics_description">לצד הסיסמה, ניתן להשתמש באמצעי זיהוי ביומטריים, כגון טביעת אצבע או צילום הפנים, בשביל לפתוח את הכספת.</string>
     <string name="authentication">פתיחת הכספת</string>
-    <string name="auth_use_biometrics">או להקיש כאן בשביל להשתמש ב<font fgcolor="#FF0D86C1">זיהוי ביומטרי</font></string>
     <string name="set_password">נא להקליד סיסמה</string>
     <string name="set_group">נא להקליד שם לקבוצה</string>
     <string name="set_number">נא להקליד מספר</string>
@@ -405,7 +404,6 @@
     <string name="version">גרסה</string>
     <string name="changelog">יומן שינויים</string>
     <string name="whats_new">מה חדש</string>
-    <string name="github_description">קוד מקור, בעיות ומידע</string>
     <string name="third_party_licenses">רישיונות של צד שלישי</string>
     <string name="third_party_licenses_description">רישיונות של ספריות צד שלישי שבהן משתמשת Cue</string>
     <string name="webview_error">מכשיר זה אינו תומך בתצוגת אינטרנט, הנחוצה להצגת יומן השינויים והרישיון. חסר לו רכיב מערכת.</string>
@@ -440,7 +438,6 @@
     <string name="empty_list_title">לא נמצאו נתונים</string>
     <string name="empty_group_list">אין קבוצות להצגה. אפשר להוסי, קבוצות במסך העריכה של רשומה</string>
     <string name="empty_group_list_title">לא נמצאו קבוצות</string>
-    <string name="no_icon_packs">עדיין לא יובאו חבילות סמלים. הקש על סימן החיבור כדי לייבא סימן חיבור. טיפ: נסו <a href="https://aegis-icons.github.io">aegis-icons</a>.</string>
     <string name="no_icon_packs_title">אין חבילות סמלים</string>
     <string name="pick_icon">בחר סמל</string>
     <string name="uncategorized">ללא קטגוריה</string>

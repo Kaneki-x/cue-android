@@ -32,7 +32,7 @@ android {
         minSdkVersion 23
         targetSdkVersion 36
         versionCode 82
-        versionName "3.4.3"
+        versionName "0.1.0"
         multiDexEnabled true
         buildConfigField "String", "GIT_HASH", "\"${getGitHash()}\""
         buildConfigField "String", "GIT_BRANCH", "\"${getGitBranch()}\""

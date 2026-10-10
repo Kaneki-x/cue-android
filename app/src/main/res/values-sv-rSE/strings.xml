@@ -169,7 +169,6 @@
     <string name="authentication_method_biometrics">Biometri</string>
     <string name="authentication_method_biometrics_description">Förutom ett lösenord kan biometri registrerad på den här enheten, som ett fingeravtryck eller ditt ansikte, användas för att låsa upp valvet.</string>
     <string name="authentication">Lås upp valvet</string>
-    <string name="auth_use_biometrics">Eller tryck här för att använda <font fgcolor="#FF0D86C1">biometri</font></string>
     <string name="set_password">Ange ett lösenord</string>
     <string name="set_group">Ange ett gruppnamn</string>
     <string name="set_number">Ange ett nummer</string>
@@ -419,7 +418,6 @@
     <string name="version">Version</string>
     <string name="changelog">Ändringslogg</string>
     <string name="whats_new">Vad är nytt</string>
-    <string name="github_description">Källkod, problem och information</string>
     <string name="third_party_licenses">Tredjepartslicenser</string>
     <string name="third_party_licenses_description">Licenser för de tredjepartsbibliotek Cue använder</string>
     <string name="webview_error">Denna enhet stöder inte WebView, vilket krävs för att visa ändringsloggen och licensen. Den saknar en systemkomponent.</string>
@@ -460,7 +458,6 @@
     <string name="empty_list_title">Inga poster hittades</string>
     <string name="empty_group_list">Det finns inga grupper att visa. Lägg till grupper i redigeringsläget för en post.</string>
     <string name="empty_group_list_title">Inga grupper hittades</string>
-    <string name="no_icon_packs">Inga ikonpaket har importerats ännu. Tryck på plustecknet för att importera ett. Tips: testa <a href="https://aegis-icons.github.io">aegis-icons</a>.</string>
     <string name="no_icon_packs_title">Inga ikonpaket</string>
     <string name="pick_icon">Välj en ikon</string>
     <string name="uncategorized">Okategoriserade</string>

@@ -55,6 +55,14 @@
             android:summary="@string/pref_expiration_state_summary"
             app:iconSpaceReserved="false"/>
 
+        <androidx.preference.SwitchPreferenceCompat
+            android:defaultValue="false"
+            android:key="pref_expiration_countdown"
+            android:dependency="pref_expiration_state"
+            android:title="@string/pref_expiration_countdown_title"
+            android:summary="@string/pref_expiration_countdown_summary"
+            app:iconSpaceReserved="false"/>
+
         <Preference
             android:key="pref_code_group_size_string"
             android:title="@string/pref_code_group_size_title"

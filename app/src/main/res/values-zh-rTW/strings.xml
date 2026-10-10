@@ -50,6 +50,8 @@
     <string name="pref_expiration_state_title">驗證碼將過期時顯示</string>
     <string name="pref_expiration_state_summary">驗證碼將過期時，更改顯示色彩並閃爍</string>
     <string name="pref_expiration_state_fallback">驗證碼將過期時，更改顯示色彩</string>
+    <string name="pref_expiration_countdown_title">顯示剩餘秒數</string>
+    <string name="pref_expiration_countdown_summary">驗證碼即將到期時，在圓環裡倒數剩餘秒數</string>
     <string name="pref_shared_issuer_account_name_title">只在必要時顯示帳戶名稱</string>
     <string name="pref_shared_issuer_account_name_summary">只顯示擁有共同發行者的帳戶名稱（並隱藏其他帳戶名稱）</string>
     <string name="pref_account_name_position_summary_override">此選項將被「條列式顯示模式」覆蓋，帳號名稱將顯示在發行者下方。</string>
@@ -99,12 +101,13 @@
     <string name="pref_tap_to_reveal_summary">預設隱藏，輕觸憑證名稱後顯示驗證碼</string>
     <string name="pref_tap_to_reveal_time_title">輕觸後顯示的秒數</string>
     <string name="pref_auto_lock_title">自動鎖定</string>
-    <string name="pref_auto_lock_summary">當 %s</string>
+    <string name="pref_auto_lock_summary">%s時</string>
+    <string name="pref_auto_lock_separator">、</string>
     <string name="pref_auto_lock_summary_disabled">已停用</string>
     <string name="pref_auto_lock_prompt">自動鎖定 Cue 的時機是</string>
-    <string name="pref_auto_lock_type_back_button">返回按鈕已按下</string>
-    <string name="pref_auto_lock_type_minimize">最小化應用程式</string>
-    <string name="pref_auto_lock_type_device_lock">裝置已鎖定</string>
+    <string name="pref_auto_lock_type_back_button">按下返回鍵</string>
+    <string name="pref_auto_lock_type_minimize">離開應用程式</string>
+    <string name="pref_auto_lock_type_device_lock">鎖定螢幕</string>
     <string name="pref_backup_password_category">備份與匯出</string>
     <string name="pref_backup_password_title">為備份與匯出使用不同的密碼</string>
     <string name="pref_backup_password_summary">如果啟用，解鎖應用程式的密碼將會不能用於解密備份與匯出的資料</string>
@@ -166,10 +169,9 @@
     <string name="authentication_method_password_explanation">警告：如果您忘記密碼，您將會無法還原憑證而不可逆的失去它們。</string>
     <string name="authentication_method_biometrics">生物特徵辨識</string>
     <string name="authentication_method_biometrics_description">除密碼外，在此裝置上註冊的生物特徵辨識（例如指紋或臉部），也可用於解鎖保險箱。</string>
-    <string name="authentication">解鎖保險箱</string>
+    <string name="authentication">解鎖 Cue</string>
     <string name="auth_locked_title">Cue 已鎖定</string>
     <string name="auth_locked_subtitle">用指紋、臉孔或密碼解鎖</string>
-    <string name="auth_use_biometrics">或者輕觸此處以使用 <font fgcolor="#FF0D86C1">生物特徵辨識</font></string>
     <string name="set_password">請輸入密碼</string>
     <string name="set_group">請輸入群組名稱</string>
     <string name="set_number">請選擇時長</string>
@@ -196,6 +198,7 @@
     <string name="no">取消</string>
     <string name="undo">復原</string>
     <string name="unlock">解鎖</string>
+    <string name="auth_unlock_biometrics">用生物辨識解鎖</string>
     <string name="advanced">進階設定</string>
     <string name="counter">計數器</string>
     <string name="digits">位數</string>
@@ -425,7 +428,6 @@
     <string name="version">版本</string>
     <string name="changelog">變更記錄</string>
     <string name="whats_new">有什麼新鮮事</string>
-    <string name="github_description">原始碼、問題與資訊</string>
     <string name="third_party_licenses">第三方授權條款</string>
     <string name="third_party_licenses_description">Cue 所使用的第三方函式庫及其授權條款</string>
     <string name="webview_error">此裝置不支援瀏覽變更記錄與授權條款所需要的 WebView。缺少重要的系統元件。</string>
@@ -468,7 +470,7 @@
     <string name="no_search_results">沒有和「%1$s」相符的項目。</string>
     <string name="empty_group_list">沒有可以顯示的群組，請先在條目編輯頁面增加一個群組</string>
     <string name="empty_group_list_title">找不到任何群組</string>
-    <string name="no_icon_packs">尚未匯入任何圖示主題集。點選「+」號以匯入。提示：試試看<a href="https://aegis-icons.github.io">aegis-icons</a>。</string>
+    <string name="no_icon_packs">尚未匯入圖示包。點選「+」號以匯入。Cue 內建的圖示包刪除後不會再自動安裝。</string>
     <string name="no_icon_packs_title">沒有圖示合輯</string>
     <string name="pick_icon">選取圖示</string>
     <string name="uncategorized">未分類</string>

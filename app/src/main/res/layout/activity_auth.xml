@@ -110,16 +110,15 @@
                         app:cornerRadius="@dimen/cue_radius_medium" />
                 </LinearLayout>
 
-                <TextView
+                <!-- a second button under 解锁, as on iOS, rather than a link -->
+                <Button
                     android:id="@+id/button_biometrics"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:minWidth="125dp"
-                    android:padding="@dimen/cue_space_2"
-                    android:text="@string/auth_use_biometrics"
-                    android:textAppearance="@style/TextAppearance.Cue.Label"
-                    android:textColor="?attr/colorPrimary"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="54dp"
+                    android:text="@string/auth_unlock_biometrics"
+                    android:textSize="16sp"
+                    app:cornerRadius="@dimen/cue_radius_medium"
                     android:visibility="gone" />
 
                 <LinearLayout

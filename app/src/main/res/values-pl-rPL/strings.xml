@@ -175,7 +175,6 @@
     <string name="authentication_method_biometrics">Autoryzacja biometryczna</string>
     <string name="authentication_method_biometrics_description">Oprócz hasła, do odblokowania sejfu możesz użyć danych biometrycznej przechowywanych na tym urządzeniu, takich jak odcisk palca lub twarz.</string>
     <string name="authentication">Odblokuj sejf</string>
-    <string name="auth_use_biometrics">Lub kliknij tutaj, aby użyć <font fgcolor="#FF0D86C1">danych biometrycznych</font></string>
     <string name="set_password">Wpisz hasło</string>
     <string name="set_group">Wpisz nazwę grupy</string>
     <string name="set_number">Wpisz numer</string>
@@ -441,7 +440,6 @@
     <string name="version">Wersja</string>
     <string name="changelog">Lista zmian</string>
     <string name="whats_new">Co nowego</string>
-    <string name="github_description">Kod źródłowy, problemy i informacje</string>
     <string name="third_party_licenses">Licencje innych firm</string>
     <string name="third_party_licenses_description">Licencje bibliotek zewnętrznych, z których korzysta aplikacja Cue</string>
     <string name="webview_error">To urządzenie nie wspiera widoku internetowego, który jest niezbędny do wyświetlenia listy zmian i licencji. To brakujący element systemu operacyjnego.</string>
@@ -483,7 +481,6 @@ Zmiany nie są zapisane w kopii zapasowej
     <string name="empty_list_title">Nie znaleziono wpisów</string>
     <string name="empty_group_list">Nie znaleziono grup do wyświetlenia. Dodaj grupy na ekranie edycji wpisu</string>
     <string name="empty_group_list_title">Nie znaleziono grup</string>
-    <string name="no_icon_packs">Nie zaimportowałeś żadnych pakietów ikon. Importuj ikony, klikając na znak plusa. Wskazówka: wypróbuj pakiet <a href="https://aegis-icons.github.io">aegis-icons</a>.</string>
     <string name="no_icon_packs_title">Brak pakietów ikon</string>
     <string name="pick_icon">Wybierz ikonę</string>
     <string name="uncategorized">Bez kategorii</string>

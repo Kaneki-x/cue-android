@@ -175,7 +175,6 @@
     <string name="authentication_method_biometrics">Біометрика</string>
     <string name="authentication_method_biometrics_description">Окрім пароля, для розблокування сховища можна використовувати біометричні дані зареєстровані на цьому пристрої, такі як відбитки пальців або ваше обличчя.</string>
     <string name="authentication">Розблокування сховища</string>
-    <string name="auth_use_biometrics">Або натисніть тут, щоб використати <font fgcolor="#FF0D86C1">біометрику</font></string>
     <string name="set_password">Будь ласка, введіть пароль</string>
     <string name="set_group">Будь ласка, введіть назву групи</string>
     <string name="set_number">Будь ласка, введіть число</string>
@@ -441,7 +440,6 @@
     <string name="version">Версія</string>
     <string name="changelog">Журнал змін</string>
     <string name="whats_new">Що нового</string>
-    <string name="github_description">Вихідний код, зауваження та інформація</string>
     <string name="third_party_licenses">Сторонні ліцензії</string>
     <string name="third_party_licenses_description">Ліцензії сторонніх бібліотек, які використовує Cue</string>
     <string name="webview_error">Цей пристрій не підтримує веб-перегляд, необхідний для перегляду журналу змін і ліцензії. У ньому відсутній системний компонент.</string>
@@ -481,7 +479,6 @@
     <string name="empty_list_title">Записів не знайдено</string>
     <string name="empty_group_list">Немає груп для показу. Додайте групи на екрані редагування запису</string>
     <string name="empty_group_list_title">Групи не знайдено</string>
-    <string name="no_icon_packs">Пакети піктограм ще не імпортовано. Натисніть \"+\" для імпорту. Порада: спробуйте <a href="https://aegis-icons.github.io">aegis-icon</a>.</string>
     <string name="no_icon_packs_title">Немає пакетів піктограм</string>
     <string name="pick_icon">Обрати піктограму</string>
     <string name="uncategorized">Без категорії</string>

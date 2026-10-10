@@ -169,7 +169,6 @@
     <string name="authentication_method_biometrics">Biométrie</string>
     <string name="authentication_method_biometrics_description">En plus d\'un mot de passe, les données biométriques enregistrées sur cet appareil, comme une empreinte digitale ou votre visage, peuvent être utilisées pour déverrouiller le coffre-fort.</string>
     <string name="authentication">Déverrouiller le coffre-fort</string>
-    <string name="auth_use_biometrics">Ou appuyez ici pour utiliser la <font fgcolor="#FF0D86C1">biométrie</font></string>
     <string name="set_password">Veuillez saisir un mot de passe</string>
     <string name="set_group">Veuillez saisir un nom de groupe</string>
     <string name="set_number">Veuillez saisir un nombre</string>
@@ -419,7 +418,6 @@
     <string name="version">Version</string>
     <string name="changelog">Historique des modifications</string>
     <string name="whats_new">Les nouveautés</string>
-    <string name="github_description">Code source, problèmes et informations</string>
     <string name="third_party_licenses">Licences tierces</string>
     <string name="third_party_licenses_description">Licences des bibliothèques tierces utilisées par Cue</string>
     <string name="webview_error">Cet appareil ne supporte pas web view, qui est nécessaire pour voir l\'historique des modifications et la licence. Un composant système est manquant.</string>
@@ -460,7 +458,6 @@
     <string name="empty_list_title">Aucune entrée trouvée</string>
     <string name="empty_group_list">Il n\'y a aucun groupe à afficher. Ajouter des groupes dans l\'écran de modification d\'une entrée</string>
     <string name="empty_group_list_title">Aucun groupe trouvé</string>
-    <string name="no_icon_packs">Aucun pack d\'icônes n\'a encore été importé. Appuyez sur le signe plus pour en importer un. Astuce : essayez <a href="https://aegis-icons.github.io">aegis-icons</a>.</string>
     <string name="no_icon_packs_title">Aucun pack d\'icônes</string>
     <string name="pick_icon">Choisissez une icône</string>
     <string name="uncategorized">Non catégorisé</string>

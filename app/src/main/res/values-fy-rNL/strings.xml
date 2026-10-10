@@ -169,7 +169,6 @@
     <string name="authentication_method_biometrics">Biometry</string>
     <string name="authentication_method_biometrics_description">Njonken in wachtwurd kinne biometryske gegevens dy’t registrearre binne op dit apparaat, lykas in fingerôfdruk of jo gesicht, brûkt wurde om de klûs te ûntskoatteljen.</string>
     <string name="authentication">Klûs ûntskoattelje</string>
-    <string name="auth_use_biometrics">Of tik hjir om <font fgcolor="#FF0D86C1">biometry</font> te brûken</string>
     <string name="set_password">Fier in wachtwurd yn</string>
     <string name="set_group">Fier in groepsnamme yn</string>
     <string name="set_number">Kies in getal</string>
@@ -419,7 +418,6 @@
     <string name="version">Ferzje</string>
     <string name="changelog">Wizigingenlochboek</string>
     <string name="whats_new">Wat is der nij</string>
-    <string name="github_description">Boarnekoade, problemen en ynformaasje</string>
     <string name="third_party_licenses">Lisinsjes fan tredden</string>
     <string name="third_party_licenses_description">Lisinsjes fan biblioteken fan tredden brûkt troch Cue</string>
     <string name="webview_error">Dit apparaat stipet gjin webview, hokker nedich is om de wizigingen te besjen. It mist in systeemkomponint.</string>
@@ -460,7 +458,6 @@
     <string name="empty_list_title">Gjin items fûn</string>
     <string name="empty_group_list">Der binne gjin groepen om te toanen. Foegje groepen ta yn it bewurkingsskerm fan in item.</string>
     <string name="empty_group_list_title">Gjin groepen fûn</string>
-    <string name="no_icon_packs">Der binne noch gjin piktogrampakketten ymportearre. Tik op it plusteken om der ien te ymportearjen. Tip: probearje <a href="https://aegis-icons.github.io">Aegis-piktogrammen</a>.</string>
     <string name="no_icon_packs_title">Gjin piktogrampakketten</string>
     <string name="pick_icon">Kies in piktogram</string>
     <string name="uncategorized">Net kategorisearre</string>

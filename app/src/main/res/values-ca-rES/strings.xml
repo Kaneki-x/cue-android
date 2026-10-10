@@ -169,7 +169,6 @@
     <string name="authentication_method_biometrics">Dades biomètriques</string>
     <string name="authentication_method_biometrics_description">A més de la contrasenya, les dades biomètriques enregistrades al dispositiu, com una emprempta digital o la cara, es poden fer servir per a desbloquejar la caixa forta.</string>
     <string name="authentication">Desbloqueja la caixa forta</string>
-    <string name="auth_use_biometrics">O toca aquí per a fer servir el <font fgcolor="#FF0D86C1">desbloqueig biomètric</font></string>
     <string name="set_password">Si et plau, introdueix una contrasenya</string>
     <string name="set_group">Introdueix un nom de grup</string>
     <string name="set_number">Introdueix un número</string>
@@ -419,7 +418,6 @@
     <string name="version">Versió</string>
     <string name="changelog">Registre de canvis</string>
     <string name="whats_new">Què hi ha de nou</string>
-    <string name="github_description">Codi font, problemes i informació</string>
     <string name="third_party_licenses">Llicències de tercers</string>
     <string name="third_party_licenses_description">Llicències de llibreries de tercers que fa servir Cue</string>
     <string name="webview_error">Aquest dispositiu no suporta \'web view\', que es necessari per a veure el registre de canvis i la llicència. Falta un component de sistema.</string>
@@ -458,7 +456,6 @@ No s\'han desat els canvis    </string>
     <string name="empty_list_title">No s\'ha trobat cap entrada</string>
     <string name="empty_group_list">No hi ha grups a mostrar. Afegeix grups a la pantalla d\'edició d\'una entrada</string>
     <string name="empty_group_list_title">No s\'ha trobat cap grup</string>
-    <string name="no_icon_packs">No s\'ha importat cap pack d\'icones. Toca el signe més per a importar-ne un. Truc: Prova <a href="https://aegis-icons.github.io">aegis-icons</a>.</string>
     <string name="no_icon_packs_title">No hi ha cap pack d\'icones</string>
     <string name="pick_icon">Tria una icona</string>
     <string name="uncategorized">Sense categoria</string>

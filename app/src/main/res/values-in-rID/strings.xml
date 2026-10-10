@@ -166,7 +166,6 @@
     <string name="authentication_method_biometrics">Biometrik</string>
     <string name="authentication_method_biometrics_description">Selain kata sandi, biometrik yang terdaftar di perangkat ini, seperti sidik jari atau wajah Anda, dapat digunakan untuk membuka brankas.</string>
     <string name="authentication">Buka brankas</string>
-    <string name="auth_use_biometrics">Atau sentuh di sini untuk menggunakan <font fgcolor="#FF0D86C1">biometrik</font></string>
     <string name="set_password">Masukkan kata sandi</string>
     <string name="set_group">Masukkan nama grup</string>
     <string name="set_number">Masukkan nomor</string>
@@ -407,7 +406,6 @@
     <string name="version">Versi</string>
     <string name="changelog">Catatan perubahan</string>
     <string name="whats_new">Apa yang baru</string>
-    <string name="github_description">Kode sumber, masalah dan informasi</string>
     <string name="third_party_licenses">Lisensi pihak ketiga</string>
     <string name="third_party_licenses_description">Lisensi pustaka pihak ketiga yang digunakan Cue</string>
     <string name="webview_error">Perangkat ini tidak mendukung tampilan web yang diperlukan untuk melihat catatan perubahan dan lisensi. Komponen sistem tidak ada.</string>
@@ -443,7 +441,6 @@
     <string name="empty_list_title">Tidak ada catatan yang ditemukan</string>
     <string name="empty_group_list">Tidak ada kelompok untuk ditampilkan. Tambahkan kelompok di layar penyuntingan sebuah entri</string>
     <string name="empty_group_list_title">Kelompok tidak ditemukan</string>
-    <string name="no_icon_packs">Belum ada paket ikon yang diimpor. Sentuh tanda plus untuk mulai mengimpor. Tip: coba <a href="https://aegis-icons.github.io">aegis-icons</a>.</string>
     <string name="no_icon_packs_title">Tidak ada paket ikon</string>
     <string name="pick_icon">Pilih sebuah ikon</string>
     <string name="uncategorized">Tidak Dikategorikan</string>

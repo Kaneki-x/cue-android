@@ -172,7 +172,6 @@
     <string name="authentication_method_biometrics">Биометрија</string>
     <string name="authentication_method_biometrics_description">Поред лозинке, биометрија регистрована на овом уређају, попут отиска прста или вашег лица, може се користити за откључавање трезора.</string>
     <string name="authentication">Откључајте трезор</string>
-    <string name="auth_use_biometrics">Или додирните овде да користите <font fgcolor="#FF0D86C1">биометрију</font></string>
     <string name="set_password">Унесите лозинку</string>
     <string name="set_group">Унесите назив групе</string>
     <string name="set_number">Унесите број</string>
@@ -430,7 +429,6 @@
     <string name="version">Верзија</string>
     <string name="changelog">Евиденција промена</string>
     <string name="whats_new">Шта је ново</string>
-    <string name="github_description">Изворни кôд, проблеми и информације</string>
     <string name="third_party_licenses">Лиценце треће стране</string>
     <string name="third_party_licenses_description">Лиценце библиотека трећих страна које користи Cue</string>
     <string name="webview_error">Овај уређај не подржава веб-приказ, који је неопходан за преглед евиденције промена и лиценце. Недостаје системска компонента.</string>
@@ -471,7 +469,6 @@
     <string name="empty_list_title">Нема пронађених уноса</string>
     <string name="empty_group_list">Нема група за приказ. Додајте групе на екран за уређивање уноса</string>
     <string name="empty_group_list_title">Нема пронађених група</string>
-    <string name="no_icon_packs">Још увек није увезен ниједан пакет иконица. Додирните знак плус да бисте га увезли. Савет: испробајте <a href="https://aegis-icons.github.io">aegis-icons</a>.</string>
     <string name="no_icon_packs_title">Нема пакета иконица</string>
     <string name="pick_icon">Изаберите иконицу</string>
     <string name="uncategorized">Некатегоризовано</string>

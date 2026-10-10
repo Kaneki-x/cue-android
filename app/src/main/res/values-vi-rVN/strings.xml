@@ -168,7 +168,6 @@
     <string name="authentication_method_biometrics">Vân tay</string>
     <string name="authentication_method_biometrics_description">Cùng với mật khẩu, vân tay hoặc khuôn mặt đã đăng ký trên thiết bị có thể dùng để mở khóa kho.</string>
     <string name="authentication">Mở khóa kho</string>
-    <string name="auth_use_biometrics">Đổi thành <font fgcolor="#FF0D86C1">vân tay</font></string>
     <string name="set_password">Vui lòng nhập mật khẩu</string>
     <string name="set_group">Vui lòng nhập tên nhóm</string>
     <string name="set_number">Chọn một số</string>
@@ -410,7 +409,6 @@
     <string name="version">Phiên bản</string>
     <string name="changelog">Các thay đổi</string>
     <string name="whats_new">Có gì mới</string>
-    <string name="github_description">Mã nguồn và báo lỗi</string>
     <string name="third_party_licenses">Giấy phép bên thứ ba</string>
     <string name="third_party_licenses_description">Các thư viện nguồn mở mà Cue sử dụng</string>
     <string name="webview_error">Thiết bị này không hỗ trợ WebView, nó là cần thiết để xem changelog và giấy phép. Đây là một thành phần hệ thống.</string>
@@ -450,7 +448,6 @@
     <string name="empty_list_title">Chưa có mục nào</string>
     <string name="empty_group_list">Hãy thêm nhóm khi chỉnh sửa mục</string>
     <string name="empty_group_list_title">Chưa có nhóm nào</string>
-    <string name="no_icon_packs">Chưa nhập gói biểu tượng nào. Hãy nhấn vào ký hiệu dấu cộng để nhập một gói. Mẹo: thử <a href="https://aegis-icons.github.io">aegis-icons</a>.</string>
     <string name="no_icon_packs_title">Chưa có gói biểu tượng</string>
     <string name="pick_icon">Chọn biểu tượng</string>
     <string name="uncategorized">Chưa phân loại</string>

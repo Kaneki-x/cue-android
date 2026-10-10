@@ -169,7 +169,6 @@
     <string name="authentication_method_biometrics">Biometria</string>
     <string name="authentication_method_biometrics_description">Em adição a uma senha, você pode usar a biometria registrada no dispositivo, como uma impressão digital ou seu rosto, para desbloquear o cofre.</string>
     <string name="authentication">Desbloqueie o cofre</string>
-    <string name="auth_use_biometrics">Ou toque aqui para usar a <font fgcolor="#FF0D86C1">biometria</font></string>
     <string name="set_password">Por favor, digite uma senha</string>
     <string name="set_group">Por favor, digite um nome de grupo</string>
     <string name="set_number">Por favor, digite um número</string>
@@ -419,7 +418,6 @@
     <string name="version">Versão</string>
     <string name="changelog">Registro de alterações</string>
     <string name="whats_new">O que há de novo</string>
-    <string name="github_description">Código-fonte, problemas e informações</string>
     <string name="third_party_licenses">Licenças de terceiros</string>
     <string name="third_party_licenses_description">Licenças das bibliotecas de terceiros usadas pelo Cue</string>
     <string name="webview_error">Este dispositivo não suporta web view, que é necessário para visualizar o registro de alterações e a licença. Falta um componente do sistema.</string>
@@ -460,7 +458,6 @@
     <string name="empty_list_title">Nenhum item encontrado</string>
     <string name="empty_group_list">Não há grupos para mostrar. Adicione grupos na tela de edição de um item</string>
     <string name="empty_group_list_title">Nenhum grupo encontrado</string>
-    <string name="no_icon_packs">Nenhum pacote de ícones foi importado ainda. Toque no sinal de mais para importar um. Dica: experimente o <a href="https://aegis-icons.github.io">aegis-icons</a>.</string>
     <string name="no_icon_packs_title">Nenhum pacote de ícones</string>
     <string name="pick_icon">Selecione um ícone</string>
     <string name="uncategorized">Sem categoria</string>

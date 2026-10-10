@@ -175,7 +175,6 @@
     <string name="authentication_method_biometrics">Биометрия</string>
     <string name="authentication_method_biometrics_description">В дополнение к паролю, биометрические данные, зарегистрированные на этом устройстве, такие как отпечаток пальца или лицо, могут быть использованы для разблокировки хранилища.</string>
     <string name="authentication">Разблокировать хранилище</string>
-    <string name="auth_use_biometrics">Или нажмите здесь, чтобы использовать <font fgcolor="#FF0D86C1">биометрию</font>.</string>
     <string name="set_password">Введите пароль</string>
     <string name="set_group">Введите название группы</string>
     <string name="set_number">Введите число</string>
@@ -441,7 +440,6 @@
     <string name="version">Версия</string>
     <string name="changelog">Список изменений</string>
     <string name="whats_new">Что нового</string>
-    <string name="github_description">Исходный код, замечания и информация</string>
     <string name="third_party_licenses">Лицензии третьих сторон</string>
     <string name="third_party_licenses_description">Лицензии сторонних библиотек, используемых в Cue</string>
     <string name="webview_error">Это устройство не поддерживает веб-просмотр, необходимый для просмотра списка изменений и лицензии, т.к. в нём отсутствует соответствующий системный компонент.</string>
@@ -484,7 +482,6 @@
     <string name="empty_list_title">Не найдено записей</string>
     <string name="empty_group_list">Нет групп для отображения. Добавьте группы на экране редактирования записи.</string>
     <string name="empty_group_list_title">Группы не найдены</string>
-    <string name="no_icon_packs">Наборы значков ещё не импортированы. Нажмите кнопку «+» для импортирования. Совет: попробуйте набор <a href="https://aegis-icons.github.io">aegis-icons</a>.</string>
     <string name="no_icon_packs_title">Нет наборов значков</string>
     <string name="pick_icon">Выбрать значок</string>
     <string name="uncategorized">Без категории</string>

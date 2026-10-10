@@ -175,7 +175,6 @@
     <string name="authentication_method_biometrics">Biometrie</string>
     <string name="authentication_method_biometrics_description">Kromě hesla půjde k odemčení trezoru použít také biometrické prvky registrované v tomto zařízení jako je otisk prstu nebo tvář.</string>
     <string name="authentication">Odemknout trezor</string>
-    <string name="auth_use_biometrics">Nebo klepněte sem pro použití <font fgcolor="#FF0D86C1">biometrie</font></string>
     <string name="set_password">Zadejte heslo</string>
     <string name="set_group">Zadejte název skupiny</string>
     <string name="set_number">Zadejte číslo</string>
@@ -441,7 +440,6 @@
     <string name="version">Verze</string>
     <string name="changelog">Seznam změn</string>
     <string name="whats_new">Co je nového?</string>
-    <string name="github_description">Zdrojový kód, problémy a informace</string>
     <string name="third_party_licenses">Licence třetí strany</string>
     <string name="third_party_licenses_description">Licence knihoven třetích stran použitých v Cueu</string>
     <string name="webview_error">Vaše zařízení nepodporuje WebView, které je nutné pro zobrazení seznamu změn a licence. Tato komponenta zřejmě chybí v systému.</string>
@@ -484,7 +482,6 @@
     <string name="empty_list_title">Žádné záznamy nenalezeny</string>
     <string name="empty_group_list">Žádné skupiny k zobrazení. Skupiny můžete přidat z obrazovky úprav položky.</string>
     <string name="empty_group_list_title">Nenalezeny žádné skupiny</string>
-    <string name="no_icon_packs">Zatím nebyly importovány žádné balíčky ikon. Pro import klepněte na tlačítko plus. Tip: zkuste <a href="https://aegis-icons.github.io">aegis-icons</a>.</string>
     <string name="no_icon_packs_title">Žádné balíčky ikon</string>
     <string name="pick_icon">Vybrat ikonu</string>
     <string name="uncategorized">Nezařazené</string>

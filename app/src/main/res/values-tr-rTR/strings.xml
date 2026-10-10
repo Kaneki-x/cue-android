@@ -169,7 +169,6 @@
     <string name="authentication_method_biometrics">Biyometrik</string>
     <string name="authentication_method_biometrics_description">Parolaya ek olarak bu cihazda kayıtlı olan parmak izi ve yüz tanıma gibi biyometrik doğrulama yöntemleri kasayı açmada kullanılabilir.</string>
     <string name="authentication">Kasa kilidini aç</string>
-    <string name="auth_use_biometrics">Ya da <font fgcolor="#FF0D86C1">biyometrik</font> kullanmak için dokunun</string>
     <string name="set_password">Lütfen bir parola girin</string>
     <string name="set_group">Lütfen bir grup adı girin</string>
     <string name="set_number">Lütfen bir sayı girin</string>
@@ -418,7 +417,6 @@
     <string name="version">Sürüm</string>
     <string name="changelog">Değişiklik Günlüğü</string>
     <string name="whats_new">Yeni ne var?</string>
-    <string name="github_description">Kaynak kod, sorunlar ve bilgiler</string>
     <string name="third_party_licenses">Üçüncü taraf lisanslar</string>
     <string name="third_party_licenses_description">Cue\'in kullandığı üçüncü-parti kütüphanelerin lisansları</string>
     <string name="webview_error">Bu cihazda değişiklik günlüğünü ve lisansı görüntülemek için gerekli olan \"web view\" desteklenmiyor. Bu sistem bileşeni yerinde yok.</string>
@@ -457,7 +455,6 @@
     <string name="empty_list_title">Hiçbir girdi bulunamadı.</string>
     <string name="empty_group_list">Gösterilecek grup bulunamadı. Bir girdinin düzenleme ekranından grup ekleyin</string>
     <string name="empty_group_list_title">Grup bulunamadı</string>
-    <string name="no_icon_packs">Henüz hiçbir ikon paketi içe aktarılmadı. Yeni bir tane eklemek için lütfen artı tuşuna basın. Tavsiye: <a href="https://aegis-icons.github.io">aegis-icons</a>\'u deneyin.</string>
     <string name="no_icon_packs_title">Simge paketi yok</string>
     <string name="pick_icon">Bir ikon seçin</string>
     <string name="uncategorized">Kategorisiz</string>

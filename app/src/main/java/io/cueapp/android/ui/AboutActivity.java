@@ -4,7 +4,6 @@ import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
@@ -25,7 +24,6 @@ import com.google.android.material.color.MaterialColors;
 
 public class AboutActivity extends CueActivity {
 
-    private static String GITHUB = "https://github.com/Kaneki-x/Aegis";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,9 +55,6 @@ public class AboutActivity extends CueActivity {
             copyToClipboard(getCurrentAppVersion(), R.string.version_copied);
         });
 
-        View btnGithub = findViewById(R.id.btn_github);
-        btnGithub.setOnClickListener(v -> openUrl(GITHUB));
-
         View btnChangelog = findViewById(R.id.btn_changelog);
         btnChangelog.setOnClickListener(v -> {
             ChangelogDialog.create()
@@ -81,18 +76,11 @@ public class AboutActivity extends CueActivity {
 
     private static String getCurrentAppVersion() {
         if (BuildConfig.DEBUG) {
-            return String.format("%s-%s (%s)", BuildConfig.VERSION_NAME, BuildConfig.GIT_HASH, BuildConfig.GIT_BRANCH);
+            return String.format("%s (%s) · %s (%s)", BuildConfig.VERSION_NAME, BuildConfig.VERSION_CODE, BuildConfig.GIT_HASH, BuildConfig.GIT_BRANCH);
         }
 
-        return BuildConfig.VERSION_NAME;
-    }
-
-    private void openUrl(String url) {
-        Intent browserIntent = new Intent(Intent.ACTION_VIEW);
-        browserIntent.setData(Uri.parse(url));
-        browserIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
-        startActivity(browserIntent);
+        // as on iOS: version (build)
+        return String.format("%s (%s)", BuildConfig.VERSION_NAME, BuildConfig.VERSION_CODE);
     }
 
     private void copyToClipboard(String text, @StringRes int messageId) {

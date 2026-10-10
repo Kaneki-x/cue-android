@@ -125,7 +125,7 @@ public class EntryHolder extends RecyclerView.ViewHolder {
         });
     }
 
-    public void setData(VaultEntry entry, Preferences.CodeGrouping groupSize, ViewMode viewMode, AccountNamePosition accountNamePosition, boolean showIcon, boolean nonUniform, boolean hidden, boolean paused, boolean dimmed, boolean showExpirationState, boolean showNextCode) {
+    public void setData(VaultEntry entry, Preferences.CodeGrouping groupSize, ViewMode viewMode, AccountNamePosition accountNamePosition, boolean showIcon, boolean nonUniform, boolean hidden, boolean paused, boolean dimmed, boolean showExpirationState, boolean showExpirationCountdown, boolean showNextCode) {
         _entry = entry;
         _hidden = hidden;
         _paused = paused;
@@ -143,6 +143,7 @@ public class EntryHolder extends RecyclerView.ViewHolder {
         _expirationHandler.removeCallbacksAndMessages(null);
         _showNextCode = entry.getInfo() instanceof TotpInfo && showNextCode;
         _showExpirationState = _entry.getInfo() instanceof TotpInfo && showExpirationState;
+        _progressBar.setShowSeconds(_showExpirationState && showExpirationCountdown);
 
         _favoriteIndicator.setVisibility(_entry.isFavorite() ? View.VISIBLE : View.INVISIBLE);
 
@@ -337,16 +338,41 @@ public class EntryHolder extends RecyclerView.ViewHolder {
 
     public void refreshCode() {
         if (!_hidden && !_paused) {
-            updateCodes();
+            boolean rotated = updateCodes();
             startExpirationAnimation();
+            if (rotated) {
+                fadeInNewCode(); // after the expiration reset, which sets the alpha back to 1
+            }
         }
     }
 
-    private void updateCodes() {
+    private boolean updateCodes() {
+        CharSequence previous = _profileCode.getText();
         _profileCode.setText(getOtp());
+        boolean rotated = previous.length() > 0 && !previous.toString().contentEquals(_profileCode.getText());
 
         if (_showNextCode) {
             _nextProfileCode.setText(getOtp(1));
+        }
+
+        return rotated;
+    }
+
+    /**
+     * Cue: a new code fades in rather than replacing the old one in a single frame. Skipped when
+     * the row is off screen or animations are turned off.
+     */
+    private void fadeInNewCode() {
+        float scale = AnimationsHelper.Scale.ANIMATOR.getValue(itemView.getContext());
+        if (scale == 0f || !itemView.isAttachedToWindow() || _hidden) {
+            return;
+        }
+
+        _profileCode.setAlpha(0.2f);
+        _profileCode.animate().alpha(1f).setDuration((long) (300 / scale)).start();
+        if (_showNextCode) {
+            _nextProfileCode.setAlpha(0.2f);
+            _nextProfileCode.animate().alpha(1f).setDuration((long) (300 / scale)).start();
         }
     }
 

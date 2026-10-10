@@ -181,7 +181,6 @@
     <string name="authentication_method_biometrics">المقاييس الحيوية</string>
     <string name="authentication_method_biometrics_description">بالإضافة إلى كلمة السر، يمكن استعمال المقاييس الحيوية المسجلة على هذا الجهاز، مثل البصمة أو وجهك، لفك قفل المخزن.</string>
     <string name="authentication">افتح المخزن</string>
-    <string name="auth_use_biometrics">أو انقر هنا لاستعمال <font fgcolor="#FF0D86C1">المقاييس الحيوية</font></string>
     <string name="set_password">الرجاء إدخال كلمة السر</string>
     <string name="set_group">الرجاء إدخال اسم المجموعة</string>
     <string name="set_number">الرجاء إدخال رقم</string>
@@ -463,7 +462,6 @@
     <string name="version">الإصدار</string>
     <string name="changelog">سجلّ التغيير</string>
     <string name="whats_new">ما الجديد</string>
-    <string name="github_description">المصدر البرمجي والعلل والمعلومات</string>
     <string name="third_party_licenses">تراخيص طرف ثالث</string>
     <string name="third_party_licenses_description">تراخيص مكتبات الطرف الثالث التي يستعملها Cue</string>
     <string name="webview_error">هذا الجهاز لا يدعم عرض الويب، والذي هو ضروري لعرض سجلّ التغيير و الرخصة. إنه مكوِّن نظام مفقود.</string>
@@ -507,7 +505,6 @@
     <string name="empty_list_title">لم يُعثر على مدخلات</string>
     <string name="empty_group_list">لا توجد مجموعات لعرضها. أضف مجموعات من خلال شاشة التعديل لأحد المدخلات</string>
     <string name="empty_group_list_title">لم يُعثر على مجموعات</string>
-    <string name="no_icon_packs">لم يتم استيراد أي حزم أيقونات بعد. انقر فوق علامة الزائد لاستيراد حزمة. نصيحة: جرب <a href="https://aegis-icons.github.io">aegis-icons</a>.</string>
     <string name="no_icon_packs_title">لا توجد حزم أيقونات</string>
     <string name="pick_icon">اختر أيقونة</string>
     <string name="uncategorized">غير مصنفة</string>

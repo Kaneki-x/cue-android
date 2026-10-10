@@ -166,7 +166,6 @@
     <string name="authentication_method_biometrics">생체 인식</string>
     <string name="authentication_method_biometrics_description">비밀번호에 추가로, 지문과 같이 이 장치에 등록된 생체 인식을 잠금 해제에 사용합니다.</string>
     <string name="authentication">보관함 잠금 해제</string>
-    <string name="auth_use_biometrics">또는 <font fgcolor="#FF0D86C1">여기</font>를 눌러 생체 인식 사용</string>
     <string name="set_password">비밀번호를 입력해주세요</string>
     <string name="set_group">그룹 이름을 입력해주세요</string>
     <string name="set_number">숫자를 입력해주세요</string>
@@ -409,7 +408,6 @@
     <string name="version">버전</string>
     <string name="changelog">변경 내역</string>
     <string name="whats_new">새로운 소식</string>
-    <string name="github_description">소스코드, 문제 및 정보</string>
     <string name="third_party_licenses">서드파티 라이선스</string>
     <string name="third_party_licenses_description">Cue가 사용하는 서드파티 라이브러리</string>
     <string name="webview_error">이 기기는 변경 내역 및 라이선스를 보는 데 필요한 웹 뷰를 지원하지 않습니다. 시스템 구성 요소가 누락된 것입니다.</string>
@@ -448,7 +446,6 @@
     <string name="empty_list_title">항목이 없습니다</string>
     <string name="empty_group_list">보여줄 그룹이 없습니다. 항목 편집 화면에서 그룹을 추가하세요</string>
     <string name="empty_group_list_title">그룹이 없습니다</string>
-    <string name="no_icon_packs">불러온 아이콘 팩이 없습니다. 플러스 버튼을 눌러 불러와보세요. 팁: <a href="https://aegis-icons.github.io">aegis-icons(Aegis 아이콘)</a>을 시도해보세요.</string>
     <string name="no_icon_packs_title">아이콘 팩이 없습니다</string>
     <string name="pick_icon">아이콘 선택하기</string>
     <string name="uncategorized">분류되지 않음</string>

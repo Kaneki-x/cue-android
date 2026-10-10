@@ -427,6 +427,10 @@ public class EntryListView extends Fragment implements EntryAdapter.Listener {
         _adapter.setShowExpirationState(showExpirationState);
     }
 
+    public void setShowExpirationCountdown(boolean showExpirationCountdown) {
+        _adapter.setShowExpirationCountdown(showExpirationCountdown);
+    }
+
     public void setHighlightEntry(boolean highlightEntry) {
         _adapter.setHighlightEntry(highlightEntry);
     }

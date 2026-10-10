@@ -135,7 +135,6 @@
     <string name="authentication_method_biometrics">Biometrika</string>
     <string name="authentication_method_biometrics_description">Papildomai prie slaptažodžio, gali būti naudojama šiame įrenginyje registruota biometrika, tokia kaip piršto atspaudas ar jūsų veidas.</string>
     <string name="authentication">Atrakinti slėptuvę</string>
-    <string name="auth_use_biometrics">Arba bakstelėkite čia, norėdami naudoti <font fgcolor="#FF0D86C1">biometriką</font></string>
     <string name="set_password">Įveskite slaptažodį</string>
     <string name="set_group">Įveskite grupės pavadinimą</string>
     <string name="set_number">Įveskite skaičių</string>
@@ -306,7 +305,6 @@
     <string name="version">Versija</string>
     <string name="changelog">Keitinių žurnalas</string>
     <string name="whats_new">Kas naujo</string>
-    <string name="github_description">Pirminis kodas, klaidos ir informacija</string>
     <string name="third_party_licenses">Trečiųjų šalių licencijos</string>
     <string name="third_party_licenses_description">Cue naudojamų trečiųjų šalių bibliotekų licencijos</string>
     <string name="webview_error">Šis įrenginys nepalaiko saityno rodinio, kuris yra būtinas norint rodyti keitinių žurnalą ir licenciją. Įrenginyje trūksta sisteminio komponento.</string>
@@ -323,7 +321,6 @@
     <string name="empty_list_title">Nerasta jokių įrašų</string>
     <string name="empty_group_list">Nėra jokių grupių, kurias galima būtų rodyti. Pridėkite grupių bet kurio įrašo taisymo lange</string>
     <string name="empty_group_list_title">Nerasta jokių grupių</string>
-    <string name="no_icon_packs">Kol kas nėra importuoti jokie piktogramų paketai. Bakstelėkite pliuso ženkliuką norėdami importuoti. Patarimas: išbandykite <a href="https://aegis-icons.github.io">aegis-icons</a>.</string>
     <string name="no_icon_packs_title">Nėra piktogramų paketų</string>
     <string name="pick_icon">Pasirinkti piktogramą</string>
     <string name="done">Atlikta</string>

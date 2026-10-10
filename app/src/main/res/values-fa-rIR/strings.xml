@@ -105,7 +105,6 @@
     <string name="authentication_method_biometrics">بیومتریک</string>
     <string name="authentication_method_biometrics_description">علاوه بر کلمه عبور، یک روش احراز هویت بیومتریک مانند اثر انگشت یا تشخیص چهره تعریف شده است که میتوان برای بازگشایی مخزن استفاده کرد.</string>
     <string name="authentication">بازکردن مخزن</string>
-    <string name="auth_use_biometrics">یا برای استفاده از &lt;font fgcolor=\'#FF0D86C1\'&gt;بیومتریک&lt;/font&gt; لمس کنید</string>
     <string name="set_password">لطفا کلمه عبور را وارد کنید</string>
     <string name="set_group">لطفا نام گروه را وارد کنید</string>
     <string name="set_number">لطفا یک شماره وارد کنید</string>
@@ -247,7 +246,6 @@
     <string name="version">نسخه</string>
     <string name="changelog">گزارش تغییرات</string>
     <string name="whats_new">تغییرات جدید</string>
-    <string name="github_description">دسترسی به کد برنامه</string>
     <string name="time_sync_warning_title">همگام سازی خودکار</string>
     <string name="time_sync_warning_message">این برنامه نیاز به زمان دقیق برای ساختن کد جدید دارد. تفاوت چند ثانیه‌ای ممکن است باعث ایجاد کد اشتباه شود. به نظر می‌رسد ساعت دستگاه شما به صورت خودکار تنظیم نشده است. آیا میخواهید این کار را انجام دهید؟</string>
     <string name="time_sync_warning_disable">دیگر به من هشدار نده. می‌دانم دارم چکار می‌کنم.</string>

@@ -230,6 +230,7 @@ public class MainActivity extends CueActivity implements EntryListView.Listener 
         _entryListView.setShowIcon(_prefs.isIconVisible());
         _entryListView.setShowExpirationState(_prefs.getShowExpirationState());
         _entryListView.setShowNextCode(_prefs.getShowNextCode());
+        _entryListView.setShowExpirationCountdown(_prefs.getShowExpirationCountdown());
         _entryListView.setOnlyShowNecessaryAccountNames(_prefs.onlyShowNecessaryAccountNames());
         _entryListView.setHighlightEntry(_prefs.isEntryHighlightEnabled());
         _entryListView.setPauseFocused(_prefs.isPauseFocusedEnabled());

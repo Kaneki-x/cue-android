@@ -52,6 +52,8 @@
     <string name="pref_expiration_state_title">Indicate when codes are about to expire</string>
     <string name="pref_expiration_state_summary">Change the color of the codes and have them blink when they are about to expire</string>
     <string name="pref_expiration_state_fallback">Change the color of the codes when they are about to expire</string>
+    <string name="pref_expiration_countdown_title">Show seconds left</string>
+    <string name="pref_expiration_countdown_summary">Count down the last seconds inside the ring before a code expires</string>
     <string name="pref_shared_issuer_account_name_title">Only show account name when necessary</string>
     <string name="pref_shared_issuer_account_name_summary">Only show account names whenever they share the same issuer. Other account names will be hidden.</string>
     <string name="pref_account_name_position_summary_override">This setting is overridden by the tiles view mode. Account name will be shown below the issuer.</string>
@@ -104,6 +106,7 @@
     <string name="pref_tap_to_reveal_time_title">Timeout for tap to reveal</string>
     <string name="pref_auto_lock_title">Auto lock</string>
     <string name="pref_auto_lock_summary">When %s</string>
+    <string name="pref_auto_lock_separator">", "</string>
     <string name="pref_auto_lock_summary_disabled">Disabled</string>
     <string name="pref_auto_lock_prompt">Automatically lock Cue when</string>
     <string name="pref_auto_lock_type_back_button">The back button is pressed</string>
@@ -176,11 +179,10 @@
     <string name="authentication_method_password_explanation">Warning: If you forget your password, you will permanently lose access to your tokens. There is no way to recover them without the password.</string>
     <string name="authentication_method_biometrics">Biometrics</string>
     <string name="authentication_method_biometrics_description">In addition to a password, biometrics registered on this device, like a fingerprint or your face, can be used to unlock the vault.</string>
-    <string name="authentication">Unlock the vault</string>
+    <string name="authentication">Unlock Cue</string>
     <string name="auth_locked_title">Cue is locked</string>
     <string name="auth_locked_subtitle">Unlock with your fingerprint, face or password</string>
 
-    <string name="auth_use_biometrics">Or tap here to use <font fgcolor='#FF0D86C1'>biometrics</font></string>
     <string name="set_password">Please enter a password</string>
     <string name="set_group">Please enter a group name</string>
     <string name="set_number">Please enter a number</string>
@@ -208,6 +210,7 @@
     <string name="no">No</string>
     <string name="undo">Undo</string>
     <string name="unlock">Unlock</string>
+    <string name="auth_unlock_biometrics">Unlock with biometrics</string>
     <string name="advanced">Advanced</string>
     <string name="counter">Counter</string>
     <string name="digits">Digits</string>
@@ -498,8 +501,6 @@
     <string name="version">Version</string>
     <string name="changelog">Changelog</string>
     <string name="whats_new">What\'s new</string>
-    <string name="github" translatable="false">GitHub</string>
-    <string name="github_description">Source code, issues and information</string>
     <string name="third_party_licenses">Third-party licenses</string>
     <string name="third_party_licenses_description">Licenses of the third-party libraries Cue uses</string>
     <string name="webview_error">This device doesn\'t support web view, which is necessary to view the changelog and the license. It is missing a system component.</string>
@@ -551,7 +552,7 @@
     <string name="no_search_results">No entries match “%1$s”.</string>
     <string name="empty_group_list">There are no groups to be shown. Add groups in the edit screen of an entry</string>
     <string name="empty_group_list_title">No groups found</string>
-    <string name="no_icon_packs">No icon packs have been imported yet. Tap the plus sign to import one. Tip: try <a href="https://aegis-icons.github.io">aegis-icons</a>.</string>
+    <string name="no_icon_packs">No icon packs yet. Tap the plus sign to import one. Cue\'s built-in icon packs are not installed again once deleted.</string>
     <string name="no_icon_packs_title">No icon packs</string>
     <string name="pick_icon">Pick an icon</string>
     <string name="uncategorized">Uncategorized</string>

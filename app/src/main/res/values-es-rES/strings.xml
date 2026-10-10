@@ -169,7 +169,6 @@
     <string name="authentication_method_biometrics">Biometría</string>
     <string name="authentication_method_biometrics_description">Aparte de contraseña, se puede aprovechar el sistema biométrico del dispositivo (como huellas dactilares o fotos de la cara) para desbloquear la bóveda de forma más sencilla.</string>
     <string name="authentication">Desbloquear la bóveda</string>
-    <string name="auth_use_biometrics">O pulsa aquí para utilizar la <font fgcolor="#FF0D86C1">biometría</font></string>
     <string name="set_password">Escribe una contraseña</string>
     <string name="set_group">Escribe un nombre de grupo</string>
     <string name="set_number">Escribe un número</string>
@@ -419,7 +418,6 @@
     <string name="version">Versión</string>
     <string name="changelog">Historial de cambios</string>
     <string name="whats_new">Novedades</string>
-    <string name="github_description">Código fuente, problemas e información</string>
     <string name="third_party_licenses">Licencias de terceros</string>
     <string name="third_party_licenses_description">Licencias de las bibliotecas de terceros usadas por Cue</string>
     <string name="webview_error">Este dispositivo no soporta web view, lo cual es necesario para visualizar el registro de cambios y la licencia. Falta un componente del sistema.</string>
@@ -460,7 +458,6 @@
     <string name="empty_list_title">No hay ninguna clave</string>
     <string name="empty_group_list">Todavía no hay ningún grupo; añade uno en la pantalla de editar claves</string>
     <string name="empty_group_list_title">No se encontraron grupos</string>
-    <string name="no_icon_packs">Aún no se ha importado ningún paquete de iconos. Pulsa «+» para importar uno. Consejo: te recomendamos que pruebes <a href="https://aegis-icons.github.io">aegis-icons</a>.</string>
     <string name="no_icon_packs_title">No parece haber ningún paquete de iconos</string>
     <string name="pick_icon">Seleccione un icono</string>
     <string name="uncategorized">Sin categorizar</string>

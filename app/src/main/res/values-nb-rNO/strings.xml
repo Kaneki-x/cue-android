@@ -165,7 +165,6 @@
     <string name="authentication_method_biometrics">Biometri</string>
     <string name="authentication_method_biometrics_description">I tillegg til et passord, så kan biometri som fingeravtrykk eller ansikt brukes til å låse opp hvelvet.</string>
     <string name="authentication">Lås opp hvelvet</string>
-    <string name="auth_use_biometrics">Eller trykk her for å bruke <font fgcolor="#FF0D86C1">biometri</font></string>
     <string name="set_password">Vennligst skriv inn et passord</string>
     <string name="set_group">Vennligst skriv inn et gruppenavn</string>
     <string name="set_number">Vennligst skriv inn et nummer</string>
@@ -381,7 +380,6 @@
     <string name="version">Versjon</string>
     <string name="changelog">Endringslogg</string>
     <string name="whats_new">Nyheter</string>
-    <string name="github_description">Kildekode, problemer og informasjon</string>
     <string name="third_party_licenses">Tredjepartslisenser</string>
     <string name="third_party_licenses_description">Lisenser til tredjepartsbiblioteker Cue benytter</string>
     <string name="backup_system_builtin">Cue\' innebygde automatiske sikkerhetskopier</string>
@@ -405,7 +403,6 @@
     <string name="empty_list_title">Ingen oppføringer funnet</string>
     <string name="empty_group_list">Det er ingen grupper å vise. Legg til grupper når du redigerer oppføringer</string>
     <string name="empty_group_list_title">Ingen grupper funnet</string>
-    <string name="no_icon_packs">Ingen importerte ikonpakker enda. Trykk på pluss-ikonet for å importere en. Tips: prøv <a href="https://aegis-icons.github.io">aegis-icons</a>.</string>
     <string name="no_icon_packs_title">Ingen ikonpakker</string>
     <string name="pick_icon">Velg et ikon</string>
     <string name="uncategorized">Ukategorisert</string>

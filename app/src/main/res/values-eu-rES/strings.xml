@@ -169,7 +169,6 @@
     <string name="authentication_method_biometrics">Biometriak</string>
     <string name="authentication_method_biometrics_description">Pasahitzaz gain, gailu honetan erregistratutako biometriak, hala nola hatz-marka edo zure aurpegia, biltegia desblokeatzeko erabil daitezke.</string>
     <string name="authentication">Desblokeatu biltegia</string>
-    <string name="auth_use_biometrics">Edo sakatu hemen <font fgcolor="#FF0D86C1">biometria</font> erabiltzeko</string>
     <string name="set_password">Sartu pasahitz bat mesedez</string>
     <string name="set_group">Sartu talde izen bat mesedez</string>
     <string name="set_number">Sartu zenbaki bat mesedez</string>
@@ -414,7 +413,6 @@
     <string name="version">Bertsioa</string>
     <string name="changelog">Aldaketen erregistroa</string>
     <string name="whats_new">Zer berri</string>
-    <string name="github_description">Iturburu-kodea, arazoak eta informazioa</string>
     <string name="third_party_licenses">Hirugarrenen lizentziak</string>
     <string name="third_party_licenses_description">Cueek erabiltzen dituen hirugarrenen lizentziak</string>
     <string name="webview_error">Gailu honetan ez dabil web view, eta beharrezkoa da aldaketen erregistroa eta lizentzia ikusteko. Sistemaren osagai bat da eta ez dago instalatuta.</string>
@@ -452,7 +450,6 @@ Biltegian egindako azken aldaketen segurtasun kopiarik ez dago. Garrantzitsua da
     <string name="empty_list_title">Ez da sarrerarik aurkitu</string>
     <string name="empty_group_list">Ez dago erakutsi beharreko talderik. Gehitu taldeak sarrerak editatzeko pantailan</string>
     <string name="empty_group_list_title">Ez da talderik aurkitu</string>
-    <string name="no_icon_packs">Ez duzu ikono multzorik inportatu. Sakatu + ikurra bat inportatzeko. Aholkua: probatu <a href="https://aegis-icons.github.io">aegis-icons</a>.</string>
     <string name="no_icon_packs_title">Ez dago ikono multzorik</string>
     <string name="pick_icon">Aukeratu ikono bat</string>
     <string name="uncategorized">Kategoriarik gabe</string>

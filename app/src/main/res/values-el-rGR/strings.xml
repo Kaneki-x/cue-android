@@ -169,7 +169,6 @@
     <string name="authentication_method_biometrics">Βιομετρικά</string>
     <string name="authentication_method_biometrics_description">Εκτός από έναν κωδικό πρόσβασης, τα βιομετρικά στοιχεία που έχουν καταχωρηθεί σε αυτήν τη συσκευή, όπως ένα δακτυλικό αποτύπωμα ή το πρόσωπό σας, μπορούν να χρησιμοποιηθούν για να ξεκλειδώσετε την κρύπτη σας.</string>
     <string name="authentication">Ξεκλείδωμα της κρύπτης</string>
-    <string name="auth_use_biometrics">Ή πατήστε εδώ για να χρησιμοποιήσετε <font fgcolor="#FF0D86C1">βιομετρία</font></string>
     <string name="set_password">Παρακαλώ εισάγετε έναν κωδικό πρόσβασης</string>
     <string name="set_group">Παρακαλώ εισάγετε όνομα ομάδας</string>
     <string name="set_number">Παρακαλώ εισάγετε αριθμό</string>
@@ -419,7 +418,6 @@
     <string name="version">Έκδοση</string>
     <string name="changelog">Αρχείο καταγραφής αλλαγών</string>
     <string name="whats_new">Τι νέο υπάρχει</string>
-    <string name="github_description">Πηγαίος κώδικας, προβλήματα και πληροφορίες</string>
     <string name="third_party_licenses">Άδειες χρήσης τρίτων</string>
     <string name="third_party_licenses_description">Άδειες χρήσης βιβλιοθηκών τρίτων που χρησιμοποιεί το Cue</string>
     <string name="webview_error">Αυτή η συσκευή δεν υποστηρίζει προβολή ιστού, η οποία είναι απαραίτητη για την προβολή του αρχείου αλλαγών και της άδειας. Λείπει ένα στοιχείο συστήματος.</string>
@@ -459,7 +457,6 @@
     <string name="empty_list_title">Δεν βρέθηκαν καταχωρήσεις</string>
     <string name="empty_group_list">Δεν υπάρχουν ομάδες προς εμφάνιση. Προσθέστε ομάδες στην οθόνη επεξεργασίας μιας καταχώρισης</string>
     <string name="empty_group_list_title">Δεν βρέθηκαν ομάδες</string>
-    <string name="no_icon_packs">Δεν έχουν εισαχθεί ακόμα πακέτα εικονιδίων. Πατήστε το σύμβολο + για να εισάγετε ένα. Συμβουλή: δοκιμάστε τα <a href="https://aegis-icons.github.io">εικονίδια-aegis</a>.</string>
     <string name="no_icon_packs_title">Χωρίς πακέτα εικονιδίων</string>
     <string name="pick_icon">Επιλέξτε ένα εικονίδιο</string>
     <string name="uncategorized">Μη κατηγοριοποιημένο</string>

@@ -169,7 +169,6 @@
     <string name="authentication_method_biometrics">Biometria</string>
     <string name="authentication_method_biometrics_description">Holvin voi avata sekä salasanalla että laitteeseen tallennettujen biometristen tietojen, kuten sormenjälkesi tai kasvojesi avulla.</string>
     <string name="authentication">Avaa holvi</string>
-    <string name="auth_use_biometrics">Tai napauta tästä käyttääksesi <font fgcolor="#FF0D86C1">biometriaa</font></string>
     <string name="set_password">Anna salasana</string>
     <string name="set_group">Anna ryhmän nimi</string>
     <string name="set_number">Anna numero</string>
@@ -410,7 +409,6 @@
     <string name="version">Versio</string>
     <string name="changelog">Muutosloki</string>
     <string name="whats_new">Mitä uutta</string>
-    <string name="github_description">Lähdekoodi, ongelmat ja tietoa</string>
     <string name="third_party_licenses">Kolmannen osapuolen lisenssit</string>
     <string name="third_party_licenses_description">Cuein käyttämien kolmannen osapuolen kirjastojen lisenssit</string>
     <string name="webview_error">Tämä laite ei tue WebView:tä, joka vaaditaan muutoslokin ja lisenssitietojen katselemiseksi. Siitä puuttuu järjestelmäkomponentti.</string>
@@ -451,7 +449,6 @@
     <string name="empty_list_title">Ei kohteita</string>
     <string name="empty_group_list">Ei näytettäviä ryhmiä. Lisää ryhmiä kohteen muokkausruudun kautta</string>
     <string name="empty_group_list_title">Ei ryhmiä</string>
-    <string name="no_icon_packs">Kuvakepaketteja ei ole vielä tuotu. Tuo yksi napauttamalla plus-merkkiä. Vihje: kokeile <a href="https://aegis-icons.github.io">aegis-iconseja</a>.</string>
     <string name="no_icon_packs_title">Ei kuvakepaketteja</string>
     <string name="pick_icon">Valitse kuvake</string>
     <string name="uncategorized">Luokittelematon</string>

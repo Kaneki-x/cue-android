@@ -305,7 +305,7 @@ public class SecurityPreferencesFragment extends PreferencesFragment {
         for (int i = 0; i < settings.length; i++) {
             if (_prefs.isAutoLockTypeEnabled(settings[i])) {
                 if (builder.length() != 0) {
-                    builder.append(", ");
+                    builder.append(getString(R.string.pref_auto_lock_separator));
                 }
 
                 builder.append(descriptions[i].toLowerCase());

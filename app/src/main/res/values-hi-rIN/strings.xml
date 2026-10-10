@@ -122,7 +122,6 @@
     <string name="authentication_method_biometrics">बॉयोमेट्रिक्स</string>
     <string name="authentication_method_biometrics_description">एक पासवर्ड के अलावा, इस डिवाइस पर पंजीकृत बायोमेट्रिक्स, एक फिंगरप्रिंट या आपके चेहरे को वॉल्ट को अनलॉक करने के लिए इस्तेमाल किया जा सकता है।</string>
     <string name="authentication">वॉल्ट अनलॉक करें</string>
-    <string name="auth_use_biometrics"><font fgcolor="#FF0D86C1">बॉयोमेट्रिक्स</font> का उपयोग करने के लिए टैप करें</string>
     <string name="set_password">कृपया पासवर्ड दर्ज करें</string>
     <string name="set_group">कृपया समूह नाम दर्ज़ करें</string>
     <string name="set_number">कृप्या कोई संख्या दर्ज़ करें</string>
@@ -319,7 +318,6 @@
     <string name="version">संस्करण</string>
     <string name="changelog">परिवर्तन लॉग</string>
     <string name="whats_new">नया क्या है</string>
-    <string name="github_description">सोर्स कोड, मुद्दे और जानकारी</string>
     <string name="third_party_licenses">तीसरे-पक्ष के लाइसेंस</string>
     <string name="third_party_licenses_description">एजिस तीसरे पक्ष के पुस्तकालयों के लाइसेंस का उपयोग करता है</string>
     <string name="webview_error">यह उपकरण वेब दृश्य का समर्थन नहीं करता है, जो चैंज और लाइसेंस देखने के लिए आवश्यक है। इसमें एक सिस्टम घटक गायब है।</string>
@@ -345,7 +343,6 @@
     <string name="empty_list_title">कोई प्रविष्टियाँ नहीं मिलीं</string>
     <string name="empty_group_list">दिखाए जाने के लिये कोई समूह नहीं हैं। एक प्रविष्टि के संपादन स्क्रीन में समूह जोड़ें</string>
     <string name="empty_group_list_title">कोई समूह नहीं मिले</string>
-    <string name="no_icon_packs">अभी तक कोई आइकन पैक आयात नहीं किया गया है। एक आयात करने के लिए प्लस चिह्न टैप करें। युक्ति: <a href="https://aegis-icons.github.io">एजिस-आइकन</a> आज़माएं।</string>
     <string name="no_icon_packs_title">कोई आइकन पैक नहीं</string>
     <string name="pick_icon">चिह्न चुनें</string>
     <string name="uncategorized">अवर्गीकृत</string>

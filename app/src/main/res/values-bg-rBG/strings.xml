@@ -169,7 +169,6 @@
     <string name="authentication_method_biometrics">Биометрични данни</string>
     <string name="authentication_method_biometrics_description">В допълнение към паролата, биометрични данни, регистрирани на това устройство, като пръстов отпечатък или лицето ви, могат да се използват за отключване на хранилището.</string>
     <string name="authentication">Отключване на хранилище</string>
-    <string name="auth_use_biometrics">Или докоснете тук, за да използвате <font fgcolor="#FF0D86C1">биометрични данни</font></string>
     <string name="set_password">Моля въведете парола</string>
     <string name="set_group">Моля, въведете име на групата</string>
     <string name="set_number">Въведете число</string>
@@ -419,7 +418,6 @@
     <string name="version">Издание</string>
     <string name="changelog">Дневник на промените</string>
     <string name="whats_new">Какво ново</string>
-    <string name="github_description">Изходен код, дефекти и информация</string>
     <string name="third_party_licenses">Лицензи на трети страни</string>
     <string name="third_party_licenses_description">Лицензи на използвани външни библиотеки</string>
     <string name="webview_error">Изглежда, че на устройството липсва WebView. Това е важен системен компонент, който е необходим за преглед на дневника с промени и лиценза. Ако сте използвали инструменти за &quot;почистване&quot; на устройство, може случайно да сте го изтрили и ще трябва да го инсталирате отново.</string>
@@ -460,7 +458,6 @@
     <string name="empty_list_title">Не са открити записи</string>
     <string name="empty_group_list">Няма групи, които да бъдат показани. Добавете групи в екрана за промяна на запис</string>
     <string name="empty_group_list_title">Не са намерени групи</string>
-    <string name="no_icon_packs">Не са внесени пакети с икони. Докоснете бутона със знак плюс. Съвет: пробвайте <a href="https://aegis-icons.github.io">aegis-icons</a>.</string>
     <string name="no_icon_packs_title">Липсват икони</string>
     <string name="pick_icon">Избор на икона</string>
     <string name="uncategorized">Без категория</string>

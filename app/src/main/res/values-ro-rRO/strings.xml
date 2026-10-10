@@ -172,7 +172,6 @@
     <string name="authentication_method_biometrics">Biometrice</string>
     <string name="authentication_method_biometrics_description">În plus față de o parolă, datele biometrice înregistrate pe acest dispozitiv, cum ar fi o amprentă sau fața ta, pot fi folosite pentru a debloca seiful.</string>
     <string name="authentication">Deblocare seif</string>
-    <string name="auth_use_biometrics">Sau apasă aici pentru a utiliza <font fgcolor="#FF0D86C1">datele biometrice</font></string>
     <string name="set_password">Te rugăm să introduci o parolă</string>
     <string name="set_group">Te rugăm să introduci un nume de grup</string>
     <string name="set_number">Te rugăm să introduci un număr</string>
@@ -417,7 +416,6 @@
     <string name="version">Versiune</string>
     <string name="changelog">Istoric modificări</string>
     <string name="whats_new">Ce este nou</string>
-    <string name="github_description">Cod sursă, probleme și informații</string>
     <string name="third_party_licenses">Licențe terțe</string>
     <string name="third_party_licenses_description">Licenţele bibliotecilor terţe pe care Cue le utilizează</string>
     <string name="webview_error">Acest dispozitiv nu acceptă vizualizare web, care este necesară pentru a vizualiza jurnalul modificărilor și licența. Îi lipsește o componentă de sistem.</string>
@@ -452,7 +450,6 @@ O tentativă recentă de backup de vault utilizând %1$s a eșuată deoarece Cue
     <string name="empty_list_title">Nicio intrare găsită</string>
     <string name="empty_group_list">Nu există grupuri care să fie afișate. Adaugă grupuri în ecranul de editare al unei intrări</string>
     <string name="empty_group_list_title">Niciun grup găsit</string>
-    <string name="no_icon_packs">Nu au fost importate încă pachete de pictograme. Apăsați pe semnul plus pentru a importa unul. Sfat: încercați <a href="https://aegis-icons.github.io">aegis-icon-uri</a>.</string>
     <string name="no_icon_packs_title">Niciun pachet de pictograme</string>
     <string name="pick_icon">Alege o pictogramă</string>
     <string name="uncategorized">Necategorizat</string>

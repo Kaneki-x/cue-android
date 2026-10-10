@@ -29,6 +29,7 @@ import io.cueapp.android.crypto.MasterKey;
 import io.cueapp.android.helpers.BiometricsHelper;
 import io.cueapp.android.helpers.EditTextHelper;
 import io.cueapp.android.helpers.MetricsHelper;
+import io.cueapp.android.helpers.SimpleTextWatcher;
 import io.cueapp.android.helpers.UiThreadExecutor;
 import io.cueapp.android.ui.dialogs.Dialogs;
 import io.cueapp.android.ui.tasks.PasswordSlotDecryptTask;
@@ -107,9 +108,15 @@ public class AuthActivity extends CueActivity {
 
         getOnBackPressedDispatcher().addCallback(this, new BackPressHandler());
 
+        // as on iOS, 解锁 stays unavailable until a password is typed
+        _decryptButton.setEnabled(false);
+        _textPassword.addTextChangedListener(new SimpleTextWatcher(text -> updateDecryptButton()));
+
         _textPassword.setOnEditorActionListener((v, actionId, event) -> {
             if ((event != null && (event.getKeyCode() == KeyEvent.KEYCODE_ENTER)) || (actionId == EditorInfo.IME_ACTION_DONE)) {
-                _decryptButton.performClick();
+                if (_decryptButton.isEnabled()) {
+                    _decryptButton.performClick();
+                }
             }
             return false;
         });
@@ -296,6 +303,10 @@ public class AuthActivity extends CueActivity {
         _textPassword.postDelayed(popup::dismiss, 5000);
     }
 
+    private void updateDecryptButton() {
+        _decryptButton.setEnabled(_textPassword.length() > 0);
+    }
+
     public BiometricPrompt showBiometricPrompt() {
         InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(_textPassword.getWindowToken(), 0);
@@ -407,7 +418,7 @@ public class AuthActivity extends CueActivity {
 
                 finish(result.getKey(), result.isSlotRepaired());
             } else {
-                _decryptButton.setEnabled(true);
+                updateDecryptButton();
 
                 _auditLogRepository.addVaultUnlockFailedPasswordEvent();
                 onInvalidPassword();

@@ -64,6 +64,7 @@ public class EntryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     private boolean _showIcon;
     private boolean _showNextCode;
     private boolean _showExpirationState;
+    private boolean _showExpirationCountdown;
     private boolean _onlyShowNecessaryAccountNames;
     private boolean _highlightEntry;
     private boolean _tempHighlightEntry;
@@ -123,6 +124,10 @@ public class EntryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
 
     public void setShowExpirationState(boolean showExpirationState) {
         _showExpirationState = showExpirationState;
+    }
+
+    public void setShowExpirationCountdown(boolean showExpirationCountdown) {
+        _showExpirationCountdown = showExpirationCountdown;
     }
 
     public void setTapToReveal(boolean tapToReveal) {
@@ -455,7 +460,7 @@ public class EntryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             }
 
             AccountNamePosition accountNamePosition = showAccountName ? _accountNamePosition : AccountNamePosition.HIDDEN;
-            entryHolder.setData(entry, _codeGroupSize, _viewMode, accountNamePosition, _showIcon, showProgress, hidden, paused, dimmed, _showExpirationState, _showNextCode);
+            entryHolder.setData(entry, _codeGroupSize, _viewMode, accountNamePosition, _showIcon, showProgress, hidden, paused, dimmed, _showExpirationState, _showExpirationCountdown, _showNextCode);
             if (showProgress && !nonUniformPeriod) {
                 // ring only; the shared refresher in EntryListView refreshes the code
                 entryHolder.setShowProgress(true, false);
