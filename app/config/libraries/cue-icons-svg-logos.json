@@ -1,0 +1,15 @@
+{
+    "uniqueId": "cue-icons:svg-logos",
+    "artifactVersion": "37a6b80",
+    "name": "SVG Logos",
+    "description": "Icons in Cue Icons, the built-in icon pack. Changed: each logo is scaled and placed on a disc.",
+    "website": "https://github.com/gilbarbara/logos",
+    "developers": [
+        {
+            "name": "Gil Barbara"
+        }
+    ],
+    "licenses": [
+        "CC0-1.0"
+    ]
+}

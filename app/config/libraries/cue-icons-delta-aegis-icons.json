@@ -1,0 +1,15 @@
+{
+    "uniqueId": "cue-icons:delta-aegis-icons",
+    "artifactVersion": "v20260201",
+    "name": "delta-aegis-icons",
+    "description": "Icons in Cue Icons, the built-in icon pack.",
+    "website": "https://github.com/Delta-Icons/aegis",
+    "developers": [
+        {
+            "name": "Delta Icons"
+        }
+    ],
+    "licenses": [
+        "CC0-1.0"
+    ]
+}

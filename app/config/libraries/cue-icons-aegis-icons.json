@@ -1,0 +1,15 @@
+{
+    "uniqueId": "cue-icons:aegis-icons",
+    "artifactVersion": "2026-07-01",
+    "name": "aegis-icons",
+    "description": "Icons in Cue Icons, the built-in icon pack.",
+    "website": "https://github.com/aegis-icons/aegis-icons",
+    "developers": [
+        {
+            "name": "aegis-icons"
+        }
+    ],
+    "licenses": [
+        "CC0-1.0"
+    ]
+}

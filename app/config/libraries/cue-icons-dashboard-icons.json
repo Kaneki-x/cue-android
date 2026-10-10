@@ -1,0 +1,15 @@
+{
+    "uniqueId": "cue-icons:dashboard-icons",
+    "artifactVersion": "57e939e",
+    "name": "Dashboard Icons",
+    "description": "Icons in Cue Icons, the built-in icon pack. Changed: each logo is scaled and placed on a disc.",
+    "website": "https://github.com/homarr-labs/dashboard-icons",
+    "developers": [
+        {
+            "name": "Homarr Labs"
+        }
+    ],
+    "licenses": [
+        "Apache-2.0"
+    ]
+}

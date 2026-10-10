@@ -1,0 +1,15 @@
+{
+    "uniqueId": "cue-icons:aegis-simple-icons",
+    "artifactVersion": "v267",
+    "name": "aegis-simple-icons",
+    "description": "Icons in Cue Icons, the built-in icon pack, made from Simple Icons. Changed: on light brand colours the glyph is drawn dark.",
+    "website": "https://github.com/alexbakker/aegis-simple-icons",
+    "developers": [
+        {
+            "name": "Alexander Bakker, Simple Icons"
+        }
+    ],
+    "licenses": [
+        "CC0-1.0"
+    ]
+}

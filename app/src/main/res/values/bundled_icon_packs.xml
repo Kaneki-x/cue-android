@@ -3,6 +3,10 @@
 <resources>
     <!-- UUIDs of the icon packs in assets/iconpacks, most preferred first -->
     <string-array name="bundled_icon_packs" translatable="false">
+        <item>c1e00404-4e51-484f-b66e-1a56125c1382</item>
+    </string-array>
+    <!-- UUIDs of packs earlier versions bundled: their bundled copies are removed -->
+    <string-array name="retired_icon_packs" translatable="false">
         <item>c1018b93-4e8c-490a-b575-30dde62a833e</item>
         <item>18400066-2748-11ee-be56-0242ac120002</item>
         <item>6a371ea0-1178-4677-ae93-cda7a7a5b378</item>

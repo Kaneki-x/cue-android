@@ -1,0 +1,15 @@
+{
+    "uniqueId": "cue-icons:selfhst-icons",
+    "artifactVersion": "2053b70",
+    "name": "selfh.st icons",
+    "description": "Icons in Cue Icons, the built-in icon pack. Changed: each logo is scaled and placed on a disc.",
+    "website": "https://github.com/selfhst/icons",
+    "developers": [
+        {
+            "name": "selfh.st"
+        }
+    ],
+    "licenses": [
+        "CC-BY-4.0"
+    ]
+}
