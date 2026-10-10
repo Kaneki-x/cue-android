@@ -34,8 +34,15 @@
                 android:includeFontPadding="false"
                 android:lineSpacingMultiplier="1.05"
                 android:singleLine="false"
-                android:text="@string/authentication_multiline"
+                android:text="@string/auth_locked_title"
                 android:textAppearance="@style/TextAppearance.Cue.Display" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/cue_space_2"
+                android:text="@string/auth_locked_subtitle"
+                android:textColor="?attr/colorOnSurfaceVariant" />
 
             <ImageView
                 android:layout_width="56dp"

@@ -169,7 +169,6 @@
     <string name="authentication_method_biometrics">Biometri</string>
     <string name="authentication_method_biometrics_description">Förutom ett lösenord kan biometri registrerad på den här enheten, som ett fingeravtryck eller ditt ansikte, användas för att låsa upp valvet.</string>
     <string name="authentication">Lås upp valvet</string>
-    <string name="authentication_multiline" comment="The newline in the middle is used for aesthetic purposes">Lås upp\nvalvet</string>
     <string name="auth_use_biometrics">Eller tryck här för att använda <font fgcolor="#FF0D86C1">biometri</font></string>
     <string name="set_password">Ange ett lösenord</string>
     <string name="set_group">Ange ett gruppnamn</string>
@@ -249,9 +248,6 @@
     <string name="discard_changes_description">Dina ändringar har inte sparats</string>
     <string name="saving_profile_error">Det gick inte att spara profilen</string>
     <string name="saving_assign_icons_error">Fel vid tilldelning av ikoner</string>
-    <string name="welcome">Välkommen</string>
-    <string name="setup_completed">Konfigurationen slutförd</string>
-    <string name="setup_completed_description">Cue har konfigurerats och är redo att användas.</string>
     <string name="vault_not_found">Valvet hittades inte, startar konfiguration …</string>
     <string name="copied">Kopierat</string>
     <string name="errors_copied">Fel kopierade till urklipp</string>

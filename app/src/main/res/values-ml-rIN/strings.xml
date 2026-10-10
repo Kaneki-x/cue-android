@@ -126,7 +126,6 @@
     <string name="authentication_method_biometrics">ബയോമെട്രിക്സ്</string>
     <string name="authentication_method_biometrics_description">ഒരു പാസ്‌വേഡിന് പുറമേ, ഈ ഉപകരണത്തിൽ രജിസ്‌റ്റർ ചെയ്‌തിരിക്കുന്ന വിരലടയാളമോ നിങ്ങളുടെ മുഖമോ പോലുള്ള ബയോമെട്രിക്‌സും നിലവറ അൺലോക്ക് ചെയ്യാൻ ഉപയോഗിക്കാം.</string>
     <string name="authentication">നിലവറ അൺലോക്ക് ചെയ്യുക</string>
-    <string name="authentication_multiline" comment="The newline in the middle is used for aesthetic purposes">നിലവറ\nഅൺലോക്ക് ചെയ്യുക</string>
     <string name="auth_use_biometrics">അല്ലെങ്കിൽ <font fgcolor="#FF0D86C1">ബയോമെട്രിക്‌സ്</font> ഉപയോഗിക്കാൻ ഇവിടെ ടാപ്പ് ചെയ്യുക</string>
     <string name="set_password">ദയവായി ഒരു പാസ്‌വേഡ് നൽകുക</string>
     <string name="set_group">ദയവായി ഒരു ഗ്രൂപ്പിൻ്റെ പേര് നൽകുക</string>
@@ -199,9 +198,6 @@
     <string name="discard_changes_description">നിങ്ങളുടെ മാറ്റങ്ങൾ സംരക്ഷിച്ചിട്ടില്ല</string>
     <string name="saving_profile_error">പ്രൊഫൈൽ സംരക്ഷിക്കുന്നതിൽ പിശക്</string>
     <string name="saving_assign_icons_error">ഐക്കണുകൾ നൽകുന്നതിൽ പിശക്</string>
-    <string name="welcome">സ്വാഗതം</string>
-    <string name="setup_completed">സജ്ജീകരണം പൂർത്തിയായി</string>
-    <string name="setup_completed_description">ഏജീസ് സജ്ജീകരിച്ചു, പോകാൻ തയ്യാറാണ്.</string>
     <string name="vault_not_found">നിലവറ കണ്ടെത്തിയില്ല, സജ്ജീകരണം ആരംഭിക്കുന്നു…</string>
     <string name="copied">പകർത്തി</string>
     <string name="errors_copied">പിശകുകൾ ക്ലിപ്പ്ബോർഡിലേക്ക് പകർത്തി</string>

@@ -172,7 +172,6 @@
     <string name="authentication_method_biometrics">Биометрија</string>
     <string name="authentication_method_biometrics_description">Поред лозинке, биометрија регистрована на овом уређају, попут отиска прста или вашег лица, може се користити за откључавање трезора.</string>
     <string name="authentication">Откључајте трезор</string>
-    <string name="authentication_multiline" comment="The newline in the middle is used for aesthetic purposes">Откључајте\nтрезор</string>
     <string name="auth_use_biometrics">Или додирните овде да користите <font fgcolor="#FF0D86C1">биометрију</font></string>
     <string name="set_password">Унесите лозинку</string>
     <string name="set_group">Унесите назив групе</string>
@@ -254,9 +253,6 @@
     <string name="discard_changes_description">Ваше промене нису сачуване</string>
     <string name="saving_profile_error">Грешка при чувању профила</string>
     <string name="saving_assign_icons_error">Грешка при додели иконица</string>
-    <string name="welcome">Добро дошли</string>
-    <string name="setup_completed">Подешавање завршено</string>
-    <string name="setup_completed_description">Cue је подешен и спреман за рад.</string>
     <string name="vault_not_found">Трезор није пронађен, покретање подешавања…</string>
     <string name="copied">Копирано</string>
     <string name="errors_copied">Грешке су копиране у привремену меморију</string>

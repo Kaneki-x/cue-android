@@ -177,7 +177,8 @@
     <string name="authentication_method_biometrics">Biometrics</string>
     <string name="authentication_method_biometrics_description">In addition to a password, biometrics registered on this device, like a fingerprint or your face, can be used to unlock the vault.</string>
     <string name="authentication">Unlock the vault</string>
-    <string name="authentication_multiline" comment="The newline in the middle is used for aesthetic purposes">Unlock\nthe vault</string>
+    <string name="auth_locked_title">Cue is locked</string>
+    <string name="auth_locked_subtitle">Unlock with your fingerprint, face or password</string>
 
     <string name="auth_use_biometrics">Or tap here to use <font fgcolor='#FF0D86C1'>biometrics</font></string>
     <string name="set_password">Please enter a password</string>
@@ -259,10 +260,17 @@
     <string name="discard_changes_description">Your changes have not been saved</string>
     <string name="saving_profile_error">Error saving profile</string>
     <string name="saving_assign_icons_error">Error assigning icons</string>
-    <string name="welcome">Welcome</string>
-    <string name="app_description">Cue is a free, secure and open source 2FA app</string>
-    <string name="setup_completed">Setup completed</string>
-    <string name="setup_completed_description">Cue has been set up and is ready to go.</string>
+    <string name="intro_welcome_title">Welcome to Cue</string>
+    <string name="intro_feature_local_title">Encrypted on this phone</string>
+    <string name="intro_feature_local_summary">Your codes are encrypted with your password and stored only on this phone. Cue never goes online.</string>
+    <string name="intro_feature_unlock_title">Unlock with fingerprint or face</string>
+    <string name="intro_feature_unlock_summary">Use the Cue keyboard and home screen widget to get a code whenever you need one.</string>
+    <string name="intro_feature_backup_title">Automatic backups</string>
+    <string name="intro_feature_backup_summary">After every change, the encrypted vault is backed up to a folder you choose. The iOS app can open it too.</string>
+    <string name="intro_done_title">You\'re all set</string>
+    <string name="intro_tip_keyboard">Add the Cue keyboard: Settings &gt; Keyboard &amp; widget</string>
+    <string name="intro_tip_widget">Add the Cue widget to your home screen</string>
+    <string name="intro_tip_backup">Turn on automatic backups in Settings &gt; Backups</string>
     <string name="vault_not_found">Vault not found, starting setup…</string>
     <string name="copied">Copied</string>
     <string name="errors_copied">Errors copied to the clipboard</string>

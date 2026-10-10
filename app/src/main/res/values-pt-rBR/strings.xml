@@ -169,7 +169,6 @@
     <string name="authentication_method_biometrics">Biometria</string>
     <string name="authentication_method_biometrics_description">Em adição a uma senha, você pode usar a biometria registrada no dispositivo, como uma impressão digital ou seu rosto, para desbloquear o cofre.</string>
     <string name="authentication">Desbloqueie o cofre</string>
-    <string name="authentication_multiline" comment="The newline in the middle is used for aesthetic purposes">Desbloqueie\no cofre</string>
     <string name="auth_use_biometrics">Ou toque aqui para usar a <font fgcolor="#FF0D86C1">biometria</font></string>
     <string name="set_password">Por favor, digite uma senha</string>
     <string name="set_group">Por favor, digite um nome de grupo</string>
@@ -249,9 +248,6 @@
     <string name="discard_changes_description">Suas alterações não foram salvas</string>
     <string name="saving_profile_error">Erro ao salvar o perfil</string>
     <string name="saving_assign_icons_error">Erro ao atribuir ícones</string>
-    <string name="welcome">Boas-vindas</string>
-    <string name="setup_completed">Configuração concluída</string>
-    <string name="setup_completed_description">O Cue foi configurado e está pronto para uso.</string>
     <string name="vault_not_found">Não foi encontrado um cofre, iniciando a configuração…</string>
     <string name="copied">Copiado</string>
     <string name="errors_copied">Erros copiados pra área de transferência</string>

@@ -135,7 +135,6 @@
     <string name="authentication_method_biometrics">Biometrika</string>
     <string name="authentication_method_biometrics_description">Papildomai prie slaptažodžio, gali būti naudojama šiame įrenginyje registruota biometrika, tokia kaip piršto atspaudas ar jūsų veidas.</string>
     <string name="authentication">Atrakinti slėptuvę</string>
-    <string name="authentication_multiline" comment="The newline in the middle is used for aesthetic purposes">Atrakinkite\nslėptuvę</string>
     <string name="auth_use_biometrics">Arba bakstelėkite čia, norėdami naudoti <font fgcolor="#FF0D86C1">biometriką</font></string>
     <string name="set_password">Įveskite slaptažodį</string>
     <string name="set_group">Įveskite grupės pavadinimą</string>
@@ -189,9 +188,6 @@
     <string name="discard_changes_description">Jūsų pakeitimai neįrašyti</string>
     <string name="saving_profile_error">Klaida įrašant profilį</string>
     <string name="saving_assign_icons_error">Klaida priskiriant piktogramas</string>
-    <string name="welcome">Sveiki</string>
-    <string name="setup_completed">Sąranka užbaigta</string>
-    <string name="setup_completed_description">Cue nustatyta ir paruošta naudojimui.</string>
     <string name="vault_not_found">Slėptuvė nerasta, pradedama sąranka…</string>
     <string name="copied">Nukopijuota</string>
     <string name="errors_copied">Klaidos nukopijuotos į iškarpinę</string>

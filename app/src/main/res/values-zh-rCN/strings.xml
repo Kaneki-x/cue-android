@@ -166,7 +166,8 @@
     <string name="authentication_method_biometrics">生物识别</string>
     <string name="authentication_method_biometrics_description">除密码外，在此设备上注册的生物识别信息（例如指纹或人脸），也可用于解锁数据库。</string>
     <string name="authentication">解锁数据库</string>
-    <string name="authentication_multiline" comment="The newline in the middle is used for aesthetic purposes">解锁\n数据库</string>
+    <string name="auth_locked_title">Cue 已锁定</string>
+    <string name="auth_locked_subtitle">用指纹、人脸或密码解锁</string>
     <string name="auth_use_biometrics">或者点击此处以使用 <font fgcolor="#FF0D86C1">生物识别</font></string>
     <string name="set_password">请输入密码</string>
     <string name="set_group">请输入分组名称</string>
@@ -244,9 +245,17 @@
     <string name="discard_changes_description">您的更改尚未保存</string>
     <string name="saving_profile_error">保存配置文件时出错</string>
     <string name="saving_assign_icons_error">分配图标时出错</string>
-    <string name="welcome">欢迎使用</string>
-    <string name="setup_completed">设置完成</string>
-    <string name="setup_completed_description">Cue 设置完成，可以开始使用了。</string>
+    <string name="intro_welcome_title">欢迎使用 Cue</string>
+    <string name="intro_feature_local_title">加密保存在本机</string>
+    <string name="intro_feature_local_summary">验证码用你的密码加密，只存在这台手机上，不联网。</string>
+    <string name="intro_feature_unlock_title">指纹或人脸解锁</string>
+    <string name="intro_feature_unlock_summary">用 Cue 键盘和桌面小组件，随手取用验证码。</string>
+    <string name="intro_feature_backup_title">自动备份</string>
+    <string name="intro_feature_backup_summary">每次修改后把加密的数据库备份到你选的文件夹，iOS 版也能打开。</string>
+    <string name="intro_done_title">准备就绪</string>
+    <string name="intro_tip_keyboard">添加 Cue 键盘：设置 &gt; 键盘与小组件</string>
+    <string name="intro_tip_widget">在桌面添加 Cue 小组件</string>
+    <string name="intro_tip_backup">在设置 &gt; 备份 中开启自动备份</string>
     <string name="vault_not_found">未找到数据库，开始设置…</string>
     <string name="copied">已复制</string>
     <string name="errors_copied">错误已复制到剪贴板</string>
@@ -611,7 +620,6 @@
     <string name="pref_section_import_export_summary">导入 Cue 或其他验证器应用的备份。手动导出你的 Cue 数据库。</string>
     <string name="export_format_cue">Cue（.JSON）</string>
     <string name="import_vault">导入 Cue 数据库</string>
-    <string name="app_description">Cue 是一款免费、安全、开源的两步验证应用</string>
     <string name="website">网站</string>
     <string name="website_helper">这个验证码在哪个网站使用，例如 github.com。键盘和小组件会据此推荐。</string>
 </resources>

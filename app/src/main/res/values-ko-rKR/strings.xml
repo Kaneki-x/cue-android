@@ -166,7 +166,6 @@
     <string name="authentication_method_biometrics">생체 인식</string>
     <string name="authentication_method_biometrics_description">비밀번호에 추가로, 지문과 같이 이 장치에 등록된 생체 인식을 잠금 해제에 사용합니다.</string>
     <string name="authentication">보관함 잠금 해제</string>
-    <string name="authentication_multiline" comment="The newline in the middle is used for aesthetic purposes">보관함\n잠금 해제</string>
     <string name="auth_use_biometrics">또는 <font fgcolor="#FF0D86C1">여기</font>를 눌러 생체 인식 사용</string>
     <string name="set_password">비밀번호를 입력해주세요</string>
     <string name="set_group">그룹 이름을 입력해주세요</string>
@@ -244,10 +243,6 @@
     <string name="discard_changes_description">변경 사항이 저장되지 않았습니다</string>
     <string name="saving_profile_error">프로필 저장 오류</string>
     <string name="saving_assign_icons_error">아이콘 할당 오류</string>
-    <string name="welcome">환영합니다!!</string>
-    <string name="app_description">Ageis는 무료고, 자유롭고, 보안에, 무려 오픈 소스인 2FA 앱입니다.</string>
-    <string name="setup_completed">설정 완료</string>
-    <string name="setup_completed_description">Cue가 설정되고, 이제 사용할 준비가 되었습니다!</string>
     <string name="vault_not_found">보관함이 없었고, 설정을 시작하는 중…</string>
     <string name="copied">복사됨</string>
     <string name="errors_copied">클립보드에 복사 중 오류</string>

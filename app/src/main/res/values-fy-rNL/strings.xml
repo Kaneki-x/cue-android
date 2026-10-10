@@ -169,7 +169,6 @@
     <string name="authentication_method_biometrics">Biometry</string>
     <string name="authentication_method_biometrics_description">Njonken in wachtwurd kinne biometryske gegevens dy’t registrearre binne op dit apparaat, lykas in fingerôfdruk of jo gesicht, brûkt wurde om de klûs te ûntskoatteljen.</string>
     <string name="authentication">Klûs ûntskoattelje</string>
-    <string name="authentication_multiline" comment="The newline in the middle is used for aesthetic purposes">Klûs\nûntskoattelje</string>
     <string name="auth_use_biometrics">Of tik hjir om <font fgcolor="#FF0D86C1">biometry</font> te brûken</string>
     <string name="set_password">Fier in wachtwurd yn</string>
     <string name="set_group">Fier in groepsnamme yn</string>
@@ -249,9 +248,6 @@
     <string name="discard_changes_description">Jo wizigingen binne net bewarre</string>
     <string name="saving_profile_error">Flater by bewarjen profyl</string>
     <string name="saving_assign_icons_error">Flater by tawizen piktogrammen</string>
-    <string name="welcome">Wolkom</string>
-    <string name="setup_completed">Konfiguraasje foltôge</string>
-    <string name="setup_completed_description">Cue is konfigurearre en is ree foar gebrûk.</string>
     <string name="vault_not_found">Klûs net fûn, konfiguraasje wurdt start…</string>
     <string name="copied">Kopiearre</string>
     <string name="errors_copied">Flaters binne nei klamboerd kopiearre</string>

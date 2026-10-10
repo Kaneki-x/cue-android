@@ -175,7 +175,6 @@
     <string name="authentication_method_biometrics">Біометрика</string>
     <string name="authentication_method_biometrics_description">Окрім пароля, для розблокування сховища можна використовувати біометричні дані зареєстровані на цьому пристрої, такі як відбитки пальців або ваше обличчя.</string>
     <string name="authentication">Розблокування сховища</string>
-    <string name="authentication_multiline" comment="The newline in the middle is used for aesthetic purposes">Розблокування\nсховища</string>
     <string name="auth_use_biometrics">Або натисніть тут, щоб використати <font fgcolor="#FF0D86C1">біометрику</font></string>
     <string name="set_password">Будь ласка, введіть пароль</string>
     <string name="set_group">Будь ласка, введіть назву групи</string>
@@ -259,9 +258,6 @@
     <string name="discard_changes_description">Ваші зміни не були збережені</string>
     <string name="saving_profile_error">Помилка під час збереження профілю</string>
     <string name="saving_assign_icons_error">Помилка при призначенні піктограм</string>
-    <string name="welcome">Ласкаво просимо</string>
-    <string name="setup_completed">Налаштування завершено</string>
-    <string name="setup_completed_description">Cue налаштований і готовий до роботи.</string>
     <string name="vault_not_found">Сховище не знайдено, запуск початкового налаштування…</string>
     <string name="copied">Скопійовано</string>
     <string name="errors_copied">Помилки скопійовано в буфер обміну</string>

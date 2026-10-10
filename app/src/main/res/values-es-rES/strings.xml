@@ -169,7 +169,6 @@
     <string name="authentication_method_biometrics">Biometría</string>
     <string name="authentication_method_biometrics_description">Aparte de contraseña, se puede aprovechar el sistema biométrico del dispositivo (como huellas dactilares o fotos de la cara) para desbloquear la bóveda de forma más sencilla.</string>
     <string name="authentication">Desbloquear la bóveda</string>
-    <string name="authentication_multiline" comment="The newline in the middle is used for aesthetic purposes">Desbloquear\nla bóveda</string>
     <string name="auth_use_biometrics">O pulsa aquí para utilizar la <font fgcolor="#FF0D86C1">biometría</font></string>
     <string name="set_password">Escribe una contraseña</string>
     <string name="set_group">Escribe un nombre de grupo</string>
@@ -249,9 +248,6 @@
     <string name="discard_changes_description">Tus cambios no se han guardado</string>
     <string name="saving_profile_error">Hubo un error al guardar el perfil</string>
     <string name="saving_assign_icons_error">Error al asignar iconos</string>
-    <string name="welcome">Te damos la bienvenida</string>
-    <string name="setup_completed">Se ha completado la configuración</string>
-    <string name="setup_completed_description">Cue se ha configurado y está listo para funcionar.</string>
     <string name="vault_not_found">Bóveda no encontrada, iniciando la configuración…</string>
     <string name="copied">Copiado</string>
     <string name="errors_copied">Se han copiado los errores al portapapeles</string>

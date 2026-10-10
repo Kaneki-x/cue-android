@@ -166,7 +166,6 @@
     <string name="authentication_method_biometrics">Biometrik</string>
     <string name="authentication_method_biometrics_description">Selain kata sandi, biometrik yang terdaftar di perangkat ini, seperti sidik jari atau wajah Anda, dapat digunakan untuk membuka brankas.</string>
     <string name="authentication">Buka brankas</string>
-    <string name="authentication_multiline" comment="The newline in the middle is used for aesthetic purposes">Buka\nbrankas</string>
     <string name="auth_use_biometrics">Atau sentuh di sini untuk menggunakan <font fgcolor="#FF0D86C1">biometrik</font></string>
     <string name="set_password">Masukkan kata sandi</string>
     <string name="set_group">Masukkan nama grup</string>
@@ -243,9 +242,6 @@
     <string name="discard_changes_description">Perubahan Anda belum disimpan</string>
     <string name="saving_profile_error">Terjadi kesalahan saat menyimpan profil</string>
     <string name="saving_assign_icons_error">Kesalahan dalam menetapkan ikon</string>
-    <string name="welcome">Selamat Datang</string>
-    <string name="setup_completed">Pengaturan selesai</string>
-    <string name="setup_completed_description">Cue telah disiapkan dan siap digunakan.</string>
     <string name="vault_not_found">Branckas tidak ditemukan, memulai penyiapan…</string>
     <string name="copied">Disalin</string>
     <string name="errors_copied">Kesalahan menyalin ke Clipboard</string>

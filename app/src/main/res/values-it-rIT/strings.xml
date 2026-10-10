@@ -169,7 +169,6 @@
     <string name="authentication_method_biometrics">Biometrica</string>
     <string name="authentication_method_biometrics_description">Oltre a una password, i dati biometrici registrati su questo dispositivo, come un\'impronta digitale o il tuo volto, possono essere utilizzati per sbloccare la cassaforte.</string>
     <string name="authentication">Sblocca la cassaforte</string>
-    <string name="authentication_multiline" comment="The newline in the middle is used for aesthetic purposes">Sblocca\nla cassaforte</string>
     <string name="auth_use_biometrics">Oppure tocca qui per usare la <font fgcolor="#FF0D86C1">biometria</font></string>
     <string name="set_password">Inserisci una password</string>
     <string name="set_group">Inserisci il nome di un gruppo</string>
@@ -249,9 +248,6 @@
     <string name="discard_changes_description">Le modifiche non sono state salvate</string>
     <string name="saving_profile_error">Errore nel salvataggio del profilo</string>
     <string name="saving_assign_icons_error">Errore nell\'assegnazione delle icone</string>
-    <string name="welcome">Benvenuto</string>
-    <string name="setup_completed">Configurazione completata</string>
-    <string name="setup_completed_description">Cue è stata configurata e può essere usata.</string>
     <string name="vault_not_found">Cassaforte non trovata, avvio della configurazione…</string>
     <string name="copied">Copiato</string>
     <string name="errors_copied">Codice errore copiato negli appunti</string>

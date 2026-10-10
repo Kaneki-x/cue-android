@@ -167,7 +167,6 @@
     <string name="authentication_method_biometrics">Biometrické údaje</string>
     <string name="authentication_method_biometrics_description">Na odomknutie trezoru možno okrem hesla použiť aj biometriu zaregistrovanú v tomto zariadení, napríklad odtlačok prsta alebo vašu tvár.</string>
     <string name="authentication">Odomknúť trezor</string>
-    <string name="authentication_multiline" comment="The newline in the middle is used for aesthetic purposes">Odomknúť \n trezor</string>
     <string name="auth_use_biometrics">Alebo kliknite sem pre použitie <font fgcolor="#FF0D86C1">biometrie</font></string>
     <string name="set_password">Prosím, zadajte heslo</string>
     <string name="set_group">Zadajte názov skupiny</string>
@@ -242,9 +241,6 @@
     <string name="discard_changes_description">Vaše zmeny neboli uložené</string>
     <string name="saving_profile_error">Pri ukladaní profilu sa vyskytla chyba</string>
     <string name="saving_assign_icons_error">Chyba priradenia ikon</string>
-    <string name="welcome">Vitajte</string>
-    <string name="setup_completed">Nastavenie je dokončené</string>
-    <string name="setup_completed_description">Cue bol nastavený a je pripravený k používaniu.</string>
     <string name="vault_not_found">Trezor sa nenašiel, spúšťa sa nastavenie…</string>
     <string name="copied">Skopírované</string>
     <string name="errors_copied">Chyby boli skopírované do schránky</string>

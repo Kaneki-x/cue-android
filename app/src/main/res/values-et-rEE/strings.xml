@@ -169,7 +169,6 @@
     <string name="authentication_method_biometrics">Biomeetria</string>
     <string name="authentication_method_biometrics_description">Lisaks salasõnale, on siin nutiseadmes biomeetrilise tuvastuse võimalus. Näiteks sõrmejälje või näotuvastusega on võimalik andmehoidlat lukust lahti võtta.</string>
     <string name="authentication">Võta andmehoidla lukust lahti</string>
-    <string name="authentication_multiline" comment="The newline in the middle is used for aesthetic purposes">Võta andmehoidla\nlukust lahti</string>
     <string name="auth_use_biometrics">Või klõpsi siin <font fgcolor="#FF0D86C1">biomeetrilise tuvastuse</font> kasutamiseks</string>
     <string name="set_password">Palun sisesta salasõna</string>
     <string name="set_group">Palun sisesta grupi nimi</string>
@@ -249,9 +248,6 @@
     <string name="discard_changes_description">Sinu muudatused pole salvestatud</string>
     <string name="saving_profile_error">Viga profiili salvestamisel</string>
     <string name="saving_assign_icons_error">Viga ikoonide lisamisel</string>
-    <string name="welcome">Tere tulemast</string>
-    <string name="setup_completed">Algseadistamine on lõppenud</string>
-    <string name="setup_completed_description">Cue on seadistatud ja valmis tegutsema.</string>
     <string name="vault_not_found">Andmehoidlat ei leidu, alustan algseadistamisega…</string>
     <string name="copied">Kopeeritud</string>
     <string name="errors_copied">Vead on kopeeritud lõikelauale</string>

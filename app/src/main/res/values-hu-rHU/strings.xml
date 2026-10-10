@@ -169,7 +169,6 @@
     <string name="authentication_method_biometrics">Biometrikus</string>
     <string name="authentication_method_biometrics_description">A jelszó mellett a biometrikus adatai is regisztrálva lesznek az eszközön, mint például az ujjlenyomata vagy az arca, melyet a széf feloldásához használhat.</string>
     <string name="authentication">A széf feloldása</string>
-    <string name="authentication_multiline" comment="The newline in the middle is used for aesthetic purposes">A széf \nfeloldása</string>
     <string name="auth_use_biometrics">Koppintson ide, hogy a <font fgcolor="#FF0D86C1">biometrikus adatokat</font> használja</string>
     <string name="set_password">Adja meg a jelszavát</string>
     <string name="set_group">Adja meg a csoport nevét</string>
@@ -248,9 +247,6 @@
     <string name="discard_changes_description">A változásai nem lettek mentve</string>
     <string name="saving_profile_error">Hiba a profil mentésekor</string>
     <string name="saving_assign_icons_error">Hiba az ikonok hozzárendelésekor</string>
-    <string name="welcome">Üdvözöljük</string>
-    <string name="setup_completed">Beállítás kész</string>
-    <string name="setup_completed_description">Az Cue beállításra került, és használatra kész.</string>
     <string name="vault_not_found">Széf nem található, beállítás indítása…</string>
     <string name="copied">Másolva</string>
     <string name="errors_copied">Hibák a vágólapra másolva</string>

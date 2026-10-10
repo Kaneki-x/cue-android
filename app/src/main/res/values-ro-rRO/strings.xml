@@ -172,7 +172,6 @@
     <string name="authentication_method_biometrics">Biometrice</string>
     <string name="authentication_method_biometrics_description">În plus față de o parolă, datele biometrice înregistrate pe acest dispozitiv, cum ar fi o amprentă sau fața ta, pot fi folosite pentru a debloca seiful.</string>
     <string name="authentication">Deblocare seif</string>
-    <string name="authentication_multiline" comment="The newline in the middle is used for aesthetic purposes">Deblocare\nseif</string>
     <string name="auth_use_biometrics">Sau apasă aici pentru a utiliza <font fgcolor="#FF0D86C1">datele biometrice</font></string>
     <string name="set_password">Te rugăm să introduci o parolă</string>
     <string name="set_group">Te rugăm să introduci un nume de grup</string>
@@ -253,9 +252,6 @@
     <string name="discard_changes_description">Modificările nu au fost salvate</string>
     <string name="saving_profile_error">Eroare la salvarea profilului</string>
     <string name="saving_assign_icons_error">Eroare la atribuirea pictogramelor</string>
-    <string name="welcome">Bun venit</string>
-    <string name="setup_completed">Configurare finalizată</string>
-    <string name="setup_completed_description">Cue a fost configurat cu succes.</string>
     <string name="vault_not_found">Seiful nu a fost găsit, se pornește configurarea…</string>
     <string name="copied">Copiat</string>
     <string name="errors_copied">Erori copiate în clipboard</string>

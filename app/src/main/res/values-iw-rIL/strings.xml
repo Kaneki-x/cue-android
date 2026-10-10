@@ -167,7 +167,6 @@
     <string name="authentication_method_biometrics">זיהוי ביומטרי</string>
     <string name="authentication_method_biometrics_description">לצד הסיסמה, ניתן להשתמש באמצעי זיהוי ביומטריים, כגון טביעת אצבע או צילום הפנים, בשביל לפתוח את הכספת.</string>
     <string name="authentication">פתיחת הכספת</string>
-    <string name="authentication_multiline" comment="The newline in the middle is used for aesthetic purposes">פתיחת \nהכספת</string>
     <string name="auth_use_biometrics">או להקיש כאן בשביל להשתמש ב<font fgcolor="#FF0D86C1">זיהוי ביומטרי</font></string>
     <string name="set_password">נא להקליד סיסמה</string>
     <string name="set_group">נא להקליד שם לקבוצה</string>
@@ -247,9 +246,6 @@
     <string name="discard_changes_description">השינויים שביצעת לא נשמרו</string>
     <string name="saving_profile_error">שגיאה בשמירת פרופיל</string>
     <string name="saving_assign_icons_error">שגיאה בשיוך הסמלים</string>
-    <string name="welcome">ברוך בואך</string>
-    <string name="setup_completed">ההקמה הושלמה</string>
-    <string name="setup_completed_description">Cue הוקמה והיא מוכנה לצאת לדרך.</string>
     <string name="vault_not_found">הכספת לא נמצאה, ההקמה מתחילה…</string>
     <string name="copied">הועתק</string>
     <string name="errors_copied">שגיאות הועתקו ללוח</string>

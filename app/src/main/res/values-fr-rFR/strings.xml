@@ -169,7 +169,6 @@
     <string name="authentication_method_biometrics">Biométrie</string>
     <string name="authentication_method_biometrics_description">En plus d\'un mot de passe, les données biométriques enregistrées sur cet appareil, comme une empreinte digitale ou votre visage, peuvent être utilisées pour déverrouiller le coffre-fort.</string>
     <string name="authentication">Déverrouiller le coffre-fort</string>
-    <string name="authentication_multiline" comment="The newline in the middle is used for aesthetic purposes">Déverrouiller\nle coffre-fort</string>
     <string name="auth_use_biometrics">Ou appuyez ici pour utiliser la <font fgcolor="#FF0D86C1">biométrie</font></string>
     <string name="set_password">Veuillez saisir un mot de passe</string>
     <string name="set_group">Veuillez saisir un nom de groupe</string>
@@ -249,9 +248,6 @@
     <string name="discard_changes_description">Vos modifications n\'ont pas été enregistrées</string>
     <string name="saving_profile_error">Erreur lors de l\'enregistrement du profil</string>
     <string name="saving_assign_icons_error">Erreur lors de l\'association des icônes</string>
-    <string name="welcome">Bienvenue</string>
-    <string name="setup_completed">Configuration terminée</string>
-    <string name="setup_completed_description">Cue a été configuré et est prêt à être utilisé.</string>
     <string name="vault_not_found">Coffre-fort introuvable, lancement de la configuration…</string>
     <string name="copied">Copié</string>
     <string name="errors_copied">Erreurs copiées dans le presse-papier</string>

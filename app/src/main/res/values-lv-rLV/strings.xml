@@ -172,7 +172,6 @@
     <string name="authentication_method_biometrics">Biometrija</string>
     <string name="authentication_method_biometrics_description">Papildus parolei glabātavas atslēgšanai var izmantot arī ierīcē pievinotos biometriskos datus, piemēram, pirkstu nospiedumu vai seju.</string>
     <string name="authentication">Atslēgt glabātavu</string>
-    <string name="authentication_multiline" comment="The newline in the middle is used for aesthetic purposes">Atslēgt\nglabātavu</string>
     <string name="auth_use_biometrics">Vai piesist šeit, lai izmantotu <font fgcolor="#FF0D86C1">biometriju</font></string>
     <string name="set_password">Lūgums ievadīt paroli</string>
     <string name="set_group">Lūgums ievadīt kopas nosaukumu</string>
@@ -253,9 +252,6 @@
     <string name="discard_changes_description">Izmaiņas netika saglabātas</string>
     <string name="saving_profile_error">Kļūda saglabājot profilu</string>
     <string name="saving_assign_icons_error">Ikonu piešķiršanā atgadījās kļūda</string>
-    <string name="welcome">Sveiciens!</string>
-    <string name="setup_completed">Uzstādīšana pabeigta</string>
-    <string name="setup_completed_description">Cue ir uzstādīta un ir gatava izmantošanai.</string>
     <string name="vault_not_found">Nav atrasta glabātava, tiek uzsākta uzstādīšana…</string>
     <string name="copied">Ievietots starpliktuvē</string>
     <string name="errors_copied">Kļūdas ir ievietotas starpliktuvē</string>

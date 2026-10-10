@@ -165,7 +165,6 @@
     <string name="authentication_method_biometrics">Biometri</string>
     <string name="authentication_method_biometrics_description">I tillegg til et passord, så kan biometri som fingeravtrykk eller ansikt brukes til å låse opp hvelvet.</string>
     <string name="authentication">Lås opp hvelvet</string>
-    <string name="authentication_multiline" comment="The newline in the middle is used for aesthetic purposes">Lås opp\nhvelvet</string>
     <string name="auth_use_biometrics">Eller trykk her for å bruke <font fgcolor="#FF0D86C1">biometri</font></string>
     <string name="set_password">Vennligst skriv inn et passord</string>
     <string name="set_group">Vennligst skriv inn et gruppenavn</string>
@@ -244,9 +243,6 @@
     <string name="discard_changes_description">Endringene ble ikke lagret</string>
     <string name="saving_profile_error">Feil ved lagring av profil</string>
     <string name="saving_assign_icons_error">Feil ved tildeling av ikoner</string>
-    <string name="welcome">Velkommen</string>
-    <string name="setup_completed">Oppsett fullført</string>
-    <string name="setup_completed_description">Cue er satt opp og er klar for bruk.</string>
     <string name="vault_not_found">Finner ikke hvelv, starter oppsett…</string>
     <string name="copied">Kopiert</string>
     <string name="errors_copied">Feil kopiert til utklippstavlen</string>

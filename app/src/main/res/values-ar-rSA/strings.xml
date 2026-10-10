@@ -181,7 +181,6 @@
     <string name="authentication_method_biometrics">المقاييس الحيوية</string>
     <string name="authentication_method_biometrics_description">بالإضافة إلى كلمة السر، يمكن استعمال المقاييس الحيوية المسجلة على هذا الجهاز، مثل البصمة أو وجهك، لفك قفل المخزن.</string>
     <string name="authentication">افتح المخزن</string>
-    <string name="authentication_multiline" comment="The newline in the middle is used for aesthetic purposes">افتح \nالمخزن</string>
     <string name="auth_use_biometrics">أو انقر هنا لاستعمال <font fgcolor="#FF0D86C1">المقاييس الحيوية</font></string>
     <string name="set_password">الرجاء إدخال كلمة السر</string>
     <string name="set_group">الرجاء إدخال اسم المجموعة</string>
@@ -269,9 +268,6 @@
     <string name="discard_changes_description">لم تُحفظ تغييراتك</string>
     <string name="saving_profile_error">حدث خطأ أثناء حفظ الملف الشخصي</string>
     <string name="saving_assign_icons_error">خطأ في تعيين الأيقونات</string>
-    <string name="welcome">مرحبًا</string>
-    <string name="setup_completed">اكتمل الإعداد</string>
-    <string name="setup_completed_description">أُعِدَّ Cue وهو جاهز للعمل.</string>
     <string name="vault_not_found">لم يُعثر على مخزن، بدء الإعداد…</string>
     <string name="copied">نُسِخ</string>
     <string name="errors_copied">نُسِخ الخطأ للحافظة</string>

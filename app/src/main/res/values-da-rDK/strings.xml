@@ -169,7 +169,6 @@
     <string name="authentication_method_biometrics">Biometri</string>
     <string name="authentication_method_biometrics_description">Ud over en adgangskode kan denne enheds registrerede biometri, såsom fingeraftryk eller ansigt, bruges til oplåsning af Boksen.</string>
     <string name="authentication">Lås boksen op</string>
-    <string name="authentication_multiline" comment="The newline in the middle is used for aesthetic purposes">Lås\nboksen op</string>
     <string name="auth_use_biometrics">Eller tryk her for at bruge <font fgcolor="#FF0D86C1">biometri</font></string>
     <string name="set_password">Angiv adgangskode</string>
     <string name="set_group">Angiv et gruppenavn</string>
@@ -249,9 +248,6 @@
     <string name="discard_changes_description">Ændringer blev ikke gemt</string>
     <string name="saving_profile_error">Fejl under lagring af profil</string>
     <string name="saving_assign_icons_error">Fejl ved tildeling af ikoner</string>
-    <string name="welcome">Velkommen</string>
-    <string name="setup_completed">Opsætning fuldført</string>
-    <string name="setup_completed_description">Cue er blevet opsat og er klar til brug.</string>
     <string name="vault_not_found">Boks ikke fundet, starter opsætning…</string>
     <string name="copied">Kopieret</string>
     <string name="errors_copied">Fejl kopieret til udklipsholderen</string>

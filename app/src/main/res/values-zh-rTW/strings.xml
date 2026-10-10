@@ -32,6 +32,7 @@
     <string name="pref_section_audit_log_summary">找出應用程式內發生的所有重要事件清單。</string>
     <string name="pref_section_backups_title">備份</string>
     <string name="pref_section_backups_summary">設定自動備份至指定位置或啟用 Android 內建的雲端備份系統。</string>
+    <string name="pref_section_integrations_title">鍵盤與小工具</string>
     <string name="pref_section_icon_packs">圖示合輯</string>
     <string name="pref_section_icon_packs_summary">管理與匯入圖示合輯</string>
     <string name="pref_select_theme_title">主題</string>
@@ -166,7 +167,8 @@
     <string name="authentication_method_biometrics">生物特徵辨識</string>
     <string name="authentication_method_biometrics_description">除密碼外，在此裝置上註冊的生物特徵辨識（例如指紋或臉部），也可用於解鎖保險箱。</string>
     <string name="authentication">解鎖保險箱</string>
-    <string name="authentication_multiline" comment="The newline in the middle is used for aesthetic purposes">解鎖\n保險箱</string>
+    <string name="auth_locked_title">Cue 已鎖定</string>
+    <string name="auth_locked_subtitle">用指紋、臉孔或密碼解鎖</string>
     <string name="auth_use_biometrics">或者輕觸此處以使用 <font fgcolor="#FF0D86C1">生物特徵辨識</font></string>
     <string name="set_password">請輸入密碼</string>
     <string name="set_group">請輸入群組名稱</string>
@@ -244,9 +246,17 @@
     <string name="discard_changes_description">您的變更尚未儲存</string>
     <string name="saving_profile_error">儲存設定檔時發生錯誤</string>
     <string name="saving_assign_icons_error">指派圖示時發生錯誤</string>
-    <string name="welcome">歡迎使用</string>
-    <string name="setup_completed">設定完成</string>
-    <string name="setup_completed_description">Cue設定完成，可以開始使用了。</string>
+    <string name="intro_welcome_title">歡迎使用 Cue</string>
+    <string name="intro_feature_local_title">加密儲存在本機</string>
+    <string name="intro_feature_local_summary">驗證碼用你的密碼加密，只存在這支手機上，不連網。</string>
+    <string name="intro_feature_unlock_title">指紋或臉孔解鎖</string>
+    <string name="intro_feature_unlock_summary">用 Cue 鍵盤和主畫面小工具，隨手取用驗證碼。</string>
+    <string name="intro_feature_backup_title">自動備份</string>
+    <string name="intro_feature_backup_summary">每次修改後把加密的保險箱備份到你選的資料夾，iOS 版也能開啟。</string>
+    <string name="intro_done_title">準備就緒</string>
+    <string name="intro_tip_keyboard">新增 Cue 鍵盤：設定 &gt; 鍵盤與小工具</string>
+    <string name="intro_tip_widget">在主畫面新增 Cue 小工具</string>
+    <string name="intro_tip_backup">在設定 &gt; 備份 中開啟自動備份</string>
     <string name="vault_not_found">保險箱不存在，開始設定…</string>
     <string name="copied">已複製</string>
     <string name="errors_copied">錯誤已複製至剪貼簿</string>

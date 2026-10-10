@@ -175,7 +175,6 @@
     <string name="authentication_method_biometrics">Биометрия</string>
     <string name="authentication_method_biometrics_description">В дополнение к паролю, биометрические данные, зарегистрированные на этом устройстве, такие как отпечаток пальца или лицо, могут быть использованы для разблокировки хранилища.</string>
     <string name="authentication">Разблокировать хранилище</string>
-    <string name="authentication_multiline" comment="The newline in the middle is used for aesthetic purposes">Открыть\nхранилище</string>
     <string name="auth_use_biometrics">Или нажмите здесь, чтобы использовать <font fgcolor="#FF0D86C1">биометрию</font>.</string>
     <string name="set_password">Введите пароль</string>
     <string name="set_group">Введите название группы</string>
@@ -259,9 +258,6 @@
     <string name="discard_changes_description">Ваши изменения не были сохранены</string>
     <string name="saving_profile_error">Ошибка сохранения профиля</string>
     <string name="saving_assign_icons_error">Невозможно назначить значки</string>
-    <string name="welcome">Добро пожаловать</string>
-    <string name="setup_completed">Настройка завершена</string>
-    <string name="setup_completed_description">Cue настроен и готов к работе.</string>
     <string name="vault_not_found">Хранилище не найдено, запуск первоначальной настройки…</string>
     <string name="copied">Скопировано</string>
     <string name="errors_copied">Ошибки скопированы в буфер обмена</string>
