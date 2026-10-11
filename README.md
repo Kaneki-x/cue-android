@@ -15,6 +15,8 @@ by Beem Development, and like Aegis it is free software under the
 [GNU General Public License v3](LICENSE). The source of every release is in this repository,
 tagged with its version.
 
+Cue collects no data: see the [privacy policy](PRIVACY.md).
+
 For a list of frequently asked questions, please check out [the FAQ](FAQ.md).
 
 The security design of the app and the vault format is described in detail in
