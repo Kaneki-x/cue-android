@@ -16,6 +16,7 @@ import static androidx.test.espresso.matcher.ViewMatchers.withClassName;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static junit.framework.TestCase.assertFalse;
+import static junit.framework.TestCase.assertNotNull;
 import static junit.framework.TestCase.assertNull;
 import static junit.framework.TestCase.assertTrue;
 import static org.hamcrest.Matchers.allOf;
@@ -98,9 +99,13 @@ public class OverallTest extends CueTest {
         }
 
         List<VaultEntry> realEntries = new ArrayList<>(vault.getEntries());
+        // the bundled icon pack gives a new entry the icon of its issuer (Google has one)
+        assertNotNull(realEntries.get(0).getIcon());
         for (int i = 0; i < realEntries.size(); i++) {
-            String message = String.format("%s != %s", realEntries.get(i).toJson().toString(), entries.get(i).toJson().toString());
-            assertTrue(message, realEntries.get(i).equivalates(entries.get(i)));
+            VaultEntry expected = entries.get(i);
+            expected.setIcon(realEntries.get(i).getIcon());
+            String message = String.format("%s != %s", realEntries.get(i).toJson().toString(), expected.toJson().toString());
+            assertTrue(message, realEntries.get(i).equivalates(expected));
         }
 
         for (int i = 0; i < 10; i++) {
