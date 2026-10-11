@@ -620,7 +620,7 @@ public class EntryListView extends Fragment implements EntryAdapter.Listener {
                 outRect.top = _offset;
             }
 
-            // In the normal view mode every entry is its own card and favorites carry a star,
+            // In the normal view mode every entry is its own card and favorites carry a bar,
             // in the other modes favorites are merged into one block with a shared indicator
             int totalFavorites = _adapter.getShownFavoritesCount();
             if (_viewMode == ViewMode.NORMAL

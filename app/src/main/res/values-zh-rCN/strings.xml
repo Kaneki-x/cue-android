@@ -67,8 +67,8 @@
     <string name="pref_backups_reminder_dialog_title">停用备份提醒</string>
     <string name="pref_backups_reminder_dialog_summary">停用后，Cue 不会再提醒你备份变更，可能导致验证码丢失。确定要停用吗？</string>
     <string name="pref_backups_versioning_strategy_title">备份策略</string>
-    <string name="pref_backups_versioning_strategy_keep_x_versions">保留多个版本</string>
-    <string name="pref_backups_versioning_strategy_single_backup">只保留一份</string>
+    <string name="pref_backups_versioning_strategy_keep_x_versions">保留版本数</string>
+    <string name="pref_backups_versioning_strategy_single_backup">单个备份</string>
     <string name="pref_backups_versioning_strategy_single_backup_warning">所选的备份策略不可靠、不推荐。单个备份如遇故障可能导致你遗失唯一的备份。</string>
     <string name="pref_backups_versioning_strategy_dialog_title">选择备份策略</string>
     <string name="pref_backups_location_title">备份位置</string>
@@ -100,6 +100,9 @@
     <string name="pref_tap_to_reveal_title">点按显示</string>
     <string name="pref_tap_to_reveal_summary">验证码默认隐藏，点按条目后显示</string>
     <string name="pref_tap_to_reveal_time_title">点按后显示多久</string>
+    <plurals name="pref_tap_to_reveal_time_summary">
+        <item quantity="other">%d 秒</item>
+    </plurals>
     <string name="pref_auto_lock_title">自动锁定</string>
     <string name="pref_auto_lock_summary">%s时</string>
     <string name="pref_auto_lock_separator">、</string>
@@ -150,8 +153,8 @@
     <string name="export_warning_unencrypted">你将导出一个未加密的 Cue 数据库副本。<b>不建议这么做</b></string>
     <string name="export_warning_password">导出使用在安全设置中配置的单独密码进行加密。</string>
     <string name="understand_risk_accept">我了解风险</string>
-    <string name="export_format_google_auth_uri">文本文件 (.TXT)</string>
-    <string name="export_format_html">网页 (.HTML)</string>
+    <string name="export_format_google_auth_uri">文本文件（.TXT）</string>
+    <string name="export_format_html">网页（.HTML）</string>
     <string name="export_format_hint">导出格式</string>
     <string name="export_all_groups">导出所有分组</string>
     <string name="export_choose_groups">选择要导出的分组</string>
@@ -191,7 +194,7 @@
     <string name="enter_password_2fas_message">看起来此 2FAS 备份已加密。请在下方输入密码。</string>
     <string name="enter_password_authy_message">你的 Authy 条目似乎已加密。请关闭 Cue，打开 Authy，然后使用你的密码解锁条目。另外，如果你在下面输入密码，Cue 也可以尝试为你解密 Authy 条目。</string>
     <string name="enter_password_import_title">请输入导入密码</string>
-    <string name="period_hint">时间间隔 (秒)</string>
+    <string name="period_hint">时间间隔（秒）</string>
     <string name="algorithm_hint">哈希函数</string>
     <string name="type">类型</string>
     <string name="share">分享</string>
@@ -274,10 +277,10 @@
     <string name="vault_load_error">尝试从存储中加载数据库时发生错误</string>
     <string name="biometric_decrypt_error">尝试使用生物识别认证对数据库进行解密时发生错误。通常只有在更改设备的安全设置后才会发生这种情况。请使用你的密码解锁数据库，然后在 Cue 的设置中重新配置生物识别认证。</string>
     <string name="biometric_init_error">尝试准备生物识别认证时发生错误。通常只有在更改设备的安全设置后才会发生这种情况。请使用你的密码解锁数据库，然后在 Cue 的设置中重新配置生物识别认证。</string>
-    <string name="disable_encryption">停用加密</string>
-    <string name="disable_encryption_description">确定要停用加密吗？数据库将以明文存储。<b>自动备份也会停用。</b></string>
+    <string name="disable_encryption">禁用加密</string>
+    <string name="disable_encryption_description">确定要禁用加密吗？数据库将以明文存储。<b>自动备份也会关闭。</b></string>
     <string name="enable_encryption_error">启用加密时出错</string>
-    <string name="disable_encryption_error">停用加密时出错</string>
+    <string name="disable_encryption_error">禁用加密时出错</string>
     <string name="backup_successful">已设置定期备份</string>
     <string name="backup_error">创建备份时出错</string>
     <string name="backup_status_success">上次备份成功：%s</string>
@@ -359,7 +362,7 @@
     <string name="new_group">新建分组…</string>
     <string name="group">分组</string>
     <string name="group_name_hint">分组名称</string>
-    <string name="preference_manage_groups">编辑分组</string>
+    <string name="preference_manage_groups">管理分组</string>
     <string name="preference_manage_groups_summary">管理和删除分组</string>
     <string name="preference_reset_usage_count">重置使用计数</string>
     <string name="preference_reset_usage_count_summary">把每个条目的使用计数清零</string>
@@ -398,8 +401,8 @@
     <string name="dark_theme_title">深色主题</string>
     <string name="light_theme_title">浅色主题</string>
     <string name="amoled_theme_title">AMOLED 主题</string>
-    <string name="system_theme_title">根据省电模式进行设置</string>
-    <string name="system_amoled_theme_title">根据省电模式进行设置 (AMOLED)</string>
+    <string name="system_theme_title">跟随系统</string>
+    <string name="system_amoled_theme_title">跟随系统（AMOLED）</string>
     <string name="normal_viewmode_title">标准</string>
     <string name="compact_mode_title">紧凑</string>
     <string name="small_mode_title">小巧</string>
@@ -430,7 +433,7 @@
     <string name="privacy_policy">隐私政策</string>
     <string name="privacy_policy_summary">Cue 不收集你的任何数据</string>
     <string name="privacy_policy_text">更新日期：2026 年 10 月 11 日\n\nCue 是一款两步验证应用。Cue 不收集你的任何数据。\n\n• 不收集数据：没有账号，不含广告、统计、崩溃上报或第三方 SDK，不向开发者或任何第三方发送信息。\n\n• 数据只在你的设备上：验证码数据库保存在本机，设置了密码时用 AES-256-GCM 加密。\n\n• 不联网：Cue for Android 不申请网络权限。\n\n• 相机：只用来扫描二维码，画面在本机处理，不保存、不上传。\n\n• 备份与导出：只写到你选择的位置。\n\n• 键盘：Cue 键盘只读取 Cue 的数据库来显示验证码，不读取、不记录你输入的内容。\n\n• 删除数据：卸载 Cue 会删除本机上的全部数据。</string>
-    <string name="webview_error">此设备不支持 webview，这是查看更新日志和许可证所必需的。你的系统缺少这一组件。</string>
+    <string name="webview_error">此设备不支持 WebView，查看许可证需要它。你的系统缺少这一组件。</string>
     <string name="time_sync_warning_title">自动同步时间</string>
     <string name="time_sync_warning_message">Cue 依靠系统时间来同步生成正确的验证码。仅几秒钟的偏差可能会导致验证码错误。你的设备似乎未配置为自动同步时间。你现在要设置自动同步时间吗？</string>
     <string name="time_sync_warning_disable">不要再次提醒。我知道我在做什么。</string>
@@ -504,7 +507,7 @@
     <string name="title_activity_assign_icons">分配图标</string>
     <string name="title_activity_licenses">第三方许可</string>
     <string name="dialog_wipe_entries_title">擦除条目</string>
-    <string name="dialog_wipe_entries_message">你的数据库已经包含条目。 你想要在导入此文件之前删除这些条目吗？\n\n<b>这样做，你将永久失去对数据库中现有条目的访问权限。</b></string>
+    <string name="dialog_wipe_entries_message">你的数据库已经包含条目。你想要在导入此文件之前删除这些条目吗？\n\n<b>这样做，你将永久失去对数据库中现有条目的访问权限。</b></string>
     <string name="dialog_wipe_entries_checkbox">擦除数据库内容</string>
     <string name="import_from_clipboard_title">从剪贴板导入</string>
     <string name="import_from_clipboard_message">在剪贴板中找到一个有效的 otpauth URI。\n\n<b>名称</b>：%1$s\n<b>服务商</b>：%2$s\n\n要用它填写此条目吗？</string>
@@ -544,13 +547,13 @@
     <string name="importer_encrypted_exception_google_authenticator">加密条目已跳过：%s</string>
     <string name="importer_help_direct">直接导入来自 %s 的条目。这要求将应用安装在此设备上，并授予 Cue root 权限。</string>
     <string name="groups">分组</string>
-    <string name="pref_focus_search">启动时聚焦搜索</string>
+    <string name="pref_focus_search">应用启动后聚焦搜索</string>
     <string name="pref_focus_search_summary">打开应用后直接进入搜索</string>
-    <string name="pref_grouping_halves">均分</string>
+    <string name="pref_grouping_halves">对半分</string>
     <string name="pref_grouping_none">不分组</string>
-    <string name="pref_grouping_size_two">2 位数</string>
-    <string name="pref_grouping_size_three">3 位数</string>
-    <string name="pref_grouping_size_four">4 位数</string>
+    <string name="pref_grouping_size_two">每 2 位</string>
+    <string name="pref_grouping_size_three">每 3 位</string>
+    <string name="pref_grouping_size_four">每 4 位</string>
     <string name="pref_copy_behavior_never">从不</string>
     <string name="pref_copy_behavior_single_tap">点按一下</string>
     <string name="pref_copy_behavior_double_tap">点按两下</string>

@@ -105,6 +105,10 @@
     <string name="pref_tap_to_reveal_title">Tap to reveal</string>
     <string name="pref_tap_to_reveal_summary">Tokens will be hidden by default. Tap on the tokens to reveal code.</string>
     <string name="pref_tap_to_reveal_time_title">Timeout for tap to reveal</string>
+    <plurals name="pref_tap_to_reveal_time_summary">
+        <item quantity="one">%d second</item>
+        <item quantity="other">%d seconds</item>
+    </plurals>
     <string name="pref_auto_lock_title">Auto lock</string>
     <string name="pref_auto_lock_summary">When %s</string>
     <string name="pref_auto_lock_separator">", "</string>
@@ -424,8 +428,8 @@
     <string name="dark_theme_title">Dark theme</string>
     <string name="light_theme_title">Light theme</string>
     <string name="amoled_theme_title">AMOLED theme</string>
-    <string name="system_theme_title">Set by Battery Saver</string>
-    <string name="system_amoled_theme_title">Set by Battery Saver (AMOLED)</string>
+    <string name="system_theme_title">Follow system</string>
+    <string name="system_amoled_theme_title">Follow system (AMOLED)</string>
     <string name="normal_viewmode_title">Normal</string>
     <string name="compact_mode_title">Compact</string>
     <string name="small_mode_title">Small</string>
@@ -512,7 +516,7 @@
     <string name="privacy_policy">Privacy policy</string>
     <string name="privacy_policy_summary">Cue collects no data</string>
     <string name="privacy_policy_text">Updated: October 11, 2026\n\nCue is a two-factor authentication app. Cue doesn\'t collect any of your data.\n\n• No data collection: no account, no ads, analytics, crash reporting or third-party SDKs. Nothing is sent to the developer or to any third party.\n\n• Your data stays on your device: the vault with your codes is stored on this device and, when you set a password, encrypted with AES-256-GCM.\n\n• No internet: Cue for Android does not request the network permission.\n\n• Camera: used only to scan QR codes. The picture is processed on the device and never saved or uploaded.\n\n• Backups and exports: written only to the location you choose.\n\n• Keyboard: the Cue keyboard only reads Cue\'s vault to show your codes. It doesn\'t read or record what you type.\n\n• Deleting your data: uninstalling Cue deletes all of its data on this device.</string>
-    <string name="webview_error">This device doesn\'t support web view, which is necessary to view the changelog and the license. It is missing a system component.</string>
+    <string name="webview_error">This device doesn\'t support web view, which is necessary to view the license. It is missing a system component.</string>
     <string name="time_sync_warning_title">Automatic time synchronization</string>
     <string name="time_sync_warning_message">Cue relies on the system time to be in sync to generate correct codes. A deviation of only a few seconds could result in incorrect codes. It looks like your device is not configured to automatically synchronize the time. Would you like to do so now?</string>
     <string name="time_sync_warning_disable">Stop warning me. I know what I\'m doing.</string>

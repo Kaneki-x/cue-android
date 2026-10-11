@@ -8,6 +8,8 @@ import android.graphics.drawable.ColorDrawable;
 import android.inputmethodservice.InputMethodService;
 import android.os.Build;
 import android.os.IBinder;
+import android.text.InputType;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -68,6 +70,8 @@ import dagger.hilt.android.AndroidEntryPoint;
 @AndroidEntryPoint
 public class CueInputMethodService extends InputMethodService
         implements VaultManager.LockListener, ImeEntryAdapter.Listener {
+    private static final String TAG = CueInputMethodService.class.getSimpleName();
+
     @Inject
     VaultManager _vaultManager;
 
@@ -91,6 +95,10 @@ public class CueInputMethodService extends InputMethodService
 
     private String _currentPackage;
     private String _chipsKey;
+    /** Whether the vault was loaded at the last refresh; onWindowShown refreshes only on a change. */
+    private Boolean _refreshedLoaded;
+    /** Attached to one of Cue's own fields, the keyboard hands over to the previous one, once. */
+    private boolean _leftOwnField;
 
     @Override
     public void onCreate() {
@@ -109,6 +117,21 @@ public class CueInputMethodService extends InputMethodService
     @Override
     public boolean onEvaluateFullscreenMode() {
         return false;
+    }
+
+    /**
+     * The panel is the keyboard: with a hardware keyboard attached (a tablet's cover, DeX)
+     * the framework would hide it, and there would be no way to pick a code.
+     */
+    @Override
+    public boolean onEvaluateInputViewShown() {
+        super.onEvaluateInputViewShown();
+        return true;
+    }
+
+    @Override
+    public boolean onShowInputRequested(int flags, boolean configChange) {
+        return true;
     }
 
     @Override
@@ -199,6 +222,7 @@ public class CueInputMethodService extends InputMethodService
             _currentPackage = packageName;
             _adapter.setFilter(null);
             _chipsKey = null;
+            _leftOwnField = false;
         }
 
         refresh();
@@ -208,10 +232,17 @@ public class CueInputMethodService extends InputMethodService
     public void onWindowShown() {
         super.onWindowShown();
         _vaultManager.setInputMethodVisible(true);
-        if (_root != null) {
-            // the vault may have been unlocked through AuthActivity while we were hidden
+        // the vault may have been unlocked through AuthActivity while we were hidden; when
+        // nothing changed, onStartInputView has just refreshed (showWindow calls both)
+        if (_root != null && !Objects.equals(_refreshedLoaded, _vaultManager.isVaultLoaded())) {
             refresh();
         }
+    }
+
+    /** Strings in the app's language (the themed context carries it), not the system's. */
+    private String uiString(int res, Object... args) {
+        Context context = _root != null ? _root.getContext() : this;
+        return context.getString(res, args);
     }
 
     @Override
@@ -241,6 +272,7 @@ public class CueInputMethodService extends InputMethodService
     }
 
     private void refresh() {
+        _refreshedLoaded = _vaultManager.isVaultLoaded();
         boolean deviceLocked = isDeviceLocked();
         _openAppButton.setVisibility(deviceLocked ? View.GONE : View.VISIBLE);
         if (deviceLocked) {
@@ -252,7 +284,14 @@ public class CueInputMethodService extends InputMethodService
 
         if (_currentPackage != null && _currentPackage.equals(getPackageName())) {
             // We're attached to one of our own text fields, most likely the password field
-            // of AuthActivity. Our codes are of no use there, but a real keyboard is.
+            // of AuthActivity (reached from this keyboard's 解锁). Our codes are of no use
+            // there, but a real keyboard is: hand over to the one used before, as after
+            // inserting a code. The hint stays only when there is none to go to.
+            _adapter.setEntries(Collections.emptyList());
+            if (!_leftOwnField && trySwitchToPreviousKeyboard()) {
+                _leftOwnField = true;
+                return;
+            }
             showState(R.drawable.ic_outline_keyboard_24, R.string.ime_own_app_hint, R.string.ime_switch_keyboard, v -> switchToPreviousKeyboard());
             return;
         }
@@ -281,7 +320,7 @@ public class CueInputMethodService extends InputMethodService
 
         boolean anySuggested = !ranked.isEmpty() && ranked.get(0).isSuggested();
         String callerLabel = anySuggested ? getCallerLabel() : "";
-        _headerHint.setText(callerLabel.isEmpty() ? getString(R.string.ime_hint_choose) : callerLabel);
+        _headerHint.setText(callerLabel.isEmpty() ? uiString(R.string.ime_hint_choose) : callerLabel);
 
         buildChips();
         showList();
@@ -305,7 +344,7 @@ public class CueInputMethodService extends InputMethodService
         try {
             CharSequence label = getPackageManager().getApplicationLabel(
                     getPackageManager().getApplicationInfo(_currentPackage, 0));
-            return getString(R.string.ime_hint_suggested_for, label);
+            return uiString(R.string.ime_hint_suggested_for, label);
         } catch (Exception e) {
             return "";
         }
@@ -336,9 +375,9 @@ public class CueInputMethodService extends InputMethodService
 
         String filter = _adapter.getFilter();
         _chips.removeAllViews();
-        addChip(null, getString(R.string.all), filter == null);
+        addChip(null, uiString(R.string.all), filter == null);
         if (hasFavorites) {
-            addChip(ImeEntryAdapter.FILTER_FAVORITES, getString(R.string.ime_filter_favorites), ImeEntryAdapter.FILTER_FAVORITES.equals(filter));
+            addChip(ImeEntryAdapter.FILTER_FAVORITES, uiString(R.string.ime_filter_favorites), ImeEntryAdapter.FILTER_FAVORITES.equals(filter));
         }
         for (io.cueapp.android.vault.VaultGroup group : groups) {
             String tag = ImeEntryAdapter.FILTER_GROUP_PREFIX + group.getUUID();
@@ -415,12 +454,17 @@ public class CueInputMethodService extends InputMethodService
             return;
         }
 
+        // a second tap within the 已填入 moment would put the code in twice
+        if (_adapter.isInserted(entry)) {
+            return;
+        }
+
         OtpInfo info = entry.getInfo();
         String code;
         try {
             code = info.getOtp();
         } catch (OtpInfoException e) {
-            Toast.makeText(this, R.string.error_all_caps, Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, uiString(R.string.error_all_caps), Toast.LENGTH_SHORT).show();
             return;
         }
 
@@ -438,8 +482,8 @@ public class CueInputMethodService extends InputMethodService
                 ((HotpInfo) info).incrementCounter();
                 _vaultManager.saveAndBackup();
             } catch (OtpInfoException | VaultRepositoryException e) {
-                e.printStackTrace();
-                Toast.makeText(this, R.string.saving_error, Toast.LENGTH_LONG).show();
+                Log.e(TAG, "Unable to save the HOTP counter", e);
+                Toast.makeText(this, uiString(R.string.saving_error), Toast.LENGTH_LONG).show();
             }
         }
 
@@ -453,11 +497,14 @@ public class CueInputMethodService extends InputMethodService
     /**
      * Inserts the code into the focused field. Numeric codes are sent as individual key
      * presses, so that forms with one box per digit (which move the focus after every
-     * digit) receive all of them. Other codes are committed as text.
+     * digit) receive all of them. Other codes are committed as text. False when there is
+     * no field to type into (TYPE_NULL, a connection that has gone away): nothing is then
+     * counted as used and no HOTP counter moves on.
      */
     private boolean insertCode(String code) {
         InputConnection ic = getCurrentInputConnection();
-        if (ic == null) {
+        EditorInfo editor = getCurrentInputEditorInfo();
+        if (ic == null || editor == null || editor.inputType == InputType.TYPE_NULL) {
             return false;
         }
 
@@ -465,11 +512,9 @@ public class CueInputMethodService extends InputMethodService
             for (int i = 0; i < code.length(); i++) {
                 sendDownUpKeyEvents(KeyEvent.KEYCODE_0 + (code.charAt(i) - '0'));
             }
-        } else {
-            ic.commitText(code, 1);
+            return true;
         }
-
-        return true;
+        return ic.commitText(code, 1);
     }
 
     private void recordUsage(VaultEntry entry) {
@@ -485,19 +530,21 @@ public class CueInputMethodService extends InputMethodService
         _prefs.setLastUsedTimestamps(timestamps);
     }
 
+    /** Back to the keyboard used before this one; when there is none, just hides. */
     private void switchToPreviousKeyboard() {
+        if (!trySwitchToPreviousKeyboard()) {
+            requestHideSelf(0);
+        }
+    }
+
+    private boolean trySwitchToPreviousKeyboard() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
-            if (!switchToPreviousInputMethod()) {
-                requestHideSelf(0);
-            }
-            return;
+            return switchToPreviousInputMethod();
         }
 
         InputMethodManager imm = (InputMethodManager) getSystemService(INPUT_METHOD_SERVICE);
         Window window = getWindow() != null ? getWindow().getWindow() : null;
         IBinder token = window != null ? window.getAttributes().token : null;
-        if (imm == null || token == null || !imm.switchToLastInputMethod(token)) {
-            requestHideSelf(0);
-        }
+        return imm != null && token != null && imm.switchToLastInputMethod(token);
     }
 }

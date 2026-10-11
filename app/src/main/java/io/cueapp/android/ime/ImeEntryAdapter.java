@@ -123,6 +123,11 @@ public class ImeEntryAdapter extends RecyclerView.Adapter<ImeEntryAdapter.Holder
         }, 1500);
     }
 
+    /** Whether the entry's key still shows 已填入. */
+    public boolean isInserted(VaultEntry entry) {
+        return _inserted != null && _inserted.equals(entry.getUUID());
+    }
+
     private void applyFilter() {
         _visible.clear();
         for (ImeEntryRanker.Ranked ranked : _all) {
@@ -203,9 +208,10 @@ public class ImeEntryAdapter extends RecyclerView.Adapter<ImeEntryAdapter.Holder
             }
             _issuer.setText(issuer);
             _name.setText(name);
-            // a suggested entry says so where its account name would be
+            // a suggested entry says so next to its account name; the name stays, since two
+            // accounts of the same service are suggested together and it is what tells them apart
             _suggested.setVisibility(ranked.isSuggested() ? View.VISIBLE : View.GONE);
-            _name.setVisibility(name.isEmpty() || ranked.isSuggested() ? View.GONE : View.VISIBLE);
+            _name.setVisibility(name.isEmpty() ? View.GONE : View.VISIBLE);
             _favoriteIndicator.setVisibility(_entry.isFavorite() ? View.VISIBLE : View.GONE);
 
             OtpInfo info = _entry.getInfo();

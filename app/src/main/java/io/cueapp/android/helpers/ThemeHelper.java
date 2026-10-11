@@ -74,12 +74,17 @@ public class ThemeHelper {
      * components that don't have an Activity, such as the input method.
      */
     public static Context createThemedContext(Context base, Preferences prefs) {
-        Locale locale = prefs.getLocale();
         Configuration config = new Configuration(base.getResources().getConfiguration());
-        config.setLocale(locale);
-        Context context = base.createConfigurationContext(config);
+        config.setLocale(prefs.getLocale());
 
-        Theme theme = getConfiguredTheme(context, prefs);
+        // The theme decides, not the system's night mode: values-night resources (the
+        // keyboard's key colours) must agree with the theme's attributes, or an explicit dark
+        // theme under a light system gives light keys with light text.
+        Theme theme = getConfiguredTheme(base, prefs);
+        boolean night = theme == Theme.DARK || theme == Theme.AMOLED;
+        config.uiMode = (config.uiMode & ~Configuration.UI_MODE_NIGHT_MASK)
+                | (night ? Configuration.UI_MODE_NIGHT_YES : Configuration.UI_MODE_NIGHT_NO);
+        Context context = base.createConfigurationContext(config);
         context = new ContextThemeWrapper(context, ThemeMap.DEFAULT.get(theme));
 
         if (prefs.isDynamicColorsEnabled()) {
@@ -93,6 +98,16 @@ public class ThemeHelper {
         }
 
         return context;
+    }
+
+    /**
+     * A context whose resources speak the app's language (Settings > Appearance > Language),
+     * not the system's: for strings put into RemoteViews by the widget, which has no Activity.
+     */
+    public static Context createLocaleContext(Context base, Preferences prefs) {
+        Configuration config = new Configuration(base.getResources().getConfiguration());
+        config.setLocale(prefs.getLocale());
+        return base.createConfigurationContext(config);
     }
 
     /**

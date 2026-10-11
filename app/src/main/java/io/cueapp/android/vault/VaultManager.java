@@ -40,6 +40,8 @@ public class VaultManager {
     private final Preferences _prefs;
 
     private VaultRepository _repo;
+    /** The file stamp of the vault file last found to be encrypted (loadIfUnencrypted), or null. */
+    private Long _encryptedFileStamp;
 
     private final VaultBackupManager _backups;
     private final BackupManager _androidBackups;
@@ -374,12 +376,21 @@ public class VaultManager {
             return false;
         }
 
+        // The keyboard and the widget ask on every appearance; while the vault is locked that
+        // would parse the whole file (icons included) each time just to find it encrypted.
+        long stamp = VaultRepository.getFileStamp(_context);
+        if (_encryptedFileStamp != null && _encryptedFileStamp == stamp) {
+            return false;
+        }
+
         try {
             VaultFile vaultFile = VaultRepository.readVaultFile(_context);
             if (vaultFile.isEncrypted()) {
+                _encryptedFileStamp = stamp;
                 return false;
             }
 
+            _encryptedFileStamp = null;
             loadFrom(vaultFile);
             return true;
         } catch (VaultRepositoryException e) {

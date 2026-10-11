@@ -67,8 +67,8 @@
     <string name="pref_backups_reminder_dialog_title">停用備份提醒</string>
     <string name="pref_backups_reminder_dialog_summary">停用後，Cue 不會再提醒你備份變更，可能導致驗證碼遺失。確定要停用嗎？</string>
     <string name="pref_backups_versioning_strategy_title">備份策略</string>
-    <string name="pref_backups_versioning_strategy_keep_x_versions">保留多個版本</string>
-    <string name="pref_backups_versioning_strategy_single_backup">只保留一份</string>
+    <string name="pref_backups_versioning_strategy_keep_x_versions">保留版本數</string>
+    <string name="pref_backups_versioning_strategy_single_backup">單個備份</string>
     <string name="pref_backups_versioning_strategy_single_backup_warning">所選的備份策略不可靠，不建議使用。只要一次備份失敗，就可能失去唯一的備份。</string>
     <string name="pref_backups_versioning_strategy_dialog_title">選擇備份策略</string>
     <string name="pref_backups_location_title">備份位置</string>
@@ -100,6 +100,9 @@
     <string name="pref_tap_to_reveal_title">點按顯示</string>
     <string name="pref_tap_to_reveal_summary">驗證碼預設隱藏，點按項目後顯示</string>
     <string name="pref_tap_to_reveal_time_title">點按後顯示多久</string>
+    <plurals name="pref_tap_to_reveal_time_summary">
+        <item quantity="other">%d 秒</item>
+    </plurals>
     <string name="pref_auto_lock_title">自動鎖定</string>
     <string name="pref_auto_lock_summary">%s時</string>
     <string name="pref_auto_lock_separator">、</string>
@@ -359,7 +362,7 @@
     <string name="new_group">新增分組…</string>
     <string name="group">分組</string>
     <string name="group_name_hint">分組名稱</string>
-    <string name="preference_manage_groups">編輯分組</string>
+    <string name="preference_manage_groups">管理分組</string>
     <string name="preference_manage_groups_summary">管理和刪除分組</string>
     <string name="preference_reset_usage_count">重設使用次數</string>
     <string name="preference_reset_usage_count_summary">將每個項目的使用次數歸零</string>
@@ -398,8 +401,8 @@
     <string name="dark_theme_title">深色主題</string>
     <string name="light_theme_title">淺色主題</string>
     <string name="amoled_theme_title">AMOLED 主題</string>
-    <string name="system_theme_title">依省電模式設定</string>
-    <string name="system_amoled_theme_title">依省電模式設定（AMOLED）</string>
+    <string name="system_theme_title">跟隨系統</string>
+    <string name="system_amoled_theme_title">跟隨系統（AMOLED）</string>
     <string name="normal_viewmode_title">標準</string>
     <string name="compact_mode_title">緊湊</string>
     <string name="small_mode_title">小巧</string>
@@ -430,7 +433,7 @@
     <string name="privacy_policy">隱私權政策</string>
     <string name="privacy_policy_summary">Cue 不收集你的任何資料</string>
     <string name="privacy_policy_text">更新日期：2026 年 10 月 11 日\n\nCue 是一款兩步驟驗證應用程式。Cue 不收集你的任何資料。\n\n• 不收集資料：沒有帳戶，不含廣告、分析、當機回報或第三方 SDK，不向開發者或任何第三方傳送資訊。\n\n• 資料只在你的裝置上：驗證碼資料庫儲存在本機，設定密碼時以 AES-256-GCM 加密。\n\n• 不連網：Cue for Android 不要求網路權限。\n\n• 相機：只用來掃描 QR 碼，影像在本機處理，不儲存、不上傳。\n\n• 備份與匯出：只寫入你選擇的位置。\n\n• 鍵盤：Cue 鍵盤只讀取 Cue 的資料庫來顯示驗證碼，不讀取、不記錄你輸入的內容。\n\n• 刪除資料：解除安裝 Cue 會刪除本機上的所有資料。</string>
-    <string name="webview_error">此裝置不支援 WebView，檢視變更記錄和授權需要它。你的系統缺少這個元件。</string>
+    <string name="webview_error">此裝置不支援 WebView，檢視授權需要它。你的系統缺少這個元件。</string>
     <string name="time_sync_warning_title">自動同步時間</string>
     <string name="time_sync_warning_message">Cue 需要準確的系統時間才能產生正確的驗證碼。只要差幾秒，驗證碼就可能錯誤。你的裝置似乎沒有設定為自動同步時間。要現在設定嗎？</string>
     <string name="time_sync_warning_disable">不要再提醒我。我知道自己在做什麼。</string>
@@ -545,13 +548,13 @@
     <string name="importer_encrypted_exception_google_authenticator">已略過加密的項目：%s</string>
     <string name="importer_help_direct">直接從 %s 匯入項目。此裝置上必須安裝該應用程式，並授予 Cue root 權限。</string>
     <string name="groups">分組</string>
-    <string name="pref_focus_search">啟動時聚焦搜尋</string>
+    <string name="pref_focus_search">App 啟動後聚焦搜尋</string>
     <string name="pref_focus_search_summary">開啟應用程式後直接進入搜尋</string>
-    <string name="pref_grouping_halves">均分</string>
+    <string name="pref_grouping_halves">對半分</string>
     <string name="pref_grouping_none">不分組</string>
-    <string name="pref_grouping_size_two">2 位數</string>
-    <string name="pref_grouping_size_three">3 位數</string>
-    <string name="pref_grouping_size_four">4 位數</string>
+    <string name="pref_grouping_size_two">每 2 位</string>
+    <string name="pref_grouping_size_three">每 3 位</string>
+    <string name="pref_grouping_size_four">每 4 位</string>
     <string name="pref_copy_behavior_never">從不</string>
     <string name="pref_copy_behavior_single_tap">點按一下</string>
     <string name="pref_copy_behavior_double_tap">點按兩下</string>

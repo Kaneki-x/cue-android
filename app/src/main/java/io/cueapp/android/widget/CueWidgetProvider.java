@@ -20,6 +20,7 @@ import androidx.annotation.Nullable;
 import io.cueapp.android.BuildConfig;
 import io.cueapp.android.Preferences;
 import io.cueapp.android.R;
+import io.cueapp.android.helpers.ThemeHelper;
 import io.cueapp.android.otp.TotpInfo;
 import io.cueapp.android.ui.AuthActivity;
 import io.cueapp.android.ui.MainActivity;
@@ -197,11 +198,12 @@ public class CueWidgetProvider extends AppWidgetProvider {
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_cue);
         views.setOnClickPendingIntent(R.id.widget_header, createOpenAppIntent(context, widgetId));
 
+        List<VaultEntry> entries = null;
         if (vaultManager.isVaultInitNeeded()) {
             showMessage(context, views, R.string.widget_setup_required, createOpenAppIntent(context, widgetId), false);
         } else if (!vaultManager.loadIfUnencrypted()) {
             showLocked(context, views, widgetId);
-        } else if (resolveEntries(vaultManager.getVault(), prefs, widgetId).isEmpty()) {
+        } else if ((entries = resolveEntries(vaultManager.getVault(), prefs, widgetId)).isEmpty()) {
             Intent intent = new Intent(context, WidgetConfigureActivity.class);
             intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, widgetId);
             intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -218,7 +220,7 @@ public class CueWidgetProvider extends AppWidgetProvider {
                 // and doesn't need a service binding
                 RemoteViews.RemoteCollectionItems.Builder builder = new RemoteViews.RemoteCollectionItems.Builder();
                 Preferences.CodeGrouping grouping = prefs.getCodeGroupSize();
-                for (VaultEntry entry : resolveEntries(vaultManager.getVault(), prefs, widgetId)) {
+                for (VaultEntry entry : entries) {
                     builder.addItem(entry.getUUID().getMostSignificantBits() ^ entry.getUUID().getLeastSignificantBits(),
                             WidgetRowFactory.build(context, widgetId, entry, true, grouping, withIcons));
                 }
@@ -263,7 +265,9 @@ public class CueWidgetProvider extends AppWidgetProvider {
         views.setViewVisibility(R.id.widget_list, View.GONE);
         views.setViewVisibility(R.id.widget_message_box, View.VISIBLE);
         views.setViewVisibility(R.id.widget_lock_icon, locked ? View.VISIBLE : View.GONE);
-        views.setTextViewText(R.id.widget_message, context.getString(textRes));
+        // in the app's language: the application context speaks the system's
+        Context localized = ThemeHelper.createLocaleContext(context, getEntryPoint(context).getPreferences());
+        views.setTextViewText(R.id.widget_message, localized.getString(textRes));
         views.setOnClickPendingIntent(R.id.widget_message_box, onClick);
     }
 

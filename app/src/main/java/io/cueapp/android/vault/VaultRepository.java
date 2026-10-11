@@ -58,6 +58,15 @@ public class VaultRepository {
         return file.exists() && file.isFile();
     }
 
+    /**
+     * A stamp that changes whenever the vault file is rewritten (its modification time and
+     * size), so callers can cache what they learned from the file without re-reading it.
+     */
+    public static long getFileStamp(Context context) {
+        File file = getAtomicFile(context).getBaseFile();
+        return file.lastModified() * 31 + file.length();
+    }
+
     public static void deleteFile(Context context) {
         getAtomicFile(context).delete();
     }

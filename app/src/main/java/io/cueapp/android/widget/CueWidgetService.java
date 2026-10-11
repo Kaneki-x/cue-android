@@ -48,9 +48,13 @@ public class CueWidgetService extends RemoteViewsService {
         @Override
         public void onDataSetChanged() {
             _grouping = _prefs.getCodeGroupSize();
-            if (_vaultManager.isVaultLoaded()) {
-                _entries = CueWidgetProvider.resolveEntries(_vaultManager.getVault(), _prefs, _widgetId);
-            } else {
+            // This runs on a binder thread; the main thread may lock the vault between the
+            // check and getVault(), which then throws. An empty list is the right answer then.
+            try {
+                _entries = _vaultManager.isVaultLoaded()
+                        ? CueWidgetProvider.resolveEntries(_vaultManager.getVault(), _prefs, _widgetId)
+                        : new ArrayList<>();
+            } catch (IllegalStateException e) {
                 _entries = new ArrayList<>();
             }
         }

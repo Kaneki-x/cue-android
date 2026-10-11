@@ -69,11 +69,11 @@ public class SecurityPreferencesFragment extends PreferencesFragment {
         });
 
         Preference tapToRevealTimePreference = requirePreference("pref_tap_to_reveal_time");
-        tapToRevealTimePreference.setSummary(_prefs.getTapToRevealTime() + " seconds");
+        tapToRevealTimePreference.setSummary(formatSeconds(_prefs.getTapToRevealTime()));
         tapToRevealTimePreference.setOnPreferenceClickListener(preference -> {
             Dialogs.showTapToRevealTimeoutPickerDialog(requireContext(), _prefs.getTapToRevealTime(), number -> {
                 _prefs.setTapToRevealTime(number);
-                tapToRevealTimePreference.setSummary(number + " seconds");
+                tapToRevealTimePreference.setSummary(formatSeconds(number));
             });
             return false;
         });
@@ -253,6 +253,10 @@ public class SecurityPreferencesFragment extends PreferencesFragment {
             Dialogs.showSetPasswordDialog(requireActivity(), new SetBackupPasswordListener());
             return false;
         });
+    }
+
+    private String formatSeconds(int seconds) {
+        return getResources().getQuantityString(R.plurals.pref_tap_to_reveal_time_summary, seconds, seconds);
     }
 
     private void updateEncryptionPreferences() {

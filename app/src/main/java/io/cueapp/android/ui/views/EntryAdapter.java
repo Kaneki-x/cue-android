@@ -205,14 +205,19 @@ public class EntryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         if (_searchFilter != null) {
             String[] tokens = _searchFilter.toLowerCase().split("\\s+");
 
-            // Return true if not all tokens match at least one of the relevant fields
-            return !Arrays.stream(tokens)
+            // Filtered out if not all tokens match at least one of the relevant fields. The
+            // group chips stay in view while searching (the search field sits under the
+            // toolbar, as on iOS), so the group filter below still applies on top.
+            boolean matches = Arrays.stream(tokens)
                     .allMatch(token ->
                             ((_searchBehaviorMask & Preferences.SEARCH_IN_ISSUER) != 0 && issuer.contains(token)) ||
                                     ((_searchBehaviorMask & Preferences.SEARCH_IN_NAME) != 0 && name.contains(token)) ||
                                     ((_searchBehaviorMask & Preferences.SEARCH_IN_NOTE) != 0 && note.contains(token)) ||
                                     ((_searchBehaviorMask & Preferences.SEARCH_IN_GROUPS) != 0 && doesAnyGroupMatchSearchFilter(groups, token))
                     );
+            if (!matches) {
+                return true;
+            }
         }
 
         if (!_groupFilter.isEmpty()) {
@@ -453,9 +458,11 @@ public class EntryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
             boolean showProgress = entry.getInfo() instanceof TotpInfo;
             boolean showAccountName = true;
             if (_onlyShowNecessaryAccountNames) {
-                // Only show account name when there's multiple entries found with the same issuer.
+                // Only show account name when there's multiple entries found with the same
+                // issuer, in the whole vault and ignoring case ("GitHub" and "github" are one
+                // service), as iOS counts them too.
                 showAccountName = _entryList.getEntries().stream()
-                        .filter(x -> x.getIssuer().equals(entry.getIssuer()))
+                        .filter(x -> x.getIssuer().equalsIgnoreCase(entry.getIssuer()))
                         .count() > 1;
             }
 
@@ -488,11 +495,14 @@ public class EntryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                             }
                         }
 
+                        // a use is a copy (as on iOS, where fills count too), not every tap:
+                        // revealing a code, or the first tap of a double tap, is not one
                         switch (_copyBehavior) {
                             case SINGLETAP:
                                 _view.onEntryCopy(entry);
                                 entryHolder.animateCopyText();
                                 _clickedEntry = null;
+                                incrementUsageCount(entry);
                                 break;
                             case DOUBLETAP:
                                 _doubleTapHandler.postDelayed(() -> _clickedEntry = null, ViewConfiguration.getDoubleTapTimeout());
@@ -501,13 +511,14 @@ public class EntryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                                     _view.onEntryCopy(entry);
                                     entryHolder.animateCopyText();
                                     _clickedEntry = null;
+                                    incrementUsageCount(entry);
                                 } else {
                                     _clickedEntry = entry;
                                 }
                                 break;
+                            case NEVER:
+                                break;
                         }
-
-                        incrementUsageCount(entry);
                     } else {
                         if (_selectedEntries.contains(entry)) {
                             _view.onDeselect(entry);

@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- not_keyguard (Android 16): home_screen alone also lets tablets put the widget on the lock
+     screen hub, where the names of unlocked entries would show without authentication. Older
+     releases read the flag as a plain integer and ignore the bit. -->
 <appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:configure="io.cueapp.android.ui.WidgetConfigureActivity"
@@ -13,6 +16,6 @@
     android:targetCellWidth="4"
     android:targetCellHeight="2"
     android:updatePeriodMillis="0"
-    android:widgetCategory="home_screen"
+    android:widgetCategory="home_screen|not_keyguard"
     android:widgetFeatures="reconfigurable|configuration_optional"
-    tools:targetApi="s" />
+    tools:targetApi="36" />

@@ -33,7 +33,6 @@ public class CountdownRingView extends View {
     private final int _colorExpiring;
 
     private final int _colorTrack;
-    private boolean _hero;
 
     private long _periodMillis = TotpInfo.DEFAULT_PERIOD * 1000L;
     private long _lastSlot = -1;
@@ -61,15 +60,6 @@ public class CountdownRingView extends View {
         _arcPaint.setStrokeWidth(stroke);
         _arcPaint.setStrokeCap(Paint.Cap.ROUND);
         _arcPaint.setColor(_colorNormal);
-    }
-
-    /**
-     * On the brand-colored hero card the ring is drawn in white.
-     */
-    public void setHero(boolean hero) {
-        _hero = hero;
-        _trackPaint.setColor(hero ? 0x55FFFFFF : _colorTrack);
-        invalidate();
     }
 
     public void setPeriod(int periodSeconds) {
@@ -104,8 +94,7 @@ public class CountdownRingView extends View {
         }
         _lastSlot = slot;
 
-        int arcColor = remaining <= EXPIRING_MILLIS ? _colorExpiring : _colorNormal;
-        _arcPaint.setColor(_hero ? (remaining <= EXPIRING_MILLIS ? 0xFFFFD6D6 : 0xFFFFFFFF) : arcColor);
+        _arcPaint.setColor(remaining <= EXPIRING_MILLIS ? _colorExpiring : _colorNormal);
         canvas.drawOval(_rect, _trackPaint);
         canvas.drawArc(_rect, -90, 360 * fraction, false, _arcPaint);
 

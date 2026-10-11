@@ -32,7 +32,7 @@ The security design of the app and the vault format is described in detail in
   - Screen capture prevention
   - Tap to reveal
 - Keyboard: insert the code of any entry into the focused field, then switch back
-- Home screen widget: codes of your pinned entries, hidden until tapped
+- Home screen widget: your pinned entries, or the ones you choose, with their codes hidden until tapped
 - Multiple backup options
   - Automatic
   - Cloud
@@ -46,7 +46,7 @@ The security design of the app and the vault format is described in detail in
 - Organization
   - Groups, pinning (pinned entries come first, marked by a bar on the card's edge), search,
     icon packs
-  - Ships with one icon pack, Cue Icons: 7458 icons merged from seven open-source sets
+  - Ships with one icon pack, Cue Icons: 7458 icons merged from six open-source sets
     (CC0 1.0, CC BY 4.0 and Apache 2.0; see [design/iconpacks/](../design/iconpacks/)),
     installed on first start; a pack removed in Settings > Icon packs stays removed. New
     entries take the matching icon, and the app offers once to assign icons to existing entries
@@ -67,7 +67,13 @@ Deliberate, so both apps' behaviour is on record:
   expires it after 60 s.
 - **Sort order**: issuer and account sorting compare case-insensitively by code point on
   Android; iOS sorts locale-aware (so Chinese names follow the system's collation).
-- **Widget**: pinned entries are listed by title on Android; iOS lists them in vault order.
+- **Widget**: pinned entries are listed by title on Android; iOS lists them in vault order. A tap on
+  a row shows the code on Android and copies it on iOS (where it also opens Cue and asks for Face
+  ID every time; Android asks only while the vault is locked). While the vault is locked, Android's
+  widget shows nothing but "locked"; iOS shows the names (there is a 隐藏名称 option).
+- **Keyboard**: Android switches back to the previous keyboard after inserting a code (a setting,
+  on by default; 已填入 shows when it is off) and ranks entries by the app being typed into; iOS
+  has neither (a keyboard cannot see the app) and unlocks with Face ID inside the keyboard.
 
 ## Building
 
@@ -100,7 +106,8 @@ still works and produces unsigned output. Keep the keystore and passwords out of
 
 Use Play App Signing: Google keeps the app signing key and the key above is only the upload
 key, which can be replaced if it is lost. `versionCode` in `app/build.gradle` must grow with
-every upload and never go back; it is 82, carried over from Aegis, for 0.1.0.
+every upload and never go back. It is `major * 10000 + minor * 100 + patch`, so 0.1.0 is 100
+(above Aegis's last, 82).
 
 ## License
 

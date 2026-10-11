@@ -12,7 +12,6 @@ import android.view.View;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.AttrRes;
 import androidx.annotation.StringRes;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -114,11 +113,6 @@ public class AboutActivity extends CueActivity {
         ClipData data = ClipData.newPlainText("text/plain", text);
         clipboard.setPrimaryClip(data);
         Toast.makeText(this, messageId, Toast.LENGTH_SHORT).show();
-    }
-
-    private String getThemeColorAsHex(@AttrRes int attributeId) {
-        int color = MaterialColors.getColor(this, attributeId, getClass().getCanonicalName());
-        return String.format("%06X", 0xFFFFFF & color);
     }
 
     @Override

@@ -112,6 +112,16 @@ public class WidgetConfigureActivity extends CueActivity {
             return;
         }
 
+        if (_vaultManager.isVaultInitNeeded()) {
+            // the widget was added before Cue was set up (launchers that always run the
+            // configuration): there is nothing to choose from yet, and AuthActivity would only
+            // show a load error; the widget itself says to open Cue
+            Toast.makeText(this, R.string.widget_setup_required, Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(this, MainActivity.class));
+            finish();
+            return;
+        }
+
         if (_vaultManager.loadIfUnencrypted()) {
             loadEntries();
         } else if (!_isAuthenticating) {

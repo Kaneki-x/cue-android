@@ -81,6 +81,19 @@ android {
         }
     }
 
+    // Declared before buildTypes: the Groovy DSL evaluates in order, and the release build type
+    // below refers to signingConfigs.release.
+    signingConfigs {
+        if (hasReleaseSigning) {
+            release {
+                storeFile file(releaseSigning.storeFile)
+                storePassword releaseSigning.storePassword
+                keyAlias releaseSigning.keyAlias
+                keyPassword releaseSigning.keyPassword
+            }
+        }
+    }
+
     buildTypes {
         debug {
             applicationIdSuffix ".debug"
@@ -121,17 +134,6 @@ android {
     bundle {
         language {
             enableSplit = false
-        }
-    }
-
-    signingConfigs {
-        if (hasReleaseSigning) {
-            release {
-                storeFile file(releaseSigning.storeFile)
-                storePassword releaseSigning.storePassword
-                keyAlias releaseSigning.keyAlias
-                keyPassword releaseSigning.keyPassword
-            }
         }
     }
 
