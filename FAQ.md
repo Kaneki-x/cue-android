@@ -4,26 +4,31 @@
 
 ### How can I contribute?
 
-There are lots of ways! Please refer to our [contributing
-guide](https://github.com/Kaneki-x/Cue/blob/master/CONTRIBUTING.md).
+There are lots of ways! Please refer to our [contributing guide](CONTRIBUTING.md).
 
-### Why is the latest version not on F-Droid yet?
+### Where can I get Cue?
 
-We don't release new versions of Cue on F-Droid ourselves. Once we've released
-a new version on GitHub, F-Droid will usually kick off their automatic build
-process a day later and publish the app to their repository a couple of days
-afterwards. It can sometimes take up to a week for a new version to appear on
-F-Droid.
+How Cue will be distributed has not been decided yet; there is no store listing so far.
+Until then, build it from source as the [README](README.md) describes.
 
-### Can you port Cue to iOS/Windows/MacOS/Browser Extension?
+### Is there Cue for iPhone?
 
-We don't have plans to port Cue to other platforms.
+Yes. Cue for iOS lives in [`apple/`](../apple/) in this repository. It is a separate Swift
+app that reads and writes the same vault file, so a vault, export or backup made on one
+opens on the other. A macOS version is planned; other platforms are not.
 
 ### Can you add support for Autofill?
 
 On Android, only one app can be active in the Autofill slot at a time, and since
-this is typically occupied by the password manager, we don't see much value in
-adding support for this feature in Cue.
+this is typically occupied by the password manager, Cue offers its codes through
+the Cue keyboard and the home screen widget instead. Cue for iOS does fill codes
+through AutoFill, matched by the website (`domain`) set on an entry.
+
+### Can I move from Aegis?
+
+Yes. Cue reads Aegis vaults: on the welcome screen, choose "Import a Cue or Aegis vault",
+or later use Settings > Import & Export > Import from file > Cue / Aegis with an Aegis
+export or backup.
 
 ### What is the difference between exporting and backing up?
 
@@ -53,7 +58,7 @@ the vault, __we do NOT recommend disabling the password reminder__.
 
 The hash algorithm is imposed by the service you're setting up 2FA for (e.g.
 Google, Facebook, GitHub, etc). There is nothing we can do about that. If we
-were to change this on Cue' end, the tokens would stop working. Furthermore,
+were to change this on Cue's end, the tokens would stop working. Furthermore,
 when using SHA1 in an HMAC calculation, the currently known issues in SHA1 are
 not of concern.
 

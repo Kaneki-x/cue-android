@@ -23,6 +23,7 @@
 
         <View
             android:id="@+id/favorite_indicator"
+            android:contentDescription="@string/entry_pinned"
             android:layout_width="15dp"
             android:layout_height="match_parent"
             android:layout_marginStart="-11dp"
@@ -162,6 +163,7 @@
 
             <ImageView
                 android:id="@+id/buttonRefresh"
+                android:contentDescription="@string/action_refresh_code"
                 android:visibility="gone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

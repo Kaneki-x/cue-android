@@ -415,8 +415,6 @@
     <string name="channel_description_lock_status">Cue kasa kilidinin açık olduğunu bildirmek üzere kalıcı bir bildirim gösterebilir.</string>
     <string name="vault_unlocked_state">Kasa kilidi açık. Kilitlemek için buraya dokunun.</string>
     <string name="version">Sürüm</string>
-    <string name="changelog">Değişiklik Günlüğü</string>
-    <string name="whats_new">Yeni ne var?</string>
     <string name="third_party_licenses">Üçüncü taraf lisanslar</string>
     <string name="third_party_licenses_description">Cue\'in kullandığı üçüncü-parti kütüphanelerin lisansları</string>
     <string name="webview_error">Bu cihazda değişiklik günlüğünü ve lisansı görüntülemek için gerekli olan \"web view\" desteklenmiyor. Bu sistem bileşeni yerinde yok.</string>

@@ -98,6 +98,9 @@ public class GoogleAuthInfo implements Transferable, Serializable {
                     info = hotpInfo;
                     break;
                 case YandexInfo.HOST_ID:
+                // Cue for iOS 0.1.0 wrote Yandex entries as otpauth://yandex/; read them too
+                // (the URIs written here keep using yaotp)
+                case YandexInfo.ID:
                     String pin = uri.getQueryParameter("pin");
                     if (pin != null) {
                         pin = new String(parseSecret(pin), StandardCharsets.UTF_8);

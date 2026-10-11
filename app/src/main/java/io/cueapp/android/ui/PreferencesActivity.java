@@ -19,11 +19,14 @@ public class PreferencesActivity extends CueActivity implements
         PreferenceFragmentCompat.OnPreferenceStartFragmentCallback {
     private Fragment _fragment;
     private CharSequence _prefTitle;
+    private boolean _titleFromScreen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (abortIfOrphan(savedInstanceState)) {
+        // the settings read the vault (security, backups, audit log) and change how it is
+        // protected, so they never open without it, whoever starts them
+        if (abortIfVaultNotLoaded()) {
             return;
         }
         setContentView(R.layout.activity_preferences);
@@ -49,6 +52,7 @@ public class PreferencesActivity extends CueActivity implements
             if (requestedFragment != null) {
                 _fragment = requestedFragment;
                 showFragment(_fragment);
+                _titleFromScreen = true;
             }
         } else {
             _fragment = getSupportFragmentManager().findFragmentById(R.id.content);
@@ -117,6 +121,13 @@ public class PreferencesActivity extends CueActivity implements
                 setTitle(R.string.action_settings);
             } else if (f instanceof AppearancePreferencesFragment) {
                 _prefTitle = getString(R.string.pref_section_appearance_title);
+                setTitle(_prefTitle);
+            } else if (_titleFromScreen && f instanceof PreferenceFragmentCompat
+                    && ((PreferenceFragmentCompat) f).getPreferenceScreen() != null) {
+                // a page opened directly (backups from the error bar, the keyboard from the
+                // system settings) takes the title its screen has
+                _titleFromScreen = false;
+                _prefTitle = ((PreferenceFragmentCompat) f).getPreferenceScreen().getTitle();
                 setTitle(_prefTitle);
             }
         }

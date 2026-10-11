@@ -407,8 +407,6 @@
     <string name="channel_description_lock_status">Cue voi luoda pysyvän ilmoituksen, joka ilmoittaa sinulle, kun holvi on lukittu</string>
     <string name="vault_unlocked_state">Holvi on avattu. Lukitse napauttamalla.</string>
     <string name="version">Versio</string>
-    <string name="changelog">Muutosloki</string>
-    <string name="whats_new">Mitä uutta</string>
     <string name="third_party_licenses">Kolmannen osapuolen lisenssit</string>
     <string name="third_party_licenses_description">Cuein käyttämien kolmannen osapuolen kirjastojen lisenssit</string>
     <string name="webview_error">Tämä laite ei tue WebView:tä, joka vaaditaan muutoslokin ja lisenssitietojen katselemiseksi. Siitä puuttuu järjestelmäkomponentti.</string>

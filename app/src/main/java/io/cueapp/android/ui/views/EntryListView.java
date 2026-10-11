@@ -209,6 +209,7 @@ public class EntryListView extends Fragment implements EntryAdapter.Listener {
     @Override
     public void onDestroyView() {
         _refresher.destroy();
+        _progressBar.stop();
         super.onDestroyView();
     }
 

@@ -24,7 +24,7 @@ def die(msg, code=1):
     exit(code)
 
 def main():
-    parser = argparse.ArgumentParser(description="Decrypt an Cue vault")
+    parser = argparse.ArgumentParser(description="Decrypt a Cue vault")
     parser.add_argument("--input", dest="input", required=True, help="encrypted Cue vault file")
     parser.add_argument("--output", dest="output", default="-", help="output file ('-' for stdout)")
     args = parser.parse_args()

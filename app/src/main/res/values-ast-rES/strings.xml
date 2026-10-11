@@ -356,8 +356,6 @@
     <string name="channel_description_lock_status">Cue pue crear un avisu permanente p\'avisate de cuándo se bloquia l\'arca</string>
     <string name="vault_unlocked_state">L\'arca ta desbloquiada. Toca equí pa bloquiala.</string>
     <string name="version">Versión</string>
-    <string name="changelog">Rexistru de cambeos</string>
-    <string name="whats_new">Les novedaes</string>
     <string name="third_party_licenses">Llicencies de terceros</string>
     <string name="third_party_licenses_description">Les llicencies de les biblioteques de terceros qu\'usa Cue</string>
     <string name="webview_error">Esti preséu nun ye compatible con WebView, que ye necesariu pa visualizar el rexistru de cambeos ya la llicencia. Al sistema fálta-y un componente.</string>

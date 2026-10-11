@@ -416,8 +416,6 @@
     <string name="channel_description_lock_status">To Cue μπορεί να δημιουργήσει μια επίμονη ειδοποίηση για να σας ειδοποιήσει όταν η λίστα είναι κλειδωμένη</string>
     <string name="vault_unlocked_state">Η κρύπτη είναι ξεκλείδωτη. Πατήστε εδώ για κλείδωμα.</string>
     <string name="version">Έκδοση</string>
-    <string name="changelog">Αρχείο καταγραφής αλλαγών</string>
-    <string name="whats_new">Τι νέο υπάρχει</string>
     <string name="third_party_licenses">Άδειες χρήσης τρίτων</string>
     <string name="third_party_licenses_description">Άδειες χρήσης βιβλιοθηκών τρίτων που χρησιμοποιεί το Cue</string>
     <string name="webview_error">Αυτή η συσκευή δεν υποστηρίζει προβολή ιστού, η οποία είναι απαραίτητη για την προβολή του αρχείου αλλαγών και της άδειας. Λείπει ένα στοιχείο συστήματος.</string>

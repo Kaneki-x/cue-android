@@ -88,6 +88,7 @@ public class ImportEntriesActivity extends CueActivity {
         _entriesView.setLayoutManager(layoutManager);
         _entriesView.setAdapter(_adapter);
         _entriesView.setNestedScrollingEnabled(false);
+        ViewHelper.setupBottomInsets(_entriesView);
 
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(v -> {

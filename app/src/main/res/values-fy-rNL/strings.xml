@@ -416,8 +416,6 @@
     <string name="channel_description_lock_status">Cue kin in permaninte melding toane wannear’t de klûs beskoattele is</string>
     <string name="vault_unlocked_state">Klûs is ûntskoattele. Tik hjir om te beskoatteljen.</string>
     <string name="version">Ferzje</string>
-    <string name="changelog">Wizigingenlochboek</string>
-    <string name="whats_new">Wat is der nij</string>
     <string name="third_party_licenses">Lisinsjes fan tredden</string>
     <string name="third_party_licenses_description">Lisinsjes fan biblioteken fan tredden brûkt troch Cue</string>
     <string name="webview_error">Dit apparaat stipet gjin webview, hokker nedich is om de wizigingen te besjen. It mist in systeemkomponint.</string>

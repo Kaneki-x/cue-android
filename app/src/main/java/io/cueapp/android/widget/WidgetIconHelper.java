@@ -24,10 +24,16 @@ import java.io.ByteArrayInputStream;
 
 /**
  * Renders entry icons to small circular bitmaps for use in RemoteViews. Bitmaps cross the
- * Binder boundary on every widget update, so they're kept small and cached.
+ * Binder boundary on every widget update, so they're kept small and cached: entries with the
+ * same icon get the same Bitmap object, which a RemoteViews hierarchy sends only once.
  */
 public class WidgetIconHelper {
-    private static final int ICON_DP = 32;
+    // the size widget_entry_item.xml shows them at
+    private static final int ICON_DP = 30;
+    // CueWidgetProvider.MAX_ROWS icons of this many pixels stay under about 250 KB, well inside
+    // the 1 MB Binder buffer one widget update has to fit in; on 3x screens and up the launcher
+    // scales them up a little
+    private static final int MAX_ICON_PX = 72;
     private static final LruCache<String, Bitmap> _cache = new LruCache<>(64);
 
     private WidgetIconHelper() {
@@ -36,12 +42,15 @@ public class WidgetIconHelper {
 
     @Nullable
     public static Bitmap getIcon(Context context, VaultEntry entry) {
-        int size = Math.round(ICON_DP * context.getResources().getDisplayMetrics().density);
+        int size = Math.min(MAX_ICON_PX, Math.round(ICON_DP * context.getResources().getDisplayMetrics().density));
         String key;
         if (entry.hasIcon()) {
             key = Hex.encode(entry.getIcon().getHash()) + "/" + size;
         } else {
-            key = "text:" + entry.getIssuer() + "/" + entry.getName() + "/" + size;
+            // TextDrawableHelper draws the first letter of the issuer (or the name) in a colour
+            // that only depends on that text
+            String text = entry.getIssuer().isEmpty() ? entry.getName() : entry.getIssuer();
+            key = "text:" + text + "/" + size;
         }
 
         synchronized (_cache) {

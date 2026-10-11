@@ -336,8 +336,6 @@
     <string name="channel_description_lock_status">നിലവറ പൂട്ടിയിരിക്കുമ്പോൾ നിങ്ങളെ അറിയിക്കാൻ ഏജിസിന് സ്ഥിരമായ ഒരു അറിയിപ്പ് സൃഷ്ടിക്കാൻ കഴിയും</string>
     <string name="vault_unlocked_state">നിലവറ അൺലോക്ക് ചെയ്തു. ലോക്ക് ചെയ്യാൻ ഇവിടെ ടാപ്പ് ചെയ്യുക.</string>
     <string name="version">പതിപ്പ്</string>
-    <string name="changelog">ചേഞ്ച്ലോഗ്</string>
-    <string name="whats_new">പുതിയതെന്താണ്</string>
     <string name="third_party_licenses">മൂന്നാം കക്ഷി ലൈസൻസുകൾ</string>
     <string name="third_party_licenses_description">ഏജിസ് ഉപയോഗിക്കുന്ന മൂന്നാം കക്ഷി ലൈബ്രറികളുടെ ലൈസൻസുകൾ</string>
     <string name="webview_error">ഈ ഉപകരണം വെബ് കാഴ്‌ചയെ പിന്തുണയ്‌ക്കുന്നില്ല, ഇത് ചേഞ്ച്‌ലോഗും ലൈസൻസും കാണുന്നതിന് ആവശ്യമാണ്. ഇതിന് ഒരു സിസ്റ്റം ഘടകം നഷ്‌ടമായിരിക്കുന്നു.</string>

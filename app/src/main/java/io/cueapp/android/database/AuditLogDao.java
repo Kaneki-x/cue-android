@@ -12,6 +12,10 @@ public interface AuditLogDao {
     @Insert
     void insert(AuditLogEntry log);
 
-    @Query("SELECT * FROM audit_logs WHERE timestamp >= strftime('%s', 'now', '-30 days') ORDER BY timestamp DESC")
+    // timestamp is in milliseconds (System.currentTimeMillis()), strftime('%s') in seconds
+    @Query("SELECT * FROM audit_logs WHERE timestamp >= strftime('%s', 'now', '-30 days') * 1000 ORDER BY timestamp DESC")
     LiveData<List<AuditLogEntry>> getAll();
+
+    @Query("DELETE FROM audit_logs WHERE timestamp < :timestamp")
+    int deleteOlderThan(long timestamp);
 }

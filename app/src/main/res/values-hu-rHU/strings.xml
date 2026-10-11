@@ -415,8 +415,6 @@
     <string name="channel_description_lock_status">Az Cue állandó értesítést tud megjeleníteni, ha a széf zárolva van</string>
     <string name="vault_unlocked_state">A széf fel van oldva. Koppintson a zároláshoz.</string>
     <string name="version">Verzió</string>
-    <string name="changelog">Változáslista</string>
-    <string name="whats_new">Újdonságok</string>
     <string name="third_party_licenses">Harmadik felek licencei</string>
     <string name="third_party_licenses_description">Az Cue által használt, harmadik féltől származó programkönyvtárok licencei</string>
     <string name="webview_error">Ez az eszköz nem támogatja a webes nézetet, amely szükséges a változásnapló és a licenc megtekintéséhez. Ez egy hiányzó rendszerösszetevő.</string>

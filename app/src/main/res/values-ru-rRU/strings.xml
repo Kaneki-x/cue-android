@@ -438,8 +438,6 @@
     <string name="channel_description_lock_status">Cue может создать постоянное уведомление для отображения статуса блокировки хранилища</string>
     <string name="vault_unlocked_state">Хранилище разблокировано. Нажмите для блокировки.</string>
     <string name="version">Версия</string>
-    <string name="changelog">Список изменений</string>
-    <string name="whats_new">Что нового</string>
     <string name="third_party_licenses">Лицензии третьих сторон</string>
     <string name="third_party_licenses_description">Лицензии сторонних библиотек, используемых в Cue</string>
     <string name="webview_error">Это устройство не поддерживает веб-просмотр, необходимый для просмотра списка изменений и лицензии, т.к. в нём отсутствует соответствующий системный компонент.</string>

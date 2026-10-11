@@ -316,8 +316,6 @@
     <string name="channel_description_lock_status">वॉल्ट लॉक हो जाने पर Cue आपको सूचित करने के लिए एक सतत अधिसूचना दिखा सकता है</string>
     <string name="vault_unlocked_state">वॉल्ट अनलॉक है। लॉक करने के लिए टैप करें।</string>
     <string name="version">संस्करण</string>
-    <string name="changelog">परिवर्तन लॉग</string>
-    <string name="whats_new">नया क्या है</string>
     <string name="third_party_licenses">तीसरे-पक्ष के लाइसेंस</string>
     <string name="third_party_licenses_description">एजिस तीसरे पक्ष के पुस्तकालयों के लाइसेंस का उपयोग करता है</string>
     <string name="webview_error">यह उपकरण वेब दृश्य का समर्थन नहीं करता है, जो चैंज और लाइसेंस देखने के लिए आवश्यक है। इसमें एक सिस्टम घटक गायब है।</string>

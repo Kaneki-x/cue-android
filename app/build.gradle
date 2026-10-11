@@ -22,6 +22,16 @@ def appId = "io.cueapp.android"
 def fileProviderAuthority = "${appId}.fileprovider"
 def fileProviderAuthorityDebug = "${appId}.debug.fileprovider"
 
+// Release signing, from Gradle properties (-P or ~/.gradle/gradle.properties) or environment
+// variables, never from files in the repository. Without all four, release builds are unsigned.
+def releaseSigning = [
+    storeFile: "CUE_RELEASE_STORE_FILE",
+    storePassword: "CUE_RELEASE_STORE_PASSWORD",
+    keyAlias: "CUE_RELEASE_KEY_ALIAS",
+    keyPassword: "CUE_RELEASE_KEY_PASSWORD",
+].collectEntries { field, name -> [field, project.findProperty(name) ?: System.getenv(name)] }
+def hasReleaseSigning = releaseSigning.values().every { it }
+
 android {
     compileSdk 36
 
@@ -31,7 +41,8 @@ android {
         applicationId appId
         minSdkVersion 23
         targetSdkVersion 36
-        versionCode 82
+        // major * 10000 + minor * 100 + patch, so 0.1.0 is 100; only ever grows (Play)
+        versionCode 100
         versionName "0.1.0"
         multiDexEnabled true
         buildConfigField "String", "GIT_HASH", "\"${getGitHash()}\""
@@ -93,6 +104,34 @@ android {
             minifyEnabled true
             shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            if (hasReleaseSigning) {
+                signingConfig signingConfigs.release
+            }
+        }
+    }
+
+    // The languages the app has, as on iOS: English (the default), Simplified and Traditional
+    // Chinese. The other values-* folders stay in the source but are left out of the APK.
+    androidResources {
+        localeFilters += ["en", "zh-rCN", "zh-rTW"]
+    }
+
+    // Settings > Appearance > Language switches the language inside the app, so an app bundle
+    // must not split the languages: Play would install only the device's own
+    bundle {
+        language {
+            enableSplit = false
+        }
+    }
+
+    signingConfigs {
+        if (hasReleaseSigning) {
+            release {
+                storeFile file(releaseSigning.storeFile)
+                storePassword releaseSigning.storePassword
+                keyAlias releaseSigning.keyAlias
+                keyPassword releaseSigning.keyPassword
+            }
         }
     }
 

@@ -402,8 +402,6 @@
     <string name="channel_description_lock_status">Cue יכולה ליצור הודעה מתמשכת כדי להודיע לך כאשר הכספת נעולה</string>
     <string name="vault_unlocked_state">הכספת פתוחה. יש להקיש כאן כדי לנעול.</string>
     <string name="version">גרסה</string>
-    <string name="changelog">יומן שינויים</string>
-    <string name="whats_new">מה חדש</string>
     <string name="third_party_licenses">רישיונות של צד שלישי</string>
     <string name="third_party_licenses_description">רישיונות של ספריות צד שלישי שבהן משתמשת Cue</string>
     <string name="webview_error">מכשיר זה אינו תומך בתצוגת אינטרנט, הנחוצה להצגת יומן השינויים והרישיון. חסר לו רכיב מערכת.</string>

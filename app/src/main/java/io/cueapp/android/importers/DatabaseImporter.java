@@ -31,7 +31,8 @@ public abstract class DatabaseImporter {
         // note: keep these lists sorted alphabetically
         _importers = new ArrayList<>();
         _importers.add(new Definition("2FAS Authenticator", TwoFASImporter.class, R.string.importer_help_2fas, false));
-        _importers.add(new Definition("Cue", CueImporter.class, R.string.importer_help_cue, false));
+        // Aegis writes the same vault format, so its exports and backups import here too
+        _importers.add(new Definition("Cue / Aegis", CueImporter.class, R.string.importer_help_cue, false));
         _importers.add(new Definition("andOTP", AndOtpImporter.class, R.string.importer_help_andotp, false));
         _importers.add(new Definition("Authenticator Plus", AuthenticatorPlusImporter.class, R.string.importer_help_authenticator_plus, false));
         _importers.add(new Definition("Authy", AuthyImporter.class, R.string.importer_help_authy, true));

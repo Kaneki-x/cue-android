@@ -88,6 +88,7 @@ public class AssignIconsActivity extends CueActivity implements AssignIconAdapte
         _entriesView.setLayoutManager(layoutManager);
         _entriesView.setAdapter(_adapter);
         _entriesView.setNestedScrollingEnabled(false);
+        ViewHelper.setupBottomInsets(_entriesView);
         _entriesView.addItemDecoration(new SpacesItemDecoration(8));
         _entriesView.addOnScrollListener(preloader1);
         _entriesView.addOnScrollListener(preloader2);

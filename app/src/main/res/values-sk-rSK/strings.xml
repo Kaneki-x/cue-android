@@ -374,8 +374,6 @@
     <string name="channel_name_lock_status">Stav uzamknutia</string>
     <string name="vault_unlocked_state">Trezor je odomknutý. Ťukni sem pre zamknutie.</string>
     <string name="version">Verzia</string>
-    <string name="changelog">Zoznam zmien</string>
-    <string name="whats_new">Čo je nové</string>
     <string name="third_party_licenses">Licencie tretích strán</string>
     <string name="third_party_licenses_description">Licencie knižníc tretích strán, ktoré Cue používa</string>
     <string name="time_sync_warning_title">Automatická synchronizácia času</string>

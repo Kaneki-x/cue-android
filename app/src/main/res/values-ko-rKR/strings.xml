@@ -406,8 +406,6 @@
     <string name="channel_description_lock_status">Cue는 보관함이 잠겨 있을 때 영구 알림을 생성하여 사용자에게 알릴 수 있습니다</string>
     <string name="vault_unlocked_state">보관함이 잠금 해제되었습니다. 여기를 눌러 잠그세요.</string>
     <string name="version">버전</string>
-    <string name="changelog">변경 내역</string>
-    <string name="whats_new">새로운 소식</string>
     <string name="third_party_licenses">서드파티 라이선스</string>
     <string name="third_party_licenses_description">Cue가 사용하는 서드파티 라이브러리</string>
     <string name="webview_error">이 기기는 변경 내역 및 라이선스를 보는 데 필요한 웹 뷰를 지원하지 않습니다. 시스템 구성 요소가 누락된 것입니다.</string>

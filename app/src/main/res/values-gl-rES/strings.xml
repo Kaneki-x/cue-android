@@ -415,8 +415,6 @@
     <string name="channel_description_lock_status">Cue pode crear unha notificación persistente para avisarche de se o almacén está bloqueado</string>
     <string name="vault_unlocked_state">O almacén está desbloqueado. Preme aquí para bloquealo.</string>
     <string name="version">Versión</string>
-    <string name="changelog">Rexistro de cambios</string>
-    <string name="whats_new">Novidades</string>
     <string name="third_party_licenses">Licenzas de terceiros</string>
     <string name="third_party_licenses_description">As licenzas das librerías de terceiros usadas por Cue</string>
     <string name="webview_error">Este dispositivo non admite Web View, que é necesario para ver o rexistro de cambios e a licenza. É un compoñente do sistema que falta.</string>

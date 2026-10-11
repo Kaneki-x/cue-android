@@ -26,6 +26,7 @@ import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 import java.util.stream.Collectors;
 
 @RunWith(RobolectricTestRunner.class)
@@ -94,6 +95,39 @@ public class IconPackTest {
         assertEquals(Arrays.asList("GitHub"), names(pack.getSuggestedIcons("git")));
         assertEquals(Arrays.asList("Google Pay"), names(pack.getSuggestedIcons("pay")));
         assertTrue(pack.getSuggestedIcons("hub").isEmpty());
+    }
+
+    @Test
+    public void testIssuerIsTrimmedAndLowercasedWithoutLocale() throws JSONException {
+        JSONArray icons = new JSONArray();
+        for (String name : new String[] { "Amazon Web Services bg.var", "Amazon", "LinkedIn" }) {
+            icons.put(new JSONObject()
+                    .put("name", name)
+                    .put("filename", name + ".svg")
+                    .put("issuer", new JSONArray().put(name.toLowerCase(Locale.ROOT))));
+        }
+        IconPack pack = IconPack.fromJson(new JSONObject()
+                .put("uuid", "55555555-5555-5555-5555-555555555555")
+                .put("name", "Test Pack")
+                .put("version", 1)
+                .put("icons", icons));
+
+        // as IconPack.suggestions(for:) does on iOS: spaces around the issuer don't count
+        assertEquals("Amazon", pack.getSuggestedIcons("Amazon ").get(0).getName());
+        assertEquals("Amazon", pack.getSuggestedIcons("  amazon").get(0).getName());
+        assertTrue(pack.getSuggestedIcons("   ").isEmpty());
+        assertTrue(pack.getSuggestedIcons("").isEmpty());
+        assertTrue(pack.getSuggestedIcons(null).isEmpty());
+
+        // a Turkish locale lowercases "I" to a dotless "ı"; matching must not depend on it
+        Locale locale = Locale.getDefault();
+        try {
+            Locale.setDefault(new Locale("tr", "TR"));
+            assertEquals(Arrays.asList("LinkedIn"), names(pack.getSuggestedIcons("LinkedIn")));
+            assertEquals(Arrays.asList("LinkedIn"), names(pack.getSuggestedIcons("LINKEDIN")));
+        } finally {
+            Locale.setDefault(locale);
+        }
     }
 
     private static List<String> names(List<IconPack.Icon> icons) {

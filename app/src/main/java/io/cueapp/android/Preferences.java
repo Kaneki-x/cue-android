@@ -20,6 +20,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Date;
 import java.util.HashMap;
@@ -36,6 +37,9 @@ public class Preferences {
     public static final int AUTO_LOCK_ON_BACK_BUTTON = 1 << 1;
     public static final int AUTO_LOCK_ON_MINIMIZE = 1 << 2;
     public static final int AUTO_LOCK_ON_DEVICE_LOCK = 1 << 3;
+
+    // the languages the app has (app/build.gradle localeFilters, R.array.pref_lang_values)
+    private static final List<String> LANGUAGES = Arrays.asList("en", "zh_CN", "zh_TW");
 
     public static final int SEARCH_IN_ISSUER = 1 << 0;
     public static final int SEARCH_IN_NAME = 1 << 1;
@@ -445,7 +449,10 @@ public class Preferences {
     }
 
     public String getLanguage() {
-        return _prefs.getString("pref_lang", "system");
+        // an earlier build offered 40 languages; the app now has these (R.array.pref_lang_values)
+        // and follows the system for any other choice
+        String lang = _prefs.getString("pref_lang", "system");
+        return LANGUAGES.contains(lang) ? lang : "system";
     }
 
     public void setLanguage(String lang) {

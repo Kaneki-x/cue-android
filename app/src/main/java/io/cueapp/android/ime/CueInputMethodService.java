@@ -1,5 +1,6 @@
 package io.cueapp.android.ime;
 
+import android.app.KeyguardManager;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -47,6 +48,7 @@ import com.google.android.material.chip.Chip;
 import com.google.android.material.chip.ChipGroup;
 import com.google.android.material.color.MaterialColors;
 
+import java.util.Collections;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -77,6 +79,7 @@ public class CueInputMethodService extends InputMethodService
     private String _themeKey;
     private View _root;
     private TextView _headerHint;
+    private View _openAppButton;
     private RecyclerView _list;
     private View _stateView;
     private ImageView _stateIcon;
@@ -129,7 +132,8 @@ public class CueInputMethodService extends InputMethodService
         _list.setLayoutManager(new androidx.recyclerview.widget.GridLayoutManager(context, 2));
         _list.setAdapter(_adapter);
 
-        _root.findViewById(R.id.btn_open_app).setOnClickListener(v -> openApp());
+        _openAppButton = _root.findViewById(R.id.btn_open_app);
+        _openAppButton.setOnClickListener(v -> openApp());
         _root.findViewById(R.id.btn_switch_keyboard).setOnClickListener(v -> switchToPreviousKeyboard());
         _chips.setOnCheckedStateChangeListener((group, checkedIds) -> {
             if (checkedIds.isEmpty()) {
@@ -237,6 +241,15 @@ public class CueInputMethodService extends InputMethodService
     }
 
     private void refresh() {
+        boolean deviceLocked = isDeviceLocked();
+        _openAppButton.setVisibility(deviceLocked ? View.GONE : View.VISIBLE);
+        if (deviceLocked) {
+            // on the lock screen: nothing from the vault, and no way into the app from here
+            _adapter.setEntries(Collections.emptyList());
+            showState(R.drawable.ic_outline_lock_24, R.string.ime_device_locked, R.string.ime_switch_keyboard, v -> switchToPreviousKeyboard());
+            return;
+        }
+
         if (_currentPackage != null && _currentPackage.equals(getPackageName())) {
             // We're attached to one of our own text fields, most likely the password field
             // of AuthActivity. Our codes are of no use there, but a real keyboard is.
@@ -250,6 +263,7 @@ public class CueInputMethodService extends InputMethodService
         }
 
         if (!_vaultManager.loadIfUnencrypted()) {
+            _adapter.setEntries(Collections.emptyList());
             showState(R.drawable.ic_outline_lock_24, R.string.ime_vault_locked, R.string.unlock, v -> unlock());
             return;
         }
@@ -260,7 +274,7 @@ public class CueInputMethodService extends InputMethodService
 
         Set<String> callerTokens = _prefs.isImeSuggestByAppEnabled()
                 ? ImeEntryRanker.getCallerTokens(this, _currentPackage)
-                : java.util.Collections.emptySet();
+                : Collections.emptySet();
         List<ImeEntryRanker.Ranked> ranked = ImeEntryRanker.rank(
                 _vaultManager.getVault().getEntries(), callerTokens, _prefs.getUsageCounts());
         _adapter.setEntries(ranked);
@@ -272,6 +286,15 @@ public class CueInputMethodService extends InputMethodService
         buildChips();
         showList();
         updateEmptyState();
+    }
+
+    /**
+     * Whether the keyboard is shown on the lock screen (or another place where the device
+     * still has to be unlocked), where the vault must not be read or offered.
+     */
+    private boolean isDeviceLocked() {
+        KeyguardManager keyguardManager = (KeyguardManager) getSystemService(Context.KEYGUARD_SERVICE);
+        return keyguardManager != null && keyguardManager.isDeviceLocked();
     }
 
     private String getCallerLabel() {
@@ -387,7 +410,7 @@ public class CueInputMethodService extends InputMethodService
 
     @Override
     public void onEntryClick(VaultEntry entry) {
-        if (!_vaultManager.isVaultLoaded()) {
+        if (isDeviceLocked() || !_vaultManager.isVaultLoaded()) {
             refresh();
             return;
         }

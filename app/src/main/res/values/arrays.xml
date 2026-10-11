@@ -29,96 +29,20 @@
         <item>@string/tiles_mode_title</item>
     </string-array>
 
+    <!-- the languages app/build.gradle keeps (localeFilters), each in its own language, as
+         system language pickers show them; Preferences.getLanguage() lists the same values -->
     <string-array name="pref_lang_entries">
-        <item>System default</item>
-        <item>Arabic</item>
-        <item>Asturian</item>
-        <item>Basque</item>
-        <item>Bulgarian</item>
-        <item>Catalan</item>
-        <item>Chinese (Simplified Han, China)</item>
-        <item>Chinese (Traditional Han, Taiwan)</item>
-        <item>Czech</item>
-        <item>Danish</item>
-        <item>Dutch</item>
-        <item>Dutch (Frysian)</item>
+        <item>@string/pref_lang_system</item>
         <item>English</item>
-        <item>Estonian</item>
-        <item>Finnish</item>
-        <item>French</item>
-        <item>Galician</item>
-        <item>German</item>
-        <item>Greek</item>
-        <item>Hebrew</item>
-        <item>Hindi</item>
-        <item>Hungarian</item>
-        <item>Italian</item>
-        <item>Indonesian</item>
-        <item>Japanese</item>
-        <item>Kannada</item>
-        <item>Korean</item>
-        <item>Latvian</item>
-        <item>Lithuanian</item>
-        <item>Norwegian (Bokmål)</item>
-        <item>Malayalam</item>
-        <item>Persian</item>
-        <item>Polish</item>
-        <item>Portuguese</item>
-        <item>Portuguese (Brazilian)</item>
-        <item>Romanian</item>
-        <item>Russian</item>
-        <item>Serbian</item>
-        <item>Slovak</item>
-        <item>Spanish</item>
-        <item>Swedish</item>
-        <item>Turkish</item>
-        <item>Ukrainian</item>
+        <item>简体中文</item>
+        <item>繁體中文</item>
     </string-array>
 
     <string-array name="pref_lang_values" translatable="false">
         <item>system</item>
-        <item>ar</item>
-        <item>ast</item>
-        <item>eu</item>
-        <item>bg</item>
-        <item>ca</item>
+        <item>en</item>
         <item>zh_CN</item>
         <item>zh_TW</item>
-        <item>cs</item>
-        <item>da</item>
-        <item>nl</item>
-        <item>fy_NL</item>
-        <item>en</item>
-        <item>et</item>
-        <item>fi</item>
-        <item>fr</item>
-        <item>gl</item>
-        <item>de</item>
-        <item>el</item>
-        <item>iw</item>
-        <item>hi</item>
-        <item>hu</item>
-        <item>it</item>
-        <item>in</item>
-        <item>ja</item>
-        <item>kn</item>
-        <item>ko</item>
-        <item>lv</item>
-        <item>lt</item>
-        <item>nb</item>
-        <item>ml</item>
-        <item>fa</item>
-        <item>pl</item>
-        <item>pt_PT</item>
-        <item>pt_BR</item>
-        <item>ro</item>
-        <item>ru</item>
-        <item>sr</item>
-        <item>sk</item>
-        <item>es</item>
-        <item>sv</item>
-        <item>tr</item>
-        <item>uk</item>
     </string-array>
 
     <string-array name="password_strength">

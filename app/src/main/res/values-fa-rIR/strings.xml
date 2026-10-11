@@ -244,8 +244,6 @@
     <string name="channel_description_lock_status">Cue می‌تواند یک اعلان برای اعلام قفل شدن برنامه به شما بسازد.</string>
     <string name="vault_unlocked_state">مخزن رمزگشایی شد. برای قفل شدن لمس کنید.</string>
     <string name="version">نسخه</string>
-    <string name="changelog">گزارش تغییرات</string>
-    <string name="whats_new">تغییرات جدید</string>
     <string name="time_sync_warning_title">همگام سازی خودکار</string>
     <string name="time_sync_warning_message">این برنامه نیاز به زمان دقیق برای ساختن کد جدید دارد. تفاوت چند ثانیه‌ای ممکن است باعث ایجاد کد اشتباه شود. به نظر می‌رسد ساعت دستگاه شما به صورت خودکار تنظیم نشده است. آیا میخواهید این کار را انجام دهید؟</string>
     <string name="time_sync_warning_disable">دیگر به من هشدار نده. می‌دانم دارم چکار می‌کنم.</string>

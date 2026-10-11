@@ -64,6 +64,7 @@ import io.cueapp.android.otp.GoogleAuthInfoException;
 import io.cueapp.android.otp.OtpInfoException;
 import io.cueapp.android.ui.dialogs.Dialogs;
 import io.cueapp.android.ui.fragments.preferences.BackupsPreferencesFragment;
+import io.cueapp.android.ui.fragments.preferences.IntegrationsPreferencesFragment;
 import io.cueapp.android.ui.fragments.preferences.PreferencesFragment;
 import io.cueapp.android.ui.models.ErrorCardInfo;
 import io.cueapp.android.ui.models.VaultGroupModel;
@@ -104,6 +105,11 @@ import java.util.stream.Collectors;
 public class MainActivity extends CueActivity implements EntryListView.Listener {
     // Permission request codes
     private static final int CODE_PERM_CAMERA = 0;
+
+    // what to open once the vault is unlocked (doShortcutActions)
+    public static final String EXTRA_ACTION = "action";
+    // the keyboard's settings, from the system's keyboard settings (ImeSettingsActivity)
+    public static final String ACTION_IME_SETTINGS = "ime_settings";
 
     private boolean _loaded;
     private boolean _isRecreated;
@@ -860,7 +866,7 @@ public class MainActivity extends CueActivity implements EntryListView.Listener 
 
     private void doShortcutActions() {
         Intent intent = getIntent();
-        String action = intent.getStringExtra("action");
+        String action = intent.getStringExtra(EXTRA_ACTION);
         if (action == null || !_vaultManager.isVaultLoaded()) {
             return;
         }
@@ -869,9 +875,12 @@ public class MainActivity extends CueActivity implements EntryListView.Listener 
             case "scan":
                 startScanActivity();
                 break;
+            case ACTION_IME_SETTINGS:
+                startPreferencesActivity(IntegrationsPreferencesFragment.class, null);
+                break;
         }
 
-        intent.removeExtra("action");
+        intent.removeExtra(EXTRA_ACTION);
     }
 
     private void handleIncomingIntent() {

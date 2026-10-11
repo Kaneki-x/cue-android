@@ -416,8 +416,6 @@
     <string name="channel_description_lock_status">Cue pot crear una notificació persistent per a avisar-te de que la caixa forta està desbloquejada</string>
     <string name="vault_unlocked_state">La caixa forta està desbloquejada. Toca aquí per a bloquejar-la.</string>
     <string name="version">Versió</string>
-    <string name="changelog">Registre de canvis</string>
-    <string name="whats_new">Què hi ha de nou</string>
     <string name="third_party_licenses">Llicències de tercers</string>
     <string name="third_party_licenses_description">Llicències de llibreries de tercers que fa servir Cue</string>
     <string name="webview_error">Aquest dispositiu no suporta \'web view\', que es necessari per a veure el registre de canvis i la llicència. Falta un component de sistema.</string>

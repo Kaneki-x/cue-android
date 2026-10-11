@@ -17,6 +17,7 @@
          card's rounded corners clip it to a 4dp strip -->
     <View
         android:id="@+id/favorite_indicator"
+        android:contentDescription="@string/entry_pinned"
         android:layout_width="15dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"

@@ -37,11 +37,14 @@
                 android:text="@string/auth_locked_title"
                 android:textAppearance="@style/TextAppearance.Cue.Display" />
 
+            <!-- how to unlock: AuthActivity says fingerprint and face only when biometric
+                 unlock is set up -->
             <TextView
+                android:id="@+id/text_subtitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/cue_space_2"
-                android:text="@string/auth_locked_subtitle"
+                android:text="@string/auth_locked_subtitle_password"
                 android:textColor="?attr/colorOnSurfaceVariant" />
 
             <ImageView

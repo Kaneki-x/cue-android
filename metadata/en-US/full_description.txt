@@ -2,10 +2,10 @@ Cue is a free, secure and open source 2FA app for Android. It keeps your tokens 
 
 Features:
 - A keyboard that inserts the code of any entry into the focused field and switches back to your usual keyboard
-- A home screen widget that shows the codes of your favorites, hidden until you tap them
+- A home screen widget that shows the codes of your pinned entries, hidden until you tap them
 - Encrypted vault (AES-256-GCM) protected by a password and optionally biometrics
 - Automatic and manual backups
-- Import from Google Authenticator, Microsoft Authenticator, 2FAS, Authy and many others
+- Import from Aegis, Google Authenticator, Microsoft Authenticator, 2FAS, Authy and many others
 - HOTP and TOTP, compatible with thousands of services
-- Groups, favorites, search and icon packs
+- Groups, pinning, search and a built-in icon pack
 - Material 3 design with dynamic colors

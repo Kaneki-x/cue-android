@@ -411,8 +411,6 @@
     <string name="channel_description_lock_status">Cueek jakinarazpen iraunkorra ezar dezake biltegia blokeatuta dagoenean jakinarazteko</string>
     <string name="vault_unlocked_state">Biltegia desblokeatuta dago. Ukitu hemen blokeatzeko.</string>
     <string name="version">Bertsioa</string>
-    <string name="changelog">Aldaketen erregistroa</string>
-    <string name="whats_new">Zer berri</string>
     <string name="third_party_licenses">Hirugarrenen lizentziak</string>
     <string name="third_party_licenses_description">Cueek erabiltzen dituen hirugarrenen lizentziak</string>
     <string name="webview_error">Gailu honetan ez dabil web view, eta beharrezkoa da aldaketen erregistroa eta lizentzia ikusteko. Sistemaren osagai bat da eta ez dago instalatuta.</string>

@@ -9,25 +9,26 @@ requesting a feature.
 
 ## Translations
 
-Translations live in `app/src/main/res/values-*/strings.xml`. Pull requests that
-add a language or fix a translation are welcome; keep the string names identical to
-the ones in `values/strings.xml`.
+The app ships in English (`values/`), Simplified Chinese (`values-zh-rCN/`) and
+Traditional Chinese (`values-zh-rTW/`); `app/build.gradle` leaves the other `values-*`
+folders out of the APK. Fixes to these three are welcome; keep the string names identical
+to the ones in `values/strings.xml`, and add a new or changed string to all three.
 
 ## Pull requests
 
 If you're planning on adding a new feature or making other large changes, please
-discuss it with us first through [a
-proposal](https://github.com/Kaneki-x/Cue/issues/new?labels=proposal&template=feature.md)
-on GitHub. Discussing your idea with us first ensures that everyone is on the
+discuss it with us first in [an issue](https://github.com/Kaneki-x/cue/issues) on
+GitHub. Discussing your idea with us first ensures that everyone is on the
 same page before you start working on your change. We don't like rejecting pull
 requests.
 
 ## Bug reports
 
 We use GitHub's issue tracker to track bugs. To make bug reports easier to
-follow up on for us, please fill out the form as accurately as possible. If a
-bug report does not contain enough information, it will be closed. Duplicate bug
-reports receive the same treatment.
+follow up on for us, please describe what you did, what you expected and what
+happened, with the app version and your Android version. If a bug report does not
+contain enough information, it will be closed. Duplicate bug reports receive the
+same treatment.
 
 Please consider trying to find the root cause yourself first and include your
 analysis of the issue in your report. Perhaps even send us a patch that fixes

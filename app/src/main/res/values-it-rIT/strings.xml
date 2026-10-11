@@ -416,8 +416,6 @@
     <string name="channel_description_lock_status">Cue può mostrare una notifica permanente quando la cassaforte è sbloccata</string>
     <string name="vault_unlocked_state">Cassaforte sbloccata. Tocca qui per bloccare.</string>
     <string name="version">Versione</string>
-    <string name="changelog">Changelog</string>
-    <string name="whats_new">Novità</string>
     <string name="third_party_licenses">Licenze di terze parti</string>
     <string name="third_party_licenses_description">Licenze delle librerie di terze parti utilizzate da Cue</string>
     <string name="webview_error">Questo dispositivo non supporta la visualizzazione web, necessaria per visualizzare il changelog e la licenza. Manca un componente di sistema.</string>

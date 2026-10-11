@@ -416,8 +416,6 @@
     <string name="channel_description_lock_status">Cue kan een permanente melding tonen wanneer de kluis is vergrendeld</string>
     <string name="vault_unlocked_state">Kluis is ontgrendeld. Tik hier om te vergrendelen.</string>
     <string name="version">Versie</string>
-    <string name="changelog">Wijzigingen</string>
-    <string name="whats_new">Vernieuwingen</string>
     <string name="third_party_licenses">Licenties van derden</string>
     <string name="third_party_licenses_description">Licenties van bibliotheken van derden gebruikt door Cue</string>
     <string name="webview_error">Dit apparaat ondersteunt geen webview, welke nodig is om de wijzigingen te bekijken. Het mist een systeemcomponent.</string>

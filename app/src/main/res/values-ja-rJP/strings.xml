@@ -340,8 +340,6 @@
     <string name="channel_description_lock_status">保管庫をロックしたときに永続的に通知を表示することができます</string>
     <string name="vault_unlocked_state">保管庫はロックされていません。ここをタップしてロックしてください。</string>
     <string name="version">バージョン</string>
-    <string name="changelog">更新履歴</string>
-    <string name="whats_new">新着情報</string>
     <string name="third_party_licenses">サードパーティ ライセンス</string>
     <string name="third_party_licenses_description">Cueが使用するサードパーティライブラリのライセンス</string>
     <string name="webview_error">このデバイスはWebビューをサポートしていません。これはchangelogとライセンスを表示するために必要です。システムコンポーネントがありません。

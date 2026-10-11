@@ -407,8 +407,6 @@
     <string name="channel_description_lock_status">Cue có thể tạo một thông báo liên tục để báo cho bạn khi kho được khóa</string>
     <string name="vault_unlocked_state">Đã mở khóa kho. Nhấn vào đây để khóa.</string>
     <string name="version">Phiên bản</string>
-    <string name="changelog">Các thay đổi</string>
-    <string name="whats_new">Có gì mới</string>
     <string name="third_party_licenses">Giấy phép bên thứ ba</string>
     <string name="third_party_licenses_description">Các thư viện nguồn mở mà Cue sử dụng</string>
     <string name="webview_error">Thiết bị này không hỗ trợ WebView, nó là cần thiết để xem changelog và giấy phép. Đây là một thành phần hệ thống.</string>

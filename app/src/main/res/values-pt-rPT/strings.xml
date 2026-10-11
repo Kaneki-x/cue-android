@@ -415,8 +415,6 @@
     <string name="channel_description_lock_status">O Cue pode criar uma notificação persistente para informá-lo quando o cofre estiver bloqueado</string>
     <string name="vault_unlocked_state">O cofre está desbloqueado. Toque aqui para bloquear.</string>
     <string name="version">Versão</string>
-    <string name="changelog">Registo de alterações</string>
-    <string name="whats_new">O que há de novo</string>
     <string name="third_party_licenses">Licenças de terceiros</string>
     <string name="third_party_licenses_description">Licenças das bibliotecas de terceiros utilizadas pelo Cue</string>
     <string name="webview_error">Este dispositivo não suporta a vista web, necessária para ver o registo de alterações e a licença. Falta-lhe um componente do sistema.</string>

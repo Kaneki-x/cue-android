@@ -354,9 +354,14 @@ public class ImportExportPreferencesFragment extends PreferencesFragment {
             String algo = entry.getInfo().getAlgorithm(false);
             int digits = entry.getInfo().getDigits();
 
+            // Google Authenticator ignores the period of a transferred TOTP entry and uses
+            // 30 seconds, so other periods would show wrong codes there
+            boolean defaultPeriod = !(entry.getInfo() instanceof TotpInfo)
+                    || ((TotpInfo) entry.getInfo()).getPeriod() == TotpInfo.DEFAULT_PERIOD;
             if ((Objects.equals(type, TotpInfo.ID) || Objects.equals(type, HotpInfo.ID))
                     && digits == OtpInfo.DEFAULT_DIGITS
-                    && Objects.equals(algo, OtpInfo.DEFAULT_ALGORITHM)) {
+                    && Objects.equals(algo, OtpInfo.DEFAULT_ALGORITHM)
+                    && defaultPeriod) {
                 GoogleAuthInfo info = new GoogleAuthInfo(entry.getInfo(), entry.getName(), entry.getIssuer());
                 toExport.add(info);
             }

@@ -416,8 +416,6 @@
     <string name="channel_description_lock_status">Cue peut créer une notification persistante pour vous notifier quand le coffre-fort est verrouillé</string>
     <string name="vault_unlocked_state">Le coffre-fort est déverrouillé. Appuyer ici pour verrouiller.</string>
     <string name="version">Version</string>
-    <string name="changelog">Historique des modifications</string>
-    <string name="whats_new">Les nouveautés</string>
     <string name="third_party_licenses">Licences tierces</string>
     <string name="third_party_licenses_description">Licences des bibliothèques tierces utilisées par Cue</string>
     <string name="webview_error">Cet appareil ne supporte pas web view, qui est nécessaire pour voir l\'historique des modifications et la licence. Un composant système est manquant.</string>

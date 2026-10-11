@@ -378,8 +378,6 @@
     <string name="channel_description_lock_status">Cue kan opprette et vedvarende varsel for å informere deg når hvelvet er låst</string>
     <string name="vault_unlocked_state">Hvelvet er låst opp. Trykk her for å låse.</string>
     <string name="version">Versjon</string>
-    <string name="changelog">Endringslogg</string>
-    <string name="whats_new">Nyheter</string>
     <string name="third_party_licenses">Tredjepartslisenser</string>
     <string name="third_party_licenses_description">Lisenser til tredjepartsbiblioteker Cue benytter</string>
     <string name="backup_system_builtin">Cue\' innebygde automatiske sikkerhetskopier</string>

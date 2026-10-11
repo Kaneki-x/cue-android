@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.RemoteViews;
 
@@ -40,6 +41,14 @@ import dagger.hilt.android.EntryPointAccessors;
  * row is tapped and never rendered while the vault is locked.
  */
 public class CueWidgetProvider extends AppWidgetProvider {
+    private static final String TAG = CueWidgetProvider.class.getSimpleName();
+
+    /**
+     * The most rows a widget shows: what fits on a large widget, and few enough that the rows
+     * with their icons fit in the single Binder transaction of an update.
+     */
+    public static final int MAX_ROWS = 12;
+
     public static final String EXTRA_UUID = "uuid";
     static final String ACTION_ROW_CLICK = BuildConfig.APPLICATION_ID + ".WIDGET_ROW_CLICK";
     static final String ACTION_HIDE = BuildConfig.APPLICATION_ID + ".WIDGET_HIDE";
@@ -89,7 +98,13 @@ public class CueWidgetProvider extends AppWidgetProvider {
             return;
         }
 
-        int[] ids = manager.getAppWidgetIds(new ComponentName(context, CueWidgetProvider.class));
+        int[] ids;
+        try {
+            ids = manager.getAppWidgetIds(new ComponentName(context, CueWidgetProvider.class));
+        } catch (RuntimeException e) {
+            Log.e(TAG, "Unable to list the widgets", e);
+            return;
+        }
         for (int id : ids) {
             render(context, manager, id);
         }
@@ -142,7 +157,39 @@ public class CueWidgetProvider extends AppWidgetProvider {
         reveal(context, widgetId, uuidString);
     }
 
+    /**
+     * Updates one widget. This runs while the vault is loaded and locked (VaultManager), so it
+     * never throws: if the rows are too large for one update (TransactionTooLargeException,
+     * which AppWidgetManager wraps in a RuntimeException) they are sent again without icons,
+     * and if that fails too the widget shows its locked state.
+     */
     static void render(Context context, AppWidgetManager manager, int widgetId) {
+        try {
+            manager.updateAppWidget(widgetId, buildViews(context, widgetId, true));
+        } catch (RuntimeException e) {
+            Log.e(TAG, "Unable to update widget " + widgetId + ", trying again without icons", e);
+            try {
+                manager.updateAppWidget(widgetId, buildViews(context, widgetId, false));
+            } catch (RuntimeException e2) {
+                Log.e(TAG, "Unable to update widget " + widgetId + ", showing it as locked", e2);
+                try {
+                    manager.updateAppWidget(widgetId, buildLockedViews(context, widgetId));
+                } catch (RuntimeException e3) {
+                    Log.e(TAG, "Unable to update widget " + widgetId, e3);
+                }
+            }
+        }
+
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S) {
+            try {
+                manager.notifyAppWidgetViewDataChanged(widgetId, R.id.widget_list);
+            } catch (RuntimeException e) {
+                Log.e(TAG, "Unable to refresh the rows of widget " + widgetId, e);
+            }
+        }
+    }
+
+    private static RemoteViews buildViews(Context context, int widgetId, boolean withIcons) {
         WidgetEntryPoint entryPoint = getEntryPoint(context);
         VaultManager vaultManager = entryPoint.getVaultManager();
         Preferences prefs = entryPoint.getPreferences();
@@ -153,11 +200,7 @@ public class CueWidgetProvider extends AppWidgetProvider {
         if (vaultManager.isVaultInitNeeded()) {
             showMessage(context, views, R.string.widget_setup_required, createOpenAppIntent(context, widgetId), false);
         } else if (!vaultManager.loadIfUnencrypted()) {
-            Intent intent = AuthActivity.createExternalIntent(context);
-            intent.putExtra(AuthActivity.EXTRA_WIDGET_ID, widgetId);
-            PendingIntent pendingIntent = PendingIntent.getActivity(context, widgetId, intent,
-                    PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
-            showMessage(context, views, R.string.widget_locked, pendingIntent, true);
+            showLocked(context, views, widgetId);
         } else if (resolveEntries(vaultManager.getVault(), prefs, widgetId).isEmpty()) {
             Intent intent = new Intent(context, WidgetConfigureActivity.class);
             intent.putExtra(AppWidgetManager.EXTRA_APPWIDGET_ID, widgetId);
@@ -177,7 +220,7 @@ public class CueWidgetProvider extends AppWidgetProvider {
                 Preferences.CodeGrouping grouping = prefs.getCodeGroupSize();
                 for (VaultEntry entry : resolveEntries(vaultManager.getVault(), prefs, widgetId)) {
                     builder.addItem(entry.getUUID().getMostSignificantBits() ^ entry.getUUID().getLeastSignificantBits(),
-                            WidgetRowFactory.build(context, widgetId, entry, true, grouping));
+                            WidgetRowFactory.build(context, widgetId, entry, true, grouping, withIcons));
                 }
                 builder.setViewTypeCount(1).setHasStableIds(true);
                 views.setRemoteAdapter(R.id.widget_list, builder.build());
@@ -198,10 +241,22 @@ public class CueWidgetProvider extends AppWidgetProvider {
             views.setPendingIntentTemplate(R.id.widget_list, PendingIntent.getBroadcast(context, widgetId, clickIntent, flags));
         }
 
-        manager.updateAppWidget(widgetId, views);
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S) {
-            manager.notifyAppWidgetViewDataChanged(widgetId, R.id.widget_list);
-        }
+        return views;
+    }
+
+    private static RemoteViews buildLockedViews(Context context, int widgetId) {
+        RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_cue);
+        views.setOnClickPendingIntent(R.id.widget_header, createOpenAppIntent(context, widgetId));
+        showLocked(context, views, widgetId);
+        return views;
+    }
+
+    private static void showLocked(Context context, RemoteViews views, int widgetId) {
+        Intent intent = AuthActivity.createExternalIntent(context);
+        intent.putExtra(AuthActivity.EXTRA_WIDGET_ID, widgetId);
+        PendingIntent pendingIntent = PendingIntent.getActivity(context, widgetId, intent,
+                PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
+        showMessage(context, views, R.string.widget_locked, pendingIntent, true);
     }
 
     private static void showMessage(Context context, RemoteViews views, int textRes, PendingIntent onClick, boolean locked) {
@@ -221,7 +276,7 @@ public class CueWidgetProvider extends AppWidgetProvider {
     }
 
     /**
-     * Returns the entries the widget should show, in display order.
+     * Returns the entries the widget should show, in display order, at most MAX_ROWS.
      */
     @NonNull
     static List<VaultEntry> resolveEntries(VaultRepository vault, Preferences prefs, int widgetId) {
@@ -242,7 +297,7 @@ public class CueWidgetProvider extends AppWidgetProvider {
                 }
             }
         }
-        return entries;
+        return entries.size() > MAX_ROWS ? new ArrayList<>(entries.subList(0, MAX_ROWS)) : entries;
     }
 
     static String getTitle(VaultEntry entry) {

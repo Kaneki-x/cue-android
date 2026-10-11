@@ -416,8 +416,6 @@
     <string name="channel_description_lock_status">Cue kann eine dauerhafte Benachrichtigung erstellen, um dich zu benachrichtigen, wenn die Datenbank gesperrt ist</string>
     <string name="vault_unlocked_state">Die Datenbank ist entsperrt. Hier antippen, um sie zu sperren.</string>
     <string name="version">Version</string>
-    <string name="changelog">Änderungsprotokoll</string>
-    <string name="whats_new">Was ist neu</string>
     <string name="third_party_licenses">Lizenzen von Dritten</string>
     <string name="third_party_licenses_description">Lizenzen für die von Cue verwendeten Bibliotheken von Dritten</string>
     <string name="webview_error">Dieses Gerät unterstützt kein WebView, das zum Anzeigen des Änderungsprotokolls und der Lizenz erforderlich ist. Es fehlt eine Systemkomponente.</string>

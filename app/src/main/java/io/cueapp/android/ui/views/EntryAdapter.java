@@ -572,7 +572,10 @@ public class EntryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                 }
             });
 
-            _holders.add(entryHolder);
+            // a holder is bound again without being recycled when its entry changes
+            if (!_holders.contains(entryHolder)) {
+                _holders.add(entryHolder);
+            }
         } else if (holder instanceof FooterView) {
             ((FooterView) holder).refresh();
         }

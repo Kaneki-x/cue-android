@@ -438,8 +438,6 @@
     <string name="channel_description_lock_status">Cue může vytvořit trvalé oznámení, které vás upozorní, když je trezor uzamčen</string>
     <string name="vault_unlocked_state">Trezor je odemčený. Klepnutím uzamkněte.</string>
     <string name="version">Verze</string>
-    <string name="changelog">Seznam změn</string>
-    <string name="whats_new">Co je nového?</string>
     <string name="third_party_licenses">Licence třetí strany</string>
     <string name="third_party_licenses_description">Licence knihoven třetích stran použitých v Cueu</string>
     <string name="webview_error">Vaše zařízení nepodporuje WebView, které je nutné pro zobrazení seznamu změn a licence. Tato komponenta zřejmě chybí v systému.</string>

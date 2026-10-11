@@ -156,11 +156,30 @@ public abstract class CueActivity extends AppCompatActivity implements VaultMana
             return false;
         }
 
+        startMainActivityAndFinish();
+        return true;
+    }
+
+    /**
+     * Like abortIfOrphan(), but also when the activity is started fresh without the vault, by
+     * whatever started it: for screens that must never open on a locked vault. MainActivity
+     * unlocks it first.
+     * @return whether to abort onCreate.
+     */
+    protected boolean abortIfVaultNotLoaded() {
+        if (!isOrphan()) {
+            return false;
+        }
+
+        startMainActivityAndFinish();
+        return true;
+    }
+
+    private void startMainActivityAndFinish() {
         Intent intent = new Intent(this, MainActivity.class);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
         finish();
-        return true;
     }
 
     @Override

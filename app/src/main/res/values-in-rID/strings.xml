@@ -404,8 +404,6 @@
     <string name="channel_description_lock_status">Cue dapat memberitahukan terus-menerus kepada Anda saat brankas terkunci</string>
     <string name="vault_unlocked_state">Brankas tidak terkunci. Setuh di sini untuk mengunci.</string>
     <string name="version">Versi</string>
-    <string name="changelog">Catatan perubahan</string>
-    <string name="whats_new">Apa yang baru</string>
     <string name="third_party_licenses">Lisensi pihak ketiga</string>
     <string name="third_party_licenses_description">Lisensi pustaka pihak ketiga yang digunakan Cue</string>
     <string name="webview_error">Perangkat ini tidak mendukung tampilan web yang diperlukan untuk melihat catatan perubahan dan lisensi. Komponen sistem tidak ada.</string>

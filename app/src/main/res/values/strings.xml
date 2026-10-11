@@ -42,6 +42,7 @@
     <string name="pref_dynamic_colors_summary">Apply an overlay based on the colors of your Android theme</string>
     <string name="pref_view_mode_title">View mode</string>
     <string name="pref_lang_title">Language</string>
+    <string name="pref_lang_system">System default</string>
     <string name="pref_show_icons_title">Show icons</string>
     <string name="pref_show_icons_summary">Display icons next to each entry</string>
     <string name="pref_code_group_size_title">Code digit grouping</string>
@@ -182,6 +183,7 @@
     <string name="authentication">Unlock Cue</string>
     <string name="auth_locked_title">Cue is locked</string>
     <string name="auth_locked_subtitle">Unlock with your fingerprint, face or password</string>
+    <string name="auth_locked_subtitle_password">Unlock with your password</string>
 
     <string name="set_password">Please enter a password</string>
     <string name="set_group">Please enter a group name</string>
@@ -264,12 +266,12 @@
     <string name="saving_profile_error">Error saving profile</string>
     <string name="saving_assign_icons_error">Error assigning icons</string>
     <string name="intro_welcome_title">Welcome to Cue</string>
-    <string name="intro_feature_local_title">Encrypted on this phone</string>
-    <string name="intro_feature_local_summary">Your codes are encrypted with your password and stored only on this phone. Cue never goes online.</string>
-    <string name="intro_feature_unlock_title">Unlock with fingerprint or face</string>
-    <string name="intro_feature_unlock_summary">Use the Cue keyboard and home screen widget to get a code whenever you need one.</string>
+    <string name="intro_feature_local_title">Stored on this phone</string>
+    <string name="intro_feature_local_summary">Your codes stay on this phone and can be encrypted with a password. Cue never goes online.</string>
+    <string name="intro_feature_unlock_title">Codes where you need them</string>
+    <string name="intro_feature_unlock_summary">Insert a code into any app with the Cue keyboard, or tap it on the home screen widget.</string>
     <string name="intro_feature_backup_title">Automatic backups</string>
-    <string name="intro_feature_backup_summary">After every change, the encrypted vault is backed up to a folder you choose. The iOS app can open it too.</string>
+    <string name="intro_feature_backup_summary">Turn them on and the encrypted vault is backed up to a folder you choose after every change. The iOS app can open it too.</string>
     <string name="intro_done_title">You\'re all set</string>
     <string name="intro_tip_keyboard">Add the Cue keyboard: Settings &gt; Keyboard &amp; widget</string>
     <string name="intro_tip_widget">Add the Cue widget to your home screen</string>
@@ -383,7 +385,7 @@
     <string name="preference_reset_usage_count_dialog">Are you sure you want to set the usage count of every entry in your vault to 0?</string>
     <string name="note" comment="Users can add a note to an entry">Note</string>
     <string name="website" comment="the website an entry belongs to, used to offer its code through autofill">Website</string>
-    <string name="website_helper">Where this code is used, e.g. github.com. Lets the keyboard and widget suggest it there.</string>
+    <string name="website_helper">Where this code is used, e.g. github.com. The Cue keyboard suggests this entry in the matching app, and Cue for iOS uses it for AutoFill.</string>
     <string name="clear">Clear</string>
 
     <string name="dialog_duplicate_entry_title" comment="'Duplicate' is a noun here">Duplicate entry</string>
@@ -444,6 +446,11 @@
     <string name="tile_open_vault" comment="label for a quick settings tile that opens the app when tapped">Open vault</string>
     <string name="tile_open_scanner" comment="label for a quick settings tile that opens the QR code scanner when tapped">Open scanner</string>
     <string name="action_refresh_code" comment="content description of the button that advances a counter-based (HOTP) entry to its next code">Next code</string>
+    <string name="entry_pinned" comment="read by screen readers on a pinned entry, whose only visual mark is a bar on its edge">Pinned</string>
+    <plurals name="countdown_seconds_left" comment="read by screen readers for the countdown ring of a time-based code">
+        <item quantity="one">%d second left</item>
+        <item quantity="other">%d seconds left</item>
+    </plurals>
     <string name="ime_label" comment="name of the Cue input method as shown in the system keyboard picker">Cue</string>
     <string name="ime_hint_suggested_for" comment="shown in the keyboard header, %s is the name of the app that asks for input">Suggested for %s</string>
     <string name="ime_vault_locked">Vault is locked</string>
@@ -455,6 +462,7 @@
     <string name="ime_filter_favorites">Pinned</string>
     <string name="ime_suggested" comment="small label on a keyboard row whose entry matches the app asking for input">Suggested</string>
     <string name="ime_own_app_hint">Switch to another keyboard to type here</string>
+    <string name="ime_device_locked">Unlock your phone to use Cue</string>
     <string name="widget_label" comment="name of the home screen widget in the widget picker">Cue</string>
     <string name="widget_description">Codes of your pinned or selected entries, hidden until you tap them.</string>
     <string name="widget_locked">Vault is locked. Tap to unlock.</string>
@@ -462,8 +470,8 @@
     <string name="widget_setup_required">Open Cue to set up your vault first.</string>
     <string name="widget_configure_title">Choose entries</string>
     <string name="widget_configure_favorites_title">Show pinned entries</string>
-    <string name="widget_configure_favorites_summary">The widget follows your pinned entries automatically</string>
-    <string name="widget_configure_select_hint">Select the entries to show in the widget</string>
+    <string name="widget_configure_favorites_summary">The widget follows your pinned entries automatically, up to %d</string>
+    <string name="widget_configure_select_hint">Select the entries to show in the widget, up to %d</string>
 
     <string name="pref_section_integrations_title">Keyboard &amp; widget</string>
     <string name="pref_section_integrations_summary">Insert codes with the Cue keyboard and show them on your home screen.</string>
@@ -475,7 +483,7 @@
     <string name="pref_ime_switch_back_title">Switch back after inserting</string>
     <string name="pref_ime_switch_back_summary">Return to the previous keyboard once a code has been inserted</string>
     <string name="pref_ime_suggest_by_app_title">Suggest entries for the current app</string>
-    <string name="pref_ime_suggest_by_app_summary">Show entries that match the name of the app you\'re typing in first. Doesn\'t work in browsers.</string>
+    <string name="pref_ime_suggest_by_app_summary">Show entries whose name or website matches the app you\'re typing in first. Doesn\'t work in browsers.</string>
     <string name="pref_ime_insert_as_text_title">Insert codes as text</string>
     <string name="pref_ime_insert_as_text_summary">Insert the whole code at once instead of typing it digit by digit. Try this if codes don\'t show up in some apps.</string>
     <string name="pref_widget_add_title">Add widget to home screen</string>
@@ -499,10 +507,11 @@
     <string name="channel_description_lock_status">Cue can create a persistent notification to notify you when the vault is locked</string>
     <string name="vault_unlocked_state">Vault is unlocked. Tap here to lock.</string>
     <string name="version">Version</string>
-    <string name="changelog">Changelog</string>
-    <string name="whats_new">What\'s new</string>
     <string name="third_party_licenses">Third-party licenses</string>
     <string name="third_party_licenses_description">Licenses of the third-party libraries Cue uses</string>
+    <string name="privacy_policy">Privacy policy</string>
+    <string name="privacy_policy_summary">Cue collects no data</string>
+    <string name="privacy_policy_text">Updated: October 11, 2026\n\nCue is a two-factor authentication app. Cue doesn\'t collect any of your data.\n\n• No data collection: no account, no ads, analytics, crash reporting or third-party SDKs. Nothing is sent to the developer or to any third party.\n\n• Your data stays on your device: the vault with your codes is stored on this device and, when you set a password, encrypted with AES-256-GCM.\n\n• No internet: Cue for Android does not request the network permission.\n\n• Camera: used only to scan QR codes. The picture is processed on the device and never saved or uploaded.\n\n• Backups and exports: written only to the location you choose.\n\n• Keyboard: the Cue keyboard only reads Cue\'s vault to show your codes. It doesn\'t read or record what you type.\n\n• Deleting your data: uninstalling Cue deletes all of its data on this device.</string>
     <string name="webview_error">This device doesn\'t support web view, which is necessary to view the changelog and the license. It is missing a system component.</string>
     <string name="time_sync_warning_title">Automatic time synchronization</string>
     <string name="time_sync_warning_message">Cue relies on the system time to be in sync to generate correct codes. A deviation of only a few seconds could result in incorrect codes. It looks like your device is not configured to automatically synchronize the time. Would you like to do so now?</string>
@@ -568,7 +577,7 @@
     <string name="uri_copied_to_clipboard">URI copied to clipboard</string>
     <string name="transfer_entry_description">Scan this QR code with the authenticator app you would like to transfer this entry to</string>
     <string name="transfer_entry_brightness">Tap the QR code to toggle full screen brightness</string>
-    <string name="google_auth_compatible_transfer_description">Scan these QR codes with Cue or Google Authenticator.\n\nDue to limitations of the Google Authenticator app, only TOTP &amp; HOTP tokens that use SHA1 and produce 6-digit codes are included</string>
+    <string name="google_auth_compatible_transfer_description">Scan these QR codes with Cue or Google Authenticator.\n\nDue to limitations of the Google Authenticator app, only HOTP entries and 30-second TOTP entries that use SHA1 and produce 6-digit codes are included</string>
 
     <string name="password_strength_very_weak">Very weak</string>
     <string name="password_strength_weak">Weak</string>
@@ -600,14 +609,14 @@
     <string name="pref_panic_trigger_title">Delete vault on panic trigger</string>
     <string name="pref_panic_trigger_summary">Delete vault when a panic trigger is received from Ripple</string>
 
-    <string name="import_vault">Import Cue vault</string>
+    <string name="import_vault">Import a Cue or Aegis vault</string>
     <string name="import_vault_hint">Want to import from a different 2FA app? Complete the setup first and then head over to the settings menu.</string>
     <plurals name="import_duplicate_toast">
         <item quantity="one">Unchecked %d potential duplicate. Please review the list of entries.</item>
         <item quantity="other">Unchecked %d potential duplicates. Please review the list of entries.</item>
     </plurals>
     <string name="importer_help_2fas">Supply a 2FAS Authenticator backup file.</string>
-    <string name="importer_help_cue">Supply a Cue export/backup file.</string>
+    <string name="importer_help_cue">Supply a Cue or Aegis export or backup file.</string>
     <string name="importer_help_authenticator_plus">Supply an Authenticator Plus export file obtained through <b>Settings -> Backup &amp; Restore -> Export as Text and HTML</b>.</string>
     <string name="importer_help_authy">Supply a copy of <b>/data/data/com.authy.authy/shared_prefs/com.authy.storage.tokens.authenticator.xml</b>, located in the internal storage directory of Authy.</string>
     <string name="importer_help_andotp">Supply an andOTP export/backup file.</string>
@@ -680,4 +689,11 @@
         <item quantity="one">%d item selected</item>
         <item quantity="other">%d items selected</item>
     </plurals>
+    <string name="source_code">Source code</string>
+    <string name="source_code_description">github.com/Kaneki-x/cue-android</string>
+    <string name="license">License</string>
+    <string name="license_description">Cue for Android is licensed under the GNU GPL v3</string>
+    <string name="based_on_aegis">Based on Aegis Authenticator</string>
+    <string name="based_on_aegis_description">By Beem Development, GPL v3. Cue has modified it</string>
+    <string name="url_copied">Link copied</string>
 </resources>

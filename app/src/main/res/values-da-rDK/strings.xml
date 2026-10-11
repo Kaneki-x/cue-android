@@ -416,8 +416,6 @@
     <string name="channel_description_lock_status">Cue kan oprette en vedvarende notifikation for at give dig besked, når boksen er låst</string>
     <string name="vault_unlocked_state">Boksen er låst op. Tryk her for at låse.</string>
     <string name="version">Version</string>
-    <string name="changelog">Ændringslog</string>
-    <string name="whats_new">Nyheder</string>
     <string name="third_party_licenses">Tredjepartslicenser</string>
     <string name="third_party_licenses_description">Licenser fra tredjepartsbibliotekerne Cue bruger</string>
     <string name="webview_error">Denne enhed understøtter ikke webvisning, hvilket kræves for at vise ændringslog og licens. En systemkomponent mangler.</string>

@@ -28,12 +28,21 @@ public class WidgetRowFactory {
     }
 
     public static RemoteViews build(Context context, int widgetId, VaultEntry entry, boolean vaultLoaded, Preferences.CodeGrouping grouping) {
+        return build(context, widgetId, entry, vaultLoaded, grouping, true);
+    }
+
+    /**
+     * Builds a row; without icons when the rows with icons were too large for one update.
+     */
+    public static RemoteViews build(Context context, int widgetId, VaultEntry entry, boolean vaultLoaded, Preferences.CodeGrouping grouping, boolean withIcon) {
         RemoteViews views = new RemoteViews(context.getPackageName(), R.layout.widget_entry_item);
         OtpInfo info = entry.getInfo();
 
-        Bitmap icon = WidgetIconHelper.getIcon(context, entry);
+        Bitmap icon = withIcon ? WidgetIconHelper.getIcon(context, entry) : null;
         if (icon != null) {
             views.setImageViewBitmap(R.id.widget_icon, icon);
+        } else if (!withIcon) {
+            views.setViewVisibility(R.id.widget_icon, View.GONE);
         }
 
         String issuer = entry.getIssuer();

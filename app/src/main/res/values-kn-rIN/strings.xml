@@ -181,8 +181,6 @@
     <string name="channel_description_lock_status">Cue ವೌಲ್ಟಿನ ಬೀಗ ಹಾಕಿದೆ ಎಂದು ನಿನಗೆ ತಿಳಿಸಲು ಒಂದು ಶಾಶ್ವತ ಅಧಿಸೂಚನೆಯನ್ನು ರಚಿಸಬುಹುದು</string>
     <string name="vault_unlocked_state">ವೌಲ್ಟಿನ ಬೀಗ ಹಾಕಿಲ್ಲ. ಬೀಗವನ್ನು ಹಾಕುವುದಕ್ಕೆ ಇಲ್ಲಿ ಒತ್ತಿ.</string>
     <string name="version">ಆವೃತ್ತಿ</string>
-    <string name="changelog">ಬದಲಾವಣೆ ಲಾಗ್</string>
-    <string name="whats_new">ಹೊಸತೇನಿದೆ</string>
     <string name="empty_list">ತೋರಿಸುವುದಕ್ಕೆ ಯಾವುದೇ ಸಂಕೇತವು ಇಲ್ಲ. ಎಂಟ್ರಿಗಳನ್ನು ಸೇರಿಸಲು ಕೆಳಗಿನ ಬಲ ಮೂಲೆಯಲ್ಲಿರುವ ಹೆಚ್ಚಿನ ಚಿಹ್ನೆಯನ್ನು ಒತ್ತು</string>
     <string name="empty_list_title">ಯಾವುದೇ ಎಂಟ್ರಿಗಳು ಕಂಡುಬಂದಿಲ್ಲ</string>
     <string name="title_activity_manage_groups">ಗುಂಪುಗಳನ್ನು ನಿರ್ವಹಿಸು</string>

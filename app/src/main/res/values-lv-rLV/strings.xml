@@ -426,8 +426,6 @@
     <string name="channel_description_lock_status">Cue var izveidot paliekošu paziņojumu, lai paziņotu, kad glabātava ir aizslēgta</string>
     <string name="vault_unlocked_state">Glabātava ir atslēgta. Piesist, lai aizslēgtu.</string>
     <string name="version">Laidiens</string>
-    <string name="changelog">Izmaiņu žurnāls</string>
-    <string name="whats_new">Kas jauns</string>
     <string name="third_party_licenses">Trešo pušu licences</string>
     <string name="third_party_licenses_description">Trešo pušu bibliotēku, ko Cue izmanto, licences</string>
     <string name="webview_error">Šajā ierīcē netiek atbalstīts tīmekļa skats, kas ir nepieciešams, lai apskatīt izmaiņu sarakstu un licenci. Tam trūkst sistēmas sastāvdaļas.</string>

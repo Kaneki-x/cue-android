@@ -460,8 +460,6 @@
     <string name="channel_description_lock_status">يمكن لـ Cue عرض إشعار مستمر لتنبيهك عند قفل المخزن</string>
     <string name="vault_unlocked_state">قفل المخزن مفتوح. انقر هنا للقفل</string>
     <string name="version">الإصدار</string>
-    <string name="changelog">سجلّ التغيير</string>
-    <string name="whats_new">ما الجديد</string>
     <string name="third_party_licenses">تراخيص طرف ثالث</string>
     <string name="third_party_licenses_description">تراخيص مكتبات الطرف الثالث التي يستعملها Cue</string>
     <string name="webview_error">هذا الجهاز لا يدعم عرض الويب، والذي هو ضروري لعرض سجلّ التغيير و الرخصة. إنه مكوِّن نظام مفقود.</string>

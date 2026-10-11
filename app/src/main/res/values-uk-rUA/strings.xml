@@ -438,8 +438,6 @@
     <string name="channel_description_lock_status">Cue може створити постійне сповіщення, щоб повідомляти вас, коли сховище заблоковано</string>
     <string name="vault_unlocked_state">Сховище розблоковано. Натисніть тут для блокування.</string>
     <string name="version">Версія</string>
-    <string name="changelog">Журнал змін</string>
-    <string name="whats_new">Що нового</string>
     <string name="third_party_licenses">Сторонні ліцензії</string>
     <string name="third_party_licenses_description">Ліцензії сторонніх бібліотек, які використовує Cue</string>
     <string name="webview_error">Цей пристрій не підтримує веб-перегляд, необхідний для перегляду журналу змін і ліцензії. У ньому відсутній системний компонент.</string>

@@ -27,7 +27,7 @@ import androidx.annotation.Nullable;
 import androidx.test.espresso.contrib.RecyclerViewActions;
 import androidx.test.espresso.intent.Intents;
 import androidx.test.espresso.matcher.RootMatchers;
-import androidx.test.ext.junit.rules.ActivityScenarioRule;
+import androidx.test.core.app.ActivityScenario;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.filters.SmallTest;
 
@@ -58,7 +58,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.RuleChain;
 import org.junit.rules.TestRule;
 import org.junit.runner.RunWith;
 import org.xmlpull.v1.XmlPullParser;
@@ -85,10 +84,12 @@ import dagger.hilt.android.testing.HiltAndroidTest;
 @HiltAndroidTest
 @SmallTest
 public class BackupExportTest extends CueTest {
-    private final ActivityScenarioRule<PreferencesActivity> _activityRule = new ActivityScenarioRule<>(PreferencesActivity.class);
+    // PreferencesActivity only opens with the vault loaded (it sends anyone else through
+    // MainActivity), so each test starts it after setting up the vault
+    private ActivityScenario<PreferencesActivity> _scenario;
 
     @Rule
-    public final TestRule testRule = RuleChain.outerRule(_activityRule).around(new ScreenshotTestRule());
+    public final TestRule testRule = new ScreenshotTestRule();
 
     @Before
     public void setUp() {
@@ -97,12 +98,20 @@ public class BackupExportTest extends CueTest {
 
     @After
     public void tearDown() {
+        if (_scenario != null) {
+            _scenario.close();
+        }
         Intents.release();
+    }
+
+    private void launchPreferences() {
+        _scenario = ActivityScenario.launch(PreferencesActivity.class);
     }
 
     @Test
     public void testPlainVaultExportPlainJson() {
         initPlainVault();
+        launchPreferences();
 
         openExportDialog();
         onView(withId(R.id.checkbox_export_encrypt)).perform(click());
@@ -116,6 +125,7 @@ public class BackupExportTest extends CueTest {
     @Test
     public void testPlainVaultExportPlainTxt() {
         initPlainVault();
+        launchPreferences();
 
         openExportDialog();
         onView(withId(R.id.checkbox_export_encrypt)).perform(click());
@@ -131,6 +141,7 @@ public class BackupExportTest extends CueTest {
     @Test
     public void testPlainVaultExportEncryptedJson() {
         initPlainVault();
+        launchPreferences();
 
         openExportDialog();
         File file = doExport();
@@ -145,6 +156,7 @@ public class BackupExportTest extends CueTest {
     @Test
     public void testEncryptedVaultExportPlainJson() {
         initEncryptedVault();
+        launchPreferences();
 
         openExportDialog();
         onView(withId(R.id.checkbox_export_encrypt)).perform(click());
@@ -158,6 +170,7 @@ public class BackupExportTest extends CueTest {
     @Test
     public void testEncryptedVaultExportPlainTxt() {
         initEncryptedVault();
+        launchPreferences();
 
         openExportDialog();
         onView(withId(R.id.checkbox_export_encrypt)).perform(click());
@@ -173,6 +186,7 @@ public class BackupExportTest extends CueTest {
     @Test
     public void testEncryptedVaultExportEncryptedJson() {
         initEncryptedVault();
+        launchPreferences();
 
         openExportDialog();
         File file = doExport();
@@ -183,6 +197,7 @@ public class BackupExportTest extends CueTest {
     @Test
     public void testPlainVaultExportHtml() {
         initPlainVault();
+        launchPreferences();
 
         openExportDialog();
         onView(withId(R.id.checkbox_export_encrypt)).perform(click());
@@ -198,6 +213,7 @@ public class BackupExportTest extends CueTest {
     @Test
     public void testEncryptedVaultExportHtml() {
         initEncryptedVault();
+        launchPreferences();
 
         openExportDialog();
         onView(withId(R.id.checkbox_export_encrypt)).perform(click());
@@ -213,6 +229,7 @@ public class BackupExportTest extends CueTest {
     @Test
     public void testSeparateExportPassword() {
         initEncryptedVault();
+        launchPreferences();
         setSeparateBackupExportPassword();
 
         openExportDialog();
@@ -224,6 +241,7 @@ public class BackupExportTest extends CueTest {
     @Test
     public void testChangeBackupPassword() throws SlotIntegrityException {
         initEncryptedVault();
+        launchPreferences();
         setSeparateBackupExportPassword();
 
         onView(withId(androidx.preference.R.id.recycler_view)).perform(RecyclerViewActions.actionOnItem(hasDescendant(withText(R.string.pref_section_security_title)), click()));
@@ -253,6 +271,7 @@ public class BackupExportTest extends CueTest {
     @Test
     public void testChangePasswordHavingBackupPassword() throws SlotIntegrityException {
         initEncryptedVault();
+        launchPreferences();
         setSeparateBackupExportPassword();
 
         onView(withId(androidx.preference.R.id.recycler_view)).perform(RecyclerViewActions.actionOnItem(hasDescendant(withText(R.string.pref_section_security_title)), click()));

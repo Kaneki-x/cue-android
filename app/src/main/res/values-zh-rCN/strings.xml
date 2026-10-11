@@ -39,6 +39,7 @@
     <string name="pref_dynamic_colors_summary">使用 Android 系统主题的颜色</string>
     <string name="pref_view_mode_title">视图模式</string>
     <string name="pref_lang_title">语言</string>
+    <string name="pref_lang_system">跟随系统</string>
     <string name="pref_show_icons_title">显示图标</string>
     <string name="pref_show_icons_summary">在每个条目旁显示图标</string>
     <string name="pref_code_group_size_title">分组显示验证码</string>
@@ -119,7 +120,7 @@
     <string name="pref_search_behavior_summary">搜索方式：%s</string>
     <string name="pref_search_behavior_prompt">搜索下列任意字段</string>
     <string name="pref_search_behavior_type_name">名称</string>
-    <string name="pref_search_behavior_type_issuer">颁发者</string>
+    <string name="pref_search_behavior_type_issuer">服务商</string>
     <string name="pref_search_behavior_type_note">备注</string>
     <string name="pref_search_behavior_type_groups">分组</string>
     <string name="pref_set_password_title">更改密码</string>
@@ -136,14 +137,14 @@
     <string name="event_description_vault_exported">已导出数据库的副本</string>
     <string name="event_title_entry_shared">共享条目</string>
     <string name="event_description_entry_shared">共享了条目</string>
-    <string name="event_title_vault_unlock_failed_password">数据库解锁失败了(密码)</string>
+    <string name="event_title_vault_unlock_failed_password">数据库解锁失败（密码）</string>
     <string name="event_description_vault_unlock_failed_password">尝试用密码解锁数据库失败</string>
-    <string name="event_title_vault_unlock_failed_biometrics">密码库解锁失败 (生物识别)</string>
+    <string name="event_title_vault_unlock_failed_biometrics">数据库解锁失败（生物识别）</string>
     <string name="event_description_vault_unlock_failed_biometrics">尝试用生物识别解锁数据库失败</string>
     <string name="event_unknown">未知事件类型</string>
     <string name="audit_log_entry_deleted">(已删除)</string>
     <string name="today_at_time">今天 %1$s</string>
-    <string name="day_of_week_at_time">%2$s %1$s</string>
+    <string name="day_of_week_at_time">%1$s %2$s</string>
     <string name="export_encrypted">加密数据库</string>
     <string name="export_help">此操作将从 Cue 的内部存储中导出数据库。选择你想要的导出格式：</string>
     <string name="export_warning_unencrypted">你将导出一个未加密的 Cue 数据库副本。<b>不建议这么做</b></string>
@@ -152,10 +153,10 @@
     <string name="export_format_google_auth_uri">文本文件 (.TXT)</string>
     <string name="export_format_html">网页 (.HTML)</string>
     <string name="export_format_hint">导出格式</string>
-    <string name="export_all_groups">导出所有组</string>
-    <string name="export_choose_groups">选择要导出的组</string>
+    <string name="export_all_groups">导出所有分组</string>
+    <string name="export_choose_groups">选择要导出的分组</string>
     <plurals name="export_groups_selected_count">
-        <item quantity="other">已选择 %d 个群组</item>
+        <item quantity="other">已选择 %d 个分组</item>
     </plurals>
     <string name="export_no_groups_selected">未选择要导出的分组</string>
     <string name="export_html_title" comment="The title of an HTML export document">Cue 身份验证器导出</string>
@@ -171,15 +172,16 @@
     <string name="authentication">解锁 Cue</string>
     <string name="auth_locked_title">Cue 已锁定</string>
     <string name="auth_locked_subtitle">用指纹、人脸或密码解锁</string>
+    <string name="auth_locked_subtitle_password">输入密码解锁</string>
     <string name="set_password">请输入密码</string>
     <string name="set_group">请输入分组名称</string>
     <string name="set_number">请选择时长</string>
     <string name="set_password_confirm">请确认密码</string>
     <string name="invalid_password">密码错误</string>
-    <string name="invalidated_biometrics">检测到你设备安全设置的一处更改。请转到 “Cue -&gt; 设置 -&gt; 安全性 -&gt; 生物解锁” 来禁用并重新启用生物解锁。</string>
+    <string name="invalidated_biometrics">检测到你设备安全设置的一处更改。请转到“Cue -&gt; 设置 -&gt; 安全 -&gt; 生物识别解锁”，关闭后再重新开启生物识别解锁。</string>
     <string name="password_reminder">你已有一段时间没有输入密码了，还记得它吗？</string>
     <string name="password_reminder_dialog_title">默认使用生物识别解锁</string>
-    <string name="password_reminder_dialog_message">我们会偶尔提示你输入密码，以免你忘记它而被锁在密码库之外。输入一次密码后，Cue 将回到默认使用生物识别解锁，直到下次提醒周期。</string>
+    <string name="password_reminder_dialog_message">我们会偶尔提示你输入密码，以免你忘记它而无法打开数据库。输入一次密码后，Cue 将回到默认使用生物识别解锁，直到下次提醒周期。</string>
     <string name="password_reminder_freq_never">从不</string>
     <string name="password_reminder_freq_weekly">每周</string>
     <string name="password_reminder_freq_biweekly">每两周</string>
@@ -210,9 +212,9 @@
     <string name="edit">编辑</string>
     <string name="select_all">全选</string>
     <string name="assign_icons">分配图标</string>
-    <string name="assign_groups">分配给组</string>
-    <string name="assign_groups_dialog_summary">选择你想要将选中条目分配到的组。</string>
-    <string name="assign_groups_dialog_dropdown">选择组</string>
+    <string name="assign_groups">分配到分组</string>
+    <string name="assign_groups_dialog_summary">选择要把所选条目分配到哪个分组。</string>
+    <string name="assign_groups_dialog_dropdown">选择分组</string>
     <string name="favorite" comment="Verb">置顶</string>
     <string name="unfavorite" comment="Verb">取消置顶</string>
     <string name="error_all_caps">错误</string>
@@ -249,12 +251,12 @@
     <string name="saving_profile_error">保存配置文件时出错</string>
     <string name="saving_assign_icons_error">分配图标时出错</string>
     <string name="intro_welcome_title">欢迎使用 Cue</string>
-    <string name="intro_feature_local_title">加密保存在本机</string>
-    <string name="intro_feature_local_summary">验证码用你的密码加密，只存在这台手机上，不联网。</string>
-    <string name="intro_feature_unlock_title">指纹或人脸解锁</string>
-    <string name="intro_feature_unlock_summary">用 Cue 键盘和桌面小组件，随手取用验证码。</string>
+    <string name="intro_feature_local_title">保存在本机</string>
+    <string name="intro_feature_local_summary">验证码只存在这台手机上，可以用密码加密。Cue 不联网。</string>
+    <string name="intro_feature_unlock_title">随手填入验证码</string>
+    <string name="intro_feature_unlock_summary">用 Cue 键盘把验证码填入任何应用，或在桌面小组件上点按查看。</string>
     <string name="intro_feature_backup_title">自动备份</string>
-    <string name="intro_feature_backup_summary">每次修改后把加密的数据库备份到你选的文件夹，iOS 版也能打开。</string>
+    <string name="intro_feature_backup_summary">开启后，每次修改都会把加密的数据库备份到你选的文件夹，iOS 版也能打开。</string>
     <string name="intro_done_title">准备就绪</string>
     <string name="intro_tip_keyboard">添加 Cue 键盘：设置 &gt; 键盘与小组件</string>
     <string name="intro_tip_widget">在桌面添加 Cue 小组件</string>
@@ -323,7 +325,7 @@
     <string name="read_qr_error_phonefactor">Cue 不兼容 Microsoft 专有的 2FA 算法。请确保在设置 Office 365 的 2FA 时选择“在无通知情况下安装应用”。</string>
     <string name="partial_google_auth_import">检测到不完整的 Google 身份验证器导出</string>
     <string name="partial_google_auth_import_warning">导入缺少部分二维码。找不到以下二维码：\n\n<b>%s</b>\n\n你可以先导入已有的部分，但建议重新扫描所有二维码，以免丢失验证码。</string>
-    <string name="missing_qr_code_descriptor">• QR 码 %d</string>
+    <string name="missing_qr_code_descriptor">• 二维码 %d</string>
     <plurals name="import_partial_export_anyway">
         <item quantity="other">继续导入 %d 个条目</item>
     </plurals>
@@ -331,12 +333,12 @@
     <string name="unrelated_google_auth_batches_error">导出文件包含多个批次的内容。请一次只导入一个批次。</string>
     <string name="no_tokens_can_be_imported">没有可导入的条目</string>
     <string name="unlocking_vault">解锁数据库</string>
-    <string name="rename_group">重命名组</string>
-    <string name="no_group_selection">不在任何组中的条目会出现在“无分组”中。</string>
+    <string name="rename_group">重命名分组</string>
+    <string name="no_group_selection">不在任何分组中的条目会出现在“无分组”中。</string>
     <string name="remove_group">删除分组</string>
     <string name="remove_group_description">你确定要删除这个分组吗？此分组内的条目将自动移动到“无分组”。</string>
-    <string name="remove_unused_groups">删除未使用的组</string>
-    <string name="remove_unused_groups_description">你确定要删除所有未分配条目的组吗？</string>
+    <string name="remove_unused_groups">删除未使用的分组</string>
+    <string name="remove_unused_groups_description">你确定要删除所有没有条目的分组吗？</string>
     <string name="remove_icon_pack">删除图标包</string>
     <string name="remove_icon_pack_description">确定要删除这个图标包吗？已在使用其中图标的条目不受影响。</string>
     <string name="details">详细信息</string>
@@ -364,8 +366,8 @@
     <string name="preference_reset_usage_count_dialog">确定要把所有条目的使用计数清零吗？</string>
     <string name="note" comment="Users can add a note to an entry">备注</string>
     <string name="clear">清空</string>
-    <string name="dialog_duplicate_entry_title" comment="'Duplicate' is a noun here">复制条目</string>
-    <string name="dialog_duplicate_entry_message">此条目与一个或多个现有条目具有相同的名称和发行者。你想如何继续？</string>
+    <string name="dialog_duplicate_entry_title" comment="'Duplicate' is a noun here">重复的条目</string>
+    <string name="dialog_duplicate_entry_message">此条目与一个或多个现有条目的名称和服务商相同。你想怎么处理？</string>
     <string name="dialog_duplicate_entry_overwrite_title">覆盖现有的条目</string>
     <string name="dialog_duplicate_entry_overwrite_subtitle">用新条目替换现有条目。此操作不能撤消</string>
     <string name="dialog_duplicate_entry_suffix_title">添加后缀</string>
@@ -373,7 +375,7 @@
     <string name="dialog_duplicate_entry_cancel_title">取消保存</string>
     <string name="dialog_duplicate_entry_cancel_subtitle">允许你在尝试再次保存之前编辑条目</string>
     <plurals name="dialog_duplicate_entry_overwrite_dialog_message">
-        <item quantity="other">你确定要删除以下名称的 %d 条记录：\n\n%s - %s</item>
+        <item quantity="other">你确定要删除以下名称的 %d 个条目吗？\n\n%s - %s</item>
     </plurals>
     <string name="dialog_duplicate_entry_overwrite_dialog_title">确认删除</string>
     <string name="pref_haptic_feedback_summary">验证码刷新时振动</string>
@@ -403,7 +405,7 @@
     <string name="small_mode_title">小巧</string>
     <string name="tiles_mode_title">平铺</string>
     <string name="unknown_issuer">未知的服务商</string>
-    <string name="unknown_account_name">未知的帐户名称</string>
+    <string name="unknown_account_name">未知的账户名称</string>
     <plurals name="import_error_dialog">
         <item quantity="other">Cue 无法导入 %d 个条目。这些条目会被跳过。点按“详细信息”查看原因。</item>
     </plurals>
@@ -423,10 +425,11 @@
     <string name="channel_description_lock_status">当数据库处于锁定状态时，Cue 可以创建一个持久的通知来提示你</string>
     <string name="vault_unlocked_state">数据库已解锁，点按此处锁定。</string>
     <string name="version">版本</string>
-    <string name="changelog">更新日志</string>
-    <string name="whats_new">新增功能</string>
     <string name="third_party_licenses">第三方许可</string>
     <string name="third_party_licenses_description">Cue 用到的第三方库的许可</string>
+    <string name="privacy_policy">隐私政策</string>
+    <string name="privacy_policy_summary">Cue 不收集你的任何数据</string>
+    <string name="privacy_policy_text">更新日期：2026 年 10 月 11 日\n\nCue 是一款两步验证应用。Cue 不收集你的任何数据。\n\n• 不收集数据：没有账号，不含广告、统计、崩溃上报或第三方 SDK，不向开发者或任何第三方发送信息。\n\n• 数据只在你的设备上：验证码数据库保存在本机，设置了密码时用 AES-256-GCM 加密。\n\n• 不联网：Cue for Android 不申请网络权限。\n\n• 相机：只用来扫描二维码，画面在本机处理，不保存、不上传。\n\n• 备份与导出：只写到你选择的位置。\n\n• 键盘：Cue 键盘只读取 Cue 的数据库来显示验证码，不读取、不记录你输入的内容。\n\n• 删除数据：卸载 Cue 会删除本机上的全部数据。</string>
     <string name="webview_error">此设备不支持 webview，这是查看更新日志和许可证所必需的。你的系统缺少这一组件。</string>
     <string name="time_sync_warning_title">自动同步时间</string>
     <string name="time_sync_warning_message">Cue 依靠系统时间来同步生成正确的验证码。仅几秒钟的偏差可能会导致验证码错误。你的设备似乎未配置为自动同步时间。你现在要设置自动同步时间吗？</string>
@@ -482,7 +485,7 @@
     <string name="uri_copied_to_clipboard">URI 已复制到剪贴板</string>
     <string name="transfer_entry_description">使用你想将此条目迁移到的其它身份验证器应用扫描此二维码</string>
     <string name="transfer_entry_brightness">点按二维码切换全屏亮度</string>
-    <string name="google_auth_compatible_transfer_description">使用 Cue 或 Google 身份验证器扫描这些二维码。\n\n由于 Google 身份验证器应用的限制， 只包含使用 SHA1 并生成 6 位数字代码的 TOTP &amp; HOTP 条目</string>
+    <string name="google_auth_compatible_transfer_description">使用 Cue 或 Google 身份验证器扫描这些二维码。\n\n由于 Google 身份验证器的限制，只包含使用 SHA1、生成 6 位验证码的 HOTP 条目和周期为 30 秒的 TOTP 条目</string>
     <string name="password_strength_very_weak">很弱</string>
     <string name="password_strength_weak">弱</string>
     <string name="password_strength_fair">中等</string>
@@ -513,7 +516,7 @@
         <item quantity="other">未选中 %d 个潜在重复项。请检视条目列表。</item>
     </plurals>
     <string name="importer_help_2fas">提供一个 2FAS 身份验证器备份文件。</string>
-    <string name="importer_help_cue">提供一个 Cue 导出/备份文件。</string>
+    <string name="importer_help_cue">支持 Cue 和 Aegis 的导出或备份文件。</string>
     <string name="importer_help_authenticator_plus">提供一个通过 <b>设置 -&gt; 备份 &amp; 还原 -&gt; 导出为纯文本和 HTML</b> 获得的 Authenticator Plus 导出文件。</string>
     <string name="importer_help_authy">提供 <b>/data/data/com.authy.authy/shared_prefs/com.authy.storage.tokens.authenticator.xml</b> 的一个副本，位于 Authy 的内部存储目录。</string>
     <string name="importer_help_andotp">提供 andOTP 导出/备份文件。</string>
@@ -549,11 +552,11 @@
     <string name="pref_grouping_size_three">3 位数</string>
     <string name="pref_grouping_size_four">4 位数</string>
     <string name="pref_copy_behavior_never">从不</string>
-    <string name="pref_copy_behavior_single_tap">单击</string>
-    <string name="pref_copy_behavior_double_tap">双击</string>
+    <string name="pref_copy_behavior_single_tap">点按一下</string>
+    <string name="pref_copy_behavior_double_tap">点按两下</string>
     <string name="pref_account_name_position_hidden">隐藏</string>
-    <string name="pref_account_name_position_end">发行者旁边</string>
-    <string name="pref_account_name_position_below">发行者下方</string>
+    <string name="pref_account_name_position_end">服务商旁边</string>
+    <string name="pref_account_name_position_below">服务商下方</string>
     <plurals name="time_elapsed_seconds" tools:ignore="UnusedResources">
         <item quantity="other">%d 秒前</item>
     </plurals>
@@ -573,6 +576,10 @@
         <item quantity="other">已选择 %d 个项目</item>
     </plurals>
     <string name="action_refresh_code">下一个验证码</string>
+    <string name="entry_pinned">已置顶</string>
+    <plurals name="countdown_seconds_left">
+        <item quantity="other">剩余 %d 秒</item>
+    </plurals>
     <string name="ime_label">Cue 验证码</string>
     <string name="ime_hint_suggested_for">为 %s 推荐</string>
     <string name="ime_hint_choose">选择要填入的验证码</string>
@@ -586,6 +593,7 @@
     <string name="ime_filter_favorites">置顶</string>
     <string name="ime_suggested">推荐</string>
     <string name="ime_own_app_hint">请切换到其他键盘在此输入</string>
+    <string name="ime_device_locked">解锁手机后使用</string>
     <string name="widget_label">Cue 验证码</string>
     <string name="widget_description">显示置顶或所选条目的验证码，点按后才会显示。</string>
     <string name="widget_locked">数据库已锁定，点按解锁。</string>
@@ -593,8 +601,8 @@
     <string name="widget_setup_required">请先打开 Cue 设置数据库。</string>
     <string name="widget_configure_title">选择条目</string>
     <string name="widget_configure_favorites_title">显示置顶条目</string>
-    <string name="widget_configure_favorites_summary">小组件会自动跟随你的置顶条目</string>
-    <string name="widget_configure_select_hint">选择要在小组件中显示的条目</string>
+    <string name="widget_configure_favorites_summary">小组件会自动显示你的置顶条目，最多 %d 个</string>
+    <string name="widget_configure_select_hint">选择要在小组件中显示的条目，最多 %d 个</string>
     <string name="pref_section_integrations_title">键盘与小组件</string>
     <string name="pref_section_integrations_summary">用 Cue 键盘直接填入验证码，在桌面上查看验证码</string>
     <string name="pref_cat_ime">键盘</string>
@@ -605,7 +613,7 @@
     <string name="pref_ime_switch_back_title">填入后切回原键盘</string>
     <string name="pref_ime_switch_back_summary">验证码填入后自动切回之前使用的键盘</string>
     <string name="pref_ime_suggest_by_app_title">按当前应用推荐条目</string>
-    <string name="pref_ime_suggest_by_app_summary">把与当前应用名称匹配的条目排在最前。浏览器中不生效。</string>
+    <string name="pref_ime_suggest_by_app_summary">把名称或网站与当前应用相符的条目排在最前。浏览器中不生效。</string>
     <string name="pref_ime_insert_as_text_title">以文本方式填入验证码</string>
     <string name="pref_ime_insert_as_text_summary">一次性填入整段验证码，而不是逐位输入。如果某些应用收不到验证码，可以试试此项。</string>
     <string name="pref_widget_add_title">添加桌面小组件</string>
@@ -621,7 +629,14 @@
     <string name="pref_external_grace_15m">15 分钟</string>
     <string name="pref_section_import_export_summary">导入 Cue 或其他验证器的备份，或手动导出 Cue 数据库</string>
     <string name="export_format_cue">Cue（.JSON）</string>
-    <string name="import_vault">导入 Cue 数据库</string>
+    <string name="import_vault">导入 Cue 或 Aegis 数据库</string>
     <string name="website">网站</string>
-    <string name="website_helper">这个验证码在哪个网站使用，例如 github.com。键盘和小组件会据此推荐。</string>
+    <string name="website_helper">这个验证码在哪个网站使用，例如 github.com。Cue 键盘会在对应的应用里推荐这个条目，iOS 版用它自动填充。</string>
+    <string name="source_code">源代码</string>
+    <string name="source_code_description">github.com/Kaneki-x/cue-android</string>
+    <string name="license">许可证</string>
+    <string name="license_description">Cue for Android 以 GNU GPL v3 许可证发布</string>
+    <string name="based_on_aegis">基于 Aegis Authenticator</string>
+    <string name="based_on_aegis_description">由 Beem Development 开发，GPL v3，Cue 在此基础上做了修改</string>
+    <string name="url_copied">已复制链接</string>
 </resources>

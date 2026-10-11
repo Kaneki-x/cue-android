@@ -173,6 +173,7 @@ public class AuthActivity extends CueActivity {
                         _bioSlot = slot;
                         _bioKey = key;
                         biometricsButton.setVisibility(View.VISIBLE);
+                        ((TextView) findViewById(R.id.text_subtitle)).setText(R.string.auth_locked_subtitle);
                         invalidated = false;
                         break;
                     }

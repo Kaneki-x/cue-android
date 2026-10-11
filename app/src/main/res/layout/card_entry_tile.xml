@@ -21,6 +21,7 @@
 
         <View
             android:id="@+id/favorite_indicator"
+            android:contentDescription="@string/entry_pinned"
             android:layout_width="15dp"
             android:layout_height="match_parent"
             android:layout_marginStart="-11dp"

@@ -1,0 +1,15 @@
+{
+    "uniqueId": "cue-font:manrope",
+    "artifactVersion": "4.505",
+    "name": "Manrope",
+    "description": "The typeface of codes and headings, shipped as \"Cue Display\". Changed: static instances (weights 600, 700 and 800) generated from the variable font and renamed, as the licence asks for modified versions.",
+    "website": "https://github.com/googlefonts/manrope",
+    "developers": [
+        {
+            "name": "The Manrope Project Authors"
+        }
+    ],
+    "licenses": [
+        "OFL-1.1"
+    ]
+}

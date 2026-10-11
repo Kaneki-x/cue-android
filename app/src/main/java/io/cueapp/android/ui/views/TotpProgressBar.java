@@ -5,25 +5,40 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Typeface;
+import android.os.Build;
 import android.os.Handler;
+import android.os.Looper;
 import android.util.AttributeSet;
+import android.view.View;
+import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.animation.LinearInterpolator;
 import android.widget.ProgressBar;
 
+import androidx.annotation.NonNull;
+
 import com.google.android.material.color.MaterialColors;
 
+import io.cueapp.android.R;
 import io.cueapp.android.helpers.AnimationsHelper;
 import io.cueapp.android.otp.TotpInfo;
 
 public class TotpProgressBar extends ProgressBar {
     private int _period = TotpInfo.DEFAULT_PERIOD;
     private Handler _handler;
+    private ObjectAnimator _animation;
     private float _animDurationScale;
     private boolean _showSeconds;
     private Paint _secondsPaint;
+    private long _secondsLeft = -1;
+
+    // start() was called and stop() was not: the ring animates whenever it can be seen
+    private boolean _started;
+    // the refresh loop is running, which it only does while the ring is on screen
+    private boolean _running;
+    private final Runnable _refreshRunnable = this::refresh;
 
     /** Seconds left in the period when the code and ring turn colorError (design/tokens.json motion.expiring). */
-    private static final int EXPIRING_MILLIS = 7000;
+    private static final int EXPIRING_MILLIS = EntryHolder.totalStateDuration;
 
     public TotpProgressBar(Context context) {
         super(context);
@@ -81,18 +96,25 @@ public class TotpProgressBar extends ProgressBar {
         canvas.restore();
     }
 
+    @Override
+    public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo info) {
+        super.onInitializeAccessibilityNodeInfo(info);
+        // the content description says how many seconds are left; the ring's percentage adds nothing
+        info.setRangeInfo(null);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+            info.setStateDescription(null);
+        }
+    }
+
     public void start() {
         stop();
-        _handler = new Handler();
-        _animDurationScale = AnimationsHelper.Scale.ANIMATOR.getValue(getContext());
-        refresh();
+        _started = true;
+        updateLoop();
     }
 
     public void stop() {
-        if (_handler != null) {
-            _handler.removeCallbacksAndMessages(null);
-            _handler = null;
-        }
+        _started = false;
+        updateLoop();
     }
 
     public void restart() {
@@ -100,7 +122,61 @@ public class TotpProgressBar extends ProgressBar {
         start();
     }
 
+    @Override
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        updateLoop();
+    }
+
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        updateLoop();
+    }
+
+    @Override
+    protected void onWindowVisibilityChanged(int visibility) {
+        super.onWindowVisibilityChanged(visibility);
+        updateLoop();
+    }
+
+    @Override
+    protected void onVisibilityChanged(@NonNull View changedView, int visibility) {
+        super.onVisibilityChanged(changedView, visibility);
+        updateLoop();
+    }
+
+    /**
+     * Runs the refresh loop only while the ring can be seen: not while it or its card is gone,
+     * its activity is in the background or its view is detached (a recycled card, a destroyed
+     * activity), so nothing animates unseen and nothing holds on to the view.
+     */
+    private void updateLoop() {
+        boolean shouldRun = _started && isAttachedToWindow() && isShown() && getWindowVisibility() == VISIBLE;
+        if (shouldRun == _running) {
+            return;
+        }
+
+        _running = shouldRun;
+        if (shouldRun) {
+            _animDurationScale = AnimationsHelper.Scale.ANIMATOR.getValue(getContext());
+            refresh();
+        } else {
+            if (_handler != null) {
+                _handler.removeCallbacks(_refreshRunnable);
+            }
+            if (_animation != null) {
+                _animation.cancel();
+                _animation = null;
+            }
+        }
+    }
+
     private void refresh() {
+        if (!_running) {
+            return;
+        }
+
         // calculate the current progress the bar should start at
         int maxProgress = getMax();
         long millisTillRotation = TotpInfo.getMillisTillNextRotation(_period);
@@ -114,12 +190,26 @@ public class TotpProgressBar extends ProgressBar {
         int realAnimDuration = (int) (1000 * animDurationFraction);
         int animDuration =  (int) (animPartDuration * animDurationFraction);
 
-        ObjectAnimator animation = ObjectAnimator.ofInt(this, "progress", currentProgress, animEnd);
-        animation.setDuration(animDuration);
-        animation.setInterpolator(new LinearInterpolator());
-        animation.start();
+        if (_animation != null) {
+            _animation.cancel();
+        }
+        _animation = ObjectAnimator.ofInt(this, "progress", currentProgress, animEnd);
+        _animation.setDuration(animDuration);
+        _animation.setInterpolator(new LinearInterpolator());
+        _animation.start();
+
+        // screen readers hear the seconds left as part of the card
+        long secondsLeft = (millisTillRotation + 999) / 1000;
+        if (secondsLeft != _secondsLeft) {
+            _secondsLeft = secondsLeft;
+            setContentDescription(getResources().getQuantityString(R.plurals.countdown_seconds_left, (int) secondsLeft, (int) secondsLeft));
+        }
 
         // the animation only lasts for (less than) one second, so restart it after that
-        _handler.postDelayed(this::refresh, realAnimDuration);
+        if (_handler == null) {
+            _handler = new Handler(Looper.getMainLooper());
+        }
+        _handler.removeCallbacks(_refreshRunnable);
+        _handler.postDelayed(_refreshRunnable, realAnimDuration);
     }
 }

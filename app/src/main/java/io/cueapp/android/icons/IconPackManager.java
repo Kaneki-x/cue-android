@@ -1,10 +1,13 @@
 package io.cueapp.android.icons;
 
 import android.content.Context;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.util.Log;
 
 import androidx.annotation.Nullable;
+import androidx.core.content.pm.PackageInfoCompat;
 
 import io.cueapp.android.R;
 import io.cueapp.android.util.IOUtils;
@@ -33,6 +36,8 @@ public class IconPackManager {
     private static final String TAG = IconPackManager.class.getSimpleName();
     private static final String _packDefFilename = "pack.json";
     private static final String _bundledAssetsDir = "iconpacks";
+    // which APK the bundled packs were last checked against (see installBundledPacks)
+    private static final String _bundledStampFilename = "bundled.stamp";
 
     private File _iconsBaseDir;
     private List<IconPack> _iconPacks;
@@ -166,6 +171,18 @@ public class IconPackManager {
      */
     public void installBundledPacks(Context context) {
         removeRetiredPacks();
+
+        // Copying the bundled pack (9 MB) out of the APK and parsing its pack.json takes a while,
+        // and only an update of the app can change it. So once every bundled pack has been dealt
+        // with (installed, or kept out because the user removed it or has their own copy) for this
+        // APK, later starts stop here, until the app is updated or a marker goes missing.
+        String stamp = getApkStamp(context);
+        File stampFile = new File(_iconsBaseDir, _bundledStampFilename);
+        if (stamp != null && stamp.equals(readStamp(stampFile)) && hasBundledMarkers()) {
+            return;
+        }
+
+        boolean complete = true;
         AssetManager assets = context.getAssets();
         String[] names;
         try {
@@ -219,12 +236,64 @@ public class IconPackManager {
                 }
                 writeBundledMarker(marker, bundled.getVersion());
             } catch (IOException | JSONException | IconPackException e) {
+                complete = false;
                 Log.e(TAG, String.format("Unable to install the bundled icon pack %s", name), e);
             } finally {
                 if (tempFile != null) {
                     tempFile.delete();
                 }
             }
+        }
+
+        if (complete && stamp != null) {
+            try {
+                writeStamp(stampFile, stamp);
+            } catch (IOException e) {
+                Log.e(TAG, "Unable to record the bundled icon packs as installed", e);
+            }
+        }
+    }
+
+    /**
+     * Identifies the installed APK: its version code and when it was installed or updated.
+     */
+    @Nullable
+    private static String getApkStamp(Context context) {
+        try {
+            PackageInfo info = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
+            return PackageInfoCompat.getLongVersionCode(info) + ":" + info.lastUpdateTime;
+        } catch (PackageManager.NameNotFoundException e) {
+            return null;
+        }
+    }
+
+    private boolean hasBundledMarkers() {
+        for (String uuid : _bundledOrder) {
+            if (readBundledMarker(new File(_iconsBaseDir, uuid + ".bundled")) == -1) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    @Nullable
+    private static String readStamp(File file) {
+        if (!file.exists()) {
+            return null;
+        }
+        try (FileInputStream inStream = new FileInputStream(file)) {
+            return new String(IOUtils.readAll(inStream), StandardCharsets.UTF_8).trim();
+        } catch (IOException e) {
+            return null;
+        }
+    }
+
+    private void writeStamp(File file, String stamp) throws IOException {
+        if (!_iconsBaseDir.exists() && !_iconsBaseDir.mkdirs()) {
+            throw new IOException(String.format("Unable to create directories: %s", _iconsBaseDir));
+        }
+        try (FileOutputStream outStream = new FileOutputStream(file)) {
+            outStream.write(stamp.getBytes(StandardCharsets.UTF_8));
         }
     }
 

@@ -427,8 +427,6 @@
     <string name="channel_description_lock_status">Cue може да направи трајно обавештење да вас обавести када је трезор закључан</string>
     <string name="vault_unlocked_state">Трезор је откључан. Додирните овде да га закључате.</string>
     <string name="version">Верзија</string>
-    <string name="changelog">Евиденција промена</string>
-    <string name="whats_new">Шта је ново</string>
     <string name="third_party_licenses">Лиценце треће стране</string>
     <string name="third_party_licenses_description">Лиценце библиотека трећих страна које користи Cue</string>
     <string name="webview_error">Овај уређај не подржава веб-приказ, који је неопходан за преглед евиденције промена и лиценце. Недостаје системска компонента.</string>

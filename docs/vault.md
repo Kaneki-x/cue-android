@@ -120,13 +120,13 @@ encoded (with padding) ciphertext of the vault contents. Otherwise, the value is
 a JSON object. See [vault content](#vault-content) for details.
 
 Full examples of a [plain text
-vault](/app/src/test/resources/io/cueapp/android/importers/cue_plain.json)
+vault](../app/src/test/resources/io/cueapp/android/importers/cue_plain.json)
 and an [encrypted
-vault](/app/src/test/resources/io/cueapp/android/importers/cue_encrypted.json)
+vault](../app/src/test/resources/io/cueapp/android/importers/cue_encrypted.json)
 are available in the [test
-data](/app/src/test/resources/io/cueapp/android/importers) folder.
-There's also an example Python script that can decrypt an Cue vault given the
-password: [decrypt.py](/docs/decrypt.py).
+data](../app/src/test/resources/io/cueapp/android/importers) folder.
+There's also an example Python script that can decrypt a Cue vault given the
+password: [decrypt.py](decrypt.py).
 
 ### Header
 
@@ -253,10 +253,23 @@ Entries hold the following fields:
 | ``note``      | string         | A personal note about the entry.                                                |
 | ``icon``      | string \| null | JPEG's encoded in Base64 with padding.                                          |
 | ``icon_mime`` | string \| null | The MIME type of the icon. Is null if ``icon`` is null.                         |
-| ``icon_hash`` | string \| null | The SHA-256 hash of the icon. Is null if ``icon`` is null.                      |
-| ``favorite``  | bool           | Whether the entry is a favorite or not.                                         |
+| ``icon_hash`` | string \| null | The SHA-256 hash of the icon. Is null if ``icon`` is null. See below.           |
+| ``favorite``  | bool           | Whether the entry is pinned (shown first, with a bar on its edge) or not.       |
 | ``info``      | object         | Information specific to the OTP type.                                           |
 | ``groups``    | array          | A list of UUIDs of groups that the entry is a member of. See [Groups](#groups). |
+| ``domain``    | string         | Optional, a Cue addition. See below.                                            |
+
+``domain`` is the website the code is for, as a host name such as ``github.com``
+(the Website field in the entry editor, 网站 in Chinese). Cue for iOS offers the code through AutoFill on
+that website, and the Android keyboard suggests the entry in an app whose name
+matches the site's main label (``github`` for ``github.com``). The key is left out
+when no website is set. Other apps that read this format ignore it, and their exports
+don't carry it.
+
+``icon_hash`` is only a cache key for the icon, so that it isn't decoded or drawn
+again for every entry that has it; nothing relies on it as a checksum. Cue for Android
+computes it as SHA-256 over the UTF-8 bytes of ``icon_mime`` followed by the icon
+bytes, and keeps the value it finds in a vault as it is.
 
 The ``info`` object contains different fields depending on the type of the OTP.
 
@@ -321,7 +334,7 @@ The following algorithms are supported for HOTP and TOTP:
 There is no specification available for Steam's OTP algorithm. It's essentially
 the same as TOTP, but it uses a different final encoding step. Cue's
 implementation of it can be found in
-[crypto/otp/OTP.java](/app/src/main/java/io/cueapp/android/crypto/otp/OTP.java).
+[crypto/otp/OTP.java](../app/src/main/java/io/cueapp/android/crypto/otp/OTP.java).
 
 A couple of fields have fixed values:
 
@@ -335,7 +348,7 @@ A couple of fields have fixed values:
 
 There is no specification available for MOTP. Cue's implementation of it can be
 found in
-[crypto/otp/MOTP.java](/app/src/main/java/io/cueapp/android/crypto/otp/MOTP.java).
+[crypto/otp/MOTP.java](../app/src/main/java/io/cueapp/android/crypto/otp/MOTP.java).
 
 A couple of fields have fixed values:
 
@@ -355,7 +368,7 @@ MOTP-specific fields:
 
 There is no specification available for Yandex's OTP algorithm. Cue's
 implementation can be found in
-[crypto/otp/YAOTP.java](/app/src/main/java/io/cueapp/android/crypto/otp/YAOTP.java)
+[crypto/otp/YAOTP.java](../app/src/main/java/io/cueapp/android/crypto/otp/YAOTP.java)
 
 A couple of fields have fixed values:
 

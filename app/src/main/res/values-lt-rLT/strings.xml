@@ -303,8 +303,6 @@
     <string name="tile_open_vault" comment="label for a quick settings tile that opens the app when tapped">Atverti slėptuvę</string>
     <string name="vault_unlocked_state">Slėptuvė atrakinta. Bakstelėkite čia, norėdami užrakinti.</string>
     <string name="version">Versija</string>
-    <string name="changelog">Keitinių žurnalas</string>
-    <string name="whats_new">Kas naujo</string>
     <string name="third_party_licenses">Trečiųjų šalių licencijos</string>
     <string name="third_party_licenses_description">Cue naudojamų trečiųjų šalių bibliotekų licencijos</string>
     <string name="webview_error">Šis įrenginys nepalaiko saityno rodinio, kuris yra būtinas norint rodyti keitinių žurnalą ir licenciją. Įrenginyje trūksta sisteminio komponento.</string>

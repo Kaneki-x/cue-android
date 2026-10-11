@@ -30,6 +30,7 @@ import io.cueapp.android.helpers.AnimationsHelper;
 import io.cueapp.android.helpers.CenterVerticalSpan;
 import io.cueapp.android.helpers.SimpleAnimationEndListener;
 import io.cueapp.android.helpers.UiRefresher;
+import io.cueapp.android.helpers.ViewHelper;
 import io.cueapp.android.otp.HotpInfo;
 import io.cueapp.android.otp.OtpInfo;
 import io.cueapp.android.otp.OtpInfoException;
@@ -46,6 +47,13 @@ public class EntryHolder extends RecyclerView.ViewHolder {
     private static final float DEFAULT_ALPHA = 1.0f;
     private static final float DIMMED_ALPHA = 0.2f;
     private static final char HIDDEN_CHAR = '●';
+
+    /**
+     * Milliseconds left in the period when a code and its ring turn colorError: motion.expiring
+     * in design/tokens.json, which design/generate.py --check compares with this line. The card
+     * ring (TotpProgressBar) and the keyboard's ring (CountdownRingView) use it too.
+     */
+    public static final int totalStateDuration = 7000;
 
     private View _favoriteIndicator;
     private TextView _profileName;
@@ -76,6 +84,10 @@ public class EntryHolder extends RecyclerView.ViewHolder {
     private AnimatorSet _expirationAnimSet;
     private boolean _showNextCode;
     private boolean _showExpirationState;
+    // the entry and the period (TOTP) or counter (HOTP) of the code on screen, to tell a code
+    // that rolled over from one that is only shown again
+    private VaultEntry _codeEntry;
+    private long _codeSlot = -1;
 
     private Animation _scaleIn;
     private Animation _scaleOut;
@@ -100,6 +112,8 @@ public class EntryHolder extends RecyclerView.ViewHolder {
         _expirationHandler = new Handler();
 
         _progressBar = view.findViewById(R.id.progressBar);
+        // the refresh button of HOTP entries is 32-40dp; the card hands it a 48dp touch target
+        ViewHelper.expandTouchTarget(_buttonRefresh, _view, 48);
 
         _scaleIn = AnimationsHelper.loadScaledAnimation(view.getContext(), R.anim.item_scale_in);
         _scaleOut = AnimationsHelper.loadScaledAnimation(view.getContext(), R.anim.item_scale_out);
@@ -319,6 +333,13 @@ public class EntryHolder extends RecyclerView.ViewHolder {
 
     public void destroy() {
         _refresher.destroy();
+        _progressBar.stop();
+        _copyAnimationHandler.removeCallbacksAndMessages(null);
+        _expirationHandler.removeCallbacksAndMessages(null);
+        if (_expirationAnimSet != null) {
+            _expirationAnimSet.cancel();
+            _expirationAnimSet = null;
+        }
     }
 
     public void startRefreshLoop() {
@@ -346,16 +367,33 @@ public class EntryHolder extends RecyclerView.ViewHolder {
         }
     }
 
+    /**
+     * Shows the current code. Returns whether it replaced the previous code of the same entry
+     * because the period ended or the HOTP counter moved on, not because the code was revealed
+     * or the row bound again.
+     */
     private boolean updateCodes() {
-        CharSequence previous = _profileCode.getText();
         _profileCode.setText(getOtp());
-        boolean rotated = previous.length() > 0 && !previous.toString().contentEquals(_profileCode.getText());
 
         if (_showNextCode) {
             _nextProfileCode.setText(getOtp(1));
         }
 
+        long slot = getCodeSlot();
+        boolean rotated = _entry == _codeEntry && _codeSlot != -1 && slot != _codeSlot;
+        _codeEntry = _entry;
+        _codeSlot = slot;
         return rotated;
+    }
+
+    private long getCodeSlot() {
+        OtpInfo info = _entry.getInfo();
+        if (info instanceof TotpInfo) {
+            return System.currentTimeMillis() / (((TotpInfo) info).getPeriod() * 1000L);
+        } else if (info instanceof HotpInfo) {
+            return ((HotpInfo) info).getCounter();
+        }
+        return -1;
     }
 
     /**
@@ -501,7 +539,6 @@ public class EntryHolder extends RecyclerView.ViewHolder {
             return;
         }
 
-        final int totalStateDuration = 7000;
         TotpInfo info = (TotpInfo) _entry.getInfo();
         if (info.getPeriod() * 1000 <= totalStateDuration) {
             setExpiringColor(MaterialColors.getColor(_profileCode, androidx.appcompat.R.attr.colorError));

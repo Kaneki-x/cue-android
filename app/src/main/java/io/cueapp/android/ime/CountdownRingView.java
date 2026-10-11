@@ -11,6 +11,7 @@ import androidx.annotation.Nullable;
 
 import io.cueapp.android.R;
 import io.cueapp.android.otp.TotpInfo;
+import io.cueapp.android.ui.views.EntryHolder;
 import com.google.android.material.color.MaterialColors;
 
 /**
@@ -19,7 +20,10 @@ import com.google.android.material.color.MaterialColors;
  * over, so that the owner can refresh the code.
  */
 public class CountdownRingView extends View {
-    private static final long EXPIRING_MILLIS = 5000;
+    // the card's ring turns at the same moment (design/tokens.json motion.expiring)
+    private static final long EXPIRING_MILLIS = EntryHolder.totalStateDuration;
+    // a 14dp ring moves less than half a dp in this time, so redrawing more often buys nothing
+    private static final long FRAME_MILLIS = 125;
 
     private final Paint _trackPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
     private final Paint _arcPaint = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -33,7 +37,9 @@ public class CountdownRingView extends View {
 
     private long _periodMillis = TotpInfo.DEFAULT_PERIOD * 1000L;
     private long _lastSlot = -1;
+    private long _lastSecondsLeft = -1;
     private Listener _listener;
+    private final Runnable _tick = this::invalidate;
 
     public CountdownRingView(Context context) {
         this(context, null);
@@ -103,8 +109,17 @@ public class CountdownRingView extends View {
         canvas.drawOval(_rect, _trackPaint);
         canvas.drawArc(_rect, -90, 360 * fraction, false, _arcPaint);
 
+        // screen readers hear the seconds left as part of the key
+        long secondsLeft = (remaining + 999) / 1000;
+        if (secondsLeft != _lastSecondsLeft) {
+            _lastSecondsLeft = secondsLeft;
+            setContentDescription(getResources().getQuantityString(R.plurals.countdown_seconds_left, (int) secondsLeft, (int) secondsLeft));
+        }
+
+        removeCallbacks(_tick);
         if (isShown()) {
-            postInvalidateOnAnimation();
+            // a few times a second, and exactly at the end of the period
+            postDelayed(_tick, Math.max(1, Math.min(FRAME_MILLIS, remaining)));
         }
     }
 
@@ -120,6 +135,12 @@ public class CountdownRingView extends View {
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
         invalidate();
+    }
+
+    @Override
+    protected void onDetachedFromWindow() {
+        removeCallbacks(_tick);
+        super.onDetachedFromWindow();
     }
 
     public interface Listener {

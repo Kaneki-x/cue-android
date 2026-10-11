@@ -416,8 +416,6 @@
     <string name="channel_description_lock_status">Cue kan skapa en beständig avisering för att meddela dig när valvet är låst</string>
     <string name="vault_unlocked_state">Valvet är olåst. Tryck här för att låsa.</string>
     <string name="version">Version</string>
-    <string name="changelog">Ändringslogg</string>
-    <string name="whats_new">Vad är nytt</string>
     <string name="third_party_licenses">Tredjepartslicenser</string>
     <string name="third_party_licenses_description">Licenser för de tredjepartsbibliotek Cue använder</string>
     <string name="webview_error">Denna enhet stöder inte WebView, vilket krävs för att visa ändringsloggen och licensen. Den saknar en systemkomponent.</string>

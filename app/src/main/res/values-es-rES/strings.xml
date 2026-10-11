@@ -416,8 +416,6 @@
     <string name="channel_description_lock_status">Cue puede crear una notificación persistente para notificar cuando la bóveda está bloqueada</string>
     <string name="vault_unlocked_state">La bóveda está desbloqueada. Pulse aquí para bloquear.</string>
     <string name="version">Versión</string>
-    <string name="changelog">Historial de cambios</string>
-    <string name="whats_new">Novedades</string>
     <string name="third_party_licenses">Licencias de terceros</string>
     <string name="third_party_licenses_description">Licencias de las bibliotecas de terceros usadas por Cue</string>
     <string name="webview_error">Este dispositivo no soporta web view, lo cual es necesario para visualizar el registro de cambios y la licencia. Falta un componente del sistema.</string>

@@ -17,6 +17,7 @@ import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Locale;
 import java.util.UUID;
 
 public class IconPack {
@@ -51,10 +52,12 @@ public class IconPack {
     }
 
     /**
-     * Retrieves a list of icons suggested for the given issuer.
+     * Retrieves a list of icons suggested for the given issuer. Spaces around it don't count
+     * ("Amazon " gets Amazon first), and an issuer of only spaces gets none, as on iOS.
      */
     public List<Icon> getSuggestedIcons(String issuer) {
-        if (issuer == null || issuer.isEmpty()) {
+        issuer = issuer == null ? "" : issuer.trim();
+        if (issuer.isEmpty()) {
             return new ArrayList<>();
         }
 
@@ -180,12 +183,13 @@ public class IconPack {
         }
 
         private MatchType getMatchFor(String issuer) {
-            String lowerEntryIssuer = issuer.toLowerCase();
+            // Locale.ROOT: under a Turkish locale, "LinkedIn".toLowerCase() has a dotless ı
+            String lowerEntryIssuer = issuer.toLowerCase(Locale.ROOT);
 
             boolean normalMatch = false;
             boolean inverseMatch = false;
             for (String is : _issuers) {
-                String lowerIconIssuer = is.toLowerCase();
+                String lowerIconIssuer = is.trim().toLowerCase(Locale.ROOT);
                 if (lowerIconIssuer.equals(lowerEntryIssuer)) {
                     return MatchType.EXACT;
                 }

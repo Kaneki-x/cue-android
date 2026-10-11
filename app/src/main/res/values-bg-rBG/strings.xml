@@ -416,8 +416,6 @@
     <string name="channel_description_lock_status">Cue може да създаде постоянно известие, когато хранилището е заключено</string>
     <string name="vault_unlocked_state">Хранилището е отключено. За да го заключите докоснете тук.</string>
     <string name="version">Издание</string>
-    <string name="changelog">Дневник на промените</string>
-    <string name="whats_new">Какво ново</string>
     <string name="third_party_licenses">Лицензи на трети страни</string>
     <string name="third_party_licenses_description">Лицензи на използвани външни библиотеки</string>
     <string name="webview_error">Изглежда, че на устройството липсва WebView. Това е важен системен компонент, който е необходим за преглед на дневника с промени и лиценза. Ако сте използвали инструменти за &quot;почистване&quot; на устройство, може случайно да сте го изтрили и ще трябва да го инсталирате отново.</string>

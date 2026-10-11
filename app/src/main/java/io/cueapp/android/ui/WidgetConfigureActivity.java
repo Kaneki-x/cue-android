@@ -1,6 +1,8 @@
 package io.cueapp.android.ui;
 
 import android.appwidget.AppWidgetManager;
+import android.appwidget.AppWidgetProviderInfo;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -9,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts.StartActivityForResult;
@@ -33,6 +36,7 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.UUID;
+import java.util.stream.Collectors;
 
 /**
  * Lets the user pick which entries a home screen widget shows: either the favorites
@@ -64,7 +68,9 @@ public class WidgetConfigureActivity extends CueActivity {
         if (intent.getExtras() != null) {
             _widgetId = intent.getExtras().getInt(AppWidgetManager.EXTRA_APPWIDGET_ID, AppWidgetManager.INVALID_APPWIDGET_ID);
         }
-        if (_widgetId == AppWidgetManager.INVALID_APPWIDGET_ID) {
+        if (_widgetId == AppWidgetManager.INVALID_APPWIDGET_ID || !isCueWidget(_widgetId)) {
+            // this activity is exported for the launcher: only configure widgets of our own
+            _widgetId = AppWidgetManager.INVALID_APPWIDGET_ID;
             finish();
             return;
         }
@@ -79,7 +85,11 @@ public class WidgetConfigureActivity extends CueActivity {
 
         _favoritesSwitch = findViewById(R.id.switch_favorites);
         _selectHint = findViewById(R.id.select_hint);
+        ((TextView) _selectHint).setText(getString(R.string.widget_configure_select_hint, CueWidgetProvider.MAX_ROWS));
+        ((TextView) findViewById(R.id.favorites_summary)).setText(getString(R.string.widget_configure_favorites_summary, CueWidgetProvider.MAX_ROWS));
         _list = findViewById(R.id.list_entries);
+        // the list runs under the navigation bar; its end stays above the bar and the button
+        ViewHelper.setupBottomInsets(_list);
         _adapter = new EntryAdapter(new LinkedHashSet<>(_prefs.getWidgetEntries(_widgetId)));
         _list.setLayoutManager(new LinearLayoutManager(this));
         _list.setAdapter(_adapter);
@@ -120,6 +130,12 @@ public class WidgetConfigureActivity extends CueActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    private boolean isCueWidget(int widgetId) {
+        AppWidgetManager manager = AppWidgetManager.getInstance(this);
+        AppWidgetProviderInfo info = manager != null ? manager.getAppWidgetInfo(widgetId) : null;
+        return info != null && new ComponentName(this, CueWidgetProvider.class).equals(info.provider);
     }
 
     private void updateMode() {
@@ -163,6 +179,8 @@ public class WidgetConfigureActivity extends CueActivity {
 
         void setEntries(List<VaultEntry> entries) {
             _entries = entries;
+            // entries deleted since the widget was set up don't count towards MAX_ROWS
+            _selected.retainAll(entries.stream().map(VaultEntry::getUUID).collect(Collectors.toSet()));
             notifyDataSetChanged();
         }
 
@@ -211,6 +229,10 @@ public class WidgetConfigureActivity extends CueActivity {
                         return;
                     }
                     if (!_selected.remove(_entry.getUUID())) {
+                        if (_selected.size() >= CueWidgetProvider.MAX_ROWS) {
+                            Toast.makeText(WidgetConfigureActivity.this, getString(R.string.widget_configure_select_hint, CueWidgetProvider.MAX_ROWS), Toast.LENGTH_SHORT).show();
+                            return;
+                        }
                         _selected.add(_entry.getUUID());
                     }
                     _checkBox.setChecked(_selected.contains(_entry.getUUID()));

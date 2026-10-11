@@ -414,8 +414,6 @@
     <string name="channel_description_lock_status">Cue poate crea o notificare persistentă pentru a te notifica când seiful este blocat</string>
     <string name="vault_unlocked_state">Seiful este deblocat. Atinge aici pentru a bloca.</string>
     <string name="version">Versiune</string>
-    <string name="changelog">Istoric modificări</string>
-    <string name="whats_new">Ce este nou</string>
     <string name="third_party_licenses">Licențe terțe</string>
     <string name="third_party_licenses_description">Licenţele bibliotecilor terţe pe care Cue le utilizează</string>
     <string name="webview_error">Acest dispozitiv nu acceptă vizualizare web, care este necesară pentru a vizualiza jurnalul modificărilor și licența. Îi lipsește o componentă de sistem.</string>

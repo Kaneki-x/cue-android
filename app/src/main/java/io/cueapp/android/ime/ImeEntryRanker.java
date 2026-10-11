@@ -24,13 +24,20 @@ import java.util.UUID;
 /**
  * Orders vault entries for the input method: entries that look like they belong to the
  * app that is currently asking for input come first, then favorites, then everything
- * else, each group sorted by how often they were used.
+ * else, each group sorted by how often they were used. An entry belongs to the app when its
+ * issuer, its name or the main label of its website (github.com: "github") matches a word of
+ * the app's package name or label.
  */
 public class ImeEntryRanker {
     private static final Set<String> IGNORED_TOKENS = new HashSet<>(Arrays.asList(
             "com", "org", "net", "io", "co", "de", "cn", "uk", "app", "apps", "android", "mobile",
             "client", "www", "the", "inc", "ltd", "llc", "official", "beta", "free", "pro", "lite",
             "for", "and"
+    ));
+
+    // the second level of country domains such as example.co.uk or example.com.cn
+    private static final Set<String> SECOND_LEVEL_LABELS = new HashSet<>(Arrays.asList(
+            "co", "com", "net", "org", "gov", "edu", "ac", "or", "ne", "go"
     ));
 
     private static final String[] BROWSER_MARKERS = {
@@ -99,9 +106,28 @@ public class ImeEntryRanker {
     }
 
     private static void addToken(Set<String> tokens, String token) {
-        if (token.length() >= 3 && !IGNORED_TOKENS.contains(token)) {
+        if (isLongEnough(token) && !IGNORED_TOKENS.contains(token)) {
             tokens.add(token);
         }
+    }
+
+    /**
+     * Whether a word is long enough to match on: three letters, or two where it has letters
+     * outside ASCII, so that two-character Chinese names (微信, 淘宝, 京东) match too.
+     */
+    static boolean isLongEnough(String token) {
+        if (token.length() >= 3) {
+            return true;
+        }
+        if (token.length() < 2) {
+            return false;
+        }
+        for (int i = 0; i < token.length(); i++) {
+            if (token.charAt(i) > 0x7F) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public static boolean matches(VaultEntry entry, Set<String> callerTokens) {
@@ -111,16 +137,69 @@ public class ImeEntryRanker {
 
         String issuer = entry.getIssuer().toLowerCase(Locale.ROOT).trim();
         String name = entry.getName().toLowerCase(Locale.ROOT).trim();
+        String domainLabel = getDomainLabel(entry.getDomain());
         for (String token : callerTokens) {
-            if (!issuer.isEmpty() && (issuer.contains(token) || (issuer.length() >= 3 && token.contains(issuer)))) {
+            if (!issuer.isEmpty() && (issuer.contains(token) || (isLongEnough(issuer) && token.contains(issuer)))) {
                 return true;
             }
             if (!name.isEmpty() && name.contains(token)) {
                 return true;
             }
+            if (domainLabel != null && domainLabel.equals(token)) {
+                return true;
+            }
         }
 
         return false;
+    }
+
+    /**
+     * The label a website is known by, matched against the app's words: "github" for
+     * github.com, "example" for www.example.co.uk. Null when there is none to match on.
+     */
+    @Nullable
+    static String getDomainLabel(@Nullable String domain) {
+        if (domain == null) {
+            return null;
+        }
+
+        String host = domain.trim().toLowerCase(Locale.ROOT);
+        // tolerate a pasted address: drop the scheme, the path and a port
+        int scheme = host.indexOf("://");
+        if (scheme != -1) {
+            host = host.substring(scheme + 3);
+        }
+        int end = host.length();
+        for (char c : new char[] { '/', ':', '?', '#' }) {
+            int i = host.indexOf(c);
+            if (i != -1) {
+                end = Math.min(end, i);
+            }
+        }
+        host = host.substring(0, end);
+
+        List<String> labels = new ArrayList<>();
+        for (String label : host.split("\\.")) {
+            if (!label.isEmpty()) {
+                labels.add(label);
+            }
+        }
+        if (!labels.isEmpty() && labels.get(0).equals("www")) {
+            labels.remove(0);
+        }
+        // drop the top-level domain, and a second level such as "co" in example.co.uk
+        if (labels.size() > 1) {
+            labels.remove(labels.size() - 1);
+        }
+        if (labels.size() > 1 && SECOND_LEVEL_LABELS.contains(labels.get(labels.size() - 1))) {
+            labels.remove(labels.size() - 1);
+        }
+        if (labels.isEmpty()) {
+            return null;
+        }
+
+        String label = labels.get(labels.size() - 1);
+        return isLongEnough(label) && !IGNORED_TOKENS.contains(label) ? label : null;
     }
 
     @NonNull

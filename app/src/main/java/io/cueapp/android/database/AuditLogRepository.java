@@ -7,8 +7,14 @@ import io.cueapp.android.EventType;
 import java.util.List;
 import java.util.concurrent.Executor;
 import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
 
 public class AuditLogRepository {
+    /**
+     * How long events are kept: the log shows the last 30 days and forgets older ones, as on iOS.
+     */
+    public static final long RETENTION_MILLIS = TimeUnit.DAYS.toMillis(30);
+
     private final AuditLogDao _auditLogDao;
     private final Executor _executor;
 
@@ -18,6 +24,7 @@ public class AuditLogRepository {
     }
 
     public LiveData<List<AuditLogEntry>> getAllAuditLogEntries() {
+        _executor.execute(this::prune);
         return _auditLogDao.getAll();
     }
 
@@ -60,7 +67,12 @@ public class AuditLogRepository {
     public void insert(AuditLogEntry auditLogEntry) {
         _executor.execute(() -> {
             _auditLogDao.insert(auditLogEntry);
+            prune();
         });
+    }
+
+    private void prune() {
+        _auditLogDao.deleteOlderThan(System.currentTimeMillis() - RETENTION_MILLIS);
     }
 
 }

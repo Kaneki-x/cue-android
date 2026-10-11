@@ -1,5 +1,7 @@
 package io.cueapp.android.ui;
 
+import android.content.ActivityNotFoundException;
+import android.net.Uri;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -18,11 +20,16 @@ import androidx.core.view.WindowInsetsCompat;
 
 import io.cueapp.android.BuildConfig;
 import io.cueapp.android.R;
-import io.cueapp.android.ui.dialogs.ChangelogDialog;
+import io.cueapp.android.ui.dialogs.LicenseDialog;
+import io.cueapp.android.ui.dialogs.Dialogs;
 import io.cueapp.android.helpers.ViewHelper;
 import com.google.android.material.color.MaterialColors;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 public class AboutActivity extends CueActivity {
+    // GPL-3.0 §6: where the corresponding source is; §5: that this is a modified Aegis
+    private static final String SOURCE_CODE = "https://github.com/Kaneki-x/cue-android";
+    private static final String AEGIS = "https://github.com/beemdevelopment/Aegis";
 
 
     @Override
@@ -55,12 +62,21 @@ public class AboutActivity extends CueActivity {
             copyToClipboard(getCurrentAppVersion(), R.string.version_copied);
         });
 
-        View btnChangelog = findViewById(R.id.btn_changelog);
-        btnChangelog.setOnClickListener(v -> {
-            ChangelogDialog.create()
-                    .setTheme(_themeHelper.getConfiguredTheme())
-                    .show(getSupportFragmentManager(), null);
+        // the privacy policy Google Play asks for; a plain dialog, so it shows without a web view
+        View btnPrivacyPolicy = findViewById(R.id.btn_privacy_policy);
+        btnPrivacyPolicy.setOnClickListener(v -> {
+            Dialogs.showSecureDialog(new MaterialAlertDialogBuilder(this)
+                    .setTitle(R.string.privacy_policy)
+                    .setMessage(R.string.privacy_policy_text)
+                    .setPositiveButton(android.R.string.ok, null)
+                    .create());
         });
+
+        findViewById(R.id.btn_license).setOnClickListener(v -> LicenseDialog.create()
+                .setTheme(_themeHelper.getConfiguredTheme())
+                .show(getSupportFragmentManager(), null));
+        findViewById(R.id.btn_source_code).setOnClickListener(v -> openUrl(SOURCE_CODE));
+        findViewById(R.id.btn_based_on_aegis).setOnClickListener(v -> openUrl(AEGIS));
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.about_scroll_view), (targetView, windowInsets) -> {
             Insets insets = windowInsets.getInsets(WindowInsetsCompat.Type.systemBars() | WindowInsetsCompat.Type.displayCutout());
@@ -81,6 +97,16 @@ public class AboutActivity extends CueActivity {
 
         // as on iOS: version (build)
         return String.format("%s (%s)", BuildConfig.VERSION_NAME, BuildConfig.VERSION_CODE);
+    }
+
+    private void openUrl(String url) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        try {
+            startActivity(intent);
+        } catch (ActivityNotFoundException e) {
+            copyToClipboard(url, R.string.url_copied);
+        }
     }
 
     private void copyToClipboard(String text, @StringRes int messageId) {

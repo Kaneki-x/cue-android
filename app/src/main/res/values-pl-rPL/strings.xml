@@ -438,8 +438,6 @@
     <string name="channel_description_lock_status">Aplikacja Cue może utworzyć stałe powiadomienie, aby powiadomić Cię, gdy sejf jest zamknięty</string>
     <string name="vault_unlocked_state">Sejf jest odblokowany. Kliknij, aby zablokować.</string>
     <string name="version">Wersja</string>
-    <string name="changelog">Lista zmian</string>
-    <string name="whats_new">Co nowego</string>
     <string name="third_party_licenses">Licencje innych firm</string>
     <string name="third_party_licenses_description">Licencje bibliotek zewnętrznych, z których korzysta aplikacja Cue</string>
     <string name="webview_error">To urządzenie nie wspiera widoku internetowego, który jest niezbędny do wyświetlenia listy zmian i licencji. To brakujący element systemu operacyjnego.</string>
