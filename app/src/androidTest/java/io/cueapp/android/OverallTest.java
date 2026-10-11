@@ -24,6 +24,7 @@ import static org.hamcrest.Matchers.containsString;
 
 import androidx.annotation.IdRes;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.test.espresso.NoMatchingViewException;
 import androidx.test.espresso.ViewInteraction;
 import androidx.test.espresso.contrib.RecyclerViewActions;
 import androidx.test.espresso.matcher.RootMatchers;
@@ -152,8 +153,7 @@ public class OverallTest extends CueTest {
         onView(withText(R.string.action_delete)).perform(click());
         onView(withId(android.R.id.button1)).perform(click());
 
-        openContextualActionModeOverflowMenu();
-        onView(withText(R.string.lock)).perform(click());
+        lockVault();
         onView(withId(R.id.text_password)).perform(typeText(VAULT_PASSWORD), closeSoftKeyboard());
         onView(withId(R.id.button_decrypt)).perform(click());
         vault = _vaultManager.getVault();
@@ -174,6 +174,16 @@ public class OverallTest extends CueTest {
 
         assertTrue(vault.isEncryptionEnabled());
         assertTrue(vault.getCredentials().getSlots().has(PasswordSlot.class));
+    }
+
+    // Cue puts the lock in the toolbar when there is room for it, else in the overflow menu
+    private void lockVault() {
+        try {
+            onView(withId(R.id.action_lock)).perform(click());
+        } catch (NoMatchingViewException e) {
+            openContextualActionModeOverflowMenu();
+            onView(withText(R.string.lock)).perform(click());
+        }
     }
 
     private void changeSort(@IdRes int resId) {
