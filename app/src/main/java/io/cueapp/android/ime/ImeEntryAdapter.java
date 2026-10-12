@@ -208,8 +208,9 @@ public class ImeEntryAdapter extends RecyclerView.Adapter<ImeEntryAdapter.Holder
             }
             _issuer.setText(issuer);
             _name.setText(name);
-            // a suggested entry says so next to its account name; the name stays, since two
-            // accounts of the same service are suggested together and it is what tells them apart
+            // a suggested entry says so next to its code, which leaves the top row to the issuer
+            // and the account name: two accounts of the same service are suggested together,
+            // and the name is what tells them apart
             _suggested.setVisibility(ranked.isSuggested() ? View.VISIBLE : View.GONE);
             _name.setVisibility(name.isEmpty() ? View.GONE : View.VISIBLE);
             _favoriteIndicator.setVisibility(_entry.isFavorite() ? View.VISIBLE : View.GONE);

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- One entry as a key: a small tile like the 瓷贴 card. Issuer (and account, or 推荐) on
-     top, the code and its ring below; the row clips the pinned bar to its corners. The iOS
-     keyboard (apple/CueKeyboard) draws the same key. Heights are minimums, so large font
-     sizes make the key taller instead of clipping its text. -->
+<!-- One entry as a key: a small tile like the 瓷贴 card. Issuer and account on top, the
+     code, 推荐 and the ring below; the row clips the pinned bar to its corners. The iOS
+     keyboard (apple/CueKeyboard) draws the same key, without 推荐 (it cannot see the app).
+     Heights are minimums, so large font sizes make the key taller instead of clipping its
+     text. -->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     tools:ignore="UseAppTint"
@@ -52,48 +53,37 @@
                 app:shapeAppearanceOverlay="@style/ShapeAppearanceOverlay.Cue.ImageView.Circle"
                 xmlns:app="http://schemas.android.com/apk/res-auto" />
 
-            <TextView
-                android:id="@+id/issuer"
+            <!-- the issuer first, the account name ellipsizing in what is left (KeyTitleLayout) -->
+            <io.cueapp.android.ime.KeyTitleLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:ellipsize="end"
-                android:includeFontPadding="false"
-                android:maxLines="1"
-                android:textColor="?attr/colorOnSurface"
-                android:textSize="12sp"
-                android:textStyle="bold"
-                tools:text="GitHub" />
+                android:layout_weight="1">
 
-            <TextView
-                android:id="@+id/suggested"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:background="@drawable/cue_pill_background"
-                android:includeFontPadding="false"
-                android:paddingStart="5dp"
-                android:paddingTop="2dp"
-                android:paddingEnd="5dp"
-                android:paddingBottom="2dp"
-                android:text="@string/ime_suggested"
-                android:textColor="?attr/colorPrimary"
-                android:textSize="10sp"
-                android:textStyle="bold"
-                android:visibility="gone" />
+                <TextView
+                    android:id="@+id/issuer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:textColor="?attr/colorOnSurface"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    tools:text="GitHub" />
 
-            <TextView
-                android:id="@+id/name"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:ellipsize="end"
-                android:includeFontPadding="false"
-                android:maxWidth="72dp"
-                android:maxLines="1"
-                android:textColor="?attr/colorOnSurfaceVariant"
-                android:textSize="11sp"
-                tools:text="kaneki-x" />
+                <TextView
+                    android:id="@+id/name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:gravity="end"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:paddingStart="4dp"
+                    android:textColor="?attr/colorOnSurfaceVariant"
+                    android:textSize="11sp"
+                    tools:text="alex@example.com" />
+            </io.cueapp.android.ime.KeyTitleLayout>
         </LinearLayout>
 
         <LinearLayout
@@ -103,11 +93,11 @@
             android:gravity="center_vertical"
             android:orientation="horizontal">
 
+            <!-- the code is measured first, so 推荐 gives way to it, never the other way -->
             <TextView
                 android:id="@+id/code"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
                 android:fontFamily="@font/cue_display"
                 android:includeFontPadding="false"
                 android:layoutDirection="ltr"
@@ -115,6 +105,33 @@
                 android:textSize="17sp"
                 android:textStyle="bold"
                 tools:text="123 456" />
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/suggested"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end|center_vertical"
+                    android:layout_marginStart="6dp"
+                    android:background="@drawable/cue_pill_background"
+                    android:ellipsize="end"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:paddingStart="5dp"
+                    android:paddingTop="2dp"
+                    android:paddingEnd="5dp"
+                    android:paddingBottom="2dp"
+                    android:text="@string/ime_suggested"
+                    android:textColor="?attr/colorPrimary"
+                    android:textSize="10sp"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+            </FrameLayout>
 
             <FrameLayout
                 android:layout_width="14dp"
