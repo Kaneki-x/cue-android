@@ -45,6 +45,16 @@ public class GroupAdapter extends RecyclerView.Adapter<GroupHolder> implements I
         notifyItemChanged(position);
     }
 
+    /**
+     * Shows the group's entry count again, after some were taken out of it.
+     */
+    public void refreshGroup(UUID uuid) {
+        int position = _groups.indexOf(getGroupByUUID(uuid));
+        if (position >= 0) {
+            notifyItemChanged(position);
+        }
+    }
+
     public void removeGroup(VaultGroup group) {
         int position = _groups.indexOf(group);
         _groups.remove(position);
@@ -59,7 +69,12 @@ public class GroupAdapter extends RecyclerView.Adapter<GroupHolder> implements I
 
     @Override
     public void onBindViewHolder(GroupHolder holder, int position) {
-        holder.setData(_groups.get(position));
+        VaultGroup group = _groups.get(position);
+        holder.setData(group, _listener.getEntryCount(group));
+        holder.setOnEntriesClickListener(v -> {
+            int position12 = holder.getAdapterPosition();
+            _listener.onShowGroupEntries(_groups.get(position12));
+        });
         holder.setOnEditClickListener(v -> {
             int position12 = holder.getAdapterPosition();
             _listener.onEditGroup(_groups.get(position12));
@@ -99,5 +114,7 @@ public class GroupAdapter extends RecyclerView.Adapter<GroupHolder> implements I
     public interface Listener {
         void onEditGroup(VaultGroup group);
         void onRemoveGroup(VaultGroup group);
+        void onShowGroupEntries(VaultGroup group);
+        int getEntryCount(VaultGroup group);
     }
 }

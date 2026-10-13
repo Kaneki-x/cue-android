@@ -130,8 +130,6 @@ public class MainActivity extends CueActivity implements EntryListView.Listener 
     private Collection<VaultGroup> _groups;
     private ChipGroup _groupChip;
     private Set<UUID> _groupFilter;
-    // set while the chips are checked to match the filter, so their listeners stay quiet
-    private boolean _updatingGroupChips;
     private Set<UUID> _prefGroupFilter;
 
     private FabScrollHelper _fabScrollHelper;
@@ -307,7 +305,10 @@ public class MainActivity extends CueActivity implements EntryListView.Listener 
      */
     private void initializeGroups() {
         _groupChip.removeAllViews();
-        _groupChip.setSingleSelection(!_prefs.isGroupMultiselectEnabled());
+        // the chips' checks follow the filter (applyGroupFilter), which a tap works out on its
+        // own: with the group's single selection, a tap first unchecked the old chip, its
+        // listener applied that (全部) and re-checked chips while the group was still changing
+        _groupChip.setSingleSelection(false);
         _groupChip.setSelectionRequired(false);
 
         addChipTo(_groupChip, new VaultGroupModel(this, GroupPlaceholderType.ALL));
@@ -319,7 +320,6 @@ public class MainActivity extends CueActivity implements EntryListView.Listener 
 
     private void applyGroupFilter(Set<UUID> groupFilter) {
         _groupFilter = groupFilter;
-        _updatingGroupChips = true;
         for (int i = 0; i < _groupChip.getChildCount(); i++) {
             Chip chip = (Chip) _groupChip.getChildAt(i);
             Object tag = chip.getTag();
@@ -331,7 +331,6 @@ public class MainActivity extends CueActivity implements EntryListView.Listener 
                 chip.setChecked(groupFilter.contains(((VaultGroupModel) tag).getUUID()));
             }
         }
-        _updatingGroupChips = false;
 
         _entryListView.setGroupFilter(groupFilter);
         onSaveGroupFilter(groupFilter);
@@ -367,33 +366,39 @@ public class MainActivity extends CueActivity implements EntryListView.Listener 
             chip.setTag(group);
         }
 
-        chip.setOnCheckedChangeListener((button, isChecked) -> {
-            if (_updatingGroupChips) {
-                return;
-            }
+        // the tap has toggled the chip already; applyGroupFilter sets every chip from the filter
+        chip.setOnClickListener(v -> {
             if (_actionMode != null) {
                 _actionMode.finish();
             }
-
-            // 全部 clears the filter; anything else filters by the checked chips, and
-            // unchecking the last one is 全部 again
-            boolean all = button.getTag() == GroupPlaceholderType.ALL;
-            applyGroupFilter(all ? new HashSet<>() : getGroupFilter(chipGroup));
+            applyGroupFilter(toggleGroupFilter(v.getTag()));
         });
 
         chipGroup.addView(chip);
     }
 
-    private static Set<UUID> getGroupFilter(ChipGroup chipGroup) {
-        // a group's UUID, or null for 无分组; 全部 adds nothing
+    /**
+     * The filter after a tap on a chip, as on iOS: 全部 clears it; a group (or 无分组, null) is
+     * added with multiselect on and replaces the filter otherwise; tapping a selected one
+     * takes it out, and taking out the last one is 全部 again.
+     */
+    private Set<UUID> toggleGroupFilter(Object tag) {
         Set<UUID> groupFilter = new HashSet<>();
-        for (int id : chipGroup.getCheckedChipIds()) {
-            Object tag = chipGroup.findViewById(id).getTag();
-            if (tag instanceof VaultGroupModel) {
-                groupFilter.add(((VaultGroupModel) tag).getUUID());
-            } else if (tag == GroupPlaceholderType.NO_GROUP) {
-                groupFilter.add(null);
+        if (tag == GroupPlaceholderType.ALL) {
+            return groupFilter;
+        }
+
+        UUID group = tag instanceof VaultGroupModel ? ((VaultGroupModel) tag).getUUID() : null;
+        if (_groupFilter != null) {
+            groupFilter.addAll(_groupFilter);
+        }
+        if (groupFilter.contains(group)) {
+            groupFilter.remove(group);
+        } else {
+            if (!_prefs.isGroupMultiselectEnabled()) {
+                groupFilter.clear();
             }
+            groupFilter.add(group);
         }
         return groupFilter;
     }

@@ -339,6 +339,8 @@
     <string name="rename_group">重新命名分組</string>
     <string name="no_group_selection">不屬於任何分組的項目會出現在「無分組」中。</string>
     <string name="remove_group">刪除分組</string>
+    <string name="remove_from_group_title">從「%1$s」移出</string>
+    <string name="remove_from_group">移出</string>
     <string name="remove_group_description">你確定要刪除這個分組嗎？此分組內的項目會自動移到「無分組」。</string>
     <string name="remove_unused_groups">刪除未使用的分組</string>
     <string name="remove_unused_groups_description">你確定要刪除所有沒有項目的分組嗎？</string>

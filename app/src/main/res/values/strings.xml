@@ -359,6 +359,8 @@
     <string name="rename_group">Rename Group</string>
     <string name="no_group_selection">If an entry is not part of any group, it can be found under \"No group\".</string>
     <string name="remove_group">Remove group</string>
+    <string name="remove_from_group_title">Remove from “%1$s”</string>
+    <string name="remove_from_group">Remove</string>
     <string name="remove_group_description">Are you sure you want to remove this group? Entries in this group will automatically switch to \'No group\'.</string>
     <string name="remove_unused_groups">Delete unused groups</string>
     <string name="remove_unused_groups_description">Are you sure you want to delete all groups that are not assigned to an entry?</string>

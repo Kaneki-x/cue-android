@@ -229,7 +229,12 @@ public class EntryListView extends Fragment implements EntryAdapter.Listener {
     }
 
     public void setGroupFilter(Set<UUID> groups) {
-        _adapter.setGroupFilter(groups);
+        if (_adapter.setGroupFilter(groups)) {
+            // Cue: another group's entries start at its top. The list kept the row number it
+            // was scrolled to, so a group opened from far down the list opened part way down,
+            // its first entries out of view.
+            scrollToPosition(0);
+        }
         _touchCallback.setIsLongPressDragEnabled(_adapter.isDragAndDropAllowed());
         updateEmptyState();
         updateDividerDecoration();

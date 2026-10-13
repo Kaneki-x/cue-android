@@ -71,6 +71,9 @@ Deliberate, so both apps' behaviour is on record:
   a row shows the code on Android and copies it on iOS (where it also opens Cue and asks for Face
   ID every time; Android asks only while the vault is locked). While the vault is locked, Android's
   widget shows nothing but "locked"; iOS shows the names (there is a 隐藏名称 option).
+- **Manage groups**: tapping a group's name lists its entries to check the ones to take out of
+  it, saved with the screen's other changes (保存); iOS opens the group as a page, where a swipe
+  or 选择 takes entries out at once.
 - **Keyboard**: Android switches back to the previous keyboard after inserting a code (a setting,
   on by default; 已填入 shows when it is off) and ranks entries by the app being typed into; iOS
   has neither (a keyboard cannot see the app) and unlocks with Face ID inside the keyboard.

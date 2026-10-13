@@ -250,13 +250,17 @@ public class EntryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
         }
     }
 
-    public void setGroupFilter(@NonNull Set<UUID> groups) {
+    /**
+     * Returns whether the filter changed.
+     */
+    public boolean setGroupFilter(@NonNull Set<UUID> groups) {
         if (_groupFilter.equals(groups)) {
-            return;
+            return false;
         }
 
         _groupFilter = groups;
         refreshEntryList();
+        return true;
     }
 
     public void setSortCategory(SortCategory category, boolean apply) {
@@ -438,7 +442,7 @@ public class EntryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
     @Override
     public void onViewRecycled(RecyclerView.ViewHolder holder) {
         if (holder instanceof EntryHolder) {
-            ((EntryHolder) holder).stopRefreshLoop();
+            ((EntryHolder) holder).recycle();
             _holders.remove(holder);
         }
     }
@@ -608,7 +612,9 @@ public class EntryAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
                 if (nonUniformPeriod) {
                     holder.setShowProgress(true);
                 } else {
-                    holder.setShowProgress(_viewMode == ViewMode.NORMAL, false);
+                    // every TOTP card carries its own ring, in every view mode, as onBindViewHolder
+                    // sets it up (this hid the rings of the cards on screen outside the normal mode)
+                    holder.setShowProgress(true, false);
                 }
             }
         }

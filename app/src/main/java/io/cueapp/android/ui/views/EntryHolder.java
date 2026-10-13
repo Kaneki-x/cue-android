@@ -153,8 +153,10 @@ public class EntryHolder extends RecyclerView.ViewHolder {
 
         _selected.clearAnimation();
         _selected.setVisibility(View.GONE);
-        _copyAnimationHandler.removeCallbacksAndMessages(null);
-        _expirationHandler.removeCallbacksAndMessages(null);
+        // whatever the card was animating for the entry it showed before ends here: its blink
+        // (kept when the new one is paused or hidden), a fading code, its "copied" label
+        stopExpirationAnimation();
+        clearCopyAnimation();
         _showNextCode = entry.getInfo() instanceof TotpInfo && showNextCode;
         _showExpirationState = _entry.getInfo() instanceof TotpInfo && showExpirationState;
         _progressBar.setShowSeconds(_showExpirationState && showExpirationCountdown);
@@ -331,6 +333,27 @@ public class EntryHolder extends RecyclerView.ViewHolder {
         }
     }
 
+    /**
+     * Cue: the card scrolled out of the list and waits to show another entry. Nothing it animates
+     * carries on while it waits: an expiring code's blink ran on until the card was bound again,
+     * and a "copied" label (its animations fill after) stayed over the next entry's title.
+     */
+    public void recycle() {
+        stopRefreshLoop();
+        stopExpirationAnimation();
+        clearCopyAnimation();
+        _codeEntry = null;
+        _codeSlot = -1;
+    }
+
+    private void clearCopyAnimation() {
+        _copyAnimationHandler.removeCallbacksAndMessages(null);
+        _profileCopied.clearAnimation();
+        _profileIssuer.clearAnimation();
+        _profileName.clearAnimation();
+        _description.clearAnimation();
+    }
+
     public void destroy() {
         _refresher.destroy();
         _progressBar.stop();
@@ -377,6 +400,8 @@ public class EntryHolder extends RecyclerView.ViewHolder {
 
         if (_showNextCode) {
             _nextProfileCode.setText(getOtp(1));
+            // hideCode() gave it the hidden colour
+            _nextProfileCode.setTextColor(MaterialColors.getColor(_nextProfileCode, R.attr.colorOnSurfaceDim));
         }
 
         long slot = getCodeSlot();
@@ -593,10 +618,14 @@ public class EntryHolder extends RecyclerView.ViewHolder {
             _expirationAnimSet.cancel();
             _expirationAnimSet = null;
         }
+        // a new code's fade drives the same alpha as the blink
+        _profileCode.animate().cancel();
+        _nextProfileCode.animate().cancel();
 
         int colorTo = MaterialColors.getColor(_profileCode, R.attr.colorCode);
         _profileCode.setTextColor(colorTo);
         _profileCode.setAlpha(1f);
+        _nextProfileCode.setAlpha(1f);
         _progressBar.setProgressTintList(null);
     }
 
