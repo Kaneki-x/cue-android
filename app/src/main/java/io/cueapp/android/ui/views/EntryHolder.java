@@ -81,6 +81,7 @@ public class EntryHolder extends RecyclerView.ViewHolder {
     private UiRefresher _refresher;
     private Handler _copyAnimationHandler;
     private Handler _expirationHandler;
+    private Handler _nextCodeHandler;
     private AnimatorSet _expirationAnimSet;
     private boolean _showNextCode;
     private boolean _showExpirationState;
@@ -110,6 +111,7 @@ public class EntryHolder extends RecyclerView.ViewHolder {
 
         _copyAnimationHandler = new Handler();
         _expirationHandler = new Handler();
+        _nextCodeHandler = new Handler();
 
         _progressBar = view.findViewById(R.id.progressBar);
         // the refresh button of HOTP entries is 32-40dp; the card hands it a 48dp touch target
@@ -168,7 +170,7 @@ public class EntryHolder extends RecyclerView.ViewHolder {
 
         // only show the button if this entry is of type HotpInfo
         _buttonRefresh.setVisibility(entry.getInfo() instanceof HotpInfo ? View.VISIBLE : View.GONE);
-        _nextProfileCode.setVisibility(_showNextCode ? View.VISIBLE : View.GONE);
+        _nextProfileCode.setVisibility(_showNextCode ? View.INVISIBLE : View.GONE);
 
         String profileIssuer = entry.getIssuer();
         String profileName = entry.getName();
@@ -339,6 +341,7 @@ public class EntryHolder extends RecyclerView.ViewHolder {
      * and a "copied" label (its animations fill after) stayed over the next entry's title.
      */
     public void recycle() {
+        _nextCodeHandler.removeCallbacksAndMessages(null);
         stopRefreshLoop();
         stopExpirationAnimation();
         clearCopyAnimation();
@@ -359,6 +362,7 @@ public class EntryHolder extends RecyclerView.ViewHolder {
         _progressBar.stop();
         _copyAnimationHandler.removeCallbacksAndMessages(null);
         _expirationHandler.removeCallbacksAndMessages(null);
+        _nextCodeHandler.removeCallbacksAndMessages(null);
         if (_expirationAnimSet != null) {
             _expirationAnimSet.cancel();
             _expirationAnimSet = null;
@@ -403,6 +407,8 @@ public class EntryHolder extends RecyclerView.ViewHolder {
             // hideCode() gave it the hidden colour
             _nextProfileCode.setTextColor(MaterialColors.getColor(_nextProfileCode, R.attr.colorOnSurfaceDim));
         }
+
+        updateNextCodeVisibility();
 
         long slot = getCodeSlot();
         boolean rotated = _entry == _codeEntry && _codeSlot != -1 && slot != _codeSlot;
@@ -501,6 +507,7 @@ public class EntryHolder extends RecyclerView.ViewHolder {
         updateCodes();
         startExpirationAnimation();
         _hidden = false;
+        updateNextCodeVisibility();
     }
 
     public void hideCode() {
@@ -512,6 +519,42 @@ public class EntryHolder extends RecyclerView.ViewHolder {
         updateTextViewWithDots(_nextProfileCode,  hiddenText, code);
 
         _hidden = true;
+        updateNextCodeVisibility();
+    }
+
+    /**
+     * Cue: the next code shows only for the last seconds of the period (totalStateDuration), when
+     * the current one may run out before it is typed: the next one can be typed ahead and sent once
+     * it turns. The rest of the time its line is kept but left blank, so the card does not change
+     * height.
+     */
+    private void updateNextCodeVisibility() {
+        _nextCodeHandler.removeCallbacksAndMessages(null);
+        if (!_showNextCode) {
+            return;
+        }
+
+        long left = ((TotpInfo) _entry.getInfo()).getMillisTillNextRotation();
+        boolean show = !_hidden && left <= totalStateDuration;
+        if (show && _nextProfileCode.getVisibility() != View.VISIBLE) {
+            _nextProfileCode.setVisibility(View.VISIBLE);
+            float scale = AnimationsHelper.Scale.ANIMATOR.getValue(itemView.getContext());
+            if (scale != 0f && itemView.isAttachedToWindow()) {
+                _nextProfileCode.setAlpha(0f);
+                _nextProfileCode.animate().alpha(1f).setDuration((long) (300 / scale)).start();
+            }
+        } else if (!show) {
+            _nextProfileCode.setVisibility(View.INVISIBLE);
+        }
+
+        if (!_hidden && left > totalStateDuration) {
+            // a paused card picks it up again in setPaused(false), through updateCodes()
+            _nextCodeHandler.postDelayed(() -> {
+                if (!_paused) {
+                    updateNextCodeVisibility();
+                }
+            }, left - totalStateDuration);
+        }
     }
 
     private void updateTextViewWithDots(TextView textView, String hiddenCode, String code) {

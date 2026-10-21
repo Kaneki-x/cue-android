@@ -46,7 +46,7 @@
     <string name="pref_code_group_size_summary">选择验证码每组显示几位</string>
     <string name="pref_account_name_position_title">显示账户名称</string>
     <string name="pref_show_next_code_title">显示下一组验证码</string>
-    <string name="pref_show_next_code_summary">提前显示下一组验证码</string>
+    <string name="pref_show_next_code_summary">当前验证码快过期时显示下一组</string>
     <string name="pref_expiration_state_title">提示验证码即将过期</string>
     <string name="pref_expiration_state_summary">验证码即将过期时变色并闪烁</string>
     <string name="pref_expiration_state_fallback">验证码即将过期时变色</string>
