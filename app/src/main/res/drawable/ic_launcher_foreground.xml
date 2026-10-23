@@ -4,14 +4,15 @@
     android:height="108dp"
     android:viewportWidth="108"
     android:viewportHeight="108">
-    <!-- A ring with a gap (the countdown) that reads as the letter Q (Cue) -->
+    <!-- The Q: a closed ring (the countdown) crossed at 45° by a tail that shows on both sides
+         of the stroke. Same numbers as apple/Shared/BrandMark.swift and design/make_app_icon.py -->
     <path
-        android:pathData="M59.7,75.25 A22,22 0 1 1 75.25,59.7"
+        android:pathData="M32,54 A22,22 0 1 1 76,54 A22,22 0 1 1 32,54 Z"
         android:strokeColor="#FFFFFF"
         android:strokeWidth="8"
         android:strokeLineCap="round" />
     <path
-        android:pathData="M65,65 L80,80"
+        android:pathData="M63.9,63.9 L76.63,76.63"
         android:strokeColor="#FFFFFF"
         android:strokeWidth="8"
         android:strokeLineCap="round" />
